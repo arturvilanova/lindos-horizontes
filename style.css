@@ -47,11 +47,11 @@
 }
 
 
-/* * {
+* {
         margin: 0px;
         padding: 0px;
    }
-*/
+
 
 :root  {
     --cor1: #ffffff;
@@ -73,9 +73,27 @@ header {
 }
 
 section#area_perfil {
+    background: #000000 url(https://cdn.pixabay.com/photo/2025/07/01/22/07/22-07-33-809_1280.jpg) right bottom no-repeat fixed;
+    background-size: cover;
+    height: 300px;
+    color: white;
+    
 
+}
+
+div#perfil {
+    padding: 20px 0px 20px 40px; 
+    border: solid white;
 }
 
 div#imagem_perfil {
     
+}
+
+img {
+    width: 15%;
+    border: 3.5px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+
 }
