@@ -73,27 +73,48 @@ header {
 }
 
 section#area_perfil {
-    background: #000000 url(https://cdn.pixabay.com/photo/2025/07/01/22/07/22-07-33-809_1280.jpg) center right no-repeat fixed;
+    background: #000000 url(https://cdn.pixabay.com/photo/2025/07/01/22/07/22-07-33-809_1280.jpg) center bottom no-repeat fixed;
     background-size: cover;
-    height: 300px;
+     height: 98vh;
     color: white;
     
 
 }
 
 div#perfil {
-    padding: 20px 0px 20px 40px; 
-    border: solid white;
+    /* height: 100vh; */
+  /* display: flex; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
 }
 
 div#imagem_perfil {
     
+    
 }
 
 img {
-    width: 15%;
+    width: 150px;
     border: 3.5px solid white;
     border-radius: 50%;
     cursor: pointer;
 
+}
+
+h1#h1_principal {
+    padding: 20px 0px 15px 0px;
+    font-size: 40px;
+}
+
+p#slogan {
+    font-size: 20px;
+    color: #ffffffb5;
+}
+
+main {
+    position: relative;
+     z-index: 1;
 }
