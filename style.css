@@ -49,18 +49,18 @@ img {
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-    transition: transform 0.5s ease;
+    /* transition: transform 0.5s ease; */
 
     transition: transform 0.2s ease-in-out;
 
 }
 
 img:hover {
-     transform: scale(1.05);
+     /* transform: scale(1.05); */
 }
 
 img:active {
-     transform: scale(1.05);
+     /* transform: scale(1.05); */
       transform: scale(1.1);
 }
 
