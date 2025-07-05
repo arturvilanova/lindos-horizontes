@@ -2,67 +2,12 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-@font-face {
-    font-family: "Be Vietnam Pro", sans-serif;
-
-    src: url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-Black.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-BlackItalic.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-Bold.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-BoldItalic.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-ExtraBold.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-ExtraBoldItalic.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-ExtraLight.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-ExtraLightItalic.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-Italic.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-Light.ttf) format('truetype'),
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-LightItalic.ttf) format('truetype'),
-    
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-Medium.ttf) format('truetype')
-    
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-MediumItalic.ttf) format('truetype')
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-Regular.ttf) format('truetype')
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-SemiBold.ttf) format('truetype')
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-SemiBoldItalic.ttf) format('truetype')
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-Thin.ttf) format('truetype')
-
-    url(/lindos-horizontes/fontes/be_vietnam_pro/BeVietnamPro-ThinItalic.ttf) format('truetype')
-    
-    ;
-
-}
-
-
 * {
         margin: 0px;
         padding: 0px;
    }
 
 
-:root  {
-    --cor1: #ffffff;
-    --cor2: #ffffff;
-    --cor3: #ffffff;
-    --cor4: #ffffff;
-    --cor5: #ffffff;
-    --font-principal: "Be Vietnam Pro", sans-serif;
-    --font-padrao: Arial, Verdana, sans-serif;
-    
-}
 
 body {
     font-family: var(--font-principal);
@@ -101,11 +46,17 @@ img {
     border: 3.5px solid white;
     border-radius: 50%;
     cursor: pointer;
+    -webkit-user-drag: none;
+    user-select: none;
     transition: transform 0.5s ease;
 
 }
 
 img:hover {
+     transform: scale(1.05);
+}
+
+img:active {
      transform: scale(1.05);
 }
 
@@ -117,21 +68,4 @@ h1#h1_principal {
 p#slogan {
     font-size: 20px;
     color: #ffffffb5;
-}
-
-ul {
-    display: inline-flex;
-    list-style: none;
-    margin-top: 50px;
-}
-
-a  {
-    color: white;
-    text-decoration: none;
-    border: 1px solid white;
-    margin-left: 30px;
-    font-size: 25px;
-    padding: 10px;
-    border-radius: 10px;
-    
 }
