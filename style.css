@@ -16,7 +16,7 @@ section#area_perfil {
     background-size: cover;
     height: 100vh;
     color: white;
-    
+    user-select: none;
     position: relative;
 
 }
@@ -52,12 +52,12 @@ img:active {
 
 h1#h1_principal {
     padding: 20px 0px 0px 0px;
-    font-size: 40px;
+    font-size: 50px;
 }
 
 p#slogan {
     color: #ffffffb5;
-    font-size: 20px;
+    font-size: 25px;
     padding: 10px 0px 40px 0px;
     
 }
