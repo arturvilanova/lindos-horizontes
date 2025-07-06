@@ -3,42 +3,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 * {
-        margin: 0px;
-        padding: 0px;
-   }
-
-
-
-body {
-    font-family: var(--font-principal);
+    margin: 0px;
+    padding: 0px;
 }
 
-header {
-
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
 }
 
 section#area_perfil {
     background: #000000 url(https://cdn.pixabay.com/photo/2025/07/01/22/07/22-07-33-809_1280.jpg) center bottom no-repeat fixed;
     background-size: cover;
-     height: 100vh;
+    height: 100vh;
     color: white;
     
+    position: relative;
 
 }
 
 div#perfil {
-    /* height: 100vh; */
-  /* display: flex; */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-}
-
-div#imagem_perfil {
-    
-    
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    display: flex; 
+    position: absolute;
+    width: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 img {
@@ -49,27 +42,24 @@ img {
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-    /* transition: transform 0.5s ease; */
-
     transition: transform 0.2s ease-in-out;
 
 }
 
-img:hover {
-     /* transform: scale(1.05); */
-}
-
 img:active {
-     /* transform: scale(1.05); */
       transform: scale(1.1);
 }
 
 h1#h1_principal {
-    padding: 20px 0px 15px 0px;
+    padding: 20px 0px 0px 0px;
     font-size: 40px;
 }
 
 p#slogan {
-    font-size: 20px;
     color: #ffffffb5;
+    font-size: 20px;
+    padding: 10px 0px 40px 0px;
+    
 }
+
+
