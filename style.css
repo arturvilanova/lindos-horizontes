@@ -58,16 +58,19 @@ h1#h1_principal {
 }
 
 section > div p > a {
-    background-color: #ffffff58;
-    color: #d9ffe0;
+    background-color: #ffffff18;
+    color: #F8FAFC;
     font-size: 20px;
     font-weight: 600;
     text-decoration: none;
     padding: 15px 20px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    /* box-shadow: 1px 1px 10px #F8FAFC; */
+    border-radius: 10px;
     
+}
+
+section > div p > a:hover {
+    border: 1px solid #F8FAFC;
+    transform: translate(1s);
 }
 
 p#slogan {
