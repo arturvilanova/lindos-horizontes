@@ -28,6 +28,16 @@ section#area_perfil {
     color: white;
     user-select: none;
     position: relative;
+    animation: rotateSun 60s infinite linear;
+
+    @keyframes rotateSun {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 }
 
