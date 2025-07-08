@@ -21,24 +21,17 @@ body {
     font-family: "Be Vietnam Pro", sans-serif;
 }
 
+header {
+    box-shadow: 1px 2px 20px #00000046;
+}
+
 section#area_perfil {
-    background: #1A2A40 url(imagens/por_do_sol.jpg) 50% 50% no-repeat fixed;
+    background: #677194 url(https://images.pexels.com/photos/28772020/pexels-photo-28772020.jpeg) right bottom no-repeat;
     background-size: cover;
     height: 100vh;
     color: white;
     user-select: none;
     position: relative;
-    animation: rotateSun 60s infinite linear;
-
-    @keyframes rotateSun {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 }
 
 div#perfil {
@@ -93,15 +86,15 @@ section > div p > a:hover {
 }
 
 p#slogan {
-    color: #ffffff9e;
+    color: #ffffffb0;
     font-size: 25px;
     padding: 10px 0px 50px 0px;
     
 }
 
 main {
-    background: url(https://images.pexels.com/photos/19470326/pexels-photo-19470326.jpeg) 50% 50% no-repeat fixed;
-    background-size: cover;
+    /* background: url(https://images.pexels.com/photos/19470326/pexels-photo-19470326.jpeg) 50% 50% no-repeat fixed;
+    background-size: cover; */
     height: 100vh;
 }
 
