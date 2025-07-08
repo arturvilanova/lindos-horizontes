@@ -22,7 +22,7 @@ body {
 }
 
 section#area_perfil {
-    background: #1A2A40 url(imagens/por_do_sol.jpg) 50% 80% no-repeat fixed;
+    background: #1A2A40 url(imagens/por_do_sol.jpg) 50% 50% no-repeat fixed;
     background-size: cover;
     height: 100vh;
     color: white;
