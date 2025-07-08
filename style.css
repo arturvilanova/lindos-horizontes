@@ -9,6 +9,14 @@
     padding: 0px;
 }
 
+:root {
+    --Cor1: #BED4BE;
+    --Cor2: #EFF4BE;
+    --Cor3: #FFC982;
+    --Cor4: #33536A;
+    --Cor5: #0F2437;
+}
+
 body {
     font-family: "Be Vietnam Pro", sans-serif;
 }
@@ -58,7 +66,7 @@ h1#h1_principal {
 }
 
 section > div p > a {
-    background-color: #ffffff51;
+    background-color: var(--Cor1);
     color: #F8FAFC;
     font-size: 20px;
     font-weight: 600;
@@ -69,8 +77,9 @@ section > div p > a {
 }
 
 section > div p > a:hover {
-    border: 1px solid #F8FAFC;
-    transform: translate(1s);
+    background-color: var(--Cor2);
+    color: black;
+    transition-duration: 0.6s;
 }
 
 p#slogan {
@@ -78,6 +87,12 @@ p#slogan {
     font-size: 25px;
     padding: 10px 0px 50px 0px;
     
+}
+
+main {
+    background: url(https://images.pexels.com/photos/19470326/pexels-photo-19470326.jpeg) 50% 50% no-repeat fixed;
+    background-size: cover;
+    height: 100vh;
 }
 
 
