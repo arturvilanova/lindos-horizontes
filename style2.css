@@ -6,16 +6,123 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-
 * {
     margin: 0px;
     padding: 0px;
 }
 
-img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+:root {
+    --Cor1: #BED4BE;
+    --Cor2: #EFF4BE;
+    --Cor3: #FFC982;
+    --Cor4: #33536A;
+    --Cor5: #0F2437;
 }
+
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+/* ÁREA DO PERFIL */
+
+header {
+    box-shadow: 1px 2px 20px #00000046;
+}
+
+section#area_perfil {
+    background: var(--Cor5) url(https://images.pexels.com/photos/28772020/pexels-photo-28772020.jpeg) right bottom no-repeat;
+    background-size: cover;
+    height: 100vh; 
+    color: #000000;
+    user-select: none;
+    position: relative;
+}
+
+div#perfil {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+    display: flex; 
+    position: absolute;
+    width: max-content;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+}
+
+img {
+    width: 150px;
+    border: 3.5px solid white;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px #0000004a;
+    cursor: pointer;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    transition: transform 0.2s ease-in-out;
+
+}
+
+img:active {
+      transform: scale(1.1);
+}
+
+h1#h1_principal {
+    font-size: 50px;
+    color: #ffffff;
+}
+
+p#slogan {
+    color: #ffffffcd;
+    font-size: 25px;
+    padding: 10px 0px 50px 0px;
+    
+}
+
+/* FIM DA ÁREA DO PERFIL */
+
+section#secao1 {
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+section#secao2 {
+    background-color: var(--Cor2);
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+section#secao3 {
+    background-color: var(--Cor3);
+    height: 100vh;
+    scroll-snap-align: start;
+}
+
+section#secao4 {
+    background-color: var(--Cor4);
+    color: white;
+    min-height: 94vh;
+    scroll-snap-align: start;
+}
+
+h1.topicos {
+    width: max-content;
+    font-size: 35px;
+    background-color: var(--Cor4);
+    color: white;
+    padding: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+footer {
+    background-color: var(--Cor4);
+    color: white;
+    height: max-content;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 

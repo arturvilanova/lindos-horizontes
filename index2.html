@@ -1,36 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Lindos Horizontes - Site de Fotografia</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Botão Animado - Canto Inferior Esquerdo</title>
+  <style>
+    :root {
+      --Cor3: #ffb656; /* cor do efeito hover */
+      --Cor4: #5fb691; /* cor inicial do botão */
+    }
+
+    body {
+      background-color: #111;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .botao-hover {
+      position: relative;
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 20px;
+      color: white;
+      background-color: var(--Cor4);
+      border: 1px solid #ffffffb3;
+      border-radius: 10px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: color 0.3s ease;
+      z-index: 1;
+    }
+
+    .botao-hover::before {
+      content: "";
+      position: absolute;
+      bottom: 0; /* Posiciona a animação no canto inferior */
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: var(--Cor3);
+      transition: width 0.4s ease;
+      z-index: 0;
+    }
+
+    .botao-hover:hover::before {
+      width: 100%; /* A animação vai crescer da esquerda para a direita */
+    }
+
+    .botao-hover:hover {
+      color: black;
+    }
+
+    .botao-hover > * {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <section>
 
-            <div>
-                <div>
-                    <img src="imagens/Design sem nome.png" alt="Lindos_Horizontes">
-                </div>
-
-                <h1>Lindos <br> Horizontes</h1>
-
-                <p id="slogan">&#128248; Cheio de inspiração para mostrar e preservar. &#x1F33F;
-            </p>
-            </div>
-
-            
-        </section>
-    </header>
-
-    <main>
-        
-    </main>
+  <a href="#" class="botao-hover">
+    <span>📸</span> veja a galeria <span>🌿</span>
+  </a>
 
 </body>
 </html>
