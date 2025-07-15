@@ -8,6 +8,121 @@
     <title>Lindos Horizontes - Site de Fotografia</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* CONFIGURAÇOES DA PÁGINA TODA */
+
+        @charset "UTF-8";
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        :root {
+            --Cor1: #ffb656;
+            --Cor2: #5fb691;
+            --Cor3: #bef2f4;
+            --Cor4: #BED4BE;
+            --Cor5: #2D4A71;
+            --Cor5: #0F2437;
+
+            /* --Cor3: #FFC982; */
+        }
+
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+
+        /* FIM DAS CONFIGURAÇOES DA PÁGINA TODA */
+
+        /* INÍCIO ÁREA DO PERFIL */
+
+        header#inicial {
+            box-shadow: 1px 2px 20px #00000046;
+        }
+
+        section#area_perfil {
+            background: var(--Cor3) url(https://images.pexels.com/photos/28493027/pexels-photo-28493027.jpeg) right bottom no-repeat;
+            background-size: cover;
+            height: 100vh; 
+            color: #000000;
+            user-select: none;
+            position: relative;
+        }
+
+        section#area_perfil::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: #0000007d; /* Escurecimento do fundo */
+            z-index: 1;
+        }
+
+        div#perfil {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center; 
+            display: flex; 
+            position: absolute;
+            width: max-content;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -60%);
+            z-index: 2; /* Mantém o conteúdo acima do overlay */
+        }
+
+        img {
+            width: 150px;
+            border: 3.5px solid white;
+            border-radius: 50%;
+            box-shadow: 1px 1px 10px #0000004a;
+            cursor: pointer;
+            -webkit-user-drag: none;
+            -webkit-tap-highlight-color: transparent;
+            user-select: none;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        img:active {
+            transform: scale(1.1);
+        }
+
+        h1#h1_principal {
+            font-size: 50px;
+            color: #ffffff;
+            margin-top: 20PX;
+            text-shadow: 0 0 10px #00000099; /* melhora a legibilidade no fundo escuro */
+        }
+
+        p#slogan {
+            color: #ffffffcd;
+            font-size: 25px;
+            padding: 20px 0px 60px 0px;
+            text-shadow: 0 0 10px #00000099; /* melhora a legibilidade no fundo escuro */
+        }
+
+        a {
+            color: white;
+            background-color: var(--Cor2);
+            font-size: 20px;
+            text-transform: capitalize;
+            border: 0.5px solid #ffffffb3;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 10px;
+        }
+
+        a:hover {
+            background-color: #5fb690d3;
+            transition: 0.2s;
+        }
+
+        /* FIM DA ÁREA DO PERFIL */
+    </style>
+
 </head>
 <body>
     <header>
@@ -18,42 +133,16 @@
                         <img src="imagens/Design sem nome.png" alt="Lindos_Horizontes">
                  </div>
 
-                <h1 id="h1_principal">Lindos</h1>
-                <h2 id="nova">Horizontes</h2>
+                <h1 id="h1_principal">Lindos Horizontes</h1>
 
-                <p id="slogan">&#128248; Cheio de inspiração para mostrar e preservar. &#x1F33F;
-            </p>
+                <p id="slogan">&#128248; Cheio de inspiração para mostrar e preservar. &#x1F33F;</p>
+
+                <a href="pagina_2.html">Veja fotos incríveis</a>
             </div>
 
             
         </section>
     </header>
-
-    <main>
-        <section id="secao1">
-            <h1 class="topicos">Fotografias que encantam</h1>
-        </section>
-
-        <section id="secao2">
-            <h1 class="topicos">Destaque do dia</h1>
-        </section>
-
-        <section id="secao3">
-            <h1 class="topicos">As lindas cores da natureza</h1>
-        </section>
-
-        <section id="secao4">
-            <h1 class="topicos">Por outros horizontes</h1>
-        </section>
-    </main>
-    
-    <footer>
-        <p>Todos os direitos reservados &copy; <span id="ano"></span> Lindos Horizontes</p>
-
-        <script>
-            document.getElementById("ano").textContent = new Date().getFullYear();
-        </script>
-    </footer>
 </body>
 
 </html>
