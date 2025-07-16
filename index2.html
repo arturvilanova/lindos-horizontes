@@ -2,69 +2,55 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botão Animado - Canto Inferior Esquerdo</title>
+  <title>Emoji Pulsante com Hover no Link</title>
   <style>
-    :root {
-      --Cor3: #ffb656; /* cor do efeito hover */
-      --Cor4: #5fb691; /* cor inicial do botão */
+    @keyframes pulsar {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    a {
+      display: inline-block;
+      background-color: #007bff;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-family: sans-serif;
+    }
+
+    a .emoji {
+      display: inline-block;
+      animation: pulsar 2s infinite;
+    }
+
+    a:hover .emoji {
+      animation-play-state: paused; /* Pausa o emoji ao passar o mouse no link inteiro */
     }
 
     body {
       background-color: #111;
       color: white;
-      font-family: sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .botao-hover {
-      position: relative;
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 20px;
-      color: white;
-      background-color: var(--Cor4);
-      border: 1px solid #ffffffb3;
-      border-radius: 10px;
-      text-decoration: none;
-      overflow: hidden;
-      transition: color 0.3s ease;
-      z-index: 1;
-    }
-
-    .botao-hover::before {
-      content: "";
-      position: absolute;
-      bottom: 0; /* Posiciona a animação no canto inferior */
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background-color: var(--Cor3);
-      transition: width 0.4s ease;
-      z-index: 0;
-    }
-
-    .botao-hover:hover::before {
-      width: 100%; /* A animação vai crescer da esquerda para a direita */
-    }
-
-    .botao-hover:hover {
-      color: black;
-    }
-
-    .botao-hover > * {
-      position: relative;
-      z-index: 2;
+      text-align: center;
+      margin-top: 20%;
     }
   </style>
 </head>
 <body>
 
-  <a href="#" class="botao-hover">
-    <span>📸</span> veja a galeria <span>🌿</span>
+  <a href="#">
+    <span class="emoji">&#x1F319;</span> Veja a Galeria
   </a>
 
 </body>

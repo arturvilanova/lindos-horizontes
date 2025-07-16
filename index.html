@@ -22,7 +22,8 @@
 
         :root {
             --Cor1: #ffb656;
-            --Cor2: #5fb691;
+            --Cor2: #56a38b4c;
+            --Cor2: #56A38A;
             --Cor3: #bef2f4;
             --Cor4: #BED4BE;
             --Cor5: #2D4A71;
@@ -34,8 +35,29 @@
         body {
             font-family: "Be Vietnam Pro", sans-serif;
         }
-
+        
         /* FIM DAS CONFIGURAÇOES DA PÁGINA TODA */
+
+        /* ANIMAÇÕES */
+
+        @keyframes pulsar {
+
+            0% {
+                transform: scale(1); /* Tamanho normal */
+            }
+
+            50% {
+                transform: scale(1.02); /* Aumenta um pouco */
+            }
+
+            100% {
+                transform: scale(1);  /* Volta ao normal */
+            }
+
+        }
+
+
+        /* FIM DAS ANIMAÇÕES */
 
         /* INÍCIO ÁREA DO PERFIL */
 
@@ -44,7 +66,7 @@
         }
 
         section#area_perfil {
-            background: var(--Cor3) url(https://images.pexels.com/photos/28493027/pexels-photo-28493027.jpeg) right bottom no-repeat;
+            background: var(--Cor3) url(https://cdn.pixabay.com/photo/2025/07/13/18/23/nature-9712656_1280.jpg) right bottom no-repeat;
             background-size: cover;
             height: 100vh; 
             color: #000000;
@@ -56,7 +78,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background: #0000007d; /* Escurecimento do fundo */
+            background: #000000a2; /* Escurecimento do fundo */
             z-index: 1;
         }
 
@@ -104,20 +126,26 @@
             text-shadow: 0 0 10px #00000099; /* melhora a legibilidade no fundo escuro */
         }
 
+        span {
+            display: inline-block;
+            animation: pulsar 1.5s infinite;
+            animation-duration: 1.8s;
+        }
+
         a {
             color: white;
             background-color: var(--Cor2);
             font-size: 20px;
+            font-weight: 700;
             text-transform: capitalize;
-            border: 0.5px solid #ffffffb3;
+            border: 1.5px solid #ffffffb3;
             padding: 15px 20px;
             text-decoration: none;
             border-radius: 10px;
         }
 
-        a:hover {
-            background-color: #5fb690d3;
-            transition: 0.2s;
+        a:hover .pulsar-parar {
+            animation-play-state: paused;
         }
 
         /* FIM DA ÁREA DO PERFIL */
@@ -135,9 +163,12 @@
 
                 <h1 id="h1_principal">Lindos Horizontes</h1>
 
-                <p id="slogan">&#128248; Cheio de inspiração para mostrar e preservar. &#x1F33F;</p>
+                <p id="slogan">&#x1F33F; Cheio de inspiração para mostrar e preservar. &#x1F33F;</p>
 
-                <a href="pagina_2.html">Veja fotos incríveis</a>
+                
+                <a href="pagina_2.html"><span class="pulsar-parar">&#128248; Veja fotos incríveis! &#x1F929;</span></a> 
+                
+                
             </div>
 
             
