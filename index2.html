@@ -35,9 +35,11 @@
       animation: pulsar 2s infinite;
     }
 
-    a:hover .emoji {
+    a .emoji:hover {
       animation-play-state: paused; /* Pausa o emoji ao passar o mouse no link inteiro */
     }
+
+
 
     body {
       background-color: #111;
@@ -54,4 +56,18 @@
   </a>
 
 </body>
+
+<script>
+
+  window.addEventListener('pageshow', function(event) {
+  if (event.persisted) {
+    document.querySelectorAll('.emoji').forEach(function(el) {
+      el.style.animation = 'none';
+      el.offsetHeight; // força reflow
+      el.style.animation = '';
+    });
+  }
+});
+
+</script>
 </html>
