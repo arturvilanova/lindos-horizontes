@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Emoji Pulsante com Hover no Link</title>
   <style>
+    
     @keyframes pulsar {
       0% {
         transform: scale(1);
@@ -56,18 +57,4 @@
   </a>
 
 </body>
-
-<script>
-
-  window.addEventListener('pageshow', function(event) {
-  if (event.persisted) {
-    document.querySelectorAll('.emoji').forEach(function(el) {
-      el.style.animation = 'none';
-      el.offsetHeight; // força reflow
-      el.style.animation = '';
-    });
-  }
-});
-
-</script>
 </html>
