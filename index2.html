@@ -2,59 +2,59 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Emoji Pulsante com Hover no Link</title>
+  <title>Galeria de Fotos - Lindos Horizontes</title>
   <style>
-    
-    @keyframes pulsar {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      50% {
-        transform: scale(1.2);
-        opacity: 0.7;
-      }
-      100% {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
-
-    a {
-      display: inline-block;
-      background-color: #007bff;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-size: 1.5rem;
-      text-decoration: none;
-      font-family: sans-serif;
-    }
-
-    a .emoji {
-      display: inline-block;
-      animation: pulsar 2s infinite;
-    }
-
-    a .emoji:hover {
-      animation-play-state: paused; /* Pausa o emoji ao passar o mouse no link inteiro */
-    }
-
-
-
     body {
-      background-color: #111;
-      color: white;
+      font-family: "Be Vietnam Pro", sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
       text-align: center;
-      margin-top: 20%;
+      color: #2D4A71;
+      margin-bottom: 40px;
+    }
+
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
     }
   </style>
 </head>
 <body>
-
-  <a href="#">
-    <span class="emoji">&#x1F319;</span> Veja a Galeria
-  </a>
-
+  <h1>Galeria de Fotos</h1>
+  <div class="galeria">
+    <img src="imagens/horizonte_destktop.jpg" alt="Descrição da Foto 1">
+    <img src="imagens/horizonte_destktop.jpg" alt="Descrição da Foto 2">
+    <img src="imagens/horizonte_destktop.jpg" alt="Descrição da Foto 3">
+    <img src="imagens/horizonte_destktop.jpg" alt="Descrição da Foto 4">
+    <img src="imagens/horizonte_destktop.jpg" alt="Descrição da Foto 5">
+    <img src="imagens/horizonte_destktop.jpg" alt="Descrição da Foto 6">
+    <!-- Adicione mais fotos conforme desejar -->
+  </div>
 </body>
 </html>
