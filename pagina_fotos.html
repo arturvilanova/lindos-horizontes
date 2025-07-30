@@ -70,7 +70,7 @@
             text-align: center;
         }
 
-        img {
+        img.fotos {
             width: 100%;
             height: auto;
             border-radius: 6px;
@@ -78,7 +78,7 @@
             transition: transform 0.3s ease;
         }
 
-        img:hover {
+        img.fotos:hover {
             transform: scale(1.03);
             
         }
@@ -132,6 +132,7 @@
             width: max-content;
             list-style: none;
             line-height: 35px;
+            background-color: #98ffde3a;
             
         }
 
@@ -148,8 +149,18 @@
             width: 20px;
         }
 
+        img#yt {
+            width: 25px;
+        }
+
+        img#pex {
+            width: 50px;
+        }
+
         a:hover {
             color: var(--Cor2);
+            
+            text-decoration: dashed;
         }
 
         p#direitos {
@@ -218,62 +229,62 @@
 
             <div>
                 <figure>
-                    <img src="imagens/imagens_conteudo/flor01.jpg" alt="Foto de uma linda flor">
+                    <img src="imagens/imagens_conteudo/flor01.jpg" alt="Foto de uma linda flor" loading="lazy" class="fotos">
                     <figcaption>"<strong>Lírio da Caatinga</strong>" é apenas um dos muitos nomes dessa linda flor que aparece somente uma vez ao ano.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/cacto.jpg" alt="Foto de um cacto" loading="lazy">
+                    <img src="imagens/imagens_conteudo/cacto.jpg" alt="Foto de um cacto" loading="lazy" class="fotos">
                     <figcaption> <strong>Mandacaru</strong> jovem, essa planta pode viver muito mais que 100 anos.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/folha_mandioca.jpg" alt="Foto da folha da mandioca" loading="lazy">
+                    <img src="imagens/imagens_conteudo/folha_mandioca.jpg" alt="Foto da folha da mandioca" loading="lazy" class="fotos">
                     <figcaption>A <strong>folha da mandioca</strong> traz consigo beleza e cores vibrantes.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/ovos.jpg" alt="Foto de um ninho com ovos" loading="lazy">
+                    <img src="imagens/imagens_conteudo/ovos.jpg" alt="Foto de um ninho com ovos" loading="lazy" class="fotos">
                     <figcaption>Com o brilho do sol no ninho, essa foto ficou incrível.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/angico.jpg" alt="Foto de uma arvore" loading="lazy">
+                    <img src="imagens/imagens_conteudo/angico.jpg" alt="Foto de uma arvore" loading="lazy" class="fotos">
                     <figcaption>"<strong>Angico</strong>", essa árvore tem grande importância medicinal.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/nuvem.jpg" alt="Foto de uma linda nuvem carregada" loading="lazy">
+                    <img src="imagens/imagens_conteudo/nuvem.jpg" alt="Foto de uma linda nuvem carregada" loading="lazy" class="fotos">
                     <figcaption>"<strong>Cúmulos-nimbos</strong>" nuvens responsáveis por trazer grandes tempestades.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/florzinha.jpg" alt="Foto de uma linda flor" loading="lazy">
+                    <img src="imagens/imagens_conteudo/florzinha.jpg" alt="Foto de uma linda flor" loading="lazy" class="fotos">
                     <figcaption>Seus filetes e ânteras são tão pequeninos! Mas o seu aroma é sentido de longe.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/folha_banana.jpg" alt="Foto da folha da banana" loading="lazy">
+                    <img src="imagens/imagens_conteudo/folha_banana.jpg" alt="Foto da folha da banana" loading="lazy" class="fotos">
                     <figcaption>Nada melhor que usar o azul do céu como plano e fundo.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/nuvens.jpg" alt="Foto de lindas nuvens em dia quente" loading="lazy">
+                    <img src="imagens/imagens_conteudo/nuvens.jpg" alt="Foto de lindas nuvens em dia quente" loading="lazy" class="fotos">
                     <figcaption>O céu é lindo em qualquer lugar do mundo.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/flor.jpg" alt="Foto de lindas flores" loading="lazy">
+                    <img src="imagens/imagens_conteudo/flor.jpg" alt="Foto de lindas flores" loading="lazy" class="fotos">
                     <figcaption>O mês de maio é invadido pela beleza dessas lindas flores.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/girassol.jpg">
+                    <img src="imagens/imagens_conteudo/girassol.jpg" class="fotos">
                     <figcaption>O <strong>Girassol</strong> acompanha o brilho do sol para poder se desenvolver.</figcaption>
                 </figure>
 
                 <figure>
-                    <img src="imagens/imagens_conteudo/orvalho.jpg" alt="Gotas de orvalho nas plantas">
+                    <img src="imagens/imagens_conteudo/orvalho.jpg" alt="Gotas de orvalho nas plantas" loading="lazy" class="fotos">
                     <figcaption>Onde tem orvalho tem vida.</figcaption>
                 </figure>
             </div>
@@ -300,14 +311,14 @@
             
             <li>
                 <p>
-                    <a href="https://www.youtube.com/@lindoshorizontes" target="_blank"><img src="imagens/icones/instagram.png" alt="Logo do YouTube" class="logo"></a>
+                    <a href="https://www.youtube.com/@lindoshorizontes" target="_blank"><img src="imagens/icones/youtube.png" alt="Logo do YouTube" id="yt"></a>
                 </p>
             </li>
 
             <li>
                 <p>
                     <a href="https://www.pexels.com/pt-br/@lindos-horizontes-494683847/" target="_blank">
-                        <img src="imagens/icones/instagram.png" alt="Logo do Pexels" class="logo">
+                        <img src="imagens/icones/White Logo on Transparent.png" alt="Logo do Pexels" id="pex">
                     </a>
                     
                 </p>
