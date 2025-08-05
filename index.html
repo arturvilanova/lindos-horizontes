@@ -10,9 +10,9 @@
     
     <style>
 
-        @charset "UTF-8";
-
         /* RESET + FONTES */
+
+        @charset "UTF-8";
 
         * {
             margin: 0;
@@ -22,23 +22,22 @@
 
         html, body {
             font-family: "Be Vietnam Pro", sans-serif;
-            overflow-x: hidden;
             max-width: 100%;
+            overflow-x: hidden;
+            
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&display=swap');
 
         :root {
-            --White: #ffffff;
-            --Black: #000000;
-
             --Cor1: #ffb656;
             --Cor2: #56A38A;
             --Cor3: #2D4A71;
             --Cor4: #0F2437;
         }
 
-        /* ANIMAÇÃO */
+        /* ANIMAÇÕES */
+
         @keyframes pulsar {
             0% { transform: scale(1); }
             50% { transform: scale(1.02); }
@@ -46,22 +45,23 @@
         }
 
         /* ÁREA DO PERFIL */
+
         section#area_perfil {
             background-color: var(--Cor1);
+            color: #ffffff;
             background-image: url(imagens/horizonte_destktop.jpg);
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover;
             background-attachment: fixed;
+            background-size: cover;
             min-height: 100svh;
             height: 100svh;
-            color: var(--White);
-            user-select: none;
             position: relative;
+            user-select: none;
             overflow-x: hidden;
         }
 
-        section#area_perfil::before {
+        section#area_perfil::before {  /* Se precisar escurecer o fundo */
             content: "";
             position: absolute;
             inset: 0;
@@ -70,6 +70,9 @@
         }
 
         div#perfil {
+            width: 100%;
+            max-width: 100%;
+            padding: 0 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -80,9 +83,6 @@
             left: 50%;
             transform: translate(-50%, -60%);
             z-index: 2;
-            width: 100%;
-            max-width: 100%;
-            padding: 0 20px;
         }
 
         img {
@@ -94,14 +94,15 @@
             user-select: none;
             -webkit-user-drag: none;
             -webkit-tap-highlight-color: transparent;
-            transition: transform 0.2s ease-in-out;
+            
         }
 
-        img:active {
-            transform: scale(1.1);
+        img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
         }
 
-        h1#h1_principal {
+        h1#lindos-horizontes {
             font-size: clamp(2.2rem, 8vw, 3.5rem);
             margin-top: 20px;
             text-shadow: 0 0 10px #00000099;
@@ -116,24 +117,24 @@
 
         span {
             display: inline-block;
-            animation: pulsar 1.8s infinite;
             transform-origin: center;
+            animation: pulsar 1.8s infinite;
             will-change: transform;
             max-width: 100%;
         }
 
         a {
-            color: white;
             background-color: var(--Cor2);
+            color: white;
+            max-width: 100%;
             font-size: 20px;
             font-weight: 700;
             text-transform: capitalize;
-            border: 1.5px solid #ffffffb3;
-            padding: 15px 20px;
             text-decoration: none;
+            padding: 15px 20px;
+            border: 1.5px solid #ffffffb3;
             border-radius: 10px;
             display: inline-block;
-            max-width: 100%;
             overflow-x: hidden;
         }
 
@@ -148,10 +149,10 @@
         }
 
         /* RESPONSIVIDADE PARA TABLET */
+
         @media (max-width: 768px) {
 
             section#area_perfil {
-                background-image: url(imagens/horizonte_tablet.jpg);
                 background-attachment: scroll; 
             }
 
@@ -179,6 +180,7 @@
         }
 
         /* RESPONSIVIDADE PARA SMARTPHONE */
+
         @media (max-width: 480px) {
 
             section#area_perfil {
@@ -218,7 +220,7 @@
                 <div id="imagem_perfil">
                     <img src="imagens/Design sem nome.png" alt="Logotipo da empresa Lindos_Horizontes">
                 </div>
-                <h1 id="h1_principal">Lindos Horizontes</h1>
+                <h1 id="lindos-horizontes">Lindos Horizontes</h1>
                 <p id="slogan">&#x1F33F; Cheio de inspiração para mostrar e preservar. &#x1F33F;</p>
                 <a href="pagina_fotos.html"><span class="pulsar-parar">&#128248; Veja fotos incríveis! &#x1F929;</span></a>
             </div>
