@@ -7,6 +7,15 @@
 
     <style>
 
+        /* RESET + FONTES */
+
+        @charset "UTF-8";
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
         @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
         :root {
@@ -18,27 +27,19 @@
             --Cor4: #0F2437;
         }
 
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
-        
         body {
             background-image: url(imagens/horizonte_destktop.jpg);
             background-size: cover;
             background-attachment: fixed;
-            font-family: "Be Vietnam Pro", sans-serif;
             background-color: #f2f2f2;
+            font-family: "Be Vietnam Pro", sans-serif;
+            
         }
 
         header {
             background-color: var(--Cor2);
             margin-bottom: 30px;
             padding: 10px 0px;
-        }
-
-        main {
-            padding: 0px 30px;
         }
 
         h1 {
@@ -48,25 +49,30 @@
             margin-bottom: 20px;
         }
 
+        main {
+            padding: 0px 30px;
+        }
+
         section {
             display: flex;
             justify-content: center;
         }
 
         div#dasFotos {
+            max-width: 1200px;
+            width: 100%;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            max-width: 1200px;
-            width: 100%;
+            
         }
 
         figure {
             background-color: #fff;
-            padding: 10px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px #0000001a;
+            padding: 10px;
         }
 
         img.fotos {
@@ -79,7 +85,6 @@
 
         img.fotos:hover {
             transform: scale(1.03);
-            
         }
 
         figcaption {
@@ -104,10 +109,10 @@
         a#BaixarFotos {
             background-color: #56A38A;
             color: white;
-            font-size: 18px;
-            font-weight: bold;
             width: max-content;
             height: max-content;
+            font-size: 18px;
+            font-weight: bold;
             display: block;
             margin: auto;
             padding: 17px 25px;
@@ -147,13 +152,13 @@
 
         @media (max-width: 480px) {
 
-            body {
-                background-image: url(imagens/horizonte_phone.jpg);
-                background-attachment: scroll;
-            }
-
             header {
                 height: 70px;
+            }
+
+            body {
+                background-image: url(imagens/horizonte_phone.jpg);
+                /* background-attachment: scroll; */
             }
 
             h1 {
@@ -215,7 +220,7 @@
 
                 <figure>
                     <img src="imagens/imagens-conteudo/nuvem.jpg" alt="Foto de uma linda nuvem carregada" loading="lazy" class="fotos">
-                    <figcaption>"<strong>Cúmulos-nimbos</strong>" nuvens responsáveis por trazer grandes tempestades.</figcaption>
+                    <figcaption>"<strong>Cúmulos-nimbos</strong>", nuvens responsáveis por trazer grandes tempestades.</figcaption>
                 </figure>
 
                 <figure>
