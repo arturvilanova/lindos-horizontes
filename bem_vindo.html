@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seja Bem-vindo!!!</title>
 
+    <!-- Fonte bonita do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
         body {
             background-image: url(imagens/horizonte_destktop.jpg);
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 100dvh; /* evita folga no celular */
             position: relative;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
         }
 
         div {
@@ -27,42 +32,59 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); /* centraliza certinho */
-            padding: 30px;
-            border-radius: 10px;
+            transform: translate(-50%, -50%);
+            padding: 25px;
+            border-radius: 12px;
             text-align: center;
-            /* background-color: rgba(179, 216, 216, 0.322); */
         }
 
         p {
             color: white;
             max-width: 500px;
-            margin-bottom: 15px;
-            font-size: 23px;
-            line-height: 30px;
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 32px;
             text-align: justify;
-            padding-bottom: 40px;
+            text-indent: 30px;
         }
 
         a {
             color: white;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             background-color: #56A38A;
-            padding: 15px 20px;
-            margin-top: 30px;
-            font-size: 20px;
+            padding: 14px 22px;
+            margin-top: 20px;
+            font-size: 18px;
             border-radius: 50px;
+            display: inline-block;
+            transition: background 0.3s ease;
         }
 
         a:hover {
+            background-color: #468c74;
+        }
+
+        /* Ajustes para celular */
+        @media (max-width: 480px) {
+            p {
+                font-size: 16px;
+                line-height: 26px;
+                text-indent: 15px;
+            }
+
+            a {
+                font-size: 16px;
+                padding: 12px 18px;
+            }
         }
     </style>
 </head>
 <body>
     <div>
         <p>Olá! Seja bem-vindo ao portfólio de <strong>'Lindos Horizontes'</strong>, um espaço dedicado à fotografia, criado por Artur Vila Nova, com o intuito de mostrar principalmente as belezas da natureza. Partindo daqui, ele mostrará o seu talento mesmo com poucos recursos.</p>
-        <a href="index.html">Quero conhecer</a>
+
+        <a href="index.html">Quero conhecer!</a>
     </div>
 </body>
 </html>
