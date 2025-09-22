@@ -59,10 +59,10 @@
             border-radius: 5px;
         }
 
-        header, ul a {
+        header ul a {
             text-decoration: none;
             font-size: 20px;
-            color: white;
+            color: var(--White);
             font-weight: bold;
         }
 
@@ -172,13 +172,53 @@
             body {
                 background-attachment: scroll;
             }
+
+            header {
+                height: 70px;
+            }
+
+            nav {
+
+            }
+
+            header ul {
+
+            }
+
+            nav ul {
+                gap: 40px;
+            }
+
+            header ul a {
+
+            }
         }
 
         @media (max-width: 480px) {
 
             header {
                 height: 70px;
+                background-color: var(--White);
             }
+
+            nav {
+
+            }
+
+            header ul {
+
+            }
+
+            nav ul {
+                gap: 25px;
+            }
+
+            header ul a {
+                font-size: 16px;
+                color: var(--Cor2);
+            }
+
+
 
             body {
                 background-image: url(imagens/horizonte_phone.jpg);
