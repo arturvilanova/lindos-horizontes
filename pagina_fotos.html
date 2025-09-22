@@ -37,9 +37,33 @@
         }
 
         header {
+            height: 70px;
             background-color: var(--Cor2);
             margin-bottom: 30px;
-            padding: 10px 0px;
+            display: flex;              /* ativa o flexbox */
+            justify-content: center;    /* centraliza no eixo X */
+            align-items: center;  
+        }
+
+        nav, ul {
+            list-style: none;
+            display: flex;              /* os <li> ficam lado a lado */
+            gap: 70px;                  /* espaço entre os itens */
+            border-radius: 5px;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+            gap: 80px;
+            border-radius: 5px;
+        }
+
+        header, ul a {
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
         }
 
         h1 {
@@ -186,7 +210,15 @@
 <body>
     
     <header>
-        <h1>Fotografias de "Lindos Horizontes"</h1>
+
+        <nav>
+            <ul>
+                <li><a href=""><a href="">Fotos</a></a></li>
+                <li><a href="">Explore</a></li>
+                <li><a href="">Poemas</a></li>
+                <li><a href="">Sobre</a></li>
+            </ul>
+        </nav>
     </header>
 
    <main>
