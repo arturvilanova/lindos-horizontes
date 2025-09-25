@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>&#128248; Fotografias da natureza &#x1F33F;</title>
+    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
+
+    <style>
+
+        /* RESET + FONTES */
+
+        @charset "UTF-8";
+        
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        :root {
+            --White:#ffffff;
+            --Black:#000000;
+            --Cor1: #ffb656;
+            --Cor2: #56A38A;
+            --Cor3: #2D4A71;
+            --Cor4: #0F2437;
+        }
+
+        body {
+            background-image: url(imagens/horizonte_destktop.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-color: #f2f2f2;
+            font-family: "Be Vietnam Pro", sans-serif;
+        }
+
+        header {
+            height: 70px;
+            background-color: var(--Cor2);
+            margin-bottom: 30px;
+            display: flex;              /* ativa o flexbox */
+            justify-content: center;    /* centraliza no eixo X */
+            align-items: center;  
+        }
+
+        nav, ul {
+            list-style: none;
+            display: flex;              /* os <li> ficam lado a lado */
+            gap: 70px;                  /* espaço entre os itens */
+            border-radius: 5px;
+        }
+
+        header ul {
+            list-style: none;
+            display: flex;
+            gap: 80px;
+            border-radius: 5px;
+        }
+
+        header ul a {
+            text-decoration: none;
+            font-size: 20px;
+            color: var(--White);
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 32px;
+            text-align: center;
+            color: var(--White);
+            margin-bottom: 20px;
+        }
+
+        main {
+            padding: 0px 30px;
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+        }
+
+        div#dasFotos {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            
+        }
+
+        figure {
+            background-color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px #0000001a;
+            padding: 10px;
+        }
+
+        img.fotos {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        img.fotos:hover {
+            transform: scale(1.03);
+        }
+
+        figcaption {
+            color: #555;
+            font-size: 17px;
+            text-align: justify;
+            line-height: 23px;
+            margin-top: 8px;
+        }
+
+        section#frase {
+            max-width: max-content;
+            margin: 90px auto;
+        }
+
+        section#frase > p {
+            color: white;
+            font-size: 25px;
+            text-align: center;
+        }
+        
+        a#BaixarFotos {
+            background-color: #56A38A;
+            color: white;
+            width: max-content;
+            height: max-content;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            margin: auto;
+            padding: 17px 25px;
+            border: 0.8px solid #ffffff55;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        a#BaixarFotos:hover {
+            background-color: #5FB398;
+            transition: 0.4s;
+        }
+
+        footer {
+            background-color: var(--Cor4);
+            color: var(--White);
+            width: 100%;
+            height: max-content;
+            margin-top: 70px;
+            padding: 15px 0px 15px;
+        }
+
+        footer > p {
+            color: #a9a9a9bd;
+            text-align: center;
+        }
+
+        p#direitos {
+            padding: 0px 20px 0px 20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-attachment: scroll;
+            }
+
+            header {
+                height: 70px;
+            }
+
+            nav {
+
+            }
+
+            header ul {
+
+            }
+
+            nav ul {
+                gap: 40px;
+            }
+
+            header ul a {
+
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            header {
+                height: 70px;
+                background-color: var(--White);
+            }
+
+            nav {
+
+            }
+
+            header ul {
+
+            }
+
+            nav ul {
+                gap: 35px;
+            }
+
+            header ul a {
+                font-size: 16px;
+                color: var(--Cor2);
+            }
+
+
+
+            body {
+                background-image: url(imagens/horizonte_phone.jpg);
+                background-attachment: scroll;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+
+            figcaption {
+                font-size: 15px;
+            }
+
+            section#frase > p {
+                width: 220px;
+                font-size: 20px;
+            }
+
+            a#BaixarFotos {
+                border: 0.8px solid #ffffff8e;
+                padding: 15px 23px;
+            }
+        }
+    </style>
+
+</head>
+    
+<body>
+    
+    <header>
+
+        <nav>
+            <ul>
+                <li><a href=""><a href="">Fotos</a></a></li>
+                <li><a href="">Explore</a></li>
+                <li><a href="">Poemas</a></li>
+                <li><a href="">Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <main>
+        <section>
+
+            <div id="dasFotos">
+                <figure>
+                    <img src="imagens/imagens-conteudo/flor.jpg" alt="Foto de uma linda flor" loading="lazy" class="fotos">
+                    <figcaption>"<strong>Lírio da Caatinga</strong>" é apenas um dos muitos nomes dessa linda flor que aparece somente uma vez ao ano.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/cacto.jpg" alt="Foto de um cacto" loading="lazy" class="fotos">
+                    <figcaption> <strong>Mandacaru</strong> jovem, essa planta pode viver muito mais que 100 anos.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/folha-mandioca.jpg" alt="Foto da folha da mandioca" loading="lazy" class="fotos">
+                    <figcaption>A <strong>folha da mandioca</strong> traz consigo beleza e cores vibrantes.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/ovos.jpg" alt="Foto de um ninho com ovos" loading="lazy" class="fotos">
+                    <figcaption>Com o brilho do sol no ninho, essa foto ficou incrível.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/angico.jpg" alt="Foto de uma arvore" loading="lazy" class="fotos">
+                    <figcaption>"<strong>Angico</strong>, Esta linda árvore tem grande resistência à estiagem e sua flor é linda.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/nuvem.jpg" alt="Foto de uma linda nuvem carregada" loading="lazy" class="fotos">
+                    <figcaption>"<strong>Cúmulos-nimbos</strong>", nuvens responsáveis por trazer grandes tempestades.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/florzinha.jpg" alt="Foto de uma linda flor" loading="lazy" class="fotos">
+                    <figcaption>Seus filetes e ânteras são tão pequeninos! Mas o seu aroma é sentido de longe.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/folha-banana.jpg" alt="Foto da folha da banana" loading="lazy" class="fotos">
+                    <figcaption>Nada melhor que usar o azul do céu como plano e fundo.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/tempo-firme.jpg" alt="Foto de lindas nuvens em dia quente" loading="lazy" class="fotos">
+                    <figcaption>O céu é lindo em qualquer lugar do mundo.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/flores.jpg" alt="Foto de lindas flores" loading="lazy" class="fotos">
+                    <figcaption>A natureza é invadida pela beleza dessas lindas flores.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/girassol.jpg" class="fotos">
+                    <figcaption>O <strong>Girassol</strong> é uma linda flor que transmite beleza e alegria.</figcaption>
+                </figure>
+
+                <figure>
+                    <img src="imagens/imagens-conteudo/orvalho.jpg" alt="Gotas de orvalho nas plantas" loading="lazy" class="fotos">
+                    <figcaption>Onde tem orvalho tem vida.</figcaption>
+                </figure>
+            </div>
+
+        </section>
+    </main> 
+
+    <section id="frase">
+        <p>"A natureza se revela para quem sabe observar".<br>
+            &#x1F341; &#x1F33F;
+        </p>
+    </section>
+
+    <a href="https://banlek.com/lindoshorizontes" target="_blank" id="BaixarFotos">Baixar fotos exclusivas</a>
+
+
+    <footer>
+        <p id="direitos"></p>
+    </footer>
+    
+    <script>
+        const anoAtual = new Date().getFullYear();
+        document.getElementById("direitos").innerText = `© ${anoAtual} - Lindos Horizontes. Todos os direitos reservados.`;
+    </script>
+</body>
+</html>
