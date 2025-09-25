@@ -37,33 +37,12 @@
         }
 
         header {
-            height: 70px;
+            height: 100px;
             background-color: var(--Cor2);
             margin-bottom: 30px;
             display: flex;              /* ativa o flexbox */
             justify-content: center;    /* centraliza no eixo X */
             align-items: center;  
-        }
-
-        nav, ul {
-            list-style: none;
-            display: flex;              /* os <li> ficam lado a lado */
-            gap: 70px;                  /* espaço entre os itens */
-            border-radius: 5px;
-        }
-
-        header ul {
-            list-style: none;
-            display: flex;
-            gap: 80px;
-            border-radius: 5px;
-        }
-
-        header ul a {
-            text-decoration: none;
-            font-size: 20px;
-            color: var(--White);
-            font-weight: bold;
         }
 
         h1 {
@@ -176,22 +155,6 @@
             header {
                 height: 70px;
             }
-
-            nav {
-
-            }
-
-            header ul {
-
-            }
-
-            nav ul {
-                gap: 40px;
-            }
-
-            header ul a {
-
-            }
         }
 
         @media (max-width: 480px) {
@@ -200,25 +163,6 @@
                 height: 70px;
                 background-color: var(--White);
             }
-
-            nav {
-
-            }
-
-            header ul {
-
-            }
-
-            nav ul {
-                gap: 35px;
-            }
-
-            header ul a {
-                font-size: 16px;
-                color: var(--Cor2);
-            }
-
-
 
             body {
                 background-image: url(imagens/horizonte_phone.jpg);
@@ -250,15 +194,7 @@
 <body>
     
     <header>
-
-        <nav>
-            <ul>
-                <li><a href=""><a href="">Fotos</a></a></li>
-                <li><a href="">Explore</a></li>
-                <li><a href="">Poemas</a></li>
-                <li><a href="">Sobre</a></li>
-            </ul>
-        </nav>
+        <h1>Fotografias de 'Lindos Horizontes'</h1>
     </header>
 
    <main>
@@ -335,7 +271,7 @@
         </p>
     </section>
 
-    <a href="https://banlek.com/lindoshorizontes" target="_blank" id="BaixarFotos">Baixar fotos exclusivas</a>
+    <a href="https://banlek.com/lindoshorizontes" target="_blank" id="BaixarFotos">Baixar sem marca d'água</a>
 
 
     <footer>
