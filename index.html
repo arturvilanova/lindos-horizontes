@@ -25,7 +25,6 @@
             font-family: "Be Vietnam Pro", sans-serif;
             max-width: 100%;
             overflow-x: hidden;
-            
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&display=swap');
@@ -48,13 +47,8 @@
         /* ÁREA DO PERFIL */
 
         section#area_perfil {
-            background-color: var(--Cor1);
+            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed;
             color: #ffffff;
-            background-image: url(imagens/horizonte_destktop.jpg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: cover;
             min-height: 100svh;
             height: 100svh;
             position: relative;
@@ -62,7 +56,7 @@
             overflow-x: hidden;
         }
 
-        section#area_perfil::before {  /* Se precisar escurecer o fundo  */
+        section#area_perfil::before {  /* Se precisar escurecer o fundo */
             content: "";
             position: absolute;
             inset: 0;
