@@ -2,229 +2,77 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#FF5733">
-    <title>Lindos Horizontes - Site de Fotografia</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
+    <title>Um site de Fotografias</title>
+
     <style>
 
-        /* RESET + FONTES */
-
-        @charset "UTF-8";
-
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
         }
 
-        html, body {
-            font-family: "Be Vietnam Pro", sans-serif;
-            max-width: 100%;
-            overflow-x: hidden;
+        header {
+            background-color: rgb(139, 242, 255);
             
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100..900&display=swap');
-
-        :root {
-            --Cor1: #ffb656;
-            --Cor2: #56A38A;
-            --Cor3: #2D4A71;
-            --Cor4: #0F2437;
-        }
-
-        /* ANIMAÇÕES */
-
-        @keyframes pulsar {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.02); }
-            100% { transform: scale(1); }
-        }
-
-        /* ÁREA DO PERFIL */
-
-        section#area_perfil {
-            background-color: var(--Cor1);
-            color: #ffffff;
+        body {
+            background-color: brown;
             background-image: url(imagens/horizonte_destktop.jpg);
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
-            background-size: cover;
-            min-height: 100svh;
-            height: 100svh;
-            position: relative;
-            user-select: none;
-            overflow-x: hidden;
-        }
-
-        section#area_perfil::before {  /* Se precisar escurecer o fundo  */
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: #00000000;
-            z-index: 1;
-        }
-
-        div#perfil {
-            width: 100%;
-            max-width: 100%;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -60%);
-            z-index: 2;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         img {
-            width: 170px;
-            border: 3px solid white;
+            height: 45px;
             border-radius: 50%;
-            box-shadow: 1px 1px 10px #0000004a;
-            cursor: pointer;
-            user-select: none;
-            -webkit-user-drag: none;
-            -webkit-tap-highlight-color: transparent;
-            transition: transform 0.3s ease;
+            border: 3px solid #56A38A;
         }
 
-        img:hover {
-            transform: scale(1.05);
+        ul {
+            display: flex;
+            background-color: rgb(255, 255, 255);
+            align-items: center;
+            gap: 60px;
+            padding: 15px 20px;
         }
 
-        h1#lindos-horizontes {
-            font-size: clamp(2.2rem, 8vw, 3.5rem);
-            margin-top: 20px;
-            text-shadow: 0 0 10px #00000099;
+        li {
+            list-style: none;
+            font-size: 18px;
         }
 
-        p#slogan {
-            color: #ffffffaf;
-            font-size: clamp(1.4rem, 5vw, 1.7rem);
-            padding: 20px 0 60px 0;
-            text-shadow: 0 0 10px #00000099;
-        }
-
-        span {
-            display: inline-block;
-            transform-origin: center;
-            animation: pulsar 1.8s infinite;
-            will-change: transform;
-            max-width: 100%;
+        li#sobre {
+            margin-left: auto;
         }
 
         a {
-            background-color: var(--Cor2);
-            color: white;
-            max-width: 100%;
-            font-size: 20px;
-            font-weight: 700;
-            text-transform: capitalize;
+            color: rgb(0, 0, 0);
             text-decoration: none;
-            padding: 15px 20px;
-            border: 1.5px solid #ffffffb3;
-            border-radius: 10px;
-            display: inline-block;
-            overflow-x: hidden;
+            font-size: 22px;
         }
 
-        a:hover {
-            box-shadow: 0 4px 10px #00000032;
-            transition: all 0.3s ease;
-        }
-
-
-        a:hover .pulsar-parar {
-            animation-play-state: paused;
-        }
-
-        /* RESPONSIVIDADE PARA TABLET */
-
-        @media (max-width: 768px) {
-
-            section#area_perfil {
-                background-attachment: scroll; 
-            }
-
-            img {
-                width: 160px;
-            }
-
-            h1#h1_principal {
-                font-size: 3rem;
-            }
-
-            p#slogan {
-                font-size: 1.5rem;
-                padding: 20px 10px 50px 10px;
-            }
-
-            a {
-                font-size: 1rem;
-                padding: 12px 16px;
-            }
-
-            div#perfil {
-                transform: translate(-50%, -50%);
-            }
-        }
-
-        /* RESPONSIVIDADE PARA SMARTPHONE */
-
-        @media (max-width: 480px) {
-
-            section#area_perfil {
-                background-image: url(imagens/horizonte_phone.jpg);
-                background-attachment: scroll; /* Para evitar bugs em celulares */
-            }
-
-            div#perfil {
-                transform: translate(-50%, -70%);
-            }
-
-            img {
-                width: 150px;
-            }
-
-            h1#h1_principal {
-                font-size: 2.3rem;
-            }
-
-            p#slogan {
-                font-size: 20px;
-                padding: 20px 10px 40px 10px;
-            }
-
-            a {
-                font-size: 16px;
-                padding: 15px 20px;
-            }
-        }
+        
     </style>
 </head>
-
 <body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#"><img src="imagens/logo.jpeg" alt="Logo"></a></li>
+                <li><a href="#">Fotos</a></li>
+                <li><a href="#">Explore</a></li>
+                <li id="sobre"><a href="#" >Sobre</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <main>
-        <section id="area_perfil">
-            <div id="perfil">
-                <div id="imagem_perfil">
-                    <img src="imagens/logo.jpeg" alt="Logotipo da empresa Lindos_Horizontes">
-                </div>
-                <h1 id="lindos-horizontes">Lindos Horizontes</h1>
-                <p id="slogan">&#x1F33F; Cheio de inspiração para mostrar e preservar. &#x1F33F;</p>
-                <a href="pagina_fotos.html"><span class="pulsar-parar">&#128248; Veja fotos incríveis! &#x1F929;</span></a>
-            </div>
-        </section>
+
     </main>
+
+    <footer>
+
+    </footer>
 </body>
 </html>
