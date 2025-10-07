@@ -4,12 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Um site de Fotografias</title>
-
+    
     <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
         * {
             margin: 0px;
             padding: 0px;
+        }
+
+        :root {
+            --Cor1: #ffb656;
+            --Cor2: #56A38A;
+            --Cor3: #2D4A71;
+            --Cor4: #0F2437;
         }
 
         header {
@@ -18,15 +27,24 @@
         }
 
         body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            height: 100vh;
             background-color: brown;
             background-image: url(imagens/horizonte_destktop.jpg);
-            font-family: Arial, Helvetica, sans-serif;
+            background-position: center center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
         }
 
         img {
             height: 45px;
             border-radius: 50%;
-            border: 3px solid #56A38A;
+            /* border: 3px solid #56A38A; */
         }
 
         ul {
@@ -42,14 +60,37 @@
             font-size: 18px;
         }
 
-        li#sobre {
+        li#sobre{
             margin-left: auto;
+        }
+
+        li#sobre a {
+            margin-left: auto;
+            color: #494949;
         }
 
         a {
             color: rgb(0, 0, 0);
             text-decoration: none;
             font-size: 22px;
+        }
+
+        footer {
+            background-color: var(--Cor4);
+            color: var(--White);
+            width: 100%;
+            height: max-content;
+            margin-top: 70px;
+            padding: 15px 0px 15px;
+        }
+
+        footer > p {
+            color: #a9a9a9bd;
+            text-align: center;
+        }
+
+        p#direitos {
+            padding: 0px 20px 0px 20px;
         }
 
         
@@ -61,7 +102,8 @@
             <ul>
                 <li><a href="#"><img src="imagens/logo.jpeg" alt="Logo"></a></li>
                 <li><a href="#">Fotos</a></li>
-                <li><a href="#">Explore</a></li>
+                <li><a href="#">Explore a natureza</a></li>
+                <li><a href="#">Outros horizontes</a></li>
                 <li id="sobre"><a href="#" >Sobre</a></li>
             </ul>
         </nav>
@@ -72,7 +114,12 @@
     </main>
 
     <footer>
-
+        <p id="direitos"></p>
     </footer>
+    
+    <script>
+        const anoAtual = new Date().getFullYear();
+        document.getElementById("direitos").innerText = `© ${anoAtual} - Lindos Horizontes. Todos os direitos reservados.`;
+    </script>
 </body>
 </html>
