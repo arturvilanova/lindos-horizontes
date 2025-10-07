@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="transparent">
+    <meta name="theme-color" content="#0F2437">
     <title>Um site de FotografiaS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
@@ -34,34 +34,20 @@
         }
 
         header {
-            background-color: rgb(139, 242, 255);
+            background-color: #ffffff;
         }
-
-        body {
-            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed;
-            font-family: "Be Vietnam Pro", sans-serif;
-            height: 100svh;
-            min-height: 100dvh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        main {
-            flex: 1;
-        }
-
-        img {
+        
+        img#logo {
             height: 45px;
             border-radius: 50%;
-            /* border: 3px solid #56A38A; */
         }
 
         ul {
             display: flex;
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(230, 105, 105);
             align-items: center;
             gap: 60px;
-            padding: 15px 20px;
+            width: max-content;
         }
 
         li {
@@ -81,6 +67,19 @@
 
         a:hover {
             color: #44826e;
+        }
+
+        body {
+            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed;
+            font-family: "Be Vietnam Pro", sans-serif;
+            height: 100svh;
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main {
+            flex: 1;
         }
 
         footer {
@@ -125,7 +124,7 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#" class="links-menu"><img src="imagens/logo.jpeg" alt="Logo"></a></li>
+                <li><a href="#" class="links-menu"><img src="imagens/logo.jpeg" alt="Logo" id="logo"></a></li>
                 <li><a href="#" class="links-menu">Fotos</a></li>
                 <li><a href="#" class="links-menu">Natureza</a></li>
                 <li><a href="#" class="links-menu">Horizontes</a></li>
