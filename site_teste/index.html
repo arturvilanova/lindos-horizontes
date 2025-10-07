@@ -79,12 +79,12 @@
             margin-left: auto;
         }
 
-        li#sobre a {
+        li#sobre a.link-menu {
             margin-left: auto;
             color: #494949;
         }
 
-        a {
+        a.link-menu {
             color: rgb(0, 0, 0);
             text-decoration: none;
             font-size: 21px;
@@ -112,6 +112,10 @@
 
         @media (max-width: 480px) {
 
+            a.link-menu {
+                font-size: 16px;
+            }
+
         }
 
         
@@ -121,11 +125,11 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#"><img src="imagens/logo.jpeg" alt="Logo"></a></li>
-                <li><a href="#">Fotos</a></li>
-                <li><a href="#">Natureza</a></li>
-                <li><a href="#">Horizontes</a></li>
-                <li id="sobre"><a href="#" >Sobre</a></li>
+                <li><a href="#" class="link-menu"><img src="imagens/logo.jpeg" alt="Logo"></a></li>
+                <li><a href="#" class="link-menu">Fotos</a></li>
+                <li><a href="#" class="link-menu">Natureza</a></li>
+                <li><a href="#" class="link-menu">Horizontes</a></li>
+                <li id="sobre" class="link-menu"><a href="#" >Sobre</a></li>
             </ul>
         </nav>
     </header>
