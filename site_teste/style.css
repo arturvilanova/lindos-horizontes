@@ -46,7 +46,6 @@ img#logo {
 
 ul {
     display: flex;
-    /* background-color: #e66969; */
     align-items: center;
     gap: 80px;
     width: max-content;
@@ -54,14 +53,12 @@ ul {
 
 li {
     list-style: none;
-    font-size: 18px;
 } 
 
 a.links-menu {
     color: rgb(0, 0, 0);
     text-decoration: none;
     font-size: 20px;
-    font-weight: 500;
     user-select: none;
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent; 
@@ -111,7 +108,7 @@ p#direitos {
 @media (max-width: 900px) {
 
     img#logo {
-        /* margin-right: 0px; */
+        margin-right: 25px;
     }
 
     a.links-menu {
