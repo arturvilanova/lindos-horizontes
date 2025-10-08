@@ -35,17 +35,63 @@
         </nav>
     </header>
 
-    <main>
+    <main id="conteudo">
+        <section id="fotos" class="secao ativa">
+            <h2>Fotos</h2>
+            <p>Galeria com as fotos mais recentes da natureza.</p>
+        </section>
 
+        <section id="natureza" class="secao">
+            <h2>Natureza</h2>
+            <p>Artigos, curiosidades e inspirações sobre a natureza.</p>
+        </section>
+
+        <section id="horizontes" class="secao">
+            <h2>Horizontes</h2>
+            <p>Textos e reflexões sobre explorar novos horizontes.</p>
+        </section>
     </main>
 
     <footer>
         <p id="direitos"></p>
     </footer>
+
+    <!-- SCRIPT DO MENU -->
+
+    <script>
+        const links = document.querySelectorAll('.links-menu');
+        const secoes = document.querySelectorAll('.secao');
+
+        function ativarSecao(id) {
+            secoes.forEach(sec => sec.classList.remove('ativa'));
+            document.getElementById(id).classList.add('ativa');
+        }
+
+        function ativarLink(linkClicado) {
+            links.forEach(link => link.classList.remove('ativo'));
+            linkClicado.classList.add('ativo');
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                const destino = link.textContent.trim().toLowerCase();
+                ativarSecao(destino);
+                ativarLink(link);
+            });
+        });
+
+        // Inicia com "Fotos" ativo
+        ativarSecao('fotos');
+        links[0].classList.add('ativo');
+    </script>
+
+    <!-- SCRIPT DO FOOTER -->
     
     <script>
         const anoAtual = new Date().getFullYear();
         document.getElementById("direitos").innerText = `© ${anoAtual} - Lindos Horizontes. Todos os direitos reservados.`;
     </script>
+
 </body>
 </html>
