@@ -71,9 +71,7 @@ a:hover {
 /* CORPO DO SITE */
 
 body {
-    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed; */
-    background: url(imagens/horizonte_destktop.jpg) center/cover no-repeat;
-    background-color: #0F2437;
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat scroll;
     font-family: "Be Vietnam Pro", sans-serif;
     height: 100svh;
     min-height: 100dvh;
