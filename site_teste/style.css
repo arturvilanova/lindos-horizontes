@@ -116,8 +116,8 @@ a.links-menu {
 }
 
 a.links-menu.ativo {
-    color: var(--Cor3);
-    font-weight: 700;
+    color: var(--Cor2);
+    /* font-weight: 900; */
 }
 
 /* a.links-menu.ativo::after {
@@ -181,12 +181,12 @@ main {
     }
 
     a.links-menu {
-        font-size: 13px;
+        font-size: 15px;
         font-weight: 300;
     }
 
     ul {
-        gap: 35px;
+        gap: 30px;
         margin: auto;
     }
 }
