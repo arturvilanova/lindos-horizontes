@@ -42,6 +42,9 @@ img#logo {
     height: 40px;
     border-radius: 50%;
     margin-right: 40px;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent; 
 }
 
 ul {
@@ -53,7 +56,7 @@ ul {
 
 li {
     list-style: none;
-} 
+}
 
 a.links-menu {
     color: rgb(0, 0, 0);
