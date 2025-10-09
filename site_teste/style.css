@@ -120,7 +120,7 @@ a.links-menu.ativo {
     font-weight: 700;
 }
 
-a.links-menu.ativo::after {
+/* a.links-menu.ativo::after {
     content: "";
     position: absolute;
     bottom: -5px;
@@ -129,7 +129,7 @@ a.links-menu.ativo::after {
     height: 3px;
     background-color: var(--Cor3);
     border-radius: 2px;
-}
+} */
 
 main {
     flex: 1;
@@ -181,7 +181,8 @@ main {
     }
 
     a.links-menu {
-        font-size: 12px;
+        font-size: 13px;
+        font-weight: 300;
     }
 
     ul {
