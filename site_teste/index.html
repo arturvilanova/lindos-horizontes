@@ -19,13 +19,14 @@
             <div>
 
                 <div id="img-logo">
-                    <a href="#" class="links-menu">
+                    <a href="#" class="links-men">
                         <img src="imagens/logo.jpeg" alt="Logo" id="logo">
                     </a>
                 </div>
             
                 <ul>
                     
+                    <li><a href="#" class="links-menu">Início</a></li>
                     <li><a href="#" class="links-menu">Fotos</a></li>
                     <li><a href="#" class="links-menu">Natureza</a></li>
                     <li><a href="#" class="links-menu">Horizontes</a></li>
@@ -36,7 +37,13 @@
     </header>
 
     <main id="conteudo">
-        <section id="fotos" class="secao ativa">
+
+        <section id="inicio" class="secao ativa">
+            <h2>Início</h2>
+            <p>As novidades do site</p>
+        </section>
+
+        <section id="fotos" class="secao">
             <h2>Fotos</h2>
             <p>Galeria com as fotos mais recentes da natureza.</p>
         </section>
@@ -81,8 +88,8 @@
             });
         });
 
-        // Inicia com "Fotos" ativo
-        ativarSecao('fotos');
+        // Começa com "inicio" ativo
+        ativarSecao('inicio');
         links[0].classList.add('ativo');
     </script>
 
