@@ -41,6 +41,7 @@ img#logo {
     display: block;
     height: 40px;
     border-radius: 50%;
+    box-shadow: 3px 1px 15px #00000042;
     margin-right: 40px;
     user-select: none;
     -webkit-user-drag: none;
