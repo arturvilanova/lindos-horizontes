@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <p>As novidades do site</p>
                     </section>
                 `;
+                
             } else {
                 // Faz o fetch da página
                 const resposta = await fetch(`${pagina}.html`);
