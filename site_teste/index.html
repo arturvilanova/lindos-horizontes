@@ -12,6 +12,7 @@
     <title>Um site de FotografiaS</title>
     <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
@@ -43,64 +44,10 @@
             <p>As novidades do site</p>
         </section>
 
-        <section id="fotos" class="secao">
-            <h2>Fotos</h2>
-            <p>Galeria com as fotos mais recentes da natureza.</p>
-        </section>
-
-        <section id="explorar" class="secao">
-            <h2>Explorar</h2>
-            <p>Explore o melhor.</p>
-        </section>
-
-        <section id="sobre" class="secao">
-            <h2>Sobre</h2>
-            <p>Saiba mais sobre 'Lindos Horizontes'.</p>
-        </section>
     </main>
 
     <footer>
         <p id="direitos"></p>
     </footer>
-
-    <!-- SCRIPT DO MENU -->
-
-    <script>
-        const links = document.querySelectorAll('.links-menu');
-        const secoes = document.querySelectorAll('.secao');
-
-        function ativarSecao(id) {
-            secoes.forEach(sec => sec.classList.remove('ativa'));
-            document.getElementById(id).classList.add('ativa');
-        }
-
-        function ativarLink(linkClicado) {
-            links.forEach(link => link.classList.remove('ativo'));
-            linkClicado.classList.add('ativo');
-        }
-
-        links.forEach(link => {
-            link.addEventListener('click', e => {
-                e.preventDefault();
-                const destino = link.dataset.target;
-                // const destino = link.textContent.trim().toLowerCase();
-
-                ativarSecao(destino);
-                ativarLink(link);
-            });
-        });
-
-        // Começa com "inicio" ativo
-        ativarSecao('inicio');
-        links[0].classList.add('ativo');
-    </script>
-
-    <!-- SCRIPT DO FOOTER -->
-    
-    <script>
-        const anoAtual = new Date().getFullYear();
-        document.getElementById("direitos").innerText = `© ${anoAtual} - Lindos Horizontes. Todos os direitos reservados.`;
-    </script>
-
 </body>
 </html>
