@@ -26,10 +26,10 @@
             
                 <ul>
                     
-                    <li><a href="#" class="links-menu">Início</a></li>
-                    <li><a href="#" class="links-menu">Fotos</a></li>
-                    <li><a href="#" class="links-menu">Explorar</a></li>
-                    <li><a href="#" class="links-menu">Sobre</a></li>
+                    <li><a href="#" class="links-menu" data-target="inicio">Início</a></li>
+                    <li><a href="#" class="links-menu" data-target="fotos">Fotos</a></li>
+                    <li><a href="#" class="links-menu" data-target="explorar">Explorar</a></li>
+                    <li><a href="#" class="links-menu" data-target="sobre">Sobre</a></li>
                 </ul>
             </div>
 
@@ -82,7 +82,9 @@
         links.forEach(link => {
             link.addEventListener('click', e => {
                 e.preventDefault();
-                const destino = link.textContent.trim().toLowerCase();
+                const destino = link.dataset.target;
+                // const destino = link.textContent.trim().toLowerCase();
+
                 ativarSecao(destino);
                 ativarLink(link);
             });
