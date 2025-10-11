@@ -68,10 +68,6 @@ a.links-menu {
     -webkit-tap-highlight-color: transparent; 
 }
 
-a:hover {
-    color: #44826e;
-}
-
 /* CORPO DO SITE */
 
 body {
@@ -118,19 +114,8 @@ a.links-menu {
 
 a.links-menu.ativo {
     color: var(--Cor2);
-    /* font-weight: 900; */
+    font-weight: 500;
 }
-
-/* a.links-menu.ativo::after {
-    content: "";
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: var(--Cor3);
-    border-radius: 2px;
-} */
 
 main {
     flex: 1;
