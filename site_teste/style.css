@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
-/* FONTES */
+/* Fontes */
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* RESET */
+/* Reset */
 
 * {
     margin: 0px;
@@ -17,7 +17,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* CORES DA MARCA */
+/* Cores da marca */
 
 :root {
     --Cor1: #ffb656;
@@ -26,14 +26,14 @@ html, body {
     --Cor4: #0F2437;
 }
 
-/* ANIMAÇÕES */
+/* Animações */
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* CABEÇALHO */
+/* Cabeçalho */
 
 header {
     background-color: #ffffff;
@@ -83,7 +83,7 @@ a.links-menu.ativo {
     font-weight: 500;
 }
 
-/* CORPO DO SITE */
+/* Corpo do site */
 
 body {
     background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat scroll;
@@ -98,7 +98,7 @@ main {
     flex: 1;
     padding: 40px;
     color: white;
-    text-align: center;
+    /* text-align: center; */
 }
 
 .secao.ativa {
@@ -110,7 +110,7 @@ main {
     animation: fadeIn 0.6s ease forwards;
 }
 
-/* RODAPÉ */
+/* Rodapé */
 
 footer {
     background-color: var(--Cor4);
@@ -127,7 +127,7 @@ p#direitos {
     padding: 0px 20px 0px 20px;
 }
 
-/* RESPONSIVIDADE PARA TABLET */
+/* Responsividade para tablet */
 
 @media (max-width: 900px) {
 
@@ -146,7 +146,7 @@ p#direitos {
 
 }
 
-/* RESPONSIVIDADE PARA SMARTPHONE */
+/* Responsividade para smartphone */
 
 @media (max-width: 480px) {
 
@@ -166,14 +166,3 @@ p#direitos {
     }
 }
 
-/* SEÇÃO FOTOS*/
-
-section#fotos {
-    max-width: 800px;
-    background-color: #56A38A;
-    height: 800px;
-}
-
-img.imagens-conteudo {
-    width: 300px;
-}
