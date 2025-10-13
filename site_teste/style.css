@@ -166,3 +166,14 @@ p#direitos {
     }
 }
 
+/* SEÇÃO FOTOS*/
+
+section#fotos {
+    max-width: 800px;
+    background-color: #56A38A;
+    height: 800px;
+}
+
+img.imagens-conteudo {
+    width: 300px;
+}
