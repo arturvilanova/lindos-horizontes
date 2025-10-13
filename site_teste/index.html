@@ -7,15 +7,16 @@
     <meta name="theme-color" content="#0F2437">
     <meta name="msapplication-navbutton-color" content="#0F2437">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Um site de FotografiaS</title>
+
+    <title>Lindos Horizontes - Fotografia</title>
     <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <div>
-
                 <div id="img-logo">
                     <a href="#">
                         <img src="imagens/logo.jpeg" alt="Logo" id="logo">
@@ -23,31 +24,48 @@
                 </div>
             
                 <ul>
-                    
-                    <li><a href="#" class="links-menu" data-target="inicio">Início</a></li>
+                    <li><a href="#" class="links-menu ativo" data-target="inicio">Início</a></li>
                     <li><a href="#" class="links-menu" data-target="fotos">Fotos</a></li>
                     <li><a href="#" class="links-menu" data-target="explorar">Explorar</a></li>
-                    <li><a href="#" class="links-menu" data-target="sobre">Sobre</a></li>
-
+                    <!-- <li><a href="#" class="links-menu" data-target="sobre">Sobre</a></li> -->
                 </ul>
             </div>
-
         </nav>
     </header>
 
     <main id="conteudo">
 
+        <!-- PÁGINA INÍCIAL -->
         <section id="inicio" class="secao ativa">
             <h2>Início</h2>
-            <p>As novidades do site</p>
+            <p>Bem-vindo(a) ao Lindos Horizontes! Aqui você encontra as novidades e fotografias mais recentes.</p>
+            <p>
+                <a href="#">saiba mais</a>
+            </p>
         </section>
+
+        <!-- SEÇÃO FOTOS -->
+        <section id="fotos" class="secao">
+            <h2>Fotos</h2>
+            <p>Galeria com as fotos mais recentes da natureza.</p>
+        </section>
+
+        <!-- SEÇÃO EXPLORAR -->
+        <section id="explorar" class="secao">
+            <h2>Explorar a natureza</h2>
+            <p>Descubra histórias e curiosidades por trás das imagens capturadas.</p>
+        </section>
+
+        <!-- SOBRE 
+        <section id="sobre" class="secao">
+            <h2>Sobre</h2>
+            <p>Saiba mais sobre o projeto Lindos Horizontes e a paixão por registrar a beleza da criação.</p>
+        </section> -->
 
     </main>
 
     <footer>
         <p id="direitos"></p>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
