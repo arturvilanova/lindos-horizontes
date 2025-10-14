@@ -178,3 +178,7 @@ p#direitos {
         margin: auto;
     }
 }
+
+section#inicio > p {
+    width: 98%;
+}

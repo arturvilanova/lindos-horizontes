@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#FF5733">
-    <title>Lindos Horizontes - Site de Fotografia</title>
+    <title>Saiba mais sobre Lindos Horizontes</title>
     <link rel="shortcut icon" href="imagens/favicon.jpeg" type="image/x-icon">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
@@ -40,6 +40,11 @@
 
         /* animações*/
 
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @keyframes pulsar {
             0% { transform: scale(1); }
             50% { transform: scale(1.02); }
@@ -49,7 +54,7 @@
         /* ÁREA DO PERFIL */
 
         section#area_perfil {
-            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed;
+            background: #2B465B url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed;
             color: #ffffff;
             min-height: 100svh;
             height: 100svh;
@@ -95,6 +100,8 @@
             -webkit-user-drag: none;
             -webkit-tap-highlight-color: transparent; 
             transition: transform 0.3s ease;
+            animation: fadeIn 0.6s ease forwards;
+
         }
 
         img:hover {
