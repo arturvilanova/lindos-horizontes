@@ -110,6 +110,10 @@ section#inicio > p {
     width: 97%;
 }
 
+section#inicio > p > span {
+    font-style: italic;
+}
+
 section#inicio > p > a {
     color: #ffffffe2;
 }
