@@ -101,6 +101,17 @@ main {
     /* text-align: center; */
 }
 
+section#inicio > p {
+    color: #ffffffc7;
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 30px;
+}
+
+section#inicio > p > a {
+    color: #ffffffe2;
+}
+
 .secao.ativa {
     display: block;
 }
