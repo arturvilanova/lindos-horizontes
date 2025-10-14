@@ -112,6 +112,7 @@ section#inicio > p {
 
 section#inicio > p > span {
     font-style: italic;
+    color: white;
 }
 
 section#inicio > p > a {
