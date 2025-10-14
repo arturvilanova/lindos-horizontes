@@ -177,9 +177,13 @@ p#direitos {
         gap: 30px;
         margin: auto;
     }
+
+
+    section#inicio > p {
+        font-size: 17.5px;
+        width: 98%;
+        text-align: center;
+    }
+
 }
 
-section#inicio > p {
-    font-size: 17.5px;
-    width: 98%;
-}
