@@ -69,7 +69,7 @@ li {
 a.links-menu {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    font-size: 20px;
+    font-size: 22px;
     user-select: none;
     font-weight: 400;
     -webkit-user-drag: none;
@@ -98,12 +98,20 @@ main {
     flex: 1;
     padding: 40px;
     color: white;
-    /* text-align: center; */
 }
 
-section#inicio > p {
+section#inicio > div {
+    display: block;
+}
+
+section > div > p > span {
+    font-style: italic;
+    color: white;
+}
+
+section#inicio > div > p {
     color: #ffffffc7;
-    font-size: 20px;
+    font-size: 19.5px;
     line-height: 32px;
     margin-bottom: 30px;
     text-align: justify;
@@ -115,15 +123,45 @@ section#inicio > p > span {
     color: white;
 }
 
-section#inicio > p > a {
+section#inicio > div > p > a {
     color: #ffffffe2;
+    background-color: var(--Cor2);
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #ffffff52;
 }
 
-.secao.ativa {
+/* COMEÇA A SEÇÃO FOTOS */
+
+section#fotos {
+    background-color: #56A38A;
+    max-width: 95vh;
+}
+
+section#fotos > h2 {
+    margin-bottom: 30px;
+}
+
+section#fotos > div > {
+    background-color: #56A38A;
+    width: 700px;
+}
+
+section#fotos > div > img {
+    width: 300px;
+}
+
+
+
+/* TERMINA A SEÇÃO FOTOS */
+
+
+section.secao.ativa {
     display: block;
 }
 
-.secao {
+section.secao {
     display: none;
     animation: fadeIn 0.6s ease forwards;
 }
