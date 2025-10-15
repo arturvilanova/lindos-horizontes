@@ -86,7 +86,7 @@ a.links-menu.ativo {
 /* Corpo do site */
 
 body {
-    background: var(--Cor1) url(imagens/florzinha.jpg) center/cover no-repeat scroll;
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat scroll;
     font-family: "Be Vietnam Pro", sans-serif;
     height: 100svh;
     min-height: 100dvh;
@@ -96,8 +96,12 @@ body {
 
 main {
     flex: 1;
-    padding: 40px;
     color: white;
+}
+
+section#inicio {
+    width: 500px;
+    margin: 50px 0px 0px 50px;
 }
 
 section#inicio > div {
@@ -134,22 +138,49 @@ section#inicio > div > p > a {
 
 /* COMEÇA A SEÇÃO FOTOS */
 
-section#fotos {
-    background-color: #56A38A;
-    max-width: 95vh;
-}
-
 section#fotos > h2 {
     margin-bottom: 30px;
 }
 
-section#fotos > div > {
-    background-color: #56A38A;
-    width: 700px;
+div#caixa-das-fotos {
+    display: flex;
+    justify-content: center;
+    
 }
 
-section#fotos > div > img {
-    width: 300px;
+section#fotos > #div-das-fotos {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+figure {
+    background-color: #fff;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #0000001a;
+    padding: 10px;  
+}
+
+section#fotos > #div-das-fotos > figure > img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+img.fotos:hover {
+    transform: scale(1.03);
+}
+
+figcaption {
+    color: #555;
+    font-size: 17px;
+    text-align: justify;
+    line-height: 23px;
+    margin-top: 8px;
 }
 
 
