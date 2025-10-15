@@ -86,7 +86,7 @@ a.links-menu.ativo {
 /* Corpo do site */
 
 body {
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat scroll;
+    background: var(--Cor1) url(imagens/florzinha.jpg) center/cover no-repeat scroll;
     font-family: "Be Vietnam Pro", sans-serif;
     height: 100svh;
     min-height: 100dvh;
