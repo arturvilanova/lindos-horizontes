@@ -212,7 +212,7 @@ p#direitos {
     }
 
     a.links-menu {
-        font-size: 15px;
+        font-size: 18px;
         font-weight: 300;
     }
 
@@ -222,11 +222,15 @@ p#direitos {
     }
 
 
-    section#inicio > p {
+    section#inicio > div > p {
         font-size: 17.5px;
         width: 98%;
         text-align: center;
     }
 
+}
+
+p#direitos {
+    font-size: 15px;
 }
 
