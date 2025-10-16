@@ -83,6 +83,23 @@ a.links-menu.ativo {
     font-weight: 500;
 }
 
+/* --- BARRA DESLIZANTE DO MENU ---*/
+
+nav {
+    position: relative;
+}
+
+.menu-indicador {
+    position: absolute;
+    bottom: -10px; /* Encosta perfeitamente na linha inferior do header */
+    height: 4px;
+    background-color: var(--Cor2);
+    border-radius: 0px;
+     transition: left 0.3s ease, width 0.3s ease; /* Anima só quando clicado */
+    width: 0;
+    left: 0;
+}
+
 
 /* --- RESPONSIVIDADE DO CABEÇALHO --- */
 
@@ -202,6 +219,10 @@ section#inicio > div > p > a {
         width: 98%;
         text-align: center;
         margin: auto;
+    }
+
+    section#inicio > div {
+        background-color: #555;
     }
 }
 
