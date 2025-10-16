@@ -69,4 +69,3 @@ window.addEventListener("resize", () => {
     const linkAtivo = document.querySelector(".links-menu.ativo");
     if (linkAtivo) moverIndicador(linkAtivo, false);
 });
-
