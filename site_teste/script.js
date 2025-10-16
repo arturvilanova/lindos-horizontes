@@ -27,3 +27,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     atualizarFooter();
 });
+
+
+
+// ===== EFEITO BARRA DESLIZANTE DO MENU =====
+const indicador = document.querySelector(".menu-indicador");
+const linksMenu = document.querySelectorAll(".links-menu");
+
+// Função para posicionar a barra sob o link ativo
+function moverIndicador(linkAtivo) {
+    const rect = linkAtivo.getBoundingClientRect();
+    const navRect = linkAtivo.closest("nav").getBoundingClientRect();
+
+    indicador.style.width = `${rect.width + 6}px`; // ligeiramente maior que o texto
+    indicador.style.left = `${rect.left - navRect.left}px`;
+}
+
+// Quando a página carregar, posiciona no "Início"
+window.addEventListener("load", () => {
+    const linkInicial = document.querySelector(".links-menu.ativo");
+    if (linkInicial) moverIndicador(linkInicial);
+});
+
+// Atualiza a posição da barra quando clicamos
+linksMenu.forEach(link => {
+    link.addEventListener("click", e => {
+        moverIndicador(link);
+    });
+});
+
+// Reposiciona em caso de redimensionamento de tela
+window.addEventListener("resize", () => {
+    const linkAtivo = document.querySelector(".links-menu.ativo");
+    if (linkAtivo) moverIndicador(linkAtivo);
+});
+
