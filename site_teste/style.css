@@ -169,6 +169,10 @@ main {
 
 /* -- COMEÇA A SEÇÃO INÍCIO -- */
 
+/* div#capa-inicio > section#inicio > div {
+    background-color: #ffb656;
+} */
+
 
 section#inicio {
     width: 500px;
