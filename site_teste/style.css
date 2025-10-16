@@ -263,6 +263,7 @@ div#caixa-das-fotos {
 }
 
 /* 🌿 GRID RESPONSIVO: usa o espaço total e se adapta ao tamanho da tela */
+
 section#fotos > #div-das-fotos {
     width: 100%;
     display: grid;
@@ -343,6 +344,11 @@ figcaption {
 }
 
 @media (max-width: 400px) {
+
+    div#caixa-das-fotos > section#fotos > h2 {
+        font-size: 23px;
+    }
+
     section#fotos > #div-das-fotos {
         grid-template-columns: 1fr; /* 🌿 uma coluna em telas muito pequenas */
     }
@@ -382,5 +388,3 @@ p#direitos {
     font-size: 14.5px;
     padding: 0px 20px 0px 20px;
 }
-    
-
