@@ -138,7 +138,7 @@ section#inicio > div > p > a {
 
 /* COMEÇA A SEÇÃO FOTOS */
 
-section#fotos > h2 {
+/* section#fotos > h2 {
     margin-bottom: 30px;
 }
 
@@ -181,6 +181,118 @@ figcaption {
     text-align: justify;
     line-height: 23px;
     margin-top: 8px;
+} */
+
+
+/* --- GALERIA DE FOTOS RESPONSIVA --- */
+
+section#fotos {
+    width: 100%;
+    max-width: 1400px; /* 🌿 aumenta o limite máximo */
+    margin: 0 auto;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+section#fotos > h2 {
+    margin-bottom: 30px;
+    text-align: center;
+    color: var(--Cor4);
+}
+
+div#caixa-das-fotos {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* 🌿 GRID RESPONSIVO: usa o espaço total e se adapta ao tamanho da tela */
+section#fotos > #div-das-fotos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    align-items: start;
+    justify-items: center; /* centraliza os itens na célula */
+    box-sizing: border-box;
+}
+
+/* 🌿 FIGURE: agora ocupa 100% da célula sem ultrapassar os limites */
+figure {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px #0000001a;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+figure:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px #00000033;
+}
+
+/* 🌿 IMAGEM: 100% fluida e mantém proporção */
+section#fotos > #div-das-fotos > figure > img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3; /* ajuda a manter consistência nas alturas */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+section#fotos > #div-das-fotos > figure > img:hover {
+    transform: scale(1.03);
+}
+
+/* 🌿 LEGENDA */
+figcaption {
+    color: #555;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 23px;
+    margin-top: 10px;
+    padding: 0 5px;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 900px) {
+    section#fotos {
+        padding: 40px 15px;
+    }
+    figcaption {
+        font-size: 15.5px;
+    }
+}
+
+@media (max-width: 600px) {
+    section#fotos > #div-das-fotos {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 🌿 fotos menores */
+        gap: 15px;
+    }
+    figure {
+        max-width: 100%;
+        padding: 8px;
+    }
+    figcaption {
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    section#fotos > #div-das-fotos {
+        grid-template-columns: 1fr; /* 🌿 uma coluna em telas muito pequenas */
+    }
+    figure {
+        margin: 0 auto;
+    }
 }
 
 
