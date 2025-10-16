@@ -33,7 +33,7 @@ html, body {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Cabeçalho */
+/* --- COMEÇA CABEÇALHO---*/
 
 header {
     background-color: #ffffff;
@@ -83,7 +83,52 @@ a.links-menu.ativo {
     font-weight: 500;
 }
 
-/* Corpo do site */
+
+/* --- RESPONSIVIDADE DO CABEÇALHO --- */
+
+
+@media (max-width: 900px) { /* Responsividade para tblet */
+
+    img#logo {
+        margin-right: 25px;
+    }
+
+    a.links-menu {
+        font-size: 20px;
+    }
+
+    ul {
+        gap: 60px;
+        /* margin: auto; */
+    }
+} 
+
+@media (max-width: 480px) { /* --- Responsividade para celular --- */
+
+    img#logo {
+        height: 35px;
+        margin-right: 0px;
+    }
+
+    a.links-menu {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    ul {
+        gap: 30px;
+        margin: auto;
+    }
+
+
+}
+
+
+/* --- TERMINA CABEÇALHO --- */
+
+
+
+/* --- COMEÇA O CORPO DO SITE --- */
 
 body {
     background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat scroll;
@@ -98,6 +143,15 @@ main {
     flex: 1;
     color: white;
 }
+
+
+
+/* --- TERMINA O CORPO DO SITE --- */
+
+
+
+/* -- COMEÇA A SEÇÃO INÍCIO -- */
+
 
 section#inicio {
     width: 500px;
@@ -136,55 +190,31 @@ section#inicio > div > p > a {
     border: 1px solid #ffffff52;
 }
 
-/* COMEÇA A SEÇÃO FOTOS */
 
-/* section#fotos > h2 {
-    margin-bottom: 30px;
+
+/* --- RESPONSIVIDADE --- */
+
+
+@media (max-width: 480px) { /* --- Responsividade para celular --- */
+
+    section#inicio > div > p {
+        font-size: 17.5px;
+        width: 98%;
+        text-align: center;
+        margin: auto;
+    }
 }
 
-div#caixa-das-fotos {
-    display: flex;
-    justify-content: center;
-    
-}
-
-section#fotos > #div-das-fotos {
-    max-width: 1200px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-figure {
-    background-color: #fff;
-    text-align: center;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px #0000001a;
-    padding: 10px;  
-}
-
-section#fotos > #div-das-fotos > figure > img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-img.fotos:hover {
-    transform: scale(1.03);
-}
-
-figcaption {
-    color: #555;
-    font-size: 17px;
-    text-align: justify;
-    line-height: 23px;
-    margin-top: 8px;
-} */
 
 
-/* --- GALERIA DE FOTOS RESPONSIVA --- */
+
+
+/* -- TERMINA A SEÇÃO INÍCIO -- */
+
+
+
+
+/* --- COMEÇA A SEÇÃO FOTOS --- */
 
 section#fotos {
     width: 100%;
@@ -196,8 +226,9 @@ section#fotos {
 
 section#fotos > h2 {
     margin-bottom: 30px;
-    text-align: center;
-    color: var(--Cor4);
+    text-align: left;
+    color: #ffffff;
+    font-size: 30px;
 }
 
 div#caixa-das-fotos {
@@ -309,7 +340,7 @@ section.secao {
     animation: fadeIn 0.6s ease forwards;
 }
 
-/* Rodapé */
+/* --- COMEÇA RODAPÉ --- */
 
 footer {
     background-color: var(--Cor4);
@@ -326,52 +357,6 @@ p#direitos {
     padding: 0px 20px 0px 20px;
 }
 
-/* Responsividade para tablet */
-
-@media (max-width: 900px) {
-
-    img#logo {
-        margin-right: 25px;
-    }
-
-    a.links-menu {
-        font-size: 20px;
-    }
-
-    ul {
-        gap: 60px;
-        /* margin: auto; */
-    }
-
-}
-
-/* Responsividade para smartphone */
-
-@media (max-width: 480px) {
-
-    img#logo {
-        height: 35px;
-        margin-right: 0px;
-    }
-
-    a.links-menu {
-        font-size: 18px;
-        font-weight: 300;
-    }
-
-    ul {
-        gap: 30px;
-        margin: auto;
-    }
-
-
-    section#inicio > div > p {
-        font-size: 17.5px;
-        width: 98%;
-        text-align: center;
-    }
-
-}
 
 p#direitos {
     font-size: 15px;
