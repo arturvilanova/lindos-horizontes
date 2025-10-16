@@ -31,34 +31,42 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===== EFEITO BARRA DESLIZANTE DO MENU =====
+
 const indicador = document.querySelector(".menu-indicador");
 const linksMenu = document.querySelectorAll(".links-menu");
 
 // Função para posicionar a barra sob o link ativo
-function moverIndicador(linkAtivo) {
+function moverIndicador(linkAtivo, animar = true) {
     const rect = linkAtivo.getBoundingClientRect();
     const navRect = linkAtivo.closest("nav").getBoundingClientRect();
 
-    indicador.style.width = `${rect.width + 6}px`; // ligeiramente maior que o texto
+    if (!animar) indicador.style.transition = "none"; // Desliga animação no carregamento
+    indicador.style.width = `${rect.width + 6}px`;
     indicador.style.left = `${rect.left - navRect.left}px`;
+    if (!animar) {
+        // Reativa animação depois de um pequeno intervalo
+        setTimeout(() => {
+            indicador.style.transition = "left 0.3s ease, width 0.3s ease";
+        }, 50);
+    }
 }
 
-// Quando a página carregar, posiciona no "Início"
+// Quando a página carregar, posiciona no "Início" sem animação
 window.addEventListener("load", () => {
     const linkInicial = document.querySelector(".links-menu.ativo");
-    if (linkInicial) moverIndicador(linkInicial);
+    if (linkInicial) moverIndicador(linkInicial, false);
 });
 
 // Atualiza a posição da barra quando clicamos
 linksMenu.forEach(link => {
     link.addEventListener("click", e => {
-        moverIndicador(link);
+        moverIndicador(link, true);
     });
 });
 
 // Reposiciona em caso de redimensionamento de tela
 window.addEventListener("resize", () => {
     const linkAtivo = document.querySelector(".links-menu.ativo");
-    if (linkAtivo) moverIndicador(linkAtivo);
+    if (linkAtivo) moverIndicador(linkAtivo, false);
 });
 
