@@ -91,15 +91,14 @@ nav {
 
 .menu-indicador {
     position: absolute;
-    bottom: -10px; /* Encosta perfeitamente na linha inferior do header */
+    bottom: -10px; /* 🔹 Fica exatamente na linha inferior do header */
     height: 4px;
     background-color: var(--Cor2);
-    border-radius: 0.5px;
-    transition: left 0.3s ease, width 0.3s ease; /* Anima só quando clicado */
+    border-radius: 2px;
+    transition: left 0.3s ease, width 0.3s ease;
     width: 0;
-    left: 0px;
+    left: 0;
 }
-
 
 /* --- RESPONSIVIDADE DO CABEÇALHO --- */
 
@@ -225,8 +224,9 @@ section#inicio > div > p > a {
         
     }
 
-    div#capa-inicio > section#inicio > div {
-        margin: auto;
+    div#capa-inicio > section#inicio {
+        margin: 50px auto 0px auto;
+        padding: 0px 40px 0px 40px;
     }
 }
 

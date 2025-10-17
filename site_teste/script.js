@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const links = document.querySelectorAll(".links-menu");
     const secoes = document.querySelectorAll(".secao");
     const direitos = document.getElementById("direitos");
+    const indicador = document.querySelector(".menu-indicador");
 
     // Atualiza o rodapé com o ano atual
     function atualizarFooter() {
@@ -15,57 +16,50 @@ document.addEventListener("DOMContentLoaded", () => {
         document.getElementById(id).classList.add("ativa");
     }
 
-    // Gerencia o estado visual dos links
+    // Função que posiciona a barra sob o link ativo
+    function moverIndicador(linkAtivo, animar = true) {
+        const rect = linkAtivo.getBoundingClientRect();
+        const navRect = linkAtivo.closest("nav").getBoundingClientRect();
+
+        const larguraExtra = 10; // 🔹 Deixa a barra um pouco maior que o texto (5px de cada lado)
+        const largura = rect.width + larguraExtra;
+        const esquerda = rect.left - navRect.left - larguraExtra / 2;
+
+        if (!animar) indicador.style.transition = "none"; // desliga animação no carregamento
+
+        indicador.style.width = `${largura}px`;
+        indicador.style.left = `${esquerda}px`;
+
+        if (!animar) {
+            // Reativa animação após pequeno atraso
+            setTimeout(() => {
+                indicador.style.transition = "left 0.3s ease, width 0.3s ease";
+            }, 50);
+        }
+    }
+
+    // Marca o link ativo e mostra seção
     links.forEach(link => {
         link.addEventListener("click", e => {
             e.preventDefault();
             links.forEach(l => l.classList.remove("ativo"));
             link.classList.add("ativo");
             mostrarSecao(link.dataset.target);
+            moverIndicador(link, true);
         });
     });
 
-    atualizarFooter();
-});
-
-
-
-// ===== EFEITO BARRA DESLIZANTE DO MENU =====
-
-const indicador = document.querySelector(".menu-indicador");
-const linksMenu = document.querySelectorAll(".links-menu");
-
-// Função para posicionar a barra sob o link ativo
-function moverIndicador(linkAtivo, animar = true) {
-    const rect = linkAtivo.getBoundingClientRect();
-    const navRect = linkAtivo.closest("nav").getBoundingClientRect();
-
-    if (!animar) indicador.style.transition = "none"; // Desliga animação no carregamento
-    indicador.style.width = `${rect.width + 6}px`;
-    indicador.style.left = `${rect.left - navRect.left}px`;
-    if (!animar) {
-        // Reativa animação depois de um pequeno intervalo
-        setTimeout(() => {
-            indicador.style.transition = "left 0.3s ease, width 0.3s ease";
-        }, 50);
-    }
-}
-
-// Quando a página carregar, posiciona no "Início" sem animação
-window.addEventListener("load", () => {
-    const linkInicial = document.querySelector(".links-menu.ativo");
-    if (linkInicial) moverIndicador(linkInicial, false);
-});
-
-// Atualiza a posição da barra quando clicamos
-linksMenu.forEach(link => {
-    link.addEventListener("click", e => {
-        moverIndicador(link, true);
+    // Ao carregar, posiciona no link "Início" sem animação
+    window.addEventListener("load", () => {
+        const linkInicial = document.querySelector(".links-menu.ativo");
+        if (linkInicial) moverIndicador(linkInicial, false);
     });
-});
 
-// Reposiciona em caso de redimensionamento de tela
-window.addEventListener("resize", () => {
-    const linkAtivo = document.querySelector(".links-menu.ativo");
-    if (linkAtivo) moverIndicador(linkAtivo, false);
+    // Reposiciona a barra se a janela for redimensionada
+    window.addEventListener("resize", () => {
+        const linkAtivo = document.querySelector(".links-menu.ativo");
+        if (linkAtivo) moverIndicador(linkAtivo, false);
+    });
+
+    atualizarFooter();
 });
