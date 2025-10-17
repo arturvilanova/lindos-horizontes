@@ -40,6 +40,10 @@ header {
     padding: 10px 0px 10px 10px;
 }
 
+nav {
+    display: flex;
+}
+
 div {
     display: flex;
 }  
@@ -121,8 +125,15 @@ nav {
 
 @media (max-width: 480px) { /* --- Responsividade para celular --- */
 
+    nav > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
     img#logo {
         height: 35px;
+        margin-left: 0px;
         margin-right: 0px;
     }
 
@@ -132,8 +143,12 @@ nav {
     }
 
     ul {
+        display: flex;
+        flex: 1;
+        justify-content: center;
         gap: 30px;
-        margin: auto;
+        justify-content: center;
+
     }
 
 
@@ -168,14 +183,29 @@ main {
 
 /* -- COMEÇA A SEÇÃO INÍCIO -- */
 
-/* div#capa-inicio > section#inicio > div {
-    background-color: #ffb656;
-} */
+ /* div#capa-inicio {
+    margin: auto;
+    width: max-content;
+    height: max-content;
+    background-color: #ffffff21;
+ } */
+
+ section#slide {
+    width: 500px;
+    margin: 50px 0px 0px 50px; 
+    /* border: 1px solid white; */
+
+}
+
+ /* div#capa-inicio > section#inicio > section#islide > img {
+    width: 400px;
+ } */
 
 
 section#inicio {
     width: 500px;
     margin: 50px 0px 0px 50px;
+    /* border: 1px solid white; */
 }
 
 section#inicio > div {
@@ -229,9 +259,6 @@ section#inicio > div > p > a {
         padding: 0px 40px 0px 40px;
     }
 }
-
-
-
 
 
 /* -- TERMINA A SEÇÃO INÍCIO -- */
