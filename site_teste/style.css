@@ -268,9 +268,10 @@ section#inicio > div > p > a {
 
 /* --- COMEÇA A SEÇÃO FOTOS --- */
 
+
 section#fotos {
     width: 100%;
-    max-width: 1400px; /* 🌿 aumenta o limite máximo */
+    max-width: 1400px;
     margin: 0 auto;
     padding: 60px 20px;
     box-sizing: border-box;
@@ -283,28 +284,17 @@ section#fotos > h2 {
     font-size: 30px;
 }
 
-div#caixa-das-fotos {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-/* 🌿 GRID RESPONSIVO: usa o espaço total e se adapta ao tamanho da tela */
-
-section#fotos > #div-das-fotos {
-    width: 100%;
+#div-das-fotos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 🌿 5 fotos por linha no desktop */
     gap: 25px;
+    justify-items: center;
     align-items: start;
-    justify-items: center; /* centraliza os itens na célula */
     box-sizing: border-box;
 }
 
-/* 🌿 FIGURE: agora ocupa 100% da célula sem ultrapassar os limites */
 figure {
     width: 100%;
-    max-width: 400px;
     background-color: #fff;
     text-align: center;
     border-radius: 10px;
@@ -319,22 +309,19 @@ figure:hover {
     box-shadow: 0 6px 14px #00000033;
 }
 
-/* 🌿 IMAGEM: 100% fluida e mantém proporção */
-section#fotos > #div-das-fotos > figure > img {
+figure img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4/3; /* ajuda a manter consistência nas alturas */
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease;
     object-fit: cover;
 }
 
-section#fotos > #div-das-fotos > figure > img:hover {
+figure img:hover {
     transform: scale(1.03);
 }
 
-/* 🌿 LEGENDA */
 figcaption {
     color: #555;
     font-size: 16px;
@@ -346,23 +333,22 @@ figcaption {
 
 /* --- RESPONSIVIDADE --- */
 
-@media (max-width: 900px) {
-    section#fotos {
-        padding: 40px 15px;
-    }
-    figcaption {
-        font-size: 15.5px;
+@media (max-width: 1000px) {
+    #div-das-fotos {
+        grid-template-columns: repeat(3, 1fr); /* 🌿 3 colunas em telas médias */
     }
 }
 
-@media (max-width: 600px) {
-    section#fotos > #div-das-fotos {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* 🌿 fotos menores */
-        gap: 15px;
+@media (max-width: 800px) {
+    #div-das-fotos {
+        grid-template-columns: repeat(2, 1fr); /* 🌿 2 colunas em tablets */
     }
-    figure {
-        max-width: 100%;
-        padding: 8px;
+}
+
+@media (max-width: 400px) {
+    #div-das-fotos {
+        grid-template-columns: repeat(2, 1fr); /* 🌿 2 colunas em celular */
+        gap: 15px;
     }
     figcaption {
         font-size: 15px;
@@ -371,19 +357,10 @@ figcaption {
 }
 
 @media (max-width: 400px) {
-
-    div#caixa-das-fotos > section#fotos > h2 {
-        font-size: 23px;
-    }
-
-    section#fotos > #div-das-fotos {
-        grid-template-columns: 1fr; /* 🌿 uma coluna em telas muito pequenas */
-    }
-    figure {
-        margin: 0 auto;
+    #div-das-fotos {
+        grid-template-columns: 1fr; /* 🌿 1 coluna em telas muito pequenas */
     }
 }
-
 
 
 /* TERMINA A SEÇÃO FOTOS */
