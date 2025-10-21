@@ -17,7 +17,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Cores da marca */
+/* Cores */
 
 :root {
     --Cor1: #ffb656;
@@ -44,7 +44,7 @@ nav {
     display: flex;
 }
 
-div {
+div#area-nav {
     display: flex;
 }  
 
@@ -52,7 +52,7 @@ img#logo {
     display: block;
     height: 40px;
     border-radius: 50%;
-    box-shadow: 3px 1px 15px #00000042;
+    box-shadow: 3px 1px 10px #00000042;
     margin-right: 40px;
     user-select: none;
     -webkit-user-drag: none;
@@ -61,9 +61,9 @@ img#logo {
 
 ul {
     display: flex;
+    width: max-content;
     align-items: center;
     gap: 80px;
-    width: max-content;
 }
 
 li {
@@ -71,15 +71,15 @@ li {
 }
 
 a.links-menu {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+    position: relative;
+    color: #000000;
     font-size: 22px;
-    user-select: none;
     font-weight: 400;
+    text-decoration: none;
+    user-select: none;
+    transition: color 0.3s ease;
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
-    position: relative;
-    transition: color 0.3s ease; 
 }
 
 a.links-menu.ativo {
@@ -87,82 +87,76 @@ a.links-menu.ativo {
     font-weight: 500;
 }
 
-/* --- BARRA DESLIZANTE DO MENU ---*/
+/* Barra deslizante do menu */
 
 nav {
     position: relative;
 }
 
-.menu-indicador {
+.barra-deslizante {
     position: absolute;
-    bottom: -10px; /* 🔹 Fica exatamente na linha inferior do header */
-    height: 4px;
     background-color: var(--Cor2);
-    border-radius: 2px;
-    transition: left 0.3s ease, width 0.3s ease;
+    border-radius: 1.5px;
+    bottom: -10px; /* A barra fica exatamente na linha inferior do header */
     width: 0;
     left: 0;
+    height: 4px;
+    transition: left 0.3s ease, width 0.3s ease;
 }
 
 /* --- RESPONSIVIDADE DO CABEÇALHO --- */
-
 
 @media (max-width: 900px) { /* Responsividade para tblet */
 
     img#logo {
         margin-right: 25px;
     }
+    
+    ul {
+        gap: 60px;
+    }
 
     a.links-menu {
         font-size: 20px;
     }
-
-    ul {
-        gap: 60px;
-        /* margin: auto; */
-    }
 } 
 
-@media (max-width: 480px) { /* --- Responsividade para celular --- */
+@media (max-width: 480px) { /* Responsividade para celular */
 
-    nav > div {
+    nav > div#area-nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
     }
+
     img#logo {
         height: 35px;
         margin-left: 0px;
         margin-right: 0px;
     }
-
-    a.links-menu {
-        font-size: 18px;
-        font-weight: 300;
-    }
-
+    
     ul {
         display: flex;
         flex: 1;
         justify-content: center;
         gap: 30px;
         justify-content: center;
-
     }
 
-
+    a.links-menu {
+        font-size: 18px;
+        font-weight: 300;
+    }
 }
 
-
-/* --- TERMINA CABEÇALHO --- */
-
+/* --- TERMINA O CABEÇALHO --- */
 
 
-/* --- COMEÇA O CORPO DO SITE --- */
+/* --- COMEÇA O CORPO DO SITE (Vale para todas as seções) --- */
 
 body {
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat scroll;
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed;
     font-family: "Be Vietnam Pro", sans-serif;
     height: 100svh;
     min-height: 100dvh;
@@ -175,55 +169,32 @@ main {
     color: white;
 }
 
-
-
-/* --- TERMINA O CORPO DO SITE --- */
-
+/* --- TERMINA O CORPO DO SITE (Vale para todas as seções) --- */
 
 
 /* -- COMEÇA A SEÇÃO INÍCIO -- */
 
- /* div#capa-inicio {
-    margin: auto;
-    width: max-content;
-    height: max-content;
-    background-color: #ffffff21;
- } */
-
- section#slide {
-    width: 500px;
-    margin: 50px 0px 0px 50px; 
-    /* border: 1px solid white; */
-
-}
-
- /* div#capa-inicio > section#inicio > section#islide > img {
-    width: 400px;
- } */
-
-
 section#inicio {
     width: 500px;
     margin: 50px 0px 0px 50px;
-    /* border: 1px solid white; */
 }
 
 section#inicio > div {
     display: block;
 }
 
+section#inicio > div > p {
+    color: #ffffffc7;
+    width: 97%;
+    font-size: 19.5px;
+    margin-bottom: 30px;
+    text-align: justify;
+    line-height: 32px;
+}
+
 section > div > p > span {
     font-style: italic;
     color: white;
-}
-
-section#inicio > div > p {
-    color: #ffffffc7;
-    font-size: 19.5px;
-    line-height: 32px;
-    margin-bottom: 30px;
-    text-align: justify;
-    width: 97%;
 }
 
 section#inicio > p > span {
@@ -264,10 +235,7 @@ section#inicio > div > p > a {
 /* -- TERMINA A SEÇÃO INÍCIO -- */
 
 
-
-
 /* --- COMEÇA A SEÇÃO FOTOS --- */
-
 
 section#fotos {
     width: 100%;
@@ -278,8 +246,10 @@ section#fotos {
 }
 
 section#fotos > h2 {
-    margin-bottom: 30px;
-    text-align: left;
+    text-align: center;
+    width: 700px;
+    margin: auto;
+    justify-content: center;
     color: #ffffff;
     font-size: 30px;
 }
@@ -287,7 +257,7 @@ section#fotos > h2 {
 #div-das-fotos {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 🌿 5 fotos por linha no desktop */
-    gap: 25px;
+    gap: 10px;
     justify-items: center;
     align-items: start;
     box-sizing: border-box;
@@ -365,6 +335,7 @@ figcaption {
 
 /* TERMINA A SEÇÃO FOTOS */
 
+/* Funções para mudança de seções */
 
 section.secao.ativa {
     display: block;
@@ -374,6 +345,9 @@ section.secao {
     display: none;
     animation: fadeIn 0.6s ease forwards;
 }
+
+/* Termina funções para mudança de seções */
+
 
 /* --- COMEÇA RODAPÉ --- */
 

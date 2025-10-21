@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <meta name="theme-color" content="#0F2437">
     <meta name="msapplication-navbutton-color" content="#0F2437">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-
-    <title>Lindos Horizontes - Fotografia</title>
+    <title>Lindos Horizontes - Site de Fotografia</title>
     <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
@@ -16,15 +14,11 @@
 <body>
     <header>
         <nav>
-            
-            
-
-            <div>
-                
-                <div id="img-logo">
-                        <a href="#">
-                            <img src="imagens/logo.jpeg" alt="Logo" id="logo">
-                        </a>
+            <div id="area-nav">
+                <div id="caixa-logo">
+                    <a href="#">
+                        <img src="imagens/logo.jpeg" alt="Logo Lindos Horizontes" id="logo">
+                    </a>
                 </div>
 
                 <ul>
@@ -32,47 +26,47 @@
                     <li><a href="#" class="links-menu" data-target="fotos">Fotos</a></li>
                     <li><a href="#" class="links-menu" data-target="explorar">Explorar</a></li>
                 </ul>
-                <!-- Indicador animado -->
-                <div class="menu-indicador"></div>
-             
+
+                <!-- Barra deslizante do menu -->
+                <div class="barra-deslizante"></div>
             </div>
         </nav>
     </header>
 
     <main id="conteudo">
 
-
-
-        <!-- CONTEÚDO DA PÁGINA INÍCIAL -->
-            <div id="capa-inicio">
+        <!-- CONTEÚDO DA SEÇÃO INICIAL -->
+            <section id="area-inicio">
                 <section id="inicio" class="secao ativa">
 
                     <div>
                         <p>Seja muito bem-vindo ao site oficial de <span>Lindos Horizontes!</span> Aqui é o nosso espaço particular. &#x1F917; <br><br> Explore detalhes da natureza que valem apena observar, Não apenas imagens, mas um olhar valioso e poético das belezas naturais.</p>
+
+                        <!-- Link para página saiba mais -->
                         <p>
                             <a href="saiba_mais.html">saiba mais</a>
                         </p>
                     </div>
                 </section>
 
-                <!-- <section id="slide" class="slide-container">
+                <section>
                     <div>
-                        n
-                        <img src="imagens/florzinha.jpg" alt="">
+                        <img src="" alt="">
                         <img src="" alt="">
                         <img src="" alt="">
                         <img src="" alt="">
                         <img src="" alt="">
                     </div>
                 </section>
-             -->
-            </div>
+            
+            </section>
 
-        <!-- TERMINA O COTEÚDO DA PÁGINA INICIAL -->
+        <!-- TERMINA O COTEÚDO DA SEÇÃO INICIAL -->
 
 
         <!-- CONTEÚDO DA SEÇÃO FOTOS -->
-            <div id="caixa-das-fotos">
+
+            <section id="caixa-das-fotos">
 
                 <section id="fotos" class="secao">
                     
@@ -82,7 +76,7 @@
                         
                         <figure>
                             <img src="imagens/imagens-conteudo/girassol.jpg" alt="Flor do girassol">
-                             <figcaption>O <strong>Girassol</strong> é uma linda flor que transmite beleza e alegria.</figcaption>
+                            <figcaption>O <strong>Girassol</strong> é uma linda flor que transmite beleza e alegria.</figcaption>
                         </figure>
 
                         <figure>
@@ -116,22 +110,18 @@
                         </figure>
 
                     </div>
-
                 </section>
 
-            </div>
+            <section>
 
-        <!-- TERMINA  O CONTEÚDO DA SEÇÃO FOTOS -->
-
-
-
+        <!-- TERMINA O CONTEÚDO DA SEÇÃO FOTOS -->
 
         <!-- CONTEÚDO DA SEÇÃO EXPLORAR -->
 
-        <section id="explorar" class="secao">
-            <h2>Explorar a natureza</h2>
-            <p>Descubra histórias e curiosidades por trás das imagens capturadas.</p>
-        </section>
+            <section id="explorar" class="secao">
+                <h2>Explorar a natureza</h2>
+                <p>Descubra histórias e curiosidades por trás das imagens capturadas.</p>
+            </section>
 
         <!-- TERMINA O CONTEÚDO DA SEÇAO  EXPLORAR -->
 
