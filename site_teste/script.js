@@ -4,12 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const direitos = document.getElementById("direitos");
     const barra = document.querySelector(".barra-deslizante");
 
-    // Atualiza o rodapé com o ano atual
-    function atualizarFooter() {
-        const ano = new Date().getFullYear();
-        direitos.textContent = `© ${ano} - Lindos Horizontes. Todos os direitos reservados.`;
-    }
-
     // Exibe a seção correspondente
     function mostrarSecao(id) {
         secoes.forEach(secao => secao.classList.remove("ativa"));
@@ -60,5 +54,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const linkAtivo = document.querySelector(".links-menu.ativo");
         if (linkAtivo) MoverBarra(linkAtivo, false);
     });
+
+    // Atualiza o rodapé com o ano atual
+    function AtualizarFooter() {
+        const ano = new Date().getFullYear();
+        direitos.textContent = `© ${ano} - Lindos Horizontes. Todos os direitos reservados.`;
+    }
+
+    AtualizarFooter(); // <- chama a função aqui
 
 });
