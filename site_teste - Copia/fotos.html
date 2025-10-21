@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotos - Lindos Horizontes</title>
+    <style>
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            margin: 0;
+            padding: 60px 20px;
+            background: #0F2437;
+            color: white;
+        }
+
+        h1 {
+            font-size: 35px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        #div-das-fotos {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 35px;
+            justify-items: center;
+            padding: 0px 20px;
+        }
+
+        figure {
+            width: 100%;
+            background: #fff;
+            color: #555;
+            border-radius: 10px;
+            padding: 7px;
+            text-align: center;
+            box-shadow: 0 4px 10px #0000001a;
+            transition: 0.3s;
+        }
+
+        figure:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px #00000033;
+        }
+
+        figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        figure img:hover {
+            transform: scale(1.03);
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: justify;
+            line-height: 23px;
+        }
+
+        @media(max-width:1000px) {
+            #div-das-fotos {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media(max-width:800px) {
+            #div-das-fotos {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:400px) {
+            #div-das-fotos {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            figcaption {
+                text-align: center;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="fotos">
+        <h1>Imagens que vão fazer você se<br>encantar  com a natureza.</h1>
+        <div id="div-das-fotos">
+            <figure>
+                <img src="imagens/imagens-conteudo/girassol.jpg" alt="Flor do girassol">
+                <figcaption>O <strong>Girassol</strong> é uma linda flor que transmite beleza e alegria.</figcaption>
+            </figure>
+            <figure>
+                <img src="imagens/imagens-conteudo/nuvem.jpg" alt="Nuvens de chuva">
+                <figcaption>"<strong>Cúmulos-nimbos</strong>", nuvens responsáveis por trazer grandes tempestades.
+                </figcaption>
+            </figure>
+            <figure>
+                <img src="imagens/imagens-conteudo/nuvem-agua.jpeg" alt="Nuvens de chuva">
+                <figcaption>"<strong>Linda foto</strong> Esse registro que fiz ficou incrível.</figcaption>
+            </figure>
+            <figure>
+                <img src="imagens/imagens-conteudo/florzinha.jpg" alt="Uma linda flor">
+                <figcaption>Seus filetes e ânteras são tão pequeninos! Mas o aroma é sentido de longe.</figcaption>
+            </figure>
+        </div>
+    </section>
+</body>
+
+</html>

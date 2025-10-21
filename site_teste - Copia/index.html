@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0F2437">
+    <meta name="msapplication-navbutton-color" content="#0F2437">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Lindos Horizontes - Fotografia</title>
+    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
+    <script src="script.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        /* === RESET === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            max-width: 100%;
+            overflow-x: hidden;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* === CORES === */
+        :root {
+            --Cor1: #ffb656;
+            --Cor2: #56A38A;
+            --Cor3: #2D4A71;
+            --Cor4: #0F2437;
+        }
+
+        /* === CABEÇALHO === */
+        header {
+            background: #fff;
+            padding: 10px;
+        }
+
+        nav {
+            display: flex;
+            position: relative;
+        }
+
+        nav>section {
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        img#logo {
+            height: 40px;
+            border-radius: 50%;
+            box-shadow: 3px 1px 15px #00000042;
+            margin-right: 40px;
+        }
+
+        ul {
+            display: flex;
+            gap: 80px;
+            list-style: none;
+        }
+
+        a.link-menu {
+            color: #000000d8;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        a.link-menu.ativo {
+            color: var(--Cor2);
+            font-weight: 500;
+        }
+
+        .barra-deslizante {
+            position: absolute;
+            bottom: -10px;
+            height: 4px;
+            background: var(--Cor2);
+            border-radius: 2px;
+            transition: left 0.3s ease, width 0.3s ease;
+            width: 0;
+            left: 0;
+        }
+
+        main {
+            flex: 1;
+        }
+
+        /* === IFRAME === */
+        iframe {
+            width: 100%;
+            height: 80vh;
+            border: none;
+        }
+
+        /* === RODAPÉ === */
+        footer {
+            background: var(--Cor4);
+            color: #fff;
+            width: 100%;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        p#direitos {
+            color: #a8a8a8bd;
+            font-size: 14.5px;
+        }
+
+        /* === RESPONSIVIDADE === */
+        @media(max-width:900px) {
+            img#logo {
+                margin-right: 25px;
+            }
+
+            a.link-menu {
+                font-size: 20px;
+            }
+
+            ul {
+                gap: 60px;
+            }
+        }
+
+        @media(max-width:480px) {
+            img#logo {
+                height: 35px;
+                margin: 0;
+            }
+
+            a.link-menu {
+                font-size: 18px;
+                font-weight: 300;
+            }
+
+            ul {
+                gap: 30px;
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <section>
+                <div id="div-logo"><a href="#"><img src="imagens/logo.jpeg" alt="Lindos Horizontes" id="logo"></a></div>
+                <ul>
+                    <li><a href="#" class="link-menu ativo" data-target="inicio.html">Início</a></li>
+                    <li><a href="#" class="link-menu" data-target="fotos.html">Fotos</a></li>
+                    <li><a href="#" class="link-menu" data-target="explorar.html">Explorar</a></li>
+                </ul>
+                <div class="barra-deslizante"></div>
+            </section>
+        </nav>
+    </header>
+
+    <main>
+        <iframe id="iframe-secao" src="inicio.html"></iframe>
+    </main>
+
+    <footer>
+        <p id="direitos">© 2025 - Lindos Horizontes. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+
+</html>
