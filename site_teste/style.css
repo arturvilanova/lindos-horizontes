@@ -184,15 +184,6 @@ main {
     color: white;
 }
 
-/* --- RESPONSIVIDADE--- */
-
-@media (max-width: 480px) {
-
-    footer {
-        font-size: 14px;
-    }
-}
-
 /* --- TERMINA O CORPO DO SITE (Vale para todas as seções) --- */
 
 
@@ -406,7 +397,7 @@ section.secao {
 /* Termina funções para mudança de seções */
 
 
-/* --- COMEÇA RODAPÉ --- */
+/* --- COMEÇA RODAPÉ --- (Vale para todas as seções*/
 
 footer {
     background-color: var(--Cor4);
@@ -423,3 +414,14 @@ p#direitos {
     font-size: 14.5px;
     padding: 0px 20px 0px 20px;
 }
+
+/* --- RESPONSIVIDADE--- */
+
+@media (max-width: 480px) {
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+
