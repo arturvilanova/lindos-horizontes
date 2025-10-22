@@ -17,6 +17,10 @@ html, body {
     overflow-x: hidden;
 }
 
+body {
+    height: 1000px;
+}
+
 /* Cores */
 
 :root {
@@ -241,9 +245,6 @@ section#inicio a {
     }
 }
 
-
-
-
 /* -- TERMINA A SEÇÃO INÍCIO -- */
 
 
@@ -258,32 +259,34 @@ section#fotos {
 }
 
 section#fotos > h2 {
-        text-align: center;      /* centraliza o título */
-        font-size: 35px;         /* reduz o tamanho do texto no celular */
-        margin-bottom: 40px;     /* espaço entre o título e as fotos */
-        color: white;
-        padding: 0 10px;         /* evita que o texto encoste nas bordas */
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+    color: white;
+    padding: 0 10px;
 }
 
+/* 🌿 Galeria Masonry fluida */
 #div-das-fotos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 🌿 5 fotos por linha no desktop */
-    gap: 10px;
-    justify-items: center;
-    align-items: start;
-    grid-auto-rows: min-content;
-    box-sizing: border-box;
+    column-count: 4;
+    column-gap: 10px; /* espaço horizontal entre colunas */
+    direction: ltr;
 }
 
 figure {
+    display: inline-block;
     width: 100%;
+    margin: 0 0 15px; /* espaço vertical entre fotos */
     background-color: #fff;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px #0000001a;
     padding: 10px;
     box-sizing: border-box;
+    position: relative;
+    break-inside: avoid; /* evita quebras de coluna */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    direction: ltr;
 }
 
 figure:hover {
@@ -296,14 +299,16 @@ figure img {
     height: auto;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    display: block;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 figure img:hover {
     transform: scale(1.03);
 }
 
+/* 🌼 Legenda abaixo da imagem, dentro da área branca */
 figcaption {
     color: #555;
     font-size: 16px;
@@ -314,47 +319,26 @@ figcaption {
 }
 
 /* --- RESPONSIVIDADE --- */
-
-@media (max-width: 1000px) {
-    #div-das-fotos {
-        grid-template-columns: repeat(3, 1fr); /* 🌿 3 colunas em telas médias */
-    }
+@media (max-width: 1200px) {
+    #div-das-fotos { column-count: 3; }
 }
-
 @media (max-width: 800px) {
-
-    section#fotos > h2 {
-        font-size: 30ppx;
-    }
-    #div-das-fotos {
-        grid-template-columns: repeat(2, 1fr); /* 🌿 2 colunas em tablets */
-    }
+    #div-das-fotos { column-count: 2; }
+    section#fotos > h2 { font-size: 30px; }
 }
-
-@media (max-width: 400px) {
-
-    section#fotos > h2 {
-        font-size: 23px;
-    }
-
-    #div-das-fotos {
-        grid-template-columns: repeat(2, 1fr); /* 🌿 2 colunas em celular */
-        gap: 15px;
-    }
+@media (max-width: 480px) {
+    #div-das-fotos { column-count: 1; }
+    figure { margin: 0 0 20px; padding: 8px; }
     figcaption {
         font-size: 15px;
         text-align: center;
+        padding: 0 4px;
     }
 }
 
-@media (max-width: 400px) {
-    #div-das-fotos {
-        grid-template-columns: 1fr; /* 🌿 1 coluna em telas muito pequenas */
-    }
-}
+/* --- TERMINA A SEÇÃO FOTOS --- */
 
 
-/* TERMINA A SEÇÃO FOTOS */
 
 /* Funções para mudança de seções */
 
