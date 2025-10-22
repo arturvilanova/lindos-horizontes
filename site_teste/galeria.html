@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeria — Lindos Horizontes</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:#000;color:#fff;}
+
+    h1{text-align:center;margin:16px 0;}
+
+    /* Galeria no estilo Masonry (como o Pexels) */
+    .galeria{
+      column-count:4;
+      column-gap:0;
+      width:100%;
+      max-width:1200px;
+      margin:0 auto;
+    }
+
+    .galeria figure{
+      display:inline-block;
+      width:100%;
+      margin:0;
+      position:relative;
+      overflow:hidden;
+      break-inside:avoid;
+    }
+
+    .galeria img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:cover;
+    }
+
+    .galeria figcaption{
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      background:rgba(0,0,0,0.5);
+      color:#fff;
+      padding:6px 10px;
+      font-size:0.9rem;
+    }
+
+    @media(max-width:1024px){.galeria{column-count:3;}}
+    @media(max-width:768px){.galeria{column-count:2;}}
+    @media(max-width:480px){.galeria{column-count:1;}}
+  </style>
+</head>
+<body>
+  <h1>Lindos Horizontes — Galeria</h1>
+
+  <section class="galeria">
+    <figure><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop" alt="Paisagem 1" loading="lazy"><figcaption>Nascer do sol entre as montanhas</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 2" loading="lazy"><figcaption>Campo verde ao entardecer</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 3" loading="lazy"><figcaption>Horizonte sereno</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=900&auto=format&fit=crop&h=1400" alt="Paisagem vertical" loading="lazy"><figcaption>Cachoeira em meio à floresta</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 5" loading="lazy"><figcaption>Rio refletindo o céu</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1470770903676-69b98201ea1c?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 6" loading="lazy"><figcaption>Montanha sob as estrelas</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 7" loading="lazy"><figcaption>Ondas do mar ao pôr do sol</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 8" loading="lazy"><figcaption>Floresta coberta por névoa</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 9" loading="lazy"><figcaption>Trilha entre as árvores</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1519817914152-22f90e5a6c9b?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 10" loading="lazy"><figcaption>Areia dourada sob o sol</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1400&auto=format&fit=crop" alt="Paisagem 11" loading="lazy"><figcaption>Montes verdes ao amanhecer</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1521747116042-5a810fda9664?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 12" loading="lazy"><figcaption>Pedras na beira do rio</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 13" loading="lazy"><figcaption>Campo de lavanda</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 14" loading="lazy"><figcaption>Montanha coberta de neve</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1503264116251-35a269479413?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 15" loading="lazy"><figcaption>Flor no campo</figcaption></figure>
+    <figure><img src="https://images.unsplash.com/photo-1470246973918-29a93221c455?q=80&w=1200&auto=format&fit=crop" alt="Paisagem 16" loading="lazy"><figcaption>Céu estrelado sobre o lago</figcaption></figure>
+  </section>
+</body>
+</html>
