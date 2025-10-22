@@ -11,7 +11,8 @@
     padding: 0px;
 }
 
-html, body {
+html,
+body {
     font-family: "Be Vietnam Pro", sans-serif;
     max-width: 100%;
     overflow-x: hidden;
@@ -33,8 +34,15 @@ body {
 /* Animações */
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* --- COMEÇA CABEÇALHO---*/
@@ -50,7 +58,7 @@ nav {
 
 div#area-nav {
     display: flex;
-}  
+}
 
 img#logo {
     display: block;
@@ -60,7 +68,7 @@ img#logo {
     margin-right: 40px;
     user-select: none;
     -webkit-user-drag: none;
-    -webkit-tap-highlight-color: transparent; 
+    -webkit-tap-highlight-color: transparent;
 }
 
 ul {
@@ -101,7 +109,8 @@ nav {
     position: absolute;
     background-color: var(--Cor2);
     border-radius: 1.5px;
-    bottom: -10px; /* A barra fica exatamente na linha inferior do header */
+    bottom: -10px;
+    /* A barra fica exatamente na linha inferior do header */
     width: 0;
     left: 0;
     height: 4px;
@@ -110,12 +119,13 @@ nav {
 
 /* --- RESPONSIVIDADE DO CABEÇALHO --- */
 
-@media (max-width: 900px) { /* Responsividade para tblet */
+@media (max-width: 900px) {
+    /* Responsividade para tblet */
 
     img#logo {
         margin-right: 25px;
     }
-    
+
     ul {
         gap: 60px;
     }
@@ -123,11 +133,12 @@ nav {
     a.links-menu {
         font-size: 20px;
     }
-} 
+}
 
-@media (max-width: 480px) { /* Responsividade para celular */
+@media (max-width: 480px) {
+    /* Responsividade para celular */
 
-    nav > div#area-nav {
+    nav>div#area-nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -139,7 +150,7 @@ nav {
         margin-left: 0px;
         margin-right: 0px;
     }
-    
+
     ul {
         display: flex;
         flex: 1;
@@ -173,6 +184,15 @@ main {
     color: white;
 }
 
+/* --- RESPONSIVIDADE--- */
+
+@media (max-width: 480px) {
+
+    footer {
+        font-size: 14px;
+    }
+}
+
 /* --- TERMINA O CORPO DO SITE (Vale para todas as seções) --- */
 
 
@@ -183,11 +203,11 @@ section#inicio {
     margin: 50px 0 0 50px;
 }
 
-section#inicio > div {
+section#inicio>div {
     display: block;
 }
 
-section#inicio > div > p {
+section#inicio>div>p {
     color: #ffffffc7;
     font-size: 19.5px;
     margin-bottom: 30px;
@@ -215,20 +235,23 @@ section#inicio a {
     section#inicio {
         width: 90%;
         max-width: 500px;
-        margin: 50px auto 0 auto; /* 🔹 Centraliza horizontalmente */
-        text-align: center;       /* 🔹 Centraliza o conteúdo */
+        margin: 50px auto 0 auto;
+        /* 🔹 Centraliza horizontalmente */
+        text-align: center;
+        /* 🔹 Centraliza o conteúdo */
     }
 
-    section#inicio > div {
+    section#inicio>div {
         margin: 0 auto;
         padding: 0;
         display: flex;
         flex-direction: column;
-        align-items: center;      /* 🔹 Centraliza horizontalmente o conteúdo */
+        align-items: center;
+        /* 🔹 Centraliza horizontalmente o conteúdo */
         justify-content: center;
     }
 
-    section#inicio > div > p {
+    section#inicio>div>p {
         font-size: 17.5px;
         width: 100%;
         color: #ffffffc7;
@@ -239,7 +262,7 @@ section#inicio a {
         margin: 0;
     }
 
-    section#inicio > div > p a {
+    section#inicio>div>p a {
         display: inline-block;
         margin-top: 15px;
     }
@@ -258,7 +281,7 @@ section#fotos {
     box-sizing: border-box;
 }
 
-section#fotos > h2 {
+section#fotos>h2 {
     text-align: center;
     font-size: 35px;
     margin-bottom: 40px;
@@ -269,14 +292,16 @@ section#fotos > h2 {
 /* 🌿 Galeria Masonry fluida */
 #div-das-fotos {
     column-count: 4;
-    column-gap: 10px; /* espaço horizontal entre colunas */
+    column-gap: 10px;
+    /* espaço horizontal entre colunas */
     direction: ltr;
 }
 
 figure {
     display: inline-block;
     width: 100%;
-    margin: 0 0 15px; /* espaço vertical entre fotos */
+    margin: 0 0 15px;
+    /* espaço vertical entre fotos */
     background-color: #fff;
     text-align: center;
     border-radius: 10px;
@@ -284,7 +309,8 @@ figure {
     padding: 10px;
     box-sizing: border-box;
     position: relative;
-    break-inside: avoid; /* evita quebras de coluna */
+    break-inside: avoid;
+    /* evita quebras de coluna */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     direction: ltr;
 }
@@ -326,15 +352,31 @@ section#frase {
 
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 1200px) {
-    #div-das-fotos { column-count: 3; }
+    #div-das-fotos {
+        column-count: 3;
+    }
 }
+
 @media (max-width: 800px) {
-    #div-das-fotos { column-count: 2; }
-    section#fotos > h2 { font-size: 30px; }
+    #div-das-fotos {
+        column-count: 2;
+    }
+
+    section#fotos>h2 {
+        font-size: 30px;
+    }
 }
+
 @media (max-width: 480px) {
-    #div-das-fotos { column-count: 1; }
-    figure { margin: 0 0 20px; padding: 8px; }
+    #div-das-fotos {
+        column-count: 1;
+    }
+
+    figure {
+        margin: 0 0 20px;
+        padding: 8px;
+    }
+
     figcaption {
         font-size: 15px;
         text-align: center;
