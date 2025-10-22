@@ -318,6 +318,12 @@ figcaption {
     padding: 0 5px;
 }
 
+section#frase {
+    text-align: center;
+    font-size: 22px;
+    margin-top: 50px;
+}
+
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 1200px) {
     #div-das-fotos { column-count: 3; }
@@ -333,6 +339,10 @@ figcaption {
         font-size: 15px;
         text-align: center;
         padding: 0 4px;
+    }
+
+    section#frase {
+        font-size: 17.5px;
     }
 }
 
