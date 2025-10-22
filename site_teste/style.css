@@ -258,10 +258,11 @@ section#fotos {
 }
 
 section#fotos > h2 {
-    display: inline-block;
-    margin-bottom: 40px;
-    color: #ffffff;
-    font-size: 30px;
+        text-align: center;      /* centraliza o título */
+        font-size: 35px;         /* reduz o tamanho do texto no celular */
+        margin-bottom: 40px;     /* espaço entre o título e as fotos */
+        color: white;
+        padding: 0 10px;         /* evita que o texto encoste nas bordas */
 }
 
 #div-das-fotos {
@@ -321,12 +322,21 @@ figcaption {
 }
 
 @media (max-width: 800px) {
+
+    section#fotos > h2 {
+        font-size: 30ppx;
+    }
     #div-das-fotos {
         grid-template-columns: repeat(2, 1fr); /* 🌿 2 colunas em tablets */
     }
 }
 
 @media (max-width: 400px) {
+
+    section#fotos > h2 {
+        font-size: 23px;
+    }
+
     #div-das-fotos {
         grid-template-columns: repeat(2, 1fr); /* 🌿 2 colunas em celular */
         gap: 15px;
