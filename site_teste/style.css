@@ -175,8 +175,8 @@ main {
 /* -- COMEÇA A SEÇÃO INÍCIO -- */
 
 section#inicio {
-    width: 500px;
-    margin: 50px 0px 0px 50px;
+    max-width: 500px;
+    margin: 50px 0 0 50px;
 }
 
 section#inicio > div {
@@ -185,51 +185,63 @@ section#inicio > div {
 
 section#inicio > div > p {
     color: #ffffffc7;
-    width: 97%;
     font-size: 19.5px;
     margin-bottom: 30px;
     text-align: justify;
     line-height: 32px;
 }
 
-section > div > p > span {
+section#inicio span {
     font-style: italic;
     color: white;
 }
 
-section#inicio > p > span {
-    font-style: italic;
-    color: white;
-}
-
-section#inicio > div > p > a {
+section#inicio a {
     color: #ffffffe2;
     background-color: var(--Cor2);
-    padding: 8px;
+    padding: 8px 12px;
     text-decoration: none;
     border-radius: 5px;
     border: 1px solid #ffffff52;
 }
 
-
-
 /* --- RESPONSIVIDADE --- */
+@media (max-width: 480px) {
 
+    section#inicio {
+        width: 90%;
+        max-width: 500px;
+        margin: 50px auto 0 auto; /* 🔹 Centraliza horizontalmente */
+        text-align: center;       /* 🔹 Centraliza o conteúdo */
+    }
 
-@media (max-width: 480px) { /* --- Responsividade para celular --- */
+    section#inicio > div {
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;      /* 🔹 Centraliza horizontalmente o conteúdo */
+        justify-content: center;
+    }
 
     section#inicio > div > p {
         font-size: 17.5px;
-        width: 98%;
+        width: 100%;
+        color: #ffffffc7;
+        padding: 15px;
+        border-radius: 8px;
+        line-height: 28px;
         text-align: center;
-        
+        margin: 0;
     }
 
-    div#capa-inicio > section#inicio {
-        margin: 50px auto 0px auto;
-        padding: 0px 40px 0px 40px;
+    section#inicio > div > p a {
+        display: inline-block;
+        margin-top: 15px;
     }
 }
+
+
 
 
 /* -- TERMINA A SEÇÃO INÍCIO -- */
@@ -246,10 +258,8 @@ section#fotos {
 }
 
 section#fotos > h2 {
-    text-align: center;
-    width: 700px;
-    margin: auto;
-    justify-content: center;
+    display: inline-block;
+    margin-bottom: 40px;
     color: #ffffff;
     font-size: 30px;
 }
@@ -260,6 +270,7 @@ section#fotos > h2 {
     gap: 10px;
     justify-items: center;
     align-items: start;
+    grid-auto-rows: min-content;
     box-sizing: border-box;
 }
 
