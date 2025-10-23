@@ -227,77 +227,98 @@ main {
 
 /* -- COMEÇA A SEÇÃO INÍCIO -- */
 
+/* -- COMEÇA A SEÇÃO INÍCIO -- */
+
+section#area-inicio {
+    width: 100vw;
+    background-color: #e098ff;
+    margin: 0;
+    padding: 0;
+}
+
 section#inicio {
-    max-width: 500px;
-    margin: 50px 0 0 50px;
+    width: 100%;
+    background-color: #2D4A71;
+    margin: 0;
+    padding: 0;
 }
 
-section#inicio>div {
-    display: block;
+/* 🔸 Container principal: divide a tela em 2 lados */
+#area {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+    height: 100%;
 }
 
-section#inicio>div>p {
-    color: #ffffffc7;
-    font-size: 19.5px;
-    margin-bottom: 30px;
-    text-align: justify;
-    line-height: 32px;
+/* 🔹 LADO ESQUERDO (texto) */
+#lado-esquerdo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
 }
 
-section#inicio span {
-    font-style: italic;
-    color: white;
+/* Remove qualquer margem interna que cause separação */
+#boas-vindas,
+#objetivo {
+    flex: 1;
+    padding: 30px;
+    margin: 0;
+    border: none;
 }
 
-section#inicio a {
-    color: #ffffffe2;
-    background-color: var(--Cor2);
-    padding: 8px 12px;
-    text-decoration: none;
-    border-radius: 5px;
-    border: 1px solid #ffffff52;
+/* Cores */
+#boas-vindas {
+    background-color: #56A38A;
+}
+
+#objetivo {
+    background-color: #0F2437;
+}
+
+/* 🔸 LADO DIREITO (slide-show) */
+#area-islides {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    background-color: transparent;
+}
+
+#slide-show {
+    background-color: #ff5a23;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
 }
 
 /* --- RESPONSIVIDADE --- */
-@media (max-width: 480px) {
-
-    section#inicio {
-        width: 90%;
-        max-width: 500px;
-        margin: 50px auto 0 auto;
-        /* 🔹 Centraliza horizontalmente */
-        text-align: center;
-        /* 🔹 Centraliza o conteúdo */
+@media (max-width: 768px) {
+    #area {
+        flex-direction: column;
     }
 
-    section#inicio>div {
-        margin: 0 auto;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* 🔹 Centraliza horizontalmente o conteúdo */
+    #lado-esquerdo, 
+    #area-islides {
+        width: 100%;
+    }
+
+    #area-islides {
         justify-content: center;
     }
 
-    section#inicio>div>p {
-        font-size: 17.5px;
-        width: 100%;
-        color: #ffffffc7;
-        padding: 15px;
-        border-radius: 8px;
-        line-height: 28px;
-        text-align: center;
-        margin: 0;
-    }
-
-    section#inicio>div>p a {
-        display: inline-block;
-        margin-top: 15px;
+    #slide-show {
+        width: 90%;
+        height: 300px;
     }
 }
 
 /* -- TERMINA A SEÇÃO INÍCIO -- */
+
+
+
 
 
 /* --- COMEÇA A SEÇÃO FOTOS --- */
