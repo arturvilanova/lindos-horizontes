@@ -231,14 +231,14 @@ main {
 
 section#area-inicio {
     width: 100vw;
-    background-color: #e098ff;
+    /* background-color: #e098ff; */
     margin: 0;
     padding: 0;
 }
 
 section#inicio {
     width: 100%;
-    background-color: #2D4A71;
+    /* background-color: #2D4A71; */
     margin: 0;
     padding: 0;
 }
@@ -271,11 +271,11 @@ section#inicio {
 
 /* Cores */
 #boas-vindas {
-    background-color: #56A38A;
+    /* background-color: #56A38A; */
 }
 
 #objetivo {
-    background-color: #0F2437;
+    /* background-color: #0F2437; */
 }
 
 /* 🔸 LADO DIREITO (slide-show) */
@@ -288,7 +288,7 @@ section#inicio {
 }
 
 #slide-show {
-    background-color: #ff5a23;
+    background-color: #9bff9257;
     width: 100%;
     height: auto;
     min-height: 400px;
