@@ -271,11 +271,11 @@ section#inicio {
 
 /* Cores */
 #boas-vindas {
-    /* background-color: #56A38A; */
+    background-color: #56A38A;
 }
 
 #objetivo {
-    /* background-color: #0F2437; */
+    background-color: #0F2437;
 }
 
 /* 🔸 LADO DIREITO (slide-show) */
@@ -312,6 +312,13 @@ section#inicio {
     #slide-show {
         width: 90%;
         height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 25px;
+        text-align: center;
     }
 }
 
