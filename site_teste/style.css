@@ -19,7 +19,7 @@ body {
 }
 
 body {
-    height: 1000px;
+    height: 1500px;
 }
 
 /* Cores */
@@ -264,18 +264,30 @@ section#inicio {
 #boas-vindas,
 #objetivo {
     flex: 1;
-    padding: 30px;
+    padding: 60px 30px 30px 30px;
     margin: 0;
     border: none;
 }
 
 /* Cores */
 #boas-vindas {
-    background-color: #56A38A;
+    /* background-color: #56A38A; */
 }
 
 #objetivo {
-    background-color: #0F2437;
+    /* background-color: #0F2437; */
+}
+
+#objetivo a {
+    background-color: var(--Cor2);
+    width: max-content;
+    padding: 12px 23px;
+    font-size: 22px;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    display: block;
+    margin-top: 30px;
 }
 
 /* 🔸 LADO DIREITO (slide-show) */
@@ -288,10 +300,17 @@ section#inicio {
 }
 
 #slide-show {
-    background-color: #9bff9257;
+    /* background-color: #9bff9257; */
     width: 100%;
     height: auto;
     min-height: 400px;
+}
+
+#slide-show >img {
+    width: 100%;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    border-bottom-left-radius: 2px;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -319,6 +338,25 @@ section#inicio {
     h1 {
         font-size: 25px;
         text-align: center;
+    }
+
+    #objetivo a  {
+        margin: 30px auto 0px auto;
+        background-color: var(--Cor2);
+        width: max-content;
+        padding: 5px 10px;
+        font-size: 17px;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        display: block;
+        margin: 30px auto 0px auto;
+    }
+
+    #slide-show > img {
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+        margin: 0px auto 0px auto;
     }
 }
 
@@ -489,5 +527,3 @@ p#direitos {
         font-size: 12px;
     }
 }
-
-
