@@ -250,7 +250,7 @@ section#inicio {
     align-items: stretch;
     width: 100%;
     height: max-content;
-    background-color: #2D4A71;
+    background-color: var(--Cor3);
 }
 
 /* 🔹 LADO ESQUERDO (texto) */
@@ -276,7 +276,7 @@ section#inicio {
 }
 
 #bem-vindo {
-    background-color: #0F2437;
+    background-color: var(--Cor3);
     height: 400px;
 }
 
