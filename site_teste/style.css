@@ -50,6 +50,7 @@ body {
 header {
     background-color: #ffffff;
     padding: 10px 0px 10px 10px;
+    border-bottom: 4px solid rgb(218, 218, 218);
 }
 
 nav {
@@ -110,7 +111,7 @@ nav {
     position: absolute;
     background-color: var(--Cor2);
     border-radius: 1.5px;
-    bottom: -10px;
+    bottom: -14px;
     /* A barra fica exatamente na linha inferior do header */
     width: 0;
     left: 0;
@@ -197,7 +198,7 @@ nav {
     }
 
     .barra-deslizante {
-        bottom: -2px;
+        bottom: -6px;
         left: 0;
         transform: translateY(6px);
     }
@@ -275,9 +276,18 @@ section#inicio {
     /* background-color: #56A38A; */
 }
 
+#lado-esquerdo {
+    background-color: #ffb656;
+    height: max-content;
+}
+
 #bem-vindo {
-    background-color: var(--Cor3);
+    background-color: #ffb656;
     height: 400px;
+}
+
+#bem-vindo > h1 {
+    background-color: #56A38A;
 }
 
 #bem-vindo a {
@@ -310,9 +320,9 @@ section#inicio {
 
 #slide-show >img {
     width: 100%;
-    border-left: 2px solid white;
-    border-bottom: 2px solid white;
-    border-bottom-left-radius: 2px;
+    border-radius: 2px;
+    border: 2px solid white;
+    border-top: none;
 }
 
 /* --- RESPONSIVIDADE --- */
