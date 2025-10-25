@@ -251,7 +251,7 @@ section#inicio {
     align-items: stretch;
     width: 100%;
     height: max-content;
-    background-color: var(--Cor3);
+    /* background-color: var(--Cor3); */
 }
 
 /* 🔹 LADO ESQUERDO (texto) */
@@ -277,17 +277,17 @@ section#inicio {
 }
 
 #lado-esquerdo {
-    background-color: #ffb656;
+    /* background-color: #ffb656; */
     height: max-content;
 }
 
 #bem-vindo {
-    background-color: #ffb656;
+    /* background-color: #ffb656; */
     height: 400px;
 }
 
 #bem-vindo > h1 {
-    background-color: #56A38A;
+    /* background-color: #56A38A; */
 }
 
 #bem-vindo a {
