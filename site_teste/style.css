@@ -337,7 +337,7 @@ section#inicio {
 }
 
 @media (max-width: 480px) {
-    #objetivo h1 {
+    #bem-vindo h1 {
         font-size: 23px;
         text-align: center;
     }
