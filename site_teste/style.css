@@ -249,7 +249,8 @@ section#inicio {
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    height: 100%;
+    height: max-content;
+    background-color: #2D4A71;
 }
 
 /* 🔹 LADO ESQUERDO (texto) */
@@ -262,7 +263,7 @@ section#inicio {
 
 /* Remove qualquer margem interna que cause separação */
 #boas-vindas,
-#objetivo {
+#bem-vindo {
     flex: 1;
     padding: 60px 30px 30px 30px;
     margin: 0;
@@ -274,11 +275,12 @@ section#inicio {
     /* background-color: #56A38A; */
 }
 
-#objetivo {
-    /* background-color: #0F2437; */
+#bem-vindo {
+    background-color: #0F2437;
+    height: 400px;
 }
 
-#objetivo a {
+#bem-vindo a {
     background-color: var(--Cor2);
     width: max-content;
     padding: 12px 23px;
@@ -335,12 +337,12 @@ section#inicio {
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 25px;
+    #objetivo h1 {
+        font-size: 23px;
         text-align: center;
     }
 
-    #objetivo a  {
+    #bem-vindo a  {
         margin: 30px auto 0px auto;
         background-color: var(--Cor2);
         width: max-content;
