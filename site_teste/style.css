@@ -85,7 +85,7 @@ li {
 
 a.links-menu {
     position: relative;
-    color: #000000;
+    color: #444444;
     font-size: 22px;
     font-weight: 400;
     text-decoration: none;
@@ -93,6 +93,11 @@ a.links-menu {
     transition: color 0.3s ease;
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+.links-menu:hover {
+    color: #000000;
+    transition: 0.3s;
 }
 
 a.links-menu.ativo {
@@ -184,10 +189,10 @@ nav {
         list-style: none;
     }
 
-    a.links-menu {
+    .links-menu {
         font-size: 18px;
         font-weight: 400;
-        color: #000;
+        color: #242424;
         text-decoration: none;
     }
 
