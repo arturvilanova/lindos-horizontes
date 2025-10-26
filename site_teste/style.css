@@ -339,8 +339,6 @@ section#inicio {
 
     #lado-esquerdo {
         height: max-content;
-        width: 100vh;
-        background-color: #2D4A71;
     }
 
     #bem-vindo h1 {
