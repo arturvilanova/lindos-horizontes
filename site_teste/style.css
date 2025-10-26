@@ -303,6 +303,12 @@ section#inicio {
     background-color: #ffb656;
 }
 
+#slide-show img {
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 2px;
+}
+
 /* --- RESPONSIVIDADE --- */
 @media (max-width: 768px) {
     #area {
@@ -482,6 +488,14 @@ section#frase {
 }
 
 /* --- TERMINA A SEÇÃO FOTOS --- */
+
+/* --- COMEÇA A SEÇÃO EXPLORAR */
+
+#explorar h2 {
+    text-align: center;
+}
+
+/* --- TERMINA A SEÇÃO EXPLORAR */
 
 
 
