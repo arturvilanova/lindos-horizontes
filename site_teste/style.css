@@ -11,15 +11,14 @@
     padding: 0px;
 }
 
-html,
-body {
+html, body {
     font-family: "Be Vietnam Pro", sans-serif;
     max-width: 100%;
     overflow-x: hidden;
 }
 
 body {
-    height: 1500px;
+    min-height: 100vh;
 }
 
 /* Cores */
@@ -219,8 +218,11 @@ body {
 }
 
 main {
-    flex: 1;
     color: white;
+    background-color: #555;
+    height: max-content;
+    width: 90%;
+    margin: auto;
 }
 
 /* --- TERMINA O CORPO DO SITE (Vale para todas as seções) --- */
@@ -228,18 +230,14 @@ main {
 
 /* -- COMEÇA A SEÇÃO INÍCIO -- */
 
-/* -- COMEÇA A SEÇÃO INÍCIO -- */
-
 section#area-inicio {
-    width: 100vw;
-    /* background-color: #e098ff; */
+    width: 100%;
     margin: 0;
     padding: 0;
 }
 
 section#inicio {
     width: 100%;
-    /* background-color: #2D4A71; */
     margin: 0;
     padding: 0;
 }
@@ -250,8 +248,7 @@ section#inicio {
     justify-content: space-between;
     align-items: stretch;
     width: 100%;
-    height: max-content;
-    /* background-color: var(--Cor3); */
+    height: max-content
 }
 
 /* 🔹 LADO ESQUERDO (texto) */
@@ -262,39 +259,28 @@ section#inicio {
     width: 50%;
 }
 
-/* Remove qualquer margem interna que cause separação */
-#boas-vindas,
-#bem-vindo {
+#lado-esquerdo {
+    height: 420px;
+    background-color: #93f7b1;
+}
+
+#bem-vindo { /* Remove qualquer margem interna que cause separação */
     flex: 1;
     padding: 60px 30px 30px 30px;
+    height: 400px;
     margin: 0;
     border: none;
 }
 
-/* Cores */
-#boas-vindas {
-    /* background-color: #56A38A; */
-}
-
-#lado-esquerdo {
-    /* background-color: #ffb656; */
-    height: max-content;
-}
-
-#bem-vindo {
-    /* background-color: #ffb656; */
-    height: 400px;
-}
-
 #bem-vindo > h1 {
-    /* background-color: #56A38A; */
+    font-size: 35px;
 }
 
 #bem-vindo a {
     background-color: var(--Cor2);
     width: max-content;
-    padding: 12px 23px;
-    font-size: 22px;
+    padding: 10px 20px;
+    font-size: 20px;
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -302,27 +288,19 @@ section#inicio {
     margin-top: 30px;
 }
 
+#bem-vindo a:hover {
+    background-color: #5fb69a;
+}
+
 /* 🔸 LADO DIREITO (slide-show) */
-#area-islides {
+#lado-direito {
     width: 50%;
+    height: 420px;
     display: flex;
     justify-content: flex-end;
     align-items: stretch;
     background-color: transparent;
-}
-
-#slide-show {
-    /* background-color: #9bff9257; */
-    width: 100%;
-    height: auto;
-    min-height: 400px;
-}
-
-#slide-show >img {
-    width: 100%;
-    border-radius: 2px;
-    border: 2px solid white;
-    border-top: none;
+    background-color: #ffb656;
 }
 
 /* --- RESPONSIVIDADE --- */
@@ -332,11 +310,11 @@ section#inicio {
     }
 
     #lado-esquerdo, 
-    #area-islides {
+    #lado-direito {
         width: 100%;
     }
 
-    #area-islides {
+    #lado-direito {
         justify-content: center;
     }
 
@@ -347,6 +325,11 @@ section#inicio {
 }
 
 @media (max-width: 480px) {
+
+    #lado-esquerdo {
+        height: max-content;
+    }
+
     #bem-vindo h1 {
         font-size: 23px;
         text-align: center;
@@ -356,7 +339,7 @@ section#inicio {
         margin: 30px auto 0px auto;
         background-color: var(--Cor2);
         width: max-content;
-        padding: 5px 10px;
+        padding: 8px 13px;
         font-size: 17px;
         color: white;
         text-decoration: none;
@@ -435,6 +418,9 @@ figure img {
     display: block;
     object-fit: cover;
     transition: transform 0.3s ease;
+
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
 }
 
 figure img:hover {
