@@ -363,7 +363,7 @@ section#inicio {
     }
 
     #lado-direito {
-        height: 220px;
+        height: 250px;
     }
 
     #bem-vindo h1 {
@@ -372,7 +372,7 @@ section#inicio {
     }
 
     #bem-vindo a  {
-        /* margin: 30px auto 0px auto; */
+        margin: 30px auto 0px auto;
         background-color: var(--Cor2);
         width: max-content;
         padding: 8px 13px;
