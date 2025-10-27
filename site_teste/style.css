@@ -225,7 +225,7 @@ body {
 
 main {
     color: white;
-    background-color: #555;
+    /* background-color: #555; */
     height: 1800px;
     width: 95%;
     margin: 0 auto;
@@ -253,7 +253,7 @@ section#inicio {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    background-color: #0F2437;
+    /* background-color: #0F2437; */
     /* width: 100vw; */
 }
 
@@ -263,13 +263,8 @@ section#inicio {
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
-    background-color: #2D4A71;
-}
-
-#lado-esquerdo {
     height: 420px;
-    /* background-color: #93f7b1; */
-    /* background-color: #0F2437; */
+    background-color: #0F2437;
 }
 
 #bem-vindo { /* Remove qualquer margem interna que cause separação */
@@ -278,11 +273,16 @@ section#inicio {
     height: 400px;
     margin: 0;
     border: none;
+    background-color: #2D4A71;
+    display: flex;              /* ativa o modelo flex */
+    flex-direction: column;     /* organiza os itens em coluna */
+    justify-content: center;    /* 🔥 centraliza verticalmente dentro da altura disponível */
 }
 
 #bem-vindo > h1 {
     font-size: 35px;
-    /* background-color: #0F2437; */
+    background-color: #3c8827;
+    margin-bottom: 30px;
 }
 
 #bem-vindo a {
@@ -294,7 +294,6 @@ section#inicio {
     text-decoration: none;
     border-radius: 50px;
     display: block;
-    margin-top: 30px;
 }
 
 #bem-vindo a:hover {
@@ -309,7 +308,7 @@ section#inicio {
     display: flex;
     justify-content: center;  /* centraliza horizontalmente */
     align-items: center;      /* centraliza verticalmente */
-    background-color: #56A38A; /* ou a cor verde que quiser */
+    background-color: #56A38A;  /* ou a cor verde que quiser */
     position: relative;
     overflow: hidden; /* evita que a imagem passe das bordas */
 }
@@ -345,6 +344,10 @@ section#inicio {
         height: 70%;
     }
 
+    #bem-vindo h1 {
+        font-size: 30px;
+    }
+
     #lado-direito {
         justify-content: center;
         height: 500px;
@@ -353,6 +356,10 @@ section#inicio {
     #slide-show {
         width: 90%;
         height: 300px;
+    }
+
+    #slide-show img {
+        max-width: 90%;
     }
 }
 
@@ -441,11 +448,6 @@ figure {
     direction: ltr;
 }
 
-figure:hover {
-    transform: scale(1.02);
-    box-shadow: 0 6px 14px #00000033;
-}
-
 figure img {
     width: 100%;
     height: auto;
@@ -454,10 +456,16 @@ figure img {
     display: block;
     object-fit: cover;
     transition: transform 0.3s ease;
-
     opacity: 0;
     animation: fadeIn 0.6s ease forwards;
 }
+
+figure:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 14px #00000033;
+}
+
+
 
 figure img:hover {
     transform: scale(1.03);
