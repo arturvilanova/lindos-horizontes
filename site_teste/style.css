@@ -395,6 +395,7 @@ section#inicio {
         border-right: 2px solid white;
         border-radius: 2px;
         margin: 0px auto 0px auto;
+        width: 95%;
     }
 }
 
