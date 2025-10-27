@@ -253,6 +253,8 @@ section#inicio {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+    background-color: #0F2437;
+    /* width: 100vw; */
 }
 
 /* 🔹 LADO ESQUERDO (texto) */
@@ -266,7 +268,7 @@ section#inicio {
 #lado-esquerdo {
     height: 420px;
     /* background-color: #93f7b1; */
-    background-color: #0F2437;
+    /* background-color: #0F2437; */
 }
 
 #bem-vindo { /* Remove qualquer margem interna que cause separação */
@@ -279,7 +281,7 @@ section#inicio {
 
 #bem-vindo > h1 {
     font-size: 35px;
-    background-color: #0F2437;
+    /* background-color: #0F2437; */
 }
 
 #bem-vindo a {
@@ -307,14 +309,18 @@ section#inicio {
     align-items: center; /* centraliza verticalmente */
     align-items: stretch;
     background-color: transparent;
-    background-color: #ffb656;
+    background-color: #959815;
+    position: relative;
 }
 
 #slide-show img {
-    width: 92.3%;
+    width: 86.5%;
     display: block;
     border: 2px solid white;
     border-radius: 2px;
+    position: absolute;
+    top: 0;
+    left: 30px;
 }
 
 /* --- RESPONSIVIDADE --- */
