@@ -15,6 +15,7 @@ html, body {
     font-family: "Be Vietnam Pro", sans-serif;
     max-width: 100%;
     overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 body {
@@ -225,9 +226,9 @@ body {
 main {
     color: white;
     background-color: #555;
-    height: max-content;
-    width: 90%;
-    margin: auto;
+    height: 1800px;
+    width: 95%;
+    margin: 0 auto;
 }
 
 /* --- TERMINA O CORPO DO SITE (Vale para todas as seções) --- */
@@ -252,8 +253,6 @@ section#inicio {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    width: 100%;
-    height: max-content
 }
 
 /* 🔹 LADO ESQUERDO (texto) */
@@ -266,7 +265,8 @@ section#inicio {
 
 #lado-esquerdo {
     height: 420px;
-    background-color: #93f7b1;
+    /* background-color: #93f7b1; */
+    background-color: #0F2437;
 }
 
 #bem-vindo { /* Remove qualquer margem interna que cause separação */
@@ -279,6 +279,7 @@ section#inicio {
 
 #bem-vindo > h1 {
     font-size: 35px;
+    background-color: #0F2437;
 }
 
 #bem-vindo a {
@@ -302,14 +303,16 @@ section#inicio {
     width: 50%;
     height: 420px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center; /* centraliza a imagem*/
+    align-items: center; /* centraliza verticalmente */
     align-items: stretch;
     background-color: transparent;
     background-color: #ffb656;
 }
 
 #slide-show img {
-    width: 100%;
+    width: 92.3%;
+    display: block;
     border: 2px solid white;
     border-radius: 2px;
 }
@@ -347,7 +350,7 @@ section#inicio {
     }
 
     #bem-vindo a  {
-        margin: 30px auto 0px auto;
+        /* margin: 30px auto 0px auto; */
         background-color: var(--Cor2);
         width: max-content;
         padding: 8px 13px;
