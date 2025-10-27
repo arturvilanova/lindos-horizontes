@@ -263,6 +263,7 @@ section#inicio {
     flex-direction: column;
     justify-content: space-between;
     width: 50%;
+    background-color: #2D4A71;
 }
 
 #lado-esquerdo {
@@ -301,6 +302,7 @@ section#inicio {
 }
 
 /* 🔸 LADO DIREITO (slide-show) */
+
 #lado-direito {
     width: 50%;
     height: 420px;
@@ -330,18 +332,22 @@ section#inicio {
 }
 
 /* --- RESPONSIVIDADE --- */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     #area {
         flex-direction: column;
     }
 
-    #lado-esquerdo, 
-    #lado-direito {
+    #lado-esquerdo, #lado-direito {
         width: 100%;
+    }
+
+    #lado-esquerdo {
+        height: 70%;
     }
 
     #lado-direito {
         justify-content: center;
+        height: 500px;
     }
 
     #slide-show {
@@ -354,6 +360,10 @@ section#inicio {
 
     #lado-esquerdo {
         height: max-content;
+    }
+
+    #lado-direito {
+        height: 300px;
     }
 
     #bem-vindo h1 {
