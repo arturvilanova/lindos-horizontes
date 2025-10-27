@@ -305,22 +305,28 @@ section#inicio {
     width: 50%;
     height: 420px;
     display: flex;
-    justify-content: center; /* centraliza a imagem*/
-    align-items: center; /* centraliza verticalmente */
-    align-items: stretch;
-    background-color: transparent;
-    background-color: #959815;
+    justify-content: center;  /* centraliza horizontalmente */
+    align-items: center;      /* centraliza verticalmente */
+    background-color: #56A38A; /* ou a cor verde que quiser */
     position: relative;
+    overflow: hidden; /* evita que a imagem passe das bordas */
+}
+
+#slide-show {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #slide-show img {
-    width: 86.5%;
-    display: block;
+    max-width: 90%;
+    height: auto;
     border: 2px solid white;
-    border-radius: 2px;
-    position: absolute;
-    top: 0;
-    left: 30px;
+    border-radius: 8px;
+    display: block;
+    position: relative;
+    object-fit: contain; /* mantém proporção */
 }
 
 /* --- RESPONSIVIDADE --- */
