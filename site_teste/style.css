@@ -221,6 +221,7 @@ section#area-inicio, section#inicio {
     text-decoration: none;
     border-radius: 50px;
     display: block;
+    border: 0.5px solid rgba(255, 255, 255, 0.355);
     
 }
 
