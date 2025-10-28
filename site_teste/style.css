@@ -196,7 +196,6 @@ section#area-inicio, section#inicio {
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
-    border-radius: 5px;
 }
 
 #bem-vindo {
@@ -236,7 +235,6 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    border-radius: 5px;
 }
 
 #slide-show {
