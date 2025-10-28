@@ -197,7 +197,7 @@ section#area-inicio, section#inicio {
     justify-content: space-between;
     height: max-content;
     border-radius: 5px;
-    /* background-color: #56A38A; */
+    background-color: #56A38A;
 }
 
 #bem-vindo {
@@ -237,7 +237,7 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    /* background-color: #2D4A71; */
+    background-color: #2D4A71;
     border-radius: 5px;
 }
 
@@ -312,13 +312,28 @@ section#area-inicio, section#inicio {
         height: auto; /* 🔹 MESMA COISA PARA COLAR NA VERDE */
     }
 
-    #bem-vindo h1 {
-        font-size: 32px;
-    }
-
     #slide-show {
         width: 90%;
         height: auto;
+    }
+
+    #bem-vindo h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    #bem-vindo a {
+        margin: 0px auto 0 auto;
+        padding: 8px 13px;
+        font-size: 17px;
+    }
+
+    #slide-show>img {
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        border-radius: 2px;
+        margin: 0 auto;
+        width: 95%;
     }
 }
 
