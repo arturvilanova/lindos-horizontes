@@ -197,6 +197,7 @@ section#area-inicio, section#inicio {
     justify-content: space-between;
     height: max-content;
     border-radius: 5px;
+    background-color: #56A38A;
 }
 
 #bem-vindo {
@@ -292,35 +293,32 @@ section#area-inicio, section#inicio {
 }
 
 @media(max-width:480px) {
+
+    #area {
+        flex-direction: column;
+    }
+
+    #lado-esquerdo,
+    #lado-direito {
+        width: 100%;
+        margin-top: 0; /* 🔹 REMOVE ESPAÇO ENTRE AS DUAS CAIXAS */
+    }
+
     #lado-esquerdo {
-        height: max-content;
+        height: auto; /* 🔹 AJUSTA ALTURA PARA SE ADAPTAR AO CONTEÚDO */
     }
 
     #lado-direito {
-        height: 300px;
-    }
-
-    #bem-vindo {
-        padding: 10px 10px 5px 10px;
+        height: auto; /* 🔹 MESMA COISA PARA COLAR NA VERDE */
     }
 
     #bem-vindo h1 {
-        text-align: center;
-        font-size: 30px;
+        font-size: 32px;
     }
 
-    #bem-vindo a {
-        margin: 0px auto 0 auto;
-        padding: 8px 13px;
-        font-size: 17px;
-    }
-
-    #slide-show>img {
-        border-top: 2px solid #fff;
-        border-right: 2px solid #fff;
-        border-radius: 2px;
-        margin: 0 auto;
-        width: 95%;
+    #slide-show {
+        width: 90%;
+        height: auto;
     }
 }
 
