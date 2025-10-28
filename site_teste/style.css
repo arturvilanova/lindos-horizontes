@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed; */
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat fixed;
     height: 100svh;
     min-height: 100dvh;
 }
@@ -50,7 +50,7 @@ body {
 header {
     background: #ededed;
     padding: 10px 0 10px 10px;
-    border-bottom: 4px solid #dadada;
+    border-bottom: 4px solid #f0f0f0;
 }
 
 nav {
@@ -207,7 +207,7 @@ section#area-inicio, section#inicio {
 #bem-vindo > h1 {
     font-size: 35px;
     margin-bottom: 30px;
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
 }
 
 #bem-vindo a {
@@ -432,6 +432,7 @@ section#frase {
 #explorar h2 {
     text-align: center;
     margin-top: 15%;
+    color: white;
 }
 
 /* --- SEÇÕES ATIVAS --- */
@@ -450,7 +451,7 @@ footer {
     color: var(--White);
     width: 100%;
     height: max-content;
-    margin-top: 70px;
+    margin-top: auto; /* cola o rodapé no final */
     padding: 15px 0;
 }
 
