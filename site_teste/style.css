@@ -51,6 +51,9 @@ header {
     background: #ededed;
     padding: 10px 0 10px 10px;
     border-bottom: 4px solid #f0f0f0;
+    position: sticky;
+    top: 0;
+    z-index: 3;
 }
 
 nav {
