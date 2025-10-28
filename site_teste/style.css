@@ -69,6 +69,7 @@ img#logo {
     display: block;
     height: 40px;
     border-radius: 50%;
+    border: 1px solid rgb(255, 255, 255);
     box-shadow: 3px 1px 10px #00000042;
     margin-right: 40px;
     user-select: none;
