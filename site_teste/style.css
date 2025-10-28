@@ -48,10 +48,9 @@ body {
 
 /* --- CABEÇALHO --- */
 header {
-    background: #fff;
+    background: #ededed;
     padding: 10px 0 10px 10px;
     border-bottom: 4px solid #dadada;
-    background-color: var(--Cor1);
 }
 
 nav {
@@ -247,11 +246,16 @@ section#area-inicio, section#inicio {
 #slide-show img {
     max-width: 90%;
     height: auto;
+    margin: auto;
     border: 2px solid #fff;
     border-radius: 8px;
     display: block;
     object-fit: contain;
     position: relative;
+}
+
+#slide-show > figure {
+    background-color: var(--Cor3);
 }
 
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
