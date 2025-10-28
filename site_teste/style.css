@@ -197,7 +197,7 @@ section#area-inicio, section#inicio {
     justify-content: space-between;
     height: max-content;
     border-radius: 5px;
-    background-color: #56A38A;
+    /* background-color: #56A38A; */
 }
 
 #bem-vindo {
@@ -237,7 +237,7 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-color: #2D4A71;
+    /* background-color: #2D4A71; */
     border-radius: 5px;
 }
 
