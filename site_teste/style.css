@@ -195,7 +195,6 @@ section#area-inicio, section#inicio {
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
-    background-color: #ffb656;
     border-radius: 5px;
 }
 
@@ -235,7 +234,7 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    /* background-color: #2D4A71; */
+    background-color: #2D4A71;
     border-radius: 5px;
 }
 
