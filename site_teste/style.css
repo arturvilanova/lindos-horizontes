@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
     height: 100svh;
     min-height: 100dvh;
 }
@@ -204,7 +204,6 @@ section#area-inicio, section#inicio {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) left/cover no-repeat scroll;
 }
 
 #bem-vindo > h1 {
