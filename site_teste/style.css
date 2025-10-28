@@ -300,6 +300,10 @@ section#area-inicio, section#inicio {
         margin-top: 0; /* 🔹 REMOVE ESPAÇO ENTRE AS DUAS CAIXAS */
     }
 
+    #bem-vindo {
+    padding: 60px 10px;
+    }
+
     #lado-esquerdo {
         height: auto; /* 🔹 AJUSTA ALTURA PARA SE ADAPTAR AO CONTEÚDO */
     }
