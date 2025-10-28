@@ -1,29 +1,31 @@
 @charset "UTF-8";
 
 /* Fontes */
-
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Reset */
-
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
     font-family: "Be Vietnam Pro", sans-serif;
     max-width: 100%;
     overflow-x: hidden;
-    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed; */
+    height: 100svh;
+    min-height: 100dvh;
 }
 
 /* Cores */
-
 :root {
     --Cor1: #ffb656;
     --Cor2: #56A38A;
@@ -32,7 +34,6 @@ body {
 }
 
 /* Animações */
-
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -45,16 +46,17 @@ body {
     }
 }
 
-/* --- COMEÇA CABEÇALHO---*/
-
+/* --- CABEÇALHO --- */
 header {
-    background-color: #ffffff;
-    padding: 10px 0px 10px 10px;
-    border-bottom: 4px solid rgb(218, 218, 218);
+    background: #fff;
+    padding: 10px 0 10px 10px;
+    border-bottom: 4px solid #dadada;
+    background-color: var(--Cor1);
 }
 
 nav {
     display: flex;
+    position: relative;
 }
 
 div#area-nav {
@@ -77,7 +79,7 @@ ul {
     width: max-content;
     align-items: center;
     gap: 80px;
-    position: relative; /* <-- contêiner de referência para a barra */
+    position: relative;
 }
 
 li {
@@ -86,19 +88,16 @@ li {
 
 a.links-menu {
     position: relative;
-    color: #444444;
+    color: #444;
     font-size: 22px;
     font-weight: 400;
     text-decoration: none;
     user-select: none;
-    transition: color 0.3s ease;
-    -webkit-user-drag: none;
-    -webkit-tap-highlight-color: transparent;
+    transition: color 0.3s;
 }
 
 .links-menu:hover {
-    color: #000000;
-    transition: 0.3s;
+    color: #000;
 }
 
 a.links-menu.ativo {
@@ -106,29 +105,19 @@ a.links-menu.ativo {
     font-weight: 500;
 }
 
-/* Barra deslizante do menu */
-
-nav {
-    position: relative;
-}
-
 .barra-deslizante {
     position: absolute;
-    background-color: var(--Cor2);
+    background: var(--Cor2);
     border-radius: 1.5px;
     bottom: -14px;
-    /* A barra fica exatamente na linha inferior do header */
     width: 0;
     left: 0;
     height: 4px;
-    transition: left 0.3s ease, width 0.3s ease;
+    transition: left 0.3s, width 0.3s;
 }
 
-/* --- RESPONSIVIDADE DO CABEÇALHO --- */
-
-@media (max-width: 900px) {
-    /* Responsividade para tblet */
-
+/* RESPONSIVIDADE CABEÇALHO */
+@media(max-width:900px) {
     img#logo {
         margin-right: 25px;
     }
@@ -142,25 +131,15 @@ nav {
     }
 }
 
-@media (max-width: 480px) {
-    /* Responsividade para celular */
-
+@media(max-width:480px) {
     header {
-    padding: 10px 0px 8px 10px;
-    }
-    
-    nav {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Centraliza tudo dentro do nav */
-        justify-content: center;
+        padding: 10px 0 8px 10px;
     }
 
+    nav,
     #area-nav {
-        display: flex;
         flex-direction: column;
-        align-items: center; /* Centraliza o logo e o menu */
+        align-items: center;
         justify-content: center;
         width: 100%;
         padding: 10px 0;
@@ -169,148 +148,93 @@ nav {
 
     img#logo {
         height: 38px;
-        margin: 0 auto; /* Garante centralização */
-        display: block;
-        border-radius: 50%;
+        margin: 0 auto;
     }
 
     ul {
-        display: flex;
-        justify-content: center; /* Centraliza os links */
-        align-items: center;
+        justify-content: center;
         flex-wrap: wrap;
-        gap: 40px; /* Espaço entre links */
-        padding: 0;
-        margin: 0 auto; /* Centraliza horizontalmente */
-        margin-top: 15px;
+        gap: 40px;
         width: 100%;
-    }
-
-    li {
-        list-style: none;
+        margin: 15px auto 0 auto;
     }
 
     .links-menu {
         font-size: 18px;
-        font-weight: 400;
         color: #242424;
-        text-decoration: none;
-    }
-
-    a.links-menu.ativo {
-        color: var(--Cor2);
-        font-weight: 500;
     }
 
     .barra-deslizante {
         bottom: -6px;
-        left: 0;
         transform: translateY(6px);
     }
 }
 
-/* --- TERMINA O CABEÇALHO --- */
-
-
-/* --- COMEÇA O CORPO DO SITE (Vale para todas as seções) --- */
-
-body {
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) center/cover no-repeat fixed;
-    font-family: "Be Vietnam Pro", sans-serif;
-    height: 100svh;
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-}
-
-main {
-    color: white;
-    /* background-color: #555; */
-    height: 1800px;
-    width: 95%;
-    margin: 0 auto;
-}
-
-/* --- TERMINA O CORPO DO SITE (Vale para todas as seções) --- */
-
-
-/* -- COMEÇA A SEÇÃO INÍCIO -- */
-
-section#area-inicio {
+/* --- SEÇÃO INÍCIO --- */
+section#area-inicio, section#inicio {
     width: 100%;
     margin: 0;
     padding: 0;
 }
 
-section#inicio {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-/* 🔸 Container principal: divide a tela em 2 lados */
 #area {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-    /* background-color: #0F2437; */
-    /* width: 100vw; */
 }
 
-/* 🔹 LADO ESQUERDO (texto) */
-#lado-esquerdo {
+#lado-esquerdo, #lado-direito {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    height: 420px;
     margin-top: 40px;
-    /* background-color: #2D4A71; */
 }
 
-#bem-vindo { /* Remove qualquer margem interna que cause separação */
+#lado-esquerdo {
+    justify-content: space-between;
+    height: max-content;
+    /* background-color: #ffb656; */
+    border-radius: 5px;
+}
+
+#bem-vindo {
     flex: 1;
-    padding: 60px 30px 30px 30px;
-    height: 400px;
-    margin: 0;
-    border: none;
-    display: flex;              /* ativa o modelo flex */
-    flex-direction: column;     /* organiza os itens em coluna */
-    justify-content: center;    /* 🔥 centraliza verticalmente dentro da altura disponível */
+    padding: 60px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #bem-vindo > h1 {
     font-size: 35px;
     margin-bottom: 30px;
+    color: rgb(0, 0, 0);
 }
 
 #bem-vindo a {
-    background-color: var(--Cor2);
+    background: var(--Cor2);
     width: max-content;
     padding: 10px 20px;
     font-size: 20px;
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 50px;
     display: block;
+    
 }
 
 #bem-vindo a:hover {
-    background-color: #5fb69a;
+    background: #5fb69a;
 }
 
-/* 🔸 LADO DIREITO (slide-show) */
-
 #lado-direito {
-    width: 50%;
-    height: 420px;
-    display: flex;
-    justify-content: center;  /* centraliza horizontalmente */
-    align-items: center;      /* centraliza verticalmente */
-    /*background-color: #56A38A;   ou a cor verde que quiser */
+    height: max-content;
+    justify-content: center;
+    align-items: center;
     position: relative;
-    overflow: hidden; /* evita que a imagem passe das bordas */
-    margin-top: 40px;
+    overflow: hidden;
+    /* background-color: #2D4A71; */
+    border-radius: 5px;
 }
 
 #slide-show {
@@ -323,20 +247,21 @@ section#inicio {
 #slide-show img {
     max-width: 90%;
     height: auto;
-    border: 2px solid white;
+    border: 2px solid #fff;
     border-radius: 8px;
     display: block;
+    object-fit: contain;
     position: relative;
-    object-fit: contain; /* mantém proporção */
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 800px) {
+/* RESPONSIVIDADE SEÇÃO INÍCIO */
+@media(max-width:800px) {
     #area {
         flex-direction: column;
     }
 
-    #lado-esquerdo, #lado-direito {
+    #lado-esquerdo,
+    #lado-direito {
         width: 100%;
     }
 
@@ -349,7 +274,6 @@ section#inicio {
     }
 
     #lado-direito {
-        justify-content: center;
         height: 500px;
     }
 
@@ -357,14 +281,9 @@ section#inicio {
         width: 90%;
         height: 300px;
     }
-
-    #slide-show img {
-        max-width: 90%;
-    }
 }
 
-@media (max-width: 480px) {
-
+@media(max-width:480px) {
     #lado-esquerdo {
         height: max-content;
     }
@@ -374,39 +293,26 @@ section#inicio {
     }
 
     #bem-vindo h1 {
-        font-size: 33px;
         text-align: center;
+        font-size: 23px;
     }
 
-    #bem-vindo a  {
-        margin: 30px auto 0px auto;
-        background-color: var(--Cor2);
-        width: max-content;
+    #bem-vindo a {
+        margin: 30px auto 0 auto;
         padding: 8px 13px;
         font-size: 17px;
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        display: block;
     }
 
-    #slide-show > img {
-        border-top: 2px solid white;
-        border-right: 2px solid white;
+    #slide-show>img {
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
         border-radius: 2px;
-        margin: 0px auto 0px auto;
+        margin: 0 auto;
         width: 95%;
     }
 }
 
-/* -- TERMINA A SEÇÃO INÍCIO -- */
-
-
-
-
-
-/* --- COMEÇA A SEÇÃO FOTOS --- */
-
+/* --- SEÇÃO FOTOS --- */
 section#fotos {
     width: 100%;
     max-width: 1400px;
@@ -419,15 +325,13 @@ section#fotos>h2 {
     text-align: center;
     font-size: 35px;
     margin-bottom: 40px;
-    color: white;
+    color: #fff;
     padding: 0 10px;
 }
 
-/* 🌿 Galeria Masonry fluida */
 #div-das-fotos {
     column-count: 4;
     column-gap: 10px;
-    /* espaço horizontal entre colunas */
     direction: ltr;
 }
 
@@ -435,17 +339,14 @@ figure {
     display: inline-block;
     width: 100%;
     margin: 0 0 15px;
-    /* espaço vertical entre fotos */
-    background-color: #fff;
+    background: #fff;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px #0000001a;
     padding: 10px;
-    box-sizing: border-box;
     position: relative;
     break-inside: avoid;
-    /* evita quebras de coluna */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
     direction: ltr;
 }
 
@@ -456,9 +357,9 @@ figure img {
     cursor: pointer;
     display: block;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
     opacity: 0;
-    animation: fadeIn 0.6s ease forwards;
+    animation: fadeIn 0.6s forwards;
 }
 
 figure:hover {
@@ -466,13 +367,10 @@ figure:hover {
     box-shadow: 0 6px 14px #00000033;
 }
 
-
-
 figure img:hover {
     transform: scale(1.03);
 }
 
-/* 🌼 Legenda abaixo da imagem, dentro da área branca */
 figcaption {
     color: #555;
     font-size: 16px;
@@ -488,14 +386,14 @@ section#frase {
     margin-top: 50px;
 }
 
-/* --- RESPONSIVIDADE --- */
-@media (max-width: 1200px) {
+/* RESPONSIVIDADE SEÇÃO FOTOS */
+@media(max-width:1200px) {
     #div-das-fotos {
         column-count: 3;
     }
 }
 
-@media (max-width: 800px) {
+@media(max-width:800px) {
     #div-das-fotos {
         column-count: 2;
     }
@@ -505,7 +403,7 @@ section#frase {
     }
 }
 
-@media (max-width: 480px) {
+@media(max-width:480px) {
     #div-das-fotos {
         column-count: 1;
     }
@@ -526,55 +424,40 @@ section#frase {
     }
 }
 
-/* --- TERMINA A SEÇÃO FOTOS --- */
-
-/* --- COMEÇA A SEÇÃO EXPLORAR */
-
+/* --- SEÇÃO EXPLORAR --- */
 #explorar h2 {
     text-align: center;
     margin-top: 15%;
 }
 
-/* --- TERMINA A SEÇÃO EXPLORAR */
-
-
-
-/* Funções para mudança de seções */
+/* --- SEÇÕES ATIVAS --- */
+section.secao {
+    display: none;
+    animation: fadeIn 0.6s forwards;
+}
 
 section.secao.ativa {
     display: block;
 }
 
-section.secao {
-    display: none;
-    animation: fadeIn 0.6s ease forwards;
-}
-
-/* Termina funções para mudança de seções */
-
-
-/* --- COMEÇA RODAPÉ --- (Vale para todas as seções*/
-
+/* --- RODAPÉ --- */
 footer {
-    background-color: var(--Cor4);
+    background: var(--Cor4);
     color: var(--White);
     width: 100%;
     height: max-content;
     margin-top: 70px;
-    padding: 15px 0px 15px;
+    padding: 15px 0;
 }
 
 p#direitos {
     color: #a8a8a8bd;
     text-align: center;
     font-size: 14.5px;
-    padding: 0px 20px 0px 20px;
+    padding: 0 20px;
 }
 
-/* --- RESPONSIVIDADE--- */
-
-@media (max-width: 480px) {
-
+@media(max-width:480px) {
     footer {
         font-size: 12px;
     }
