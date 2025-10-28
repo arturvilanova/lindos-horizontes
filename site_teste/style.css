@@ -195,7 +195,7 @@ section#area-inicio, section#inicio {
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
-    /* background-color: #ffb656; */
+    background-color: #ffb656;
     border-radius: 5px;
 }
 
@@ -299,13 +299,17 @@ section#area-inicio, section#inicio {
         height: 300px;
     }
 
+    #bem-vindo {
+        padding: 10px 10px 5px 10px;
+    }
+
     #bem-vindo h1 {
         text-align: center;
         font-size: 30px;
     }
 
     #bem-vindo a {
-        margin: 30px auto 0 auto;
+        margin: 0px auto 0 auto;
         padding: 8px 13px;
         font-size: 17px;
     }
