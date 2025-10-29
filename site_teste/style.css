@@ -265,10 +265,6 @@ section#area-inicio, section#inicio {
     position: relative;
 }
 
-#slide-show > figure {
-    background-color: var(--Cor3);
-}
-
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
 @media(max-width:800px) {
     #area {
@@ -325,6 +321,10 @@ section#area-inicio, section#inicio {
     #slide-show {
         width: 90%;
         height: auto;
+    }
+
+    #slide-show figure {
+        background-color: white;
     }
 
     #bem-vindo h1 {
