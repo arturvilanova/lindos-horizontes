@@ -173,6 +173,11 @@ a.links-menu.ativo {
     }
 }
 
+main {
+    height: 1500px;
+    
+}
+
 /* --- SEÇÃO INÍCIO --- */
 section#area-inicio, section#inicio {
     width: 100%;
@@ -184,6 +189,11 @@ section#area-inicio, section#inicio {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
+}
+
+#area:hover {
+    background-color: rgba(255, 255, 255, 0.244);
+    transition: 1s;
 }
 
 #lado-esquerdo, #lado-direito {
@@ -208,7 +218,7 @@ section#area-inicio, section#inicio {
 
 #bem-vindo > h1 {
     font-size: 35px;
-    margin-bottom: 30px;
+    margin-bottom: 30px; 
     color: rgb(255, 255, 255);
 }
 
@@ -313,8 +323,16 @@ section#area-inicio, section#inicio {
     }
 
     #slide-show {
-        width: 90%;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff; /* 🔹 mantém borda nas partes superior e inferior */
+        border-right: none; /* 🔹 remove bordas laterais */
+        border-left: none;
+        border-radius: 2px;
+        margin: 0; /* 🔹 remove margens laterais */
+        width: 100vw; /* 🔹 ocupa toda a largura da tela */
+        max-width: 100%; /* 🔹 impede que ultrapasse a tela */
         height: auto;
+        display: block;
     }
 
     #bem-vindo h1 {
@@ -328,12 +346,12 @@ section#area-inicio, section#inicio {
         font-size: 17px;
     }
 
-    #slide-show>img {
+    #slide-show > img {
         border-top: 2px solid #fff;
         border-right: 2px solid #fff;
         border-radius: 2px;
         margin: 0 auto;
-        width: 95%;
+        width: 100%;
     }
 }
 
