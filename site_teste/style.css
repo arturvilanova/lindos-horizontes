@@ -339,10 +339,7 @@ section#area-inicio, section#inicio {
     }
 
     #slide-show > img {
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff; /* 🔹 mantém borda nas partes superior e inferior */
-        border-right: none; /* 🔹 remove bordas laterais */
-        border-left: none;
+        border: 2px solid #fff;
         border-radius: 2px;
         margin: 0; /* 🔹 remove margens laterais */
         width: 100vw; /* 🔹 ocupa toda a largura da tela */
