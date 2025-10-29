@@ -189,18 +189,14 @@ section#area-inicio, section#inicio {
     display: flex;
     justify-content: space-between;
     align-items: stretch;
-}
-
-#area:hover {
-    background-color: rgba(255, 255, 255, 0.244);
-    transition: 1s;
+    background-color: #ffffff;
+    margin-bottom: 50px;
 }
 
 #lado-esquerdo, #lado-direito {
     width: 50%;
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
 }
 
 #lado-esquerdo {
@@ -219,7 +215,7 @@ section#area-inicio, section#inicio {
 #bem-vindo > h1 {
     font-size: 35px;
     margin-bottom: 30px; 
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 #bem-vindo a {
@@ -240,11 +236,11 @@ section#area-inicio, section#inicio {
 }
 
 #lado-direito {
-    height: max-content;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    background-color: var(--Cor1);
 }
 
 #slide-show {
@@ -257,7 +253,7 @@ section#area-inicio, section#inicio {
 #slide-show img {
     max-width: 90%;
     height: auto;
-    margin: auto;
+    margin: 30px auto 30px auto;
     border: 2px solid #fff;
     border-radius: 8px;
     display: block;
@@ -315,16 +311,12 @@ section#area-inicio, section#inicio {
     }
 
     #lado-direito {
-        height: auto; /* 🔹 MESMA COISA PARA COLAR NA VERDE */
+        height: (calc(max-content + 10px)); /* 🔹 MESMA COISA PARA COLAR NA VERDE */
     }
 
     #slide-show {
         width: 90%;
         height: auto;
-    }
-
-    #slide-show figure {
-        background-color: white;
     }
 
     #bem-vindo h1 {
@@ -339,8 +331,8 @@ section#area-inicio, section#inicio {
     }
 
     #slide-show > img {
-        border: 2px solid #fff;
         border-radius: 2px;
+        margin: 30px auto 30px auto;
         margin: 0; /* 🔹 remove margens laterais */
         width: 100vw; /* 🔹 ocupa toda a largura da tela */
         max-width: 100%; /* 🔹 impede que ultrapasse a tela */
