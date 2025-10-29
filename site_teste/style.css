@@ -323,16 +323,8 @@ section#area-inicio, section#inicio {
     }
 
     #slide-show {
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff; /* 🔹 mantém borda nas partes superior e inferior */
-        border-right: none; /* 🔹 remove bordas laterais */
-        border-left: none;
-        border-radius: 2px;
-        margin: 0; /* 🔹 remove margens laterais */
-        width: 100vw; /* 🔹 ocupa toda a largura da tela */
-        max-width: 100%; /* 🔹 impede que ultrapasse a tela */
+        width: 90%;
         height: auto;
-        display: block;
     }
 
     #bem-vindo h1 {
@@ -348,10 +340,15 @@ section#area-inicio, section#inicio {
 
     #slide-show > img {
         border-top: 2px solid #fff;
-        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff; /* 🔹 mantém borda nas partes superior e inferior */
+        border-right: none; /* 🔹 remove bordas laterais */
+        border-left: none;
         border-radius: 2px;
-        margin: 0 auto;
-        width: 100%;
+        margin: 0; /* 🔹 remove margens laterais */
+        width: 100vw; /* 🔹 ocupa toda a largura da tela */
+        max-width: 100%; /* 🔹 impede que ultrapasse a tela */
+        height: auto;
+        display: block;
     }
 }
 
