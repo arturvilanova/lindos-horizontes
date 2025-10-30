@@ -346,6 +346,7 @@ section#area-inicio, section#inicio {
         height: auto;
         display: block;
         border: 2px solid #ffffff;
+        border-radius: 4px solid white;
     }
 }
 
