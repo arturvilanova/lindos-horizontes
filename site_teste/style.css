@@ -202,6 +202,8 @@ section#area-inicio, section#inicio {
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
+    background-color: #5fb69b11;
+    height: 500px;
 }
 
 #bem-vindo {
@@ -240,7 +242,7 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-color: var(--Cor1);
+    background-color: #B8BB16;
 }
 
 #slide-show {
@@ -299,45 +301,49 @@ section#area-inicio, section#inicio {
     #lado-esquerdo,
     #lado-direito {
         width: 100%;
-        margin-top: 0; /* 🔹 REMOVE ESPAÇO ENTRE AS DUAS CAIXAS */
-    }
-
-    #bem-vindo {
-    padding: 60px 10px;
+        margin-top: 0; /* 🔹 cola as duas caixas verticalmente */
     }
 
     #lado-esquerdo {
-        height: auto; /* 🔹 AJUSTA ALTURA PARA SE ADAPTAR AO CONTEÚDO */
-    }
-
-    #lado-direito {
-        height: (calc(max-content + 10px)); /* 🔹 MESMA COISA PARA COLAR NA VERDE */
-    }
-
-    #slide-show {
-        width: 90%;
         height: auto;
+        margin: 0 10px; /* 🔹 dá um pequeno respiro lateral */
+        border-radius: 6px; /* 🔹 opcional: cantos levemente arredondados */
+    }
+
+    #bem-vindo {
+        padding: 50px 10px; /* 🔹 mantém espaçamento interno equilibrado */
     }
 
     #bem-vindo h1 {
         text-align: center;
         font-size: 30px;
+        color: #000000; /* 🔹 texto branco */
     }
 
     #bem-vindo a {
-        margin: 0px auto 0 auto;
+        margin: 15px auto 0 auto;
         padding: 8px 13px;
         font-size: 17px;
+        color: #fff;
+    }
+
+    #lado-direito {
+        height: auto; /* 🔹 ajusta ao conteúdo */
+    }
+
+    #slide-show {
+        width: 100%;
+        height: auto;
     }
 
     #slide-show > img {
-        border-radius: 2px;
-        margin: 10px auto 10px auto;
-        margin: 0; /* 🔹 remove margens laterais */
-        width: 100vw; /* 🔹 ocupa toda a largura da tela */
-        max-width: 100%; /* 🔹 impede que ultrapasse a tela */
+        width: calc(100% - 20px); /* 🔹 ocupa quase toda a largura da caixa, mas com margem */
+        margin: 20px auto;        /* 🔹 margem superior/inferior 10px, centralizada horizontalmente */
         height: auto;
         display: block;
+        border-top: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+        border-radius: 2px;
     }
 }
 
