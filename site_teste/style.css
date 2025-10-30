@@ -332,7 +332,7 @@ section#area-inicio, section#inicio {
 
     #slide-show > img {
         border-radius: 2px;
-        margin: 30px auto 30px auto;
+        margin: 10px auto 10px auto;
         margin: 0; /* 🔹 remove margens laterais */
         width: 100vw; /* 🔹 ocupa toda a largura da tela */
         max-width: 100%; /* 🔹 impede que ultrapasse a tela */
