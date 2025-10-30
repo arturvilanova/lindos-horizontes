@@ -85,6 +85,7 @@ ul {
     position: relative;
 }
 
+
 li {
     list-style: none;
 }
@@ -188,9 +189,10 @@ section#area-inicio, section#inicio {
 #area {
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
-    background-color: #ffffff;
+    align-items: flex-start;
     margin-bottom: 50px;
+    height: auto;
+    background-color: white;
 }
 
 #lado-esquerdo, #lado-direito {
@@ -202,14 +204,15 @@ section#area-inicio, section#inicio {
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
-    background-color: #5fb69b11;
+    background-color: #56a38b33;
     height: 500px;
 }
 
 #bem-vindo {
-    flex: 1;
+    flex: none;
     padding: 60px 30px 30px;
     display: flex;
+    width: 100%;
     flex-direction: column;
     justify-content: center;
 }
@@ -229,7 +232,7 @@ section#area-inicio, section#inicio {
     text-decoration: none;
     border-radius: 50px;
     display: block;
-    border: 0.5px solid rgba(255, 255, 255, 0.355);
+    border: 0.5px solid #ffffff5b;
     
 }
 
@@ -242,7 +245,8 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-color: #B8BB16;
+    background-color: #a6b868;
+    height: 500px;
 }
 
 #slide-show {
@@ -290,6 +294,8 @@ section#area-inicio, section#inicio {
         width: 90%;
         height: 300px;
     }
+
+    
 }
 
 @media(max-width:480px) {
@@ -306,8 +312,6 @@ section#area-inicio, section#inicio {
 
     #lado-esquerdo {
         height: auto;
-        margin: 0 10px; /* 🔹 dá um pequeno respiro lateral */
-        border-radius: 6px; /* 🔹 opcional: cantos levemente arredondados */
     }
 
     #bem-vindo {
@@ -341,9 +345,7 @@ section#area-inicio, section#inicio {
         margin: 20px auto;        /* 🔹 margem superior/inferior 10px, centralizada horizontalmente */
         height: auto;
         display: block;
-        border-top: 2px solid #fff;
-        border-bottom: 2px solid #fff;
-        border-radius: 2px;
+        border: 2px solid #ffffff;
     }
 }
 
