@@ -83,6 +83,7 @@ ul {
     align-items: center;
     gap: 80px;
     position: relative;
+    /* background-color: #ffb9b9; */
 }
 
 
@@ -136,9 +137,9 @@ a.links-menu.ativo {
 }
 
 @media(max-width:480px) {
-    header {
+    /* header {
         padding: 10px 0 8px 10px;
-    }
+    } */
 
     nav,
     #area-nav {
@@ -150,16 +151,21 @@ a.links-menu.ativo {
         gap: 10px;
     }
 
+    #caixa-logo {
+        /* background-color: #56A38A; */
+        width: 100vw;
+    }
+
     img#logo {
         height: 38px;
-        margin: 0 auto;
+        margin: auto;
     }
 
     ul {
         justify-content: center;
         flex-wrap: wrap;
         gap: 40px;
-        width: 100%;
+        width: 100vw;
         margin: 15px auto 0 auto;
     }
 
