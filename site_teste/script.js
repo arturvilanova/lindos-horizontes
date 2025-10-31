@@ -64,3 +64,29 @@ document.addEventListener("DOMContentLoaded", () => {
     AtualizarFooter(); // <- chama a função aqui
 
 });
+
+
+// Animação do slide de imagens
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelectorAll("#slide-show img");
+  let indice = 0;
+
+  function mostrarSlide(index) {
+    slides.forEach(img => img.classList.remove("ativo"));
+    slides[index].classList.add("ativo");
+  }
+
+  function proximoSlide() {
+    indice = (indice + 1) % slides.length;
+    mostrarSlide(indice);
+  }
+
+  // Mostra o primeiro
+  mostrarSlide(indice);
+
+  // Troca a cada 5 segundos
+  setInterval(proximoSlide, 5000);
+});
+
+
