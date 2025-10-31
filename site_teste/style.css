@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
     height: 100svh;
     min-height: 100dvh;
 }
@@ -195,7 +195,6 @@ section#area-inicio, section#inicio {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 50px;
     height: auto;
     background-color: white;
 }
@@ -379,6 +378,30 @@ section#area-inicio, section#inicio {
 #slide-show img.ativo {
     opacity: 1;
 }
+}
+
+/* REDES SOCIAIS */
+
+#conheca-nos {
+    padding-bottom: 40px;
+} 
+
+h3 {
+   padding: 50px 0px 20px 15px;
+   font-size: 22px;
+}
+
+#conheca-nos > #contato > li > a > img {
+    width: 20px;
+}
+
+#conheca-nos p {
+    margin: 0px 15px 40px 15px;
+}
+
+#conheca-nos > #contato {
+    gap: 30px;
+    margin-left: 15px;
 }
 
 /* --- SEÇÃO FOTOS --- */
