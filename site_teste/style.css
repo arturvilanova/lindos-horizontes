@@ -348,7 +348,7 @@ section#area-inicio, section#inicio {
         position: relative;
         background-color: #a6b868;
         padding: 15px 10px;
-        min-height: 320px;  /* ✅ altura mínima garante que o bloco apareça */
+        max-height: 300px; 
     }
 
     #slide-show {
