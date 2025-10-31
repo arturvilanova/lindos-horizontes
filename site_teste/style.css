@@ -342,22 +342,38 @@ section#area-inicio, section#inicio {
     }
 
     #lado-direito {
-        height: auto; /* 🔹 ajusta ao conteúdo */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #a6b868;
+        padding: 15px 10px;
+        min-height: 320px;  /* ✅ altura mínima garante que o bloco apareça */
     }
 
     #slide-show {
-        width: 100%;
-        height: auto;
-    }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    overflow: hidden;
+}
 
-    #slide-show > img {
-        width: calc(100% - 20px); /* 🔹 ocupa quase toda a largura da caixa, mas com margem */
-        margin: 20px auto;        /* 🔹 margem superior/inferior 10px, centralizada horizontalmente */
-        height: auto;
-        display: block;
-        border: 2px solid #ffffff;
-        border-radius: 4px solid white;
-    }
+#slide-show img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;  /* Garante que preencha sem distorcer */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#slide-show img.ativo {
+    opacity: 1;
+}
 }
 
 /* --- SEÇÃO FOTOS --- */
