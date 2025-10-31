@@ -49,7 +49,7 @@ body {
 /* --- CABEÇALHO --- */
 header {
     background: #ededed;
-    padding: 10px 0 10px 10px;
+    padding: 10px 0 10px 0px;
     border-bottom: 4px solid #f0f0f0;
     position: sticky;
     top: 0;
@@ -59,6 +59,7 @@ header {
 nav {
     display: flex;
     position: relative;
+    /* background-color: #94f6a3; */
 }
 
 div#area-nav {
@@ -71,7 +72,7 @@ img#logo {
     border-radius: 50%;
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 3px 1px 10px #00000042;
-    margin-right: 40px;
+    margin: 0px 40px 0px 10px;
     user-select: none;
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
@@ -141,8 +142,7 @@ a.links-menu.ativo {
         padding: 10px 0 8px 10px;
     } */
 
-    nav,
-    #area-nav {
+    nav, #area-nav {
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -153,12 +153,11 @@ a.links-menu.ativo {
 
     #caixa-logo {
         /* background-color: #56A38A; */
-        width: 100vw;
     }
 
     img#logo {
         height: 38px;
-        margin: auto;
+        margin: 0 auto;
     }
 
     ul {
