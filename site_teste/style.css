@@ -138,9 +138,10 @@ a.links-menu.ativo {
 }
 
 @media(max-width:480px) {
-    /* header {
+    
+    header {
         padding: 10px 0 8px 10px;
-    } */
+    }
 
     nav, #area-nav {
         flex-direction: column;
