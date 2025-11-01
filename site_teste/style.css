@@ -389,6 +389,7 @@ section#area-inicio, section#inicio {
 h3 {
    padding: 50px 0px 20px 15px;
    font-size: 22px;
+   color: #000000e0;
 }
 
 #conheca-nos > #contato > li > a > img {
@@ -397,11 +398,18 @@ h3 {
 
 #conheca-nos p {
     margin: 0px 15px 40px 15px;
+    color: #000000ae;
 }
 
 #conheca-nos > #contato {
     gap: 30px;
     margin-left: 15px;
+    justify-content: left;
+}
+
+/* Responsividade */
+@media(max-width:480px) {
+
 }
 
 /* --- SEÇÃO FOTOS --- */
