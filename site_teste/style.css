@@ -304,8 +304,6 @@ section#area-inicio, section#inicio {
         width: 90%;
         height: 300px;
     }
-
-    
 }
 
 @media(max-width:480px) {
@@ -530,6 +528,9 @@ section#frase {
 
 #caixa-secao-explorar {
     background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+    
+    height: 100vh;
+    display: none;
 }
 
 #explorar h2 {
@@ -567,6 +568,6 @@ p#direitos {
 
 @media(max-width:480px) {
     footer {
-        font-size: 12px;
+        font-size: 10px;
     }
 }
