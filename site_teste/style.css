@@ -389,7 +389,9 @@ h3 {
 }
 
 #contatos > #redes-sociais > li > a > img {
-    width: 20px;
+    width: 30px;
+    padding: 5px;
+    /* background-color: #2D4A71; */
 }
 
 #contatos > #redes-sociais {
@@ -402,6 +404,10 @@ h3 {
 @media(max-width:480px) {
     h3 {
         font-size: 20px;
+    }
+
+    #contatos > #redes-sociais > li > a > img {
+        width: 25px;
     }
 }
 
