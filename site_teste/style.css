@@ -150,7 +150,7 @@ a.links-menu.ativo {
         padding: 10px 0;
         gap: 10px;
     }
-    
+
     img#logo {
         height: 38px;
         margin: 0 auto;
@@ -408,6 +408,12 @@ h3 {
 }
 
 /* --- SEÇÃO FOTOS --- */
+
+
+#caixa-das-fotos {
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+}
+
 section#fotos {
     width: 100%;
     max-width: 1400px;
@@ -521,6 +527,11 @@ section#frase {
 }
 
 /* --- SEÇÃO EXPLORAR --- */
+
+#caixa-secao-explorar {
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+}
+
 #explorar h2 {
     text-align: center;
     margin-top: 15%;
