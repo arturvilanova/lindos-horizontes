@@ -382,28 +382,25 @@ section#area-inicio, section#inicio {
 
 /* REDES SOCIAIS */
 
-#conheca-nos {
-    padding-bottom: 40px;
-} 
-
 h3 {
-   padding: 50px 0px 20px 15px;
+   padding: 50px 0px 0px 15px;
    font-size: 22px;
-   color: #000000e0;
+   color: #000000d3;
 }
 
-#conheca-nos > #contato > li > a > img {
+#contatos p {
+    margin: 20px 15px 40px 15px;
+    color: #4f4f4f;
+    font-weight: 400;
+}
+
+#contatos > #redes-sociais > li > a > img {
     width: 20px;
 }
 
-#conheca-nos p {
-    margin: 0px 15px 40px 15px;
-    color: #000000ae;
-}
-
-#conheca-nos > #contato {
+#contatos > #redes-sociais {
     gap: 30px;
-    margin-left: 25px;
+    margin: 0px 15px 40px 15px;
     justify-content: left;
 }
 
