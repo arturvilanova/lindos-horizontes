@@ -18,8 +18,7 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
+        html, body {
             font-family: "Be Vietnam Pro", sans-serif;
             max-width: 100%;
             overflow-x: hidden;
@@ -29,7 +28,6 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
             height: 100svh;
             min-height: 100dvh;
         }
@@ -55,18 +53,26 @@
             }
         }
 
-        #explorar h2 {
+        #caixa-explorar {
+            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+            height: 100svh;
+            min-height: 100dvh;
+        }
+
+        #caixa-explorar h2 {
             text-align: center;
-            margin-top: 15%;
             color: white;
+            padding-top: 200px;
         }
     </style>
 </head>
 
 <body>
-    <section id="explorar">
-        <h2>Seção Explorar</h2>
-    </section>
+    <main id="conteudo">
+        <section id="caixa-explorar">
+            <h2>Seção Explorar</h2>
+        </section>
+    </main>
+    
 </body>
-
 </html>
