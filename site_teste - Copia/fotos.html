@@ -1,47 +1,102 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fotos - Lindos Horizontes</title>
+    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
+    <title>Fotografias</title>
+
     <style>
-        body {
-            font-family: "Be Vietnam Pro", sans-serif;
+        /* Fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        /* Reset */
+        * {
             margin: 0;
-            padding: 60px 20px;
-            background: #0F2437;
-            color: white;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        h1 {
+        html,
+        body {
+            font-family: "Be Vietnam Pro", sans-serif;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
+            height: 100svh;
+            min-height: 100dvh;
+        }
+
+        /* Cores */
+        :root {
+            --Cor1: #ffb656;
+            --Cor2: #56A38A;
+            --Cor3: #2D4A71;
+            --Cor4: #0F2437;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #caixa-das-fotos {
+            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+            min-height: 100vh;
+            /* garante que ocupe toda a altura da tela */
+            display: flex;
+            flex-direction: column;
+        }
+
+        section#fotos {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            box-sizing: border-box;
+        }
+
+        section#fotos>h2 {
+            text-align: center;
             font-size: 35px;
             margin-bottom: 40px;
-            text-align: center;
+            color: #fff;
+            padding: 0 10px;
         }
 
         #div-das-fotos {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 35px;
-            justify-items: center;
-            padding: 0px 20px;
+            column-count: 4;
+            column-gap: 10px;
+            direction: ltr;
         }
 
         figure {
+            display: inline-block;
             width: 100%;
+            margin: 0 0 15px;
             background: #fff;
-            color: #555;
-            border-radius: 10px;
-            padding: 7px;
             text-align: center;
+            border-radius: 10px;
             box-shadow: 0 4px 10px #0000001a;
-            transition: 0.3s;
-        }
-
-        figure:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 14px #00000033;
+            padding: 10px;
+            position: relative;
+            break-inside: avoid;
+            transition: transform 0.3s, box-shadow 0.3s;
+            direction: ltr;
         }
 
         figure img {
@@ -49,8 +104,16 @@
             height: auto;
             border-radius: 8px;
             cursor: pointer;
+            display: block;
             object-fit: cover;
-            transition: 0.3s;
+            transition: transform 0.3s;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards;
+        }
+
+        figure:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px #00000033;
         }
 
         figure img:hover {
@@ -58,61 +121,142 @@
         }
 
         figcaption {
-            margin-top: 10px;
+            color: #555;
             font-size: 16px;
             text-align: justify;
             line-height: 23px;
+            margin-top: 10px;
+            padding: 0 5px;
         }
 
-        @media(max-width:1000px) {
+        section#frase {
+            text-align: center;
+            font-size: 22px;
+            margin-top: 50px;
+            color: white;
+        }
+
+        /* RESPONSIVIDADE SEÇÃO FOTOS */
+        @media(max-width:1200px) {
             #div-das-fotos {
-                grid-template-columns: repeat(3, 1fr);
+                column-count: 3;
             }
         }
 
         @media(max-width:800px) {
             #div-das-fotos {
-                grid-template-columns: repeat(2, 1fr);
+                column-count: 2;
+            }
+
+            section#fotos>h2 {
+                font-size: 30px;
             }
         }
 
-        @media(max-width:400px) {
+        @media(max-width:480px) {
             #div-das-fotos {
-                grid-template-columns: 1fr;
-                gap: 15px;
+                column-count: 1;
+            }
+
+            figure {
+                margin: 0 0 20px;
+                padding: 8px;
             }
 
             figcaption {
-                text-align: center;
                 font-size: 15px;
+                text-align: center;
+                padding: 0 4px;
+            }
+
+            section#frase {
+                font-size: 17.5px;
             }
         }
     </style>
 </head>
 
 <body>
-    <section id="fotos">
-        <h1>Imagens que vão fazer você se<br>encantar  com a natureza.</h1>
-        <div id="div-das-fotos">
-            <figure>
-                <img src="imagens/imagens-conteudo/girassol.jpg" alt="Flor do girassol">
-                <figcaption>O <strong>Girassol</strong> é uma linda flor que transmite beleza e alegria.</figcaption>
-            </figure>
-            <figure>
-                <img src="imagens/imagens-conteudo/nuvem.jpg" alt="Nuvens de chuva">
-                <figcaption>"<strong>Cúmulos-nimbos</strong>", nuvens responsáveis por trazer grandes tempestades.
-                </figcaption>
-            </figure>
-            <figure>
-                <img src="imagens/imagens-conteudo/nuvem-agua.jpeg" alt="Nuvens de chuva">
-                <figcaption>"<strong>Linda foto</strong> Esse registro que fiz ficou incrível.</figcaption>
-            </figure>
-            <figure>
-                <img src="imagens/imagens-conteudo/florzinha.jpg" alt="Uma linda flor">
-                <figcaption>Seus filetes e ânteras são tão pequeninos! Mas o aroma é sentido de longe.</figcaption>
-            </figure>
-        </div>
-    </section>
+    <main>
+
+        <section id="caixa-das-fotos">
+
+            <section id="fotos" class="secao">
+
+                <div id="div-das-fotos">
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/girassol.jpg" alt="Flor do girassol">
+                        <figcaption>O <strong>Girassol</strong> é uma linda flor que transmite beleza e alegria.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/nuvem.jpg" alt="Nuvens de chuva">
+                        <figcaption>"<strong>Cúmulos-nimbos</strong>", nuvens responsáveis por trazer grandes
+                            tempestades.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/nuvem-agua.jpeg" alt="Nuvens de chuva">
+                        <figcaption>Esse registro que fiz ficou incível.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/florzinha.jpg" alt="Uma linda flor">
+                        <figcaption>Seus filetes e ânteras são tão pequeninos! Mas o seu aroma é sentido de longe.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/placa-solar.jpeg" alt="Uma linda flor">
+                        <figcaption>Uma das melhores fotos que já tirei</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/angico.jpg" alt="Árvore">
+                        <figcaption>Esta linda árvore tem grande resistência à estiagem e sua flor é linda.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/cacto.jpg" alt="Flor">
+                        <figcaption> <strong>Mandacaru</strong> jovem, essa planta pode viver muito mais que 100 anos.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/folha-banana.jpg" alt="Flor">
+                        <figcaption>Nada melhor que usar o azul do céu como plano e fundo.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/folha-mandioca.jpg" alt="Flor">
+                        <figcaption>A <strong>folha da mandioca</strong> traz consigo beleza e cores vibrantes.
+                        </figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/tempo-firme.jpg" alt="Flor">
+                        <figcaption>O céu é lindo em qualquer lugar do mundo.</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="imagens/imagens-conteudo/ovos.jpg" alt="Flor">
+                        <figcaption>Com o brilho do sol no ninho, essa foto ficou incrível.</figcaption>
+                    </figure>
+
+                </div>
+
+                <section id="frase">
+                    <p>"A natureza se revela para quem sabe observar".<br>
+                        &#x1F341; &#x1F33F;
+                    </p>
+                </section>
+
+            </section>
+
+            <section>
+    </main>
 </body>
 
 </html>
