@@ -4,32 +4,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Explorar - Lindos Horizontes</title>
+    <title>Explorar</title>
+
     <style>
+
+        /* Fontes */
+        @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
         body {
             font-family: "Be Vietnam Pro", sans-serif;
-            margin: 0;
-            padding: 60px 20px;
-            background: #2D4A71;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+            height: 100svh;
+            min-height: 100dvh;
+        }
+
+        /* Cores */
+        :root {
+            --Cor1: #ffb656;
+            --Cor2: #56A38A;
+            --Cor3: #2D4A71;
+            --Cor4: #0F2437;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #explorar h2 {
+            text-align: center;
+            margin-top: 15%;
             color: white;
-        }
-
-        h1 {
-            font-size: 30px;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 28px;
         }
     </style>
 </head>
 
 <body>
     <section id="explorar">
-        <h2>Explorar a natureza</h2>
-        <p>Descubra histórias e curiosidades por trás das imagens capturadas.</p>
+        <h2>Seção Explorar</h2>
     </section>
 </body>
 
