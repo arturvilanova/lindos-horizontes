@@ -389,11 +389,31 @@ h3 {
     font-weight: 400;
 }
 
-#contatos > #redes-sociais > li > a > img {
-    width: 30px;
-    padding: 5px;
-    /* background-color: #2D4A71; */
+#contatos > #redes-sociais > li > #instagram  {
+    background-image: radial-gradient(#CE395E);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 40px;
 }
+
+#contatos > #redes-sociais > li > #youtube  {
+    background-image: radial-gradient(#F70000);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+#contatos > #redes-sociais > li > #pixabay {
+    background-image: radial-gradient(#14BC7D);
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 40px;
+}
+
+
 
 #contatos > #redes-sociais {
     gap: 30px;
@@ -533,17 +553,18 @@ section#frase {
 
 /* --- SEÇÃO EXPLORAR --- */
 
-#caixa-secao-explorar {
+#explorar {
     background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
-    
-    height: 100vh;
-    display: none;
+    min-height: 100vh; /* ocupa a altura da tela */
+    width: 100%;
+    align-items: center;      
+    justify-content: center;
 }
 
 #explorar h2 {
     text-align: center;
-    margin-top: 15%;
     color: white;
+    padding: 50px;
 }
 
 /* --- SEÇÕES ATIVAS --- */
