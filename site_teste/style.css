@@ -393,14 +393,12 @@ h3 {
     width: 20px;
 }
 
-#instagram, #youtube, #pixabay {
+#contatos > #redes-sociais > li > a > div {
     background-color: #F2F8F6;
+    border: 1px solid rgba(0, 0, 0, 0.074);
+    padding: 10px;
+    border-radius: 50%;
 }
-
-#instagram, #youtube, #pixabay {
-    border: 1px solid #91919135;
-}
-
 
 #contatos > #redes-sociais > li > #instagram  {
     
