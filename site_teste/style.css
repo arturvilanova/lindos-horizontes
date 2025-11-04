@@ -447,11 +447,10 @@ h3 {
 /* --- SEÇÃO FOTOS --- */
 
 
-#caixa-das-fotos {
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
-}
+
 
 section#fotos {
+    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
