@@ -66,6 +66,13 @@ div#area-nav {
     display: flex;
 }
 
+#caixa-logo {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* 🔹 Centraliza o logo horizontalmente */
+    align-items: center;      /* 🔹 Centraliza verticalmente */
+}
+
 img#logo {
     display: block;
     height: 40px;
