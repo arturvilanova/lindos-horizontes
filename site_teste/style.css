@@ -177,8 +177,10 @@ a.links-menu.ativo {
 }
 
 main {
-    height: 1500px;
-    
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* ou simplesmente remova o height */
 }
 
 /* --- SEÇÃO INÍCIO --- */
