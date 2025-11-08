@@ -90,3 +90,25 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  const menu = document.querySelector("ul");
+  const headerHeight = document.querySelector("#caixa-logo").offsetHeight; 
+
+  window.addEventListener("scroll", function() {
+    // Só aplica no modo celular
+    if (window.innerWidth <= 480) {
+      if (window.scrollY > headerHeight) {
+        menu.classList.add("fixo");
+      } else {
+        menu.classList.remove("fixo");
+      }
+    } else {
+      // Remove a classe se estiver em tela grande
+      menu.classList.remove("fixo");
+    }
+  });
+});
+
+
+

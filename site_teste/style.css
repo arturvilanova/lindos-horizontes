@@ -25,6 +25,13 @@ body {
     min-height: 100dvh;
 }
 
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: auto; /* ou simplesmente remova o height */
+}
+
 /* Cores */
 :root {
     --Cor1: #ffb656;
@@ -48,18 +55,16 @@ body {
 
 /* --- CABEÇALHO --- */
 header {
-    background: #ededed;
     padding: 10px 0 10px 0px;
     border-bottom: 4px solid #f0f0f0;
-    position: sticky;
-    top: 0;
+    display: flex;
     z-index: 3;
 }
 
 nav {
     display: flex;
     position: relative;
-    /* background-color: #94f6a3; */
+    flex: 1;
 }
 
 div#area-nav {
@@ -67,10 +72,10 @@ div#area-nav {
 }
 
 #caixa-logo {
-    width: 100%;
-    display: flex;
+    width: max-content;
     justify-content: center; /* 🔹 Centraliza o logo horizontalmente */
     align-items: center;      /* 🔹 Centraliza verticalmente */
+    margin: 0px 40px 0px 10px;
 }
 
 img#logo {
@@ -79,19 +84,17 @@ img#logo {
     border-radius: 50%;
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 3px 1px 10px #00000042;
-    margin: 0px 40px 0px 10px;
     user-select: none;
     -webkit-user-drag: none;
     -webkit-tap-highlight-color: transparent;
 }
 
-ul {
+ul#links {
     display: flex;
     width: max-content;
     align-items: center;
     gap: 80px;
     position: relative;
-    /* background-color: #ffb9b9; */
 }
 
 
@@ -131,8 +134,8 @@ a.links-menu.ativo {
 
 /* RESPONSIVIDADE CABEÇALHO */
 @media(max-width:900px) {
+
     img#logo {
-        margin-right: 25px;
     }
 
     ul {
@@ -147,7 +150,8 @@ a.links-menu.ativo {
 @media(max-width:480px) {
     
     header {
-        padding: 10px 0 8px 10px;
+        padding: 0px 0 8px 0px;
+        display: block;
     }
 
     nav, #area-nav {
@@ -155,8 +159,13 @@ a.links-menu.ativo {
         align-items: center;
         justify-content: center;
         width: 100%;
-        padding: 10px 0;
         gap: 10px;
+    }
+
+    #caixa-logo {
+        width: 100%;
+        padding-top: 15px;
+        margin: 0;
     }
 
     img#logo {
@@ -164,12 +173,13 @@ a.links-menu.ativo {
         margin: 0 auto;
     }
 
-    ul {
+    ul#links {
         justify-content: center;
         flex-wrap: wrap;
         gap: 40px;
         width: 100vw;
-        margin: 15px auto 0 auto;
+        padding: 20px 0px 10px 0px;
+        margin: 0px auto 0 auto;
     }
 
     .links-menu {
@@ -181,13 +191,6 @@ a.links-menu.ativo {
         bottom: -6px;
         transform: translateY(6px);
     }
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: auto; /* ou simplesmente remova o height */
 }
 
 /* --- SEÇÃO INÍCIO --- */
@@ -386,6 +389,10 @@ section#area-inicio, section#inicio {
 
 /* REDES SOCIAIS */
 
+#redes-sociais {
+    display: flex;
+}
+
 h3 {
    padding: 50px 0px 0px 15px;
    font-size: 22px;
@@ -404,9 +411,14 @@ h3 {
 
 #contatos > #redes-sociais > li > a > div {
     background-color: #F2F8F6;
-    border: 1px solid rgba(0, 0, 0, 0.074);
     padding: 10px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
+    border: 1px solid #00000012;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 
 #contatos > #redes-sociais > li > #instagram  {
@@ -452,9 +464,6 @@ h3 {
 }
 
 /* --- SEÇÃO FOTOS --- */
-
-
-
 
 section#fotos {
     background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
@@ -571,8 +580,12 @@ section#frase {
 
 /* --- SEÇÃO EXPLORAR --- */
 
+#caixa-secao-explorar {
+   background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; 
+}
+
+
 #explorar {
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
     min-height: 100vh; /* ocupa a altura da tela */
     width: 100%;
     align-items: center;      
