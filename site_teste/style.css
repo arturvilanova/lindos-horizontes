@@ -464,7 +464,6 @@ h3 {
     }
 
     #redes-sociais {
-        background-color: #2D4A71;
         margin: auto;
         width: max-content;
         align-items: center;
@@ -586,6 +585,13 @@ section#frase {
 
     section#frase {
         font-size: 17.5px;
+    }
+
+    section#fotos {
+        background-size: cover;
+        background-position: center center;
+        background-attachment: scroll; /* evita bugs no mobile */
+        padding: 40px 15px; /* um pouco menos de espaçamento */
     }
 }
 
