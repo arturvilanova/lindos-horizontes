@@ -264,7 +264,7 @@ section#area-inicio, section#inicio {
     overflow: hidden;
     background-color: #56A38A;
     height: 500px;
-    padding: 20px;
+    padding: 0px 20px 0px 20px;
 }
 
 #slide-show {
@@ -364,7 +364,7 @@ section#area-inicio, section#inicio {
         justify-content: center;
         align-items: center;
         position: relative;
-        padding: 15px 10px;
+        padding: 25px 10px;
         max-height: 300px;
     }
 
