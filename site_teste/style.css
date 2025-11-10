@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
-/* Fontes */
+/* FONTES */
+
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Reset */
+/* RESET */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Cores */
+/* CORES */
+
 :root {
     --Cor1: #ffb656;
     --Cor2: #56A38A;
@@ -18,7 +21,8 @@
     --Cor4: #0F2437;
 }
 
-/* Animações */
+/* ANIMAÇÕES */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -31,7 +35,7 @@
     }
 }
 
-/* Configurações par todo o documento */
+/* CONFIGURAÇÕES PARA TODO O DOCUMENTO */
 
 html, body {
     font-family: "Be Vietnam Pro", sans-serif;
@@ -43,7 +47,6 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
     height: 100svh;
     min-height: 100dvh;
 }
@@ -53,10 +56,9 @@ main {
     display: flex;
     flex-direction: column;
     height: auto;
-    /* ou simplesmente remova o height */
 }
 
-/* --- CABEÇALHO --- */
+/* CABEÇALHO */
 
 header {
     padding: 10px 0 10px 0px;
@@ -71,20 +73,18 @@ nav {
     flex: 1;
 }
 
-div#area-nav {
+#area-nav {
     display: flex;
 }
 
 #caixa-logo {
     width: max-content;
-    justify-content: center;
-    /* 🔹 Centraliza o logo horizontalmente */
-    align-items: center;
-    /* 🔹 Centraliza verticalmente */
+    justify-content: center; /* 🔹 Centraliza o logo horizontalmente */
+    align-items: center; /* 🔹 Centraliza verticalmente */
     margin: 0px 40px 0px 10px;
 }
 
-img#logo {
+#logo {
     display: block;
     height: 40px;
     border-radius: 50%;
@@ -108,7 +108,7 @@ li {
     list-style: none;
 }
 
-a.links-menu {
+.links-menu {
     position: relative;
     color: #444;
     font-size: 22px;
@@ -128,8 +128,8 @@ a.links-menu.ativo {
 }
 
 .barra-deslizante {
-    position: absolute;
     background: var(--Cor2);
+    position: absolute;
     border-radius: 1.5px;
     bottom: -14px;
     width: 0;
@@ -139,7 +139,8 @@ a.links-menu.ativo {
 }
 
 /* RESPONSIVIDADE CABEÇALHO */
-@media(max-width:900px) {
+
+@media(max-width: 900px) {
 
     ul {
         gap: 60px;
@@ -150,15 +151,14 @@ a.links-menu.ativo {
     }
 }
 
-@media(max-width:480px) {
+@media(max-width: 480px) {
 
     header {
         padding: 0px 0 8px 0px;
         display: block;
     }
 
-    nav,
-    #area-nav {
+    nav, #area-nav {
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -172,7 +172,7 @@ a.links-menu.ativo {
         margin: 0;
     }
 
-    img#logo {
+    #logo {
         height: 38px;
         margin: 0 auto;
     }
@@ -197,9 +197,9 @@ a.links-menu.ativo {
     }
 }
 
-/* --- SEÇÃO INÍCIO --- */
-section#area-inicio,
-section#inicio {
+/* SEÇÃO INÍCIO */
+
+section#area-inicio, section#inicio {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -213,8 +213,7 @@ section#inicio {
     background-color: white;
 }
 
-#lado-esquerdo,
-#lado-direito {
+#lado-esquerdo, #lado-direito {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -236,10 +235,10 @@ section#inicio {
     justify-content: center;
 }
 
-#bem-vindo>h1 {
+#bem-vindo h1 {
     font-size: 35px;
     margin-bottom: 30px;
-    color: rgb(0, 0, 0);
+    color: #000000;
 }
 
 #bem-vindo a {
@@ -252,7 +251,6 @@ section#inicio {
     border-radius: 50px;
     display: block;
     border: 0.5px solid #ffffff5b;
-
 }
 
 #bem-vindo a:hover {
@@ -264,7 +262,7 @@ section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-color: #a6b868;
+    background-color: #56A38A;
     height: 500px;
 }
 
@@ -272,7 +270,6 @@ section#inicio {
     position: relative;
     width: 100%;
     max-width: 600px;
-    /* ajuste conforme seu layout */
     height: 400px;
     overflow: hidden;
 }
@@ -290,21 +287,20 @@ section#inicio {
     border-radius: 10px;
 }
 
-/* A imagem ativa fica visível */
-#slide-show img.ativo {
+#slide-show img.ativo { /* A imagem ativa fica visível */
     opacity: 1;
     z-index: 1;
 }
 
-
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
+
 @media(max-width:800px) {
+
     #area {
         flex-direction: column;
     }
 
-    #lado-esquerdo,
-    #lado-direito {
+    #lado-esquerdo, #lado-direito {
         width: 100%;
     }
 
@@ -332,27 +328,23 @@ section#inicio {
         flex-direction: column;
     }
 
-    #lado-esquerdo,
-    #lado-direito {
+    #lado-esquerdo, #lado-direito { /* 🔹 cola as duas caixas verticalmente */
         width: 100%;
         margin-top: 0;
-        /* 🔹 cola as duas caixas verticalmente */
     }
 
     #lado-esquerdo {
         height: auto;
     }
 
-    #bem-vindo {
+    #bem-vindo { /* 🔹 mantém espaçamento interno equilibrado */
         padding: 50px 10px;
-        /* 🔹 mantém espaçamento interno equilibrado */
     }
 
     #bem-vindo h1 {
         text-align: center;
         font-size: 30px;
         color: #000000;
-        /* 🔹 texto branco */
     }
 
     #bem-vindo a {
@@ -377,10 +369,8 @@ section#inicio {
         width: 100%;
         height: 100%;
         display: flex;
-        justify-content: center;
-        /* Centraliza horizontalmente */
-        align-items: center;
-        /* Centraliza verticalmente */
+        justify-content: center; /* Centraliza horizontalmente */
+        align-items: center; /* Centraliza verticalmente */
         overflow: hidden;
     }
 
@@ -389,8 +379,7 @@ section#inicio {
         width: 100%;
         height: auto;
         max-height: 100%;
-        object-fit: cover;
-        /* Garante que preencha sem distorcer */
+        object-fit: cover; /* Garante que preencha sem distorcer */
         opacity: 0;
         transition: opacity 1s ease-in-out;
     }
@@ -418,11 +407,11 @@ h3 {
     font-weight: 400;
 }
 
-#contatos>#redes-sociais>li>a img {
+#contatos #redes-sociais li a img {
     width: 20px;
 }
 
-#contatos>#redes-sociais>li>a>div {
+#contatos #redes-sociais li a div {
     background-color: #F2F8F6;
     padding: 10px;
     height: 50px;
@@ -434,49 +423,56 @@ h3 {
     display: flex;
 }
 
-#contatos>#redes-sociais>li>#instagram {
-
+#contatos #redes-sociais li #instagram {
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px;
     border-radius: 40px;
 }
 
-#contatos>#redes-sociais>li>#youtube {
+#contatos #redes-sociais li #youtube {
     color: rgb(0, 0, 0);
     text-decoration: none;
     padding: 10px;
     border-radius: 40px;
 }
 
-#contatos>#redes-sociais>li>#pixabay {
-    /* background-image: radial-gradient(#14BC7D);                                                                 */
-    color: rgb(0, 0, 0);
+#contatos #redes-sociais li #pixabay {
+    color: #000000;
     text-decoration: none;
     padding: 10px;
     border-radius: 40px;
 }
 
-
-
-#contatos>#redes-sociais {
+#contatos #redes-sociais {
     gap: 30px;
     margin: 0px 15px 40px 15px;
     justify-content: left;
 }
 
-/* Responsividade */
+/* RESPONSIVIDADE */
+
 @media(max-width:480px) {
-    h3 {
+
+    h3, p {
         font-size: 19px;
+        text-align: center;
     }
 
-    #contatos>#redes-sociais>li>a>img {
+    #contatos #redes-sociais li a img {
         width: 25px;
+    }
+
+    #redes-sociais {
+        background-color: #2D4A71;
+        margin: auto;
+        width: max-content;
+        align-items: center;
+        justify-content: center;
     }
 }
 
-/* --- SEÇÃO FOTOS --- */
+/* SEÇÃO FOTOS */
 
 section#fotos {
     background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
@@ -487,7 +483,7 @@ section#fotos {
     box-sizing: border-box;
 }
 
-section#fotos>h2 {
+section#fotos h2 {
     text-align: center;
     font-size: 35px;
     margin-bottom: 40px;
@@ -554,7 +550,9 @@ section#frase {
 }
 
 /* RESPONSIVIDADE SEÇÃO FOTOS */
+
 @media(max-width:1200px) {
+
     #div-das-fotos {
         column-count: 3;
     }
@@ -591,16 +589,14 @@ section#frase {
     }
 }
 
-/* --- SEÇÃO EXPLORAR --- */
+/* SEÇÃO EXPLORAR */
 
 #caixa-secao-explorar {
     background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
 }
 
-
 #explorar {
     min-height: 100vh;
-    /* ocupa a altura da tela */
     width: 100%;
     align-items: center;
     justify-content: center;
@@ -613,6 +609,7 @@ section#frase {
 }
 
 /* --- SEÇÕES ATIVAS --- */
+
 section.secao {
     display: none;
     animation: fadeIn 0.6s forwards;
@@ -623,17 +620,17 @@ section.secao.ativa {
 }
 
 /* --- RODAPÉ --- */
+
 footer {
     background: var(--Cor4);
     color: var(--White);
     width: 100%;
     height: max-content;
     margin-top: auto;
-    /* cola o rodapé no final */
     padding: 15px 0;
 }
 
-p#direitos {
+#direitos {
     color: #a8a8a8bd;
     text-align: center;
     font-size: 14.5px;
