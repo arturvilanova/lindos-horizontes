@@ -264,13 +264,14 @@ section#area-inicio, section#inicio {
     overflow: hidden;
     background-color: #56A38A;
     height: 500px;
+    padding: 20px;
 }
 
 #slide-show {
     position: relative;
     width: 100%;
-    max-width: 600px;
     height: 400px;
+    max-width: 600px;
     overflow: hidden;
 }
 
@@ -294,7 +295,7 @@ section#area-inicio, section#inicio {
 
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
 
-@media(max-width:800px) {
+@media(max-width: 900px) {
 
     #area {
         flex-direction: column;
@@ -302,6 +303,10 @@ section#area-inicio, section#inicio {
 
     #lado-esquerdo, #lado-direito {
         width: 100%;
+    }
+
+    #lado-direito {
+        height: 300px;
     }
 
     #lado-esquerdo {
@@ -313,12 +318,12 @@ section#area-inicio, section#inicio {
     }
 
     #lado-direito {
-        height: 500px;
+        height: 450px;
+        padding: 0px;
     }
 
     #slide-show {
         width: 90%;
-        height: 300px;
     }
 }
 
@@ -454,19 +459,27 @@ h3 {
 @media(max-width:480px) {
 
     h3, p {
-        font-size: 19px;
         text-align: center;
     }
 
+    p {
+        text-align: center;
+    }
+
+    #contatos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     #contatos #redes-sociais li a img {
-        width: 25px;
+        width: 18px;
     }
 
     #redes-sociais {
-        margin: auto;
         width: max-content;
-        align-items: center;
-        justify-content: center;
+        margin: auto;
     }
 }
 
