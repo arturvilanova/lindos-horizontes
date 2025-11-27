@@ -625,6 +625,12 @@ section#frase {
     padding: 50px;
 }
 
+#explorar p {
+    margin: 30px 0px 30px 40px;
+    font-size: 20px;
+    line-height: 40px;
+}
+
 
 /* --- SEÇÕES ATIVAS --- */
 
