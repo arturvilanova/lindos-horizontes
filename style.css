@@ -399,7 +399,7 @@ section#area-inicio, section#inicio {
     display: flex;
 }
 
-h3 {
+#contatos h3 {
     padding: 50px 0px 0px 15px;
     font-size: 22px;
     color: #000000c0;
@@ -634,6 +634,16 @@ section#frase {
     font-size: 20px;
     line-height: 40px;
     text-align: left;
+}
+
+@media(max-width:480px) {
+    #explorar p {
+        font-size: 17px;
+    }
+
+    #explorar h2 {
+    text-align: center;
+}
 }
 
 
