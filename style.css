@@ -616,19 +616,25 @@ section#frase {
 #explorar {
     min-height: 100vh;
     width: 100%;
-    align-items: center;
-    justify-content: center;
+    
 }
 
 #explorar h2 {
     color: rgb(0, 0, 0);
-    padding: 50px;
+    padding: 50px 0px 0px 20px;
+    font-size: 26px;
+}
+
+#explorar h3 {
+    padding: 50px 0px 0px 20px;
+    font-size: 22px;
 }
 
 #explorar p {
     margin: 30px 0px 30px 40px;
     font-size: 20px;
     line-height: 40px;
+    text-align: left;
 }
 
 
