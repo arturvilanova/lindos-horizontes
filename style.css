@@ -486,7 +486,13 @@ section#area-inicio, section#inicio {
 /* SEÇÃO FOTOS */
 
 section#fotos {
-    background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll;
+
+    background-image: url('imagens/horizonte_destktop.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;  /*efeito parallax suave (opcional) */
+
+    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
     width: 100%;
     max-width: 1400px;
     margin: 0 auto;
@@ -580,6 +586,11 @@ section#frase {
 }
 
 @media(max-width:480px) {
+
+    #fotos {
+        background-attachment: scroll;
+    }
+
     #div-das-fotos {
         column-count: 1;
     }
