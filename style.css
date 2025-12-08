@@ -580,7 +580,7 @@ section#frase {
 
 @media(max-width:480px) {
 
-    #fotos {
+    #caixa-das-fotos {
         background-attachment: scroll;
     }
 
