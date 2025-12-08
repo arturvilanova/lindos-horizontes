@@ -485,19 +485,12 @@ section#area-inicio, section#inicio {
 
 /* SEÇÃO FOTOS */
 
-section#fotos {
-
+#caixa-das-fotos {
     background-image: url('imagens/horizonte_destktop.jpg');
     background-size: cover;
-    background-position: center center;
+    background-position: right bottom;
     background-attachment: fixed;  /*efeito parallax suave (opcional) */
-
-    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
     padding: 60px 20px;
-    box-sizing: border-box;
 }
 
 section#fotos h2 {
