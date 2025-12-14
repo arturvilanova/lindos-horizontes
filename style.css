@@ -395,6 +395,10 @@ section#area-inicio, section#inicio {
 
 /* REDES SOCIAIS */
 
+#contatos {
+    padding: auto;
+}
+
 #redes-sociais {
     display: flex;
 }
@@ -485,12 +489,13 @@ section#area-inicio, section#inicio {
 
 /* SEÇÃO FOTOS */
 
-#caixa-das-fotos {
+#fotos {
     background-image: url('imagens/horizonte_destktop.jpg');
     background-size: cover;
+    background-repeat: no-repeat;
     background-position: right bottom;
-    background-attachment: fixed;  /*efeito parallax suave (opcional) */
     padding: 60px 20px;
+    height: 100%;
 }
 
 section#fotos h2 {
@@ -620,6 +625,7 @@ section#frase {
 #explorar {
     min-height: 100vh;
     width: 100%;
+    color: rgb(0, 0, 0);
 }
 
 #explorar h2 {
