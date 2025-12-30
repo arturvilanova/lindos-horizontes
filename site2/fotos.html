@@ -1,110 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0F2437">
-    <meta name="msapplication-navbutton-color" content="#0F2437">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Lindos Horizontes - Expressando a natureza com fotos e poesia</title>
-    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    <title>Fotografias de Lindos Horizontes</title>
 </head>
-
 <body>
-    <header>
-
-        <div id="caixa-logo">
-            <a href="#">
-                <img src="imagens/logo.jpeg" alt="Logo Lindos Horizontes" id="logo">
-            </a>
-        </div>
-
-        <nav>
-            <div id="area-nav">
-
-                <ul id="links">
-                    <li><a href="#" class="links-menu ativo" data-target="inicio">Início</a></li>
-                    <li><a href="#" class="links-menu" data-target="fotos">Fotos</a></li>
-                    <li><a href="#" class="links-menu" data-target="explorar">Explorar</a></li>
-                </ul>
-
-                <!-- Barra deslizante do menu -->
-                <div class="barra-deslizante"></div>
-            </div>
-        </nav>
-
-    </header>
-
-    <main id="conteudo">
-
-        <!-- CONTEÚDO DA SEÇÃO INICIAL -->
-        <section id="area-inicio">
-            <section id="inicio" class="secao ativa">
-                <div id="area">
-                    <!-- 🔹 LADO ESQUERDO -->
-                    <div id="lado-esquerdo">
-
-                        <div id="bem-vindo">
-                            <h1>Fotografias autorais que exploram os detalhes da natureza. &#x1F33F; &#128248;</h1>
-                            <p><a href="saiba_mais.html">Saiba mais</a></p>
-                        </div>
-
-                    </div>
-
-                    <!-- 🔸 LADO DIREITO (SLIDES) -->
-                    <section id="lado-direito">
-                        <div id="slide-show">
-                            <img src="imagens/imagens-conteudo/angico.jpg" alt="">
-                            <img src="imagens/imagens-conteudo/cacto.jpg" alt="">
-                            <img src="imagens/imagens-conteudo/florzinha.jpg" alt="">
-                            <img src="imagens/imagens-conteudo/girassol.jpg" alt="">
-                            <img src="imagens/imagens-conteudo/flores.jpg" alt="">
-                        </div>
-                    </section>
-                </div>
-
-                <div id="contatos">
-                    <h3>Por outros horizontes</h3>
-                    <p>Siga nossos passos e descubra histórias que florescem a cada dia.</p>
-
-                    <ul id="redes-sociais">
-                        <li>
-                            <a href="https://www.instagram.com/lindoshorizontes/" target="_blank" id="instagram">
-                                <div>
-                                    <img src="imagens/logos/instagram.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://www.youtube.com/@lindoshorizontes" target="_blank" id="youtube">
-                                <div>
-                                    <img src="imagens/logos/youtube.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="https://pixabay.com/pt/users/lindoshorizontes-35550203/" target="_blank"
-                                id="pixabay">
-                                <div>
-                                    <img src="imagens/logos/pixabay.png" alt="">
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-
-            <h2 style="text-align: center; margin-bottom: 30px;" ><span id="contador-visitas"></span> visitas</h2 >
-        </section>
-
-        <!-- TERMINA O COTEÚDO DA SEÇÃO INICIAL -->
-
-        <!-- CONTEÚDO DA SEÇÃO FOTOS -->
+    <!-- CONTEÚDO DA SEÇÃO FOTOS -->
         <section id="caixa-das-fotos">
             
             <section id="fotos" class="secao">
@@ -277,59 +179,134 @@
         </section>
         <!-- TERMINA O CONTEÚDO DA SEÇÃO FOTOS -->
 
-        <!-- CONTEÚDO DA SEÇÃO EXPLORAR -->
-        <section id="caixa-secao-explorar">
+    <style>
 
-            <section id="explorar" class="secao">
+        #fotos {
+            background-image: url('imagens/horizonte_destktop.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            padding: 60px 20px;
+            height: 100%;
+        }
 
-            <!-- <h2>Em breve teremos muitas novidades aqui, <br> enquanto isso, leia este lindo poema.</h2>
+        section#fotos h2 {
+            text-align: center;
+            font-size: 35px;
+            margin-bottom: 40px;
+            color: #fff;
+            padding: 0 10px;
+        }
 
-                <p>Bem-vindo à terra <br>
-                    Um lugar cheio de rios <br>
-                    Montanhas <br>
-                    Florestas<br>
-                    Geleiras <br>
-                    Lugares remotos <br>
-                    E uma variedade incrível de animais <br>
-                    Como eu queria poder voar por todo o seu globo <br>
-                    Conhecendo toda sua vastidão <br>
-                    E refletindo no que via <br> 
-                    Pois no planeta azul todo elemento traz consigo um ensinamnto <br>   
-                    O grande me faz pensar <br>
-                    Mas o pequeno diminui meus pensamentos <br>                                                           
-                    O belo enche meu coração de alegria <br>
-                    Mas o infinito me intriga <br>
-                    Porém... <br>
-                    Mesmo sem entender toda sua complexidade <br>
-                    Sei que aqui é o lar perfeito para a vida <br>
-                    Aqui tem tudo o que precisamos <br>
-                    Para viver <br>
-                    E ser feliz <br>
-                    Da água se produz a vida <br>
-                    Sim, vida em abundância! <br>
-                    As estações dão sentido à ela <br>
-                    E o ar puro traz a paz e o contentamento <br>
-                    O Mar é um segredo sem fim <br>
-                    A terra é como uma mãe <br>
-                    A chuva representa esperança <br>
-                    E o sol sempre vem lembra você de que já é um novo dia <br>
-                </p>
-                <p></p>
-            </section> -->
+        #div-das-fotos {
+            column-count: 4;
+            column-gap: 10px;
+            direction: ltr;
+        }
 
-            <h1>Fotografias e suas cores</h1>
+        figure {
+            display: inline-block;
+            width: 100%;
+            margin: 0 0 15px;
+            background: #fff;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px #0000001a;
+            padding: 10px;
+            position: relative;
+            break-inside: avoid;
+            transition: transform 0.3s, box-shadow 0.3s;
+            direction: ltr;
+        }
 
-            <img src="" alt="">
-        </section> 
+        figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.3s;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards;
+        }
 
-        <!-- TERMINA O CONTEÚDO DA SEÇAO  EXPLORAR -->
-    </main>
+        figure:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 14px #00000033;
+        }
 
-    <!-- RODAPÉ -->
+        figure img:hover {
+            transform: scale(1.03);
+        }
 
-    <footer>
-        <p id="direitos"></p>
-    </footer>
+        figcaption {
+            color: #555;
+            font-size: 16px;
+            text-align: justify;
+            line-height: 23px;
+            margin-top: 10px;
+            padding: 0 5px;
+        }
+
+        section#frase {
+            text-align: center;
+            font-size: 22px;
+            margin-top: 50px;
+            color: white;
+        }
+
+        /* RESPONSIVIDADE SEÇÃO FOTOS */
+
+        @media(max-width:1200px) {
+
+            #div-das-fotos {
+                column-count: 3;
+            }
+        }
+
+        @media(max-width:800px) {
+            #div-das-fotos {
+                column-count: 2;
+            }
+
+            section#fotos>h2 {
+                font-size: 30px;
+            }
+        }
+
+        @media(max-width:480px) {
+
+            #caixa-das-fotos {
+                background-attachment: scroll;
+            }
+
+            #div-das-fotos {
+                column-count: 1;
+            }
+
+            figure {
+                margin: 0 0 20px;
+                padding: 8px;
+            }
+
+            figcaption {
+                font-size: 15px;
+                text-align: center;
+                padding: 0 4px;
+            }
+
+            section#frase {
+                font-size: 17.5px;
+            }
+
+            section#fotos {
+                background-size: cover;
+                background-position: center center;
+                background-attachment: scroll; /* evita bugs no mobile */
+                padding: 40px 15px; /* um pouco menos de espaçamento */
+            }
+        }
+    </style>
 </body>
-
 </html>

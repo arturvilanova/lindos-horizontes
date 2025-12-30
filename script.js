@@ -110,5 +110,16 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
+fetch("https://api.counterapi.dev/v1/lindoshorizontes/visitas/up")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("contador-visitas").textContent = data.value;
+  })
+  .catch(err => {
+    console.error("Erro no contador:", err);
+    document.getElementById("contador-visitas").textContent = "—";
+  });
+
+
 
 
