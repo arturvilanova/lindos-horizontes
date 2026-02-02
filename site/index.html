@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lindos Horizontes</title>
+  <meta name="description" content="Paisagens, nuvens e plantas fotografadas com celular em São João do Piauí." />
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --areia: #f4efe6;
+      --marrom: #7a4a2e;
+      --verde: #6f7f63;
+      --texto: #2b2b2b;
+      --branco: #ffffff;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--areia);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    /* TOPO */
+    header {
+      background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height: 85vh;
+      color: var(--branco);
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background: rgba(244,239,230,.85);
+      color: var(--marrom);
+    }
+
+    nav h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--marrom);
+      font-weight: 500;
+    }
+
+    .hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .7rem 1.6rem;
+      background: var(--marrom);
+      color: var(--branco);
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    /* SEÇÕES */
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+    }
+
+    section h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      color: var(--marrom);
+    }
+
+    /* GALERIA */
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .galeria img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 14px;
+      transition: transform .3s ease, box-shadow .3s ease;
+      cursor: pointer;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 15px 30px rgba(0,0,0,.25);
+    }
+
+    /* FOOTER */
+    footer {
+      background: #e6ddcf;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: .9rem;
+    }
+
+    /* RESPONSIVO */
+    @media (max-width: 700px) {
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <h1>Lindos Horizontes</h1>
+    <ul>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#galeria">Galeria</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero" id="inicio">
+    <div class="hero-content">
+      <h2>Mostrando a natureza de um jeito criativo!</h2>
+      <p>Paisagens, céu e plantas</p>
+      <a href="#galeria" class="btn">Veja a Galeria</a>
+    </div>
+  </div>
+</header>
+
+<section id="galeria">
+  <h3>Fotografias de LH</h3>
+  <div class="galeria">
+    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="Paisagem do sertão">
+    <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=800&q=80" alt="Céu com nuvens">
+    <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80" alt="Plantas e vegetação">
+    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=800&q=80" alt="Pôr do sol no interior">
+  </div>
+</section>
+
+<footer id="contato">
+  <p>Instagram | YouTube</p>
+  <p>© 2026 — Lindos Horizontes</p>
+</footer>
+
+</body>
+</html>
