@@ -629,10 +629,10 @@ section#frase {
     color: rgb(0, 0, 0);
 }
 
-#explorar h2 {
+#explorar h1 {
     color: rgb(0, 0, 0);
     padding: 50px 0px 0px 20px;
-    font-size: 26px;
+    font-size: 35px;
 }
 
 #explorar h3 {
@@ -649,7 +649,7 @@ section#frase {
 
 @media(max-width:480px) {
 
-    #explorar h2 {
+    #explorar h1 {
     text-align: center;
     font-size: 20px;
 }
