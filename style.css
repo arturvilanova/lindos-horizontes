@@ -582,7 +582,7 @@ section#frase {
         column-count: 2;
     }
 
-    section#fotos>h2 {
+    section#fotos > h1 {
         font-size: 30px;
     }
 }
