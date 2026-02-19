@@ -596,6 +596,9 @@ section#frase {
     #div-das-fotos {
         column-count: 1;
     }
+    section#fotos h1 {
+        font-size: 20px;
+    }
 
     figure {
         margin: 0 0 20px;
