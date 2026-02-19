@@ -491,7 +491,8 @@ section#area-inicio, section#inicio {
 /* SEÇÃO FOTOS */
 
 #fotos {
-    background-image: url('imagens/horizonte_destktop.jpg');
+    background-color: var(--Cor3);
+    /* background-image: url('imagens/horizonte_destktop.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -499,10 +500,12 @@ section#area-inicio, section#inicio {
     height: 100%;
 }
 
-section#fotos h2 {
+
+
+section#fotos h1 {
     text-align: center;
-    font-size: 35px;
-    margin-bottom: 40px;
+    font-size: 38px;
+    margin-bottom: 60px;
     color: #fff;
     padding: 0 10px;
 }
