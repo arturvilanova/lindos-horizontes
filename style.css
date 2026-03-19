@@ -255,6 +255,7 @@ section#area-inicio, section#inicio {
 
 #bem-vindo a:hover {
     background: #5fb69a;
+    text-decoration: underline;
 }
 
 #lado-direito {
@@ -292,24 +293,6 @@ section#area-inicio, section#inicio {
 #slide-show img.ativo { /* A imagem ativa fica visível */
     opacity: 1;
     z-index: 1;
-}
-
-#caixa-video {
-    width: 100%;
-    /* margin: 0 auto; */
-    height: 498px;
-    background-color: var(--Cor1);
-    position: relative;
-}
-
-video {
-    width: 70%;
-    /* height: auto; */
-    display: block;
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
@@ -412,50 +395,6 @@ video {
     }
 }
 
-#caixa-youtube {
-    background-color: var(--Cor3);
-    height: 400px;
-    background-image: url(imagens/1.jpg);
-    background-position: center center;
-    background-size: cover;
-}
-
-#caixa-youtube h2 {
-    color: white;
-    font-size: 30px;
-    padding: 30px 0px 30px 40px;
-}
-
-#caixa-youtube a {
-    margin: 80px 0px 0px 40px;
-    padding: 15px 20px;
-    background-color: var(--Cor2);
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 50px;
-}
-
-@media(max-width:900px) {
-    #caixa-youtube {
-        background-image: url(imagens/2.jpg);
-    }
-}
-
-@media(max-width:400px) {
-    #caixa-youtube {
-        background-image: url(imagens/3.jpg);
-        background-position: center center;
-        background-size: cover;
-    }
-
-    #caixa-youtube h2 {
-        text-align: center;
-        font-size: 16px;
-    }
-}
-
 /* REDES SOCIAIS */
 
 #contatos {
@@ -552,8 +491,16 @@ video {
 
 /* SEÇÃO FOTOS */
 
+#caixa-das-fotos {
+    background-color: var(--Cor3);
+    background-image: url('imagens/horizonte_destktop.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center bottom;
+}
+
 #fotos {
-    background-color: #ffffff;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -567,7 +514,7 @@ section#fotos h1 {
     text-align: center;
     font-size: 38px;
     margin-bottom: 60px;
-    color: #000000;
+    color: #fff;
     padding: 0 10px;
 }
 
@@ -584,7 +531,7 @@ figure {
     background: #fff;
     text-align: center;
     border-radius: 10px;
-    box-shadow: 0 4px 15px #00000016;
+    box-shadow: 0 4px 10px #0000001a;
     padding: 10px;
     position: relative;
     break-inside: avoid;
@@ -626,7 +573,7 @@ section#frase {
     text-align: center;
     font-size: 22px;
     margin-top: 50px;
-    color: rgb(0, 0, 0);
+    color: white;
 }
 
 /* RESPONSIVIDADE SEÇÃO FOTOS */
@@ -652,6 +599,10 @@ section#frase {
 
     #caixa-das-fotos {
         background-attachment: scroll;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
     }
 
     #div-das-fotos {
@@ -685,10 +636,6 @@ section#frase {
 }
 
 /* SEÇÃO EXPLORAR */
-
-#caixa-secao-explorar {
-    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
-}
 
 #explorar {
     min-height: 100vh;
