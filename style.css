@@ -490,9 +490,16 @@ section#area-inicio, section#inicio {
 
 /* SEÇÃO FOTOS */
 
-#fotos {
+#caixa-das-fotos {
     background-color: var(--Cor3);
-    /* background-image: url('imagens/horizonte_destktop.jpg'); */
+    background-image: url(imagens/horizonte_destktop.jpg);
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#fotos {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
