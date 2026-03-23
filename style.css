@@ -265,7 +265,7 @@ section#area-inicio, section#inicio {
     background-color: #ffffff;
     height: 500px;
     padding: 0px 20px 0px 20px;
-    box-shadow: inset 10px 10px 10px rgb(240, 240, 240);
+    box-shadow: inset 10px 10px 10px 10px #f0f0f0;
 }
 
 #slide-show {
@@ -319,8 +319,10 @@ section#area-inicio, section#inicio {
     }
 
     #lado-direito {
-        height: 450px;
-        padding: 0px;
+    height: 450px;
+    padding: 0px;
+    
+
     }
 
     #slide-show {
@@ -367,6 +369,7 @@ section#area-inicio, section#inicio {
         position: relative;
         padding: 25px 10px;
         max-height: 300px;
+        box-shadow: inset 10px 0px 10px 0px #f0f0f0;
     }
 
     #slide-show {
