@@ -605,7 +605,7 @@ section#frase {
     background-position: center bottom;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: fixed;
 }
 
     #div-das-fotos {
