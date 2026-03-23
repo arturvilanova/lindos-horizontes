@@ -642,18 +642,23 @@ section#frase {
 
 #caixa-secao-explorar {
     /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
+    background-color: #6a459a;
 }
 
 #explorar {
     min-height: 100vh;
     width: 100%;
     color: rgb(0, 0, 0);
+    background-color: #2D4A71;
 }
 
 #explorar h1 {
     color: rgb(0, 0, 0);
     padding: 50px 0px 0px 20px;
     font-size: 35px;
+    background-color: #2d7145;
+    text-align: center;
+
 }
 
 #explorar h3 {
