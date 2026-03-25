@@ -574,8 +574,7 @@ section#frase {
 }
 
 #imagens-ia img {
-    width: 400px;
-    
+    width: 400px;  
     border-radius: 10px;
 }
 
@@ -586,11 +585,11 @@ section#frase {
     }
  
     #imagens-ia img {
-    width: 250px;
+    width: 320px;
 }
 
     #imagens-ia figure {
-    width: 260px;
+    width: 340px;
     display: block;
     margin-left: auto;
     margin-right: auto;
