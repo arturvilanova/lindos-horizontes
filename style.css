@@ -36,7 +36,6 @@
 }
 
 /* CONFIGURAÇÕES PARA TODO O DOCUMENTO */
-
 html, body {
     font-family: "Be Vietnam Pro", sans-serif;
     max-width: 100%;
@@ -397,98 +396,15 @@ section#area-inicio, section#inicio {
     }
 }
 
-/* REDES SOCIAIS */
+/* SECAO */
 
-#contatos {
-    padding: auto;
-}
 
-#redes-sociais {
-    display: flex;
-}
-
-#contatos h3 {
-    padding: 50px 0px 0px 15px;
-    font-size: 22px;
-    color: #000000c0;
-}
-
-#contatos p {
-    margin: 20px 15px 40px 15px;
-    color: #4f4f4f;
-    font-weight: 400;
-}
-
-#contatos #redes-sociais li a img {
-    width: 20px;
-}
-
-#contatos #redes-sociais li a div {
-    background-color: #F2F8F6;
-    padding: 10px;
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border: 1px solid #00000012;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-#contatos #redes-sociais li #instagram {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 40px;
-}
-
-#contatos #redes-sociais li #youtube {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 40px;
-}
-
-#contatos #redes-sociais li #pixabay {
-    color: #000000;
-    text-decoration: none;
-    padding: 10px;
-    border-radius: 40px;
-}
-
-#contatos #redes-sociais {
-    gap: 30px;
-    margin: 0px 15px 40px 15px;
-    justify-content: left;
-}
-
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE*/
 
 @media(max-width:480px) {
 
-    h3, p {
-        text-align: center;
-    }
 
-    p {
-        text-align: center;
-    }
-
-    #contatos {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    #contatos #redes-sociais li a img {
-        width: 18px;
-    }
-
-    #redes-sociais {
-        width: max-content;
-        margin: auto;
-    }
+    
 }
 
 /* SEÇÃO FOTOS */
@@ -509,8 +425,6 @@ section#area-inicio, section#inicio {
     padding: 60px 20px;
     height: 100%;
 }
-
-
 
 section#fotos h1 {
     text-align: center;
@@ -638,53 +552,34 @@ section#frase {
     }
 }
 
-/* SEÇÃO EXPLORAR */
+/* SEÇÃO IA */
 
-#caixa-secao-explorar {
-    /* background: var(--Cor1) url(imagens/horizonte_destktop.jpg) right bottom/cover no-repeat scroll; */
-    /* background-color: #6a459a; */
+#imagens-ia {
+    background-color: #ffffff;
+    padding-bottom: 30px;
 }
 
-#explorar {
-    min-height: 100vh;
-    width: 100%;
-    color: rgb(0, 0, 0);
-    /* background-color: #2D4A71; */
-}
-
-#explorar h1 {
-    color: rgb(0, 0, 0);
-    padding: 50px 0px 0px 20px;
-    font-size: 35px;
-    /* background-color: #2d7145; */
+#caixa-ia h1 {
     text-align: center;
-
+    color: rgb(0, 0, 0);
+    padding: 40px;
+    font-size: 28px;
 }
 
-#explorar h3 {
-    padding: 50px 0px 0px 20px;
-    font-size: 22px;
+#imagens-ia figure {
+    width: 420px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#explorar p {
-    margin: 30px 0px 30px 40px;
-    font-size: 20px;
-    line-height: 40px;
-    text-align: left;
+#imagens-ia img {
+    width: 400px;
+    
+    border-radius: 10px;
 }
 
 @media(max-width:480px) {
-
-    #explorar h1 {
-    text-align: center;
-    font-size: 25px;
-    color: #202020;
-}
-
-#explorar p {
-    margin: 30px 0px 15px 40px;
-    font-size: 17px;
-}
 
 }
 
