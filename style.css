@@ -579,6 +579,55 @@ section#frase {
     border-radius: 10px;
 }
 
+/* CARROSSEL IA */
+
+.carrossel-ia {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 0 40px;
+    background-color: #56A38A;
+}
+
+.track-ia {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.4s ease;
+    padding-left: 20px;
+}
+
+.card-ia {
+    min-width: 60%;
+    background: #eaff00;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+
+    transform: translateY(20px) scale(0.9);
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+.card-ia img {
+    width: 100%;  
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-ia p {
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+    color: #444;
+}
+
+/* CARD ATIVO (o do meio) */
+.card-ia.ativo {
+    transform: translateY(0px) scale(1);
+    opacity: 1;
+}
+
 @media(max-width:480px) {
 
 }

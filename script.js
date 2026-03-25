@@ -105,6 +105,43 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// CARROSSEL IA COM SWIPE
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const track = document.querySelector(".track-ia");
+  const cards = document.querySelectorAll(".card-ia");
+
+  let index = 0;
+  let startX = 0;
+
+  function atualizar() {
+    const largura = cards[0].offsetWidth + 20;
+    track.style.transform = `translateX(${-index * largura}px)`;
+
+    cards.forEach(c => c.classList.remove("ativo"));
+    cards[index].classList.add("ativo");
+  }
+
+  track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+    let diff = startX - endX;
+
+    if (diff > 50 && index < cards.length - 1) {
+      index++;
+    } else if (diff < -50 && index > 0) {
+      index--;
+    }
+
+    atualizar();
+  });
+
+});
+
 // Atualiza o rodapé com o ano atual
 function AtualizarFooter() {
   const ano = new Date().getFullYear();
