@@ -580,8 +580,17 @@ section#frase {
 }
 
 @media(max-width:480px) {
-
+ 
+    #imagens-ia img {
+    width: 200px;
 }
+
+    #imagens-ia figure {
+    width: 220px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
 
 
 /* --- SEÇÕES ATIVAS --- */
