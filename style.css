@@ -563,7 +563,7 @@ section#frase {
     text-align: center;
     color: rgb(0, 0, 0);
     padding: 40px;
-    font-size: 28px;
+    font-size: 33px;
 }
 
 #imagens-ia figure {
@@ -580,13 +580,17 @@ section#frase {
 }
 
 @media(max-width:480px) {
+
+    caixa-ia h1 {
+    font-size: 28px;
+    }
  
     #imagens-ia img {
-    width: 200px;
+    width: 250px;
 }
 
     #imagens-ia figure {
-    width: 220px;
+    width: 260px;
     display: block;
     margin-left: auto;
     margin-right: auto;
