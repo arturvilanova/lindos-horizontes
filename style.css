@@ -563,7 +563,7 @@ section#frase {
     text-align: center;
     color: rgb(0, 0, 0);
     padding: 40px;
-    font-size: 28px;
+    font-size: 33px;
 }
 
 #imagens-ia figure {
@@ -574,8 +574,7 @@ section#frase {
 }
 
 #imagens-ia img {
-    width: 400px;
-    
+    width: 400px;  
     border-radius: 10px;
 }
 
@@ -630,7 +629,20 @@ section#frase {
 
 @media(max-width:480px) {
 
+    caixa-ia h1 {
+    font-size: 24px;
+    }
+ 
+    #imagens-ia img {
+    width: 300px;
 }
+
+    #imagens-ia figure {
+    width: 320px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
 
 
 /* --- SEÇÕES ATIVAS --- */
