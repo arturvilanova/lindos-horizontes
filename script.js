@@ -153,4 +153,3 @@ AtualizarFooter(); // <- chama a função aqui
 // FINALIZA PAGINA INICIAL
 
 
-

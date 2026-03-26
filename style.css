@@ -562,8 +562,8 @@ section#frase {
 #caixa-ia h1 {
     text-align: center;
     color: rgb(0, 0, 0);
-    padding: 40px;
-    font-size: 33px;
+    padding: 40px 0px 20px 0px;
+    font-size: 30px;
 }
 
 #imagens-ia figure {
@@ -591,23 +591,21 @@ section#frase {
     display: flex;
     gap: 20px;
     transition: transform 0.4s ease;
-    padding-left: 20px;
+    padding: 0 calc(50% - 15%); 
 }
 
 .card-ia {
-    min-width: 60%;
     background: #eaff00;
     border-radius: 15px;
-    padding: 10px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-
+    padding: 5px 5px 30px;
     transform: translateY(20px) scale(0.9);
     opacity: 0.7;
     transition: all 0.4s ease;
 }
 
 .card-ia img {
-    width: 100%;  
+    width: 500px; 
     border-radius: 10px;
     display: block;
     margin-left: auto;
@@ -629,7 +627,7 @@ section#frase {
 
 @media(max-width:480px) {
 
-    caixa-ia h1 {
+    #caixa-ia h1 {
     font-size: 24px;
     }
  
@@ -644,6 +642,7 @@ section#frase {
     margin-right: auto;
     }
 
+}
 
 /* --- SEÇÕES ATIVAS --- */
 
