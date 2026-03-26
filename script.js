@@ -107,39 +107,63 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // CARROSSEL IA COM SWIPE
 
-document.addEventListener("DOMContentLoaded", () => {
+const track = document.querySelector('.track');
+const slides = Array.from(document.querySelectorAll('.slide'));
 
-  const track = document.querySelector(".track-ia");
-  const cards = document.querySelectorAll(".card-ia");
+let index = 0;
+let startX = 0;
+let currentX = 0;
+let isDragging = false;
 
-  let index = 0;
-  let startX = 0;
+function updateCarousel() {
+  const slideWidth = slides[0].offsetWidth + 40; // margem
+  track.style.transform = `translateX(${-index * slideWidth}px)`;
 
-  function atualizar() {
-    const largura = cards[0].offsetWidth + 20;
-    track.style.transform = `translateX(${-index * largura}px)`;
+  slides.forEach((slide, i) => {
+    slide.classList.toggle('active', i === index);
+  });
+}
 
-    cards.forEach(c => c.classList.remove("ativo"));
-    cards[index].classList.add("ativo");
+updateCarousel();
+
+
+// 👉 Clique nas laterais
+slides.forEach((slide, i) => {
+  slide.addEventListener('click', () => {
+    index = i;
+    updateCarousel();
+  });
+});
+
+
+// 👉 DRAG SUAVE (acompanha o dedo)
+track.addEventListener('pointerdown', (e) => {
+  isDragging = true;
+  startX = e.clientX;
+  track.style.transition = 'none';
+});
+
+window.addEventListener('pointermove', (e) => {
+  if (!isDragging) return;
+
+  currentX = e.clientX - startX;
+  track.style.transform = `translateX(${(-index * (slides[0].offsetWidth + 40)) + currentX}px)`;
+});
+
+window.addEventListener('pointerup', () => {
+  if (!isDragging) return;
+
+  isDragging = false;
+  track.style.transition = 'transform 0.4s ease';
+
+  if (currentX < -50 && index < slides.length - 1) {
+    index++;
+  } else if (currentX > 50 && index > 0) {
+    index--;
   }
 
-  track.addEventListener("touchstart", e => {
-    startX = e.touches[0].clientX;
-  });
-
-  track.addEventListener("touchend", e => {
-    let endX = e.changedTouches[0].clientX;
-    let diff = startX - endX;
-
-    if (diff > 50 && index < cards.length - 1) {
-      index++;
-    } else if (diff < -50 && index > 0) {
-      index--;
-    }
-
-    atualizar();
-  });
-
+  updateCarousel();
+  currentX = 0;
 });
 
 // Atualiza o rodapé com o ano atual

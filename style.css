@@ -554,94 +554,48 @@ section#frase {
 
 /* SEÇÃO IA */
 
-#imagens-ia {
-    background-color: #ffffff;
-    padding-bottom: 30px;
+#caixa-ia {
+    background-color: #d2e6ff;
+    
 }
 
 #caixa-ia h1 {
     text-align: center;
-    color: rgb(0, 0, 0);
-    padding: 40px 0px 20px 0px;
-    font-size: 30px;
+    padding: 40px 0px
 }
 
-#imagens-ia figure {
-    width: 420px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  background-color: #7dd5ba;
+  padding: 20px;
+  
 }
 
-#imagens-ia img {
-    width: 400px;  
-    border-radius: 10px;
+.track {
+  display: flex;
+  align-items: center;
+  transition: transform 0.4s ease;
 }
 
-/* CARROSSEL IA */
-
-.carrossel-ia {
-    overflow: hidden;
-    width: 100%;
-    padding: 20px 0 40px;
-    background-color: #56A38A;
+.slide {
+  min-width: 70%;
+  margin: 0 5%;
+  transition: all 0.4s ease;
+  transform: scale(0.9) translateY(30px);
+  opacity: 0.6;
 }
 
-.track-ia {
-    display: flex;
-    gap: 20px;
-    transition: transform 0.4s ease;
-    padding: 0 calc(50% - 15%); 
+.slide img {
+  width: 60%;
+  border-radius: 16px;
+  border: 6px solid #eee;
 }
 
-.card-ia {
-    background: #eaff00;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-    padding: 5px 5px 30px;
-    transform: translateY(20px) scale(0.9);
-    opacity: 0.7;
-    transition: all 0.4s ease;
-}
-
-.card-ia img {
-    width: 500px; 
-    border-radius: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.card-ia p {
-    text-align: center;
-    font-size: 15px;
-    margin-top: 10px;
-    color: #444;
-}
-
-/* CARD ATIVO (o do meio) */
-.card-ia.ativo {
-    transform: translateY(0px) scale(1);
-    opacity: 1;
-}
-
-@media(max-width:480px) {
-
-    #caixa-ia h1 {
-    font-size: 24px;
-    }
- 
-    #imagens-ia img {
-    width: 300px;
-}
-
-    #imagens-ia figure {
-    width: 320px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    }
-
+/* Slide ativo (centro) */
+.slide.active {
+  transform: scale(1) translateY(-10px);
+  opacity: 1;
 }
 
 /* --- SEÇÕES ATIVAS --- */
