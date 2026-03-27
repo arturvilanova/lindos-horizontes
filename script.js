@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function mostrarSecao(id) {
     secoes.forEach(secao => secao.classList.remove("ativa"));
     document.getElementById(id).classList.add("ativa");
+
+    setTimeout(() => {
+      updateCarousel();
+    }, 50);
   }
 
   // Função que posiciona a barra sob o link ativo
@@ -108,26 +112,30 @@ document.addEventListener("DOMContentLoaded", function () {
 // CARROSSEL IA COM SWIPE
 
 const track = document.querySelector('.track');
-const slides = Array.from(document.querySelectorAll('.slide'));
+const slides = document.querySelectorAll('.slide');
+const carousel = document.querySelector('.carousel');
 
 let index = 0;
-let startX = 0;
-let currentX = 0;
-let isDragging = false;
 
+// 👉 CENTRALIZA BASEADO NO CONTAINER REAL
 function updateCarousel() {
-  const slideWidth = slides[0].offsetWidth + 40; // margem
-  track.style.transform = `translateX(${-index * slideWidth}px)`;
+  slides.forEach(s => s.classList.remove('active'));
+  slides[index].classList.add('active');
 
-  slides.forEach((slide, i) => {
-    slide.classList.toggle('active', i === index);
-  });
+  const slideWidth = slides[0].offsetWidth + 40; // margem total
+  const containerWidth = carousel.offsetWidth;
+
+  const offset = (containerWidth / 2) - (slideWidth / 2);
+
+  track.style.transform = `translateX(${-index * slideWidth + offset}px)`;
 }
 
 updateCarousel();
 
 
-// 👉 Clique nas laterais
+// ==========================
+// 🖱️ CLIQUE (OPCIONAL)
+// ==========================
 slides.forEach((slide, i) => {
   slide.addEventListener('click', () => {
     index = i;
@@ -136,35 +144,63 @@ slides.forEach((slide, i) => {
 });
 
 
-// 👉 DRAG SUAVE (acompanha o dedo)
-track.addEventListener('pointerdown', (e) => {
-  isDragging = true;
-  startX = e.clientX;
-  track.style.transition = 'none';
-});
+// ==========================
+// 🖐️ SWIPE REAL (FLUIDO)
+// ==========================
+let isDragging = false;
+let startX = 0;
+let currentTranslate = 0;
 
-window.addEventListener('pointermove', (e) => {
+track.addEventListener('mousedown', start);
+track.addEventListener('touchstart', start);
+
+track.addEventListener('mousemove', move);
+track.addEventListener('touchmove', move);
+
+track.addEventListener('mouseup', end);
+track.addEventListener('mouseleave', end);
+track.addEventListener('touchend', end);
+
+function start(e) {
+  isDragging = true;
+  startX = getX(e);
+  track.style.transition = 'none';
+}
+
+function move(e) {
   if (!isDragging) return;
 
-  currentX = e.clientX - startX;
-  track.style.transform = `translateX(${(-index * (slides[0].offsetWidth + 40)) + currentX}px)`;
-});
+  const currentX = getX(e);
+  const diff = currentX - startX;
 
-window.addEventListener('pointerup', () => {
+  const slideWidth = slides[0].offsetWidth + 40;
+
+  currentTranslate = -index * slideWidth + diff;
+  track.style.transform = `translateX(${currentTranslate}px)`;
+}
+
+function end(e) {
   if (!isDragging) return;
 
   isDragging = false;
+
+  const slideWidth = slides[0].offsetWidth + 40;
+  const moved = currentTranslate + index * slideWidth;
+
+  if (moved < -50) index++;
+  else if (moved > 50) index--;
+
+  // loop infinito
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+
   track.style.transition = 'transform 0.4s ease';
-
-  if (currentX < -50 && index < slides.length - 1) {
-    index++;
-  } else if (currentX > 50 && index > 0) {
-    index--;
-  }
-
   updateCarousel();
-  currentX = 0;
-});
+}
+
+function getX(e) {
+  return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+}
 
 // Atualiza o rodapé com o ano atual
 function AtualizarFooter() {
