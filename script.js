@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 const track = document.querySelector('.track');
 const slides = document.querySelectorAll('.slide');
 const carousel = document.querySelector('.carousel');
+let lastX = 0;
 
 let index = 0;
 
@@ -172,7 +173,10 @@ function move(e) {
   if (!isDragging) return;
 
   const currentX = getX(e);
-  const diff = currentX - startX;
+  const diff = currentX - lastX;
+
+  movedDistance += Math.abs(diff);
+  lastX = currentX;
 
   const slideWidth = slides[0].offsetWidth + 40;
 
@@ -180,7 +184,8 @@ function move(e) {
   track.style.transform = `translateX(${currentTranslate}px)`;
 
   // 👉 usa o mesmo diff
-  movedDistance = Math.abs(diff);
+  movedDistance += Math.abs(diff);
+
 }
 
 function end(e) {
@@ -189,7 +194,8 @@ function end(e) {
   isDragging = false;
 
   const slideWidth = slides[0].offsetWidth + 40;
-  const moved = currentTranslate + index * slideWidth;
+
+  const moved = startX - getX(e);
 
   const threshold = slides[0].offsetWidth * 0.15;
 
@@ -217,8 +223,14 @@ function getX(e) {
 function start(e) {
   isDragging = true;
   startX = getX(e);
-  movedDistance = 0; // 🔥 ESSENCIAL
+  movedDistance = 0;
   track.style.transition = 'none';
+  lastX = startX;
+
+  // 🔥 evita conflito com scroll
+  if (e.type === 'touchstart') {
+    e.preventDefault();
+  }
 }
 
 // Atualiza o rodapé com o ano atual
