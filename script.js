@@ -156,6 +156,7 @@ slides.forEach((slide, i) => {
 let isDragging = false;
 let startX = 0;
 let currentTranslate = 0;
+let movedDistance = 0;
 
 track.addEventListener('mousedown', start);
 track.addEventListener('touchstart', start);
@@ -167,12 +168,6 @@ track.addEventListener('mouseup', end);
 track.addEventListener('mouseleave', end);
 track.addEventListener('touchend', end);
 
-function start(e) {
-  isDragging = true;
-  startX = getX(e);
-  track.style.transition = 'none';
-}
-
 function move(e) {
   if (!isDragging) return;
 
@@ -181,8 +176,11 @@ function move(e) {
 
   const slideWidth = slides[0].offsetWidth + 40;
 
-  currentTranslate = -index * slideWidth + diff;
+  currentTranslate = -index * slideWidth + diff * 0.8;
   track.style.transform = `translateX(${currentTranslate}px)`;
+
+  // 👉 usa o mesmo diff
+  movedDistance = Math.abs(diff);
 }
 
 function end(e) {
@@ -193,19 +191,34 @@ function end(e) {
   const slideWidth = slides[0].offsetWidth + 40;
   const moved = currentTranslate + index * slideWidth;
 
-  if (moved < -50) index++;
-  else if (moved > 50) index--;
+  const threshold = slides[0].offsetWidth * 0.15;
+
+  // 🔥 SE FOI SÓ UM TOQUE, NÃO MUDA SLIDE
+  if (movedDistance < 8) {
+    updateCarousel();
+    return;
+  }
+
+  if (moved < -threshold) index++;
+  else if (moved > threshold) index--;
 
   // loop infinito
   if (index < 0) index = slides.length - 1;
   if (index >= slides.length) index = 0;
 
-  track.style.transition = 'transform 0.4s ease';
+  track.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
   updateCarousel();
 }
 
 function getX(e) {
   return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+}
+
+function start(e) {
+  isDragging = true;
+  startX = getX(e);
+  movedDistance = 0; // 🔥 ESSENCIAL
+  track.style.transition = 'none';
 }
 
 // Atualiza o rodapé com o ano atual

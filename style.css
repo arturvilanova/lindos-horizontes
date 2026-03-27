@@ -570,7 +570,7 @@ section#frase {
   width: 100%;
   /* background-color: #7dd5ba; */
   padding: 20px 0px 20px 0px;
-  
+  touch-action: pan-y;
 }
 
 .track {
@@ -604,6 +604,14 @@ section#frase {
 .slide.active {
   transform: scale(1) translateY(-10px);
   opacity: 1;
+}
+
+/* RESPONSIVIDADE IA */
+
+@media(max-width:480px) {
+    h1 {
+        font-size: 25px;
+    }
 }
 
 /* --- SEÇÕES ATIVAS --- */
