@@ -555,20 +555,21 @@ section#frase {
 /* SEÇÃO IA */
 
 #caixa-ia {
-    background-color: #d2e6ff;
+    /* background-color: #d2e6ff; */
     
 }
 
 #caixa-ia h1 {
     text-align: center;
-    padding: 40px 0px
+    padding: 30px 0px;
+    font-size: 29px;
 }
 
 .carousel {
   overflow: hidden;
   width: 100%;
-  background-color: #7dd5ba;
-  padding: 20px;
+  /* background-color: #7dd5ba; */
+  padding: 20px 0px 20px 0px;
   
 }
 
@@ -576,6 +577,7 @@ section#frase {
   display: flex;
   align-items: center;
   transition: transform 0.4s ease;
+  padding: 0 20px; 
 }
 
 .slide {
@@ -594,7 +596,8 @@ section#frase {
   border-radius: 16px;
   border: 6px solid #eee;
   border-radius: 16px;
-  border: 6px solid #eee;
+  border: 1.7px solid #9d9d9d;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.29);
 }
 
 /* Slide ativo (centro) */

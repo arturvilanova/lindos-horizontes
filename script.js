@@ -122,15 +122,21 @@ function updateCarousel() {
   slides.forEach(s => s.classList.remove('active'));
   slides[index].classList.add('active');
 
-  const slideWidth = slides[0].offsetWidth + 40; // margem total
+  const slide = slides[index];
+
   const containerWidth = carousel.offsetWidth;
 
-  const offset = (containerWidth / 2) - (slideWidth / 2);
+  // 👉 centro do slide ativo
+  const slideCenter = slide.offsetLeft + (slide.offsetWidth / 2);
 
-  track.style.transform = `translateX(${-index * slideWidth + offset}px)`;
+  // 👉 centro do container
+  const containerCenter = containerWidth / 2;
+
+  // 👉 alinhamento perfeito
+  const offset = containerCenter - slideCenter;
+
+  track.style.transform = `translateX(${offset}px)`;
 }
-
-updateCarousel();
 
 
 // ==========================
