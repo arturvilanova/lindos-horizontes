@@ -60,9 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-
-
-
 });
 
 // Animação do slide de imagens
@@ -172,6 +169,11 @@ track.addEventListener('touchend', end);
 function move(e) {
   if (!isDragging) return;
 
+  // 🔥 impede scroll só DURANTE o swipe
+  if (e.type === 'touchmove') {
+    e.preventDefault();
+  }
+
   const currentX = getX(e);
   const diff = currentX - lastX;
 
@@ -180,12 +182,8 @@ function move(e) {
 
   const slideWidth = slides[0].offsetWidth + 40;
 
-  currentTranslate = -index * slideWidth + diff * 0.8;
+  currentTranslate = -index * slideWidth + diff * 0.6;
   track.style.transform = `translateX(${currentTranslate}px)`;
-
-  // 👉 usa o mesmo diff
-  movedDistance += Math.abs(diff);
-
 }
 
 function end(e) {
@@ -227,10 +225,7 @@ function start(e) {
   track.style.transition = 'none';
   lastX = startX;
 
-  // 🔥 evita conflito com scroll
-  if (e.type === 'touchstart') {
-    e.preventDefault();
-  }
+  
 }
 
 // Atualiza o rodapé com o ano atual
