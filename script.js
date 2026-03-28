@@ -160,7 +160,8 @@ track.addEventListener('mousedown', start);
 track.addEventListener('touchstart', start);
 
 track.addEventListener('mousemove', move);
-track.addEventListener('touchmove', move);
+// track.addEventListener('touchmove', move);
+track.addEventListener('touchmove', move, { passive: false });
 
 track.addEventListener('mouseup', end);
 track.addEventListener('mouseleave', end);
