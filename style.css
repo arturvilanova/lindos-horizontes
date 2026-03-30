@@ -609,6 +609,10 @@ section#frase {
 /* RESPONSIVIDADE IA */
 
 @media(max-width:480px) {
+
+    #caixa-ia {
+        box-shadow: inset 5px 5px 10px 0px rgba(0,0,0,0.5);
+    }
     
     #caixa-ia h1 {
         font-size: 20px;
