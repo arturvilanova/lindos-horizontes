@@ -106,127 +106,97 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// CARROSSEL IA COM SWIPE
+// CARROSSEL IA
 
 const track = document.querySelector('.track');
 const slides = document.querySelectorAll('.slide');
 const carousel = document.querySelector('.carousel');
-let lastX = 0;
 
 let index = 0;
+let isDragging = false;
+let startX = 0;
+let currentX = 0;
 
-// 👉 CENTRALIZA BASEADO NO CONTAINER REAL
-function updateCarousel() {
+// ==========================
+// 🎯 CENTRALIZA COM ANIMAÇÃO
+// ==========================
+function updateCarousel(smooth = true) {
   slides.forEach(s => s.classList.remove('active'));
   slides[index].classList.add('active');
 
   const slide = slides[index];
 
   const containerWidth = carousel.offsetWidth;
-
-  // 👉 centro do slide ativo
-  const slideCenter = slide.offsetLeft + (slide.offsetWidth / 2);
-
-  // 👉 centro do container
+  const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
   const containerCenter = containerWidth / 2;
 
-  // 👉 alinhamento perfeito
   const offset = containerCenter - slideCenter;
+
+  track.style.transition = smooth 
+    ? 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)'
+    : 'none';
 
   track.style.transform = `translateX(${offset}px)`;
 }
 
-
 // ==========================
-// 🖱️ CLIQUE (OPCIONAL)
+// 🖱️ DESKTOP (APENAS CLIQUE)
 // ==========================
 slides.forEach((slide, i) => {
   slide.addEventListener('click', () => {
     index = i;
-    updateCarousel();
+    updateCarousel(true);
   });
 });
 
-
 // ==========================
-// 🖐️ SWIPE REAL (FLUIDO)
+// 📱 MOBILE (SWIPE REAL)
 // ==========================
-let isDragging = false;
-let startX = 0;
-let currentTranslate = 0;
-let movedDistance = 0;
+track.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+  track.style.transition = 'none';
+});
 
-track.addEventListener('mousedown', start);
-track.addEventListener('touchstart', start);
-
-track.addEventListener('mousemove', move);
-track.addEventListener('touchmove', move);
-
-track.addEventListener('mouseup', end);
-track.addEventListener('mouseleave', end);
-track.addEventListener('touchend', end);
-
-function move(e) {
+track.addEventListener('touchmove', (e) => {
   if (!isDragging) return;
 
-  // 🔥 impede scroll só DURANTE o swipe
-  if (e.type === 'touchmove') {
-    e.preventDefault();
-  }
+  currentX = e.touches[0].clientX;
+  const diff = currentX - startX;
 
-  const currentX = getX(e);
-  const diff = currentX - lastX;
+  const baseSlide = slides[index];
+  const containerWidth = carousel.offsetWidth;
+  const slideCenter = baseSlide.offsetLeft + baseSlide.offsetWidth / 2;
+  const containerCenter = containerWidth / 2;
 
-  movedDistance += Math.abs(diff);
-  lastX = currentX;
+  const baseOffset = containerCenter - slideCenter;
 
-  const slideWidth = slides[0].offsetWidth + 40;
+  // 👉 movimento suave durante arraste
+  track.style.transform = `translateX(${baseOffset + diff * 0.6}px)`;
+});
 
-  currentTranslate = -index * slideWidth + diff * 0.6;
-  track.style.transform = `translateX(${currentTranslate}px)`;
-}
-
-function end(e) {
+track.addEventListener('touchend', () => {
   if (!isDragging) return;
-
   isDragging = false;
 
-  const slideWidth = slides[0].offsetWidth + 40;
+  const diff = currentX - startX;
+  const threshold = 50;
 
-  const moved = startX - getX(e);
-
-  const threshold = slides[0].offsetWidth * 0.15;
-
-  // 🔥 SE FOI SÓ UM TOQUE, NÃO MUDA SLIDE
-  if (movedDistance < 8) {
-    updateCarousel();
+  // 👉 efeito de fim (bounce)
+  if ((index === 0 && diff > 0) || (index === slides.length - 1 && diff < 0)) {
+    updateCarousel(true);
     return;
   }
 
-  if (moved < -threshold) index++;
-  else if (moved > threshold) index--;
+  if (diff < -threshold) index++;
+  else if (diff > threshold) index--;
 
-  // loop infinito
-  if (index < 0) index = slides.length - 1;
-  if (index >= slides.length) index = 0;
+  // limites
+  if (index < 0) index = 0;
+  if (index >= slides.length) index = slides.length - 1;
 
-  track.style.transition = 'transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)';
-  updateCarousel();
-}
-
-function getX(e) {
-  return e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
-}
-
-function start(e) {
-  isDragging = true;
-  startX = getX(e);
-  movedDistance = 0;
-  track.style.transition = 'none';
-  lastX = startX;
-
-  
-}
+  updateCarousel(true);
+});
 
 // Atualiza o rodapé com o ano atual
 function AtualizarFooter() {
