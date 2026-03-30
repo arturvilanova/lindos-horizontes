@@ -554,7 +554,7 @@ section#frase {
 
 /* SEÇÃO IA */
 
-#caixa-ia {
+imagens-ia {
     /* background-color: #d2e6ff; */
     background-color: #56a38b13;
 }
@@ -608,6 +608,7 @@ section#frase {
 /* RESPONSIVIDADE IA */
 
 @media (max-width: 480px) {
+    
     #imagens-ia h1 {
         font-size: 22px;
         margin: 25px 10px;
