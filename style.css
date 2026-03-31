@@ -613,6 +613,16 @@ imagens-ia {
         font-size: 22px;
         margin: 25px 10px;
     }
+
+    .slide {
+    min-width: 85%;
+    margin: 0 3%;
+  }
+
+  .slide img {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 /* --- SEÇÕES ATIVAS --- */
