@@ -626,7 +626,7 @@ section#frase {
   }
     .track {
   display: flex;
-  gap: 10px; /* controla o espaço real entre imagens */
+  gap: 7.5px; /* controla o espaço real entre imagens */
 }
 }
 
