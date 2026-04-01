@@ -131,7 +131,7 @@ function updateCarousel(smooth = true) {
   const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
   const containerCenter = containerWidth / 2;
 
-  const offset = containerCenter - slideCenter + (containerWidth * 0.08);
+  const offset = containerCenter - slideCenter;
   track.style.transition = smooth 
     ? 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)'
     : 'none';
