@@ -121,27 +121,20 @@ let currentX = 0;
 // 🎯 CENTRALIZA COM ANIMAÇÃO
 // ==========================
 
-function updateCarousel() {
+function updateCarousel(smooth = true) {
   slides.forEach(s => s.classList.remove('active'));
   slides[index].classList.add('active');
 
   const slide = slides[index];
 
   const containerWidth = carousel.offsetWidth;
-
-  const slideCenter = slide.offsetLeft + (slide.offsetWidth / 2);
+  const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
   const containerCenter = containerWidth / 2;
 
-  let offset = containerCenter - slideCenter;
-
-  // 👉 ajuste inteligente (equilibra os dois lados)
-  const edgeOffset = containerWidth * 0.06;
-
-  if (index === 0) {
-    offset += edgeOffset;
-  } else if (index === slides.length - 1) {
-    offset -= edgeOffset;
-  }
+  const offset = containerCenter - slideCenter + (containerWidth * 0.08);
+  track.style.transition = smooth 
+    ? 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)'
+    : 'none';
 
   track.style.transform = `translateX(${offset}px)`;
 }
