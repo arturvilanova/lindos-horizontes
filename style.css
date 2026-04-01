@@ -615,7 +615,8 @@ section#frase {
     }
 
     .slide {
-    margin: 0 5%;
+    min-width: 85%;
+    margin: 0 3%;
     }
 
   .slide img {
