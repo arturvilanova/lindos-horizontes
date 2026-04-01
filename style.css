@@ -613,16 +613,21 @@ section#frase {
         font-size: 22px;
         margin: 25px 10px;
     }
-
-    .slide {
-    min-width: 90%;
-    margin: 0 3%;
+    
+   .slide {
+      min-width: 90%;
+      margin: 0 3%;
+      margin: 0; /* remove margem antiga */
     }
-
+    
   .slide img {
     width: 100%;
     max-width: none;
   }
+    .track {
+  display: flex;
+  gap: 10px; /* controla o espaço real entre imagens */
+}
 }
 
 /* --- SEÇÕES ATIVAS --- */
