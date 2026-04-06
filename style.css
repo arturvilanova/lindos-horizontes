@@ -364,6 +364,10 @@ section#area-inicio, section#inicio {
 
 @media(max-width:480px) {
 
+    #texto-logo {
+        display: none;
+    }
+
     #area {
         flex-direction: column;
     }
