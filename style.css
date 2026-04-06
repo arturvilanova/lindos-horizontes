@@ -80,6 +80,7 @@ nav {
     width: max-content;
     justify-content: center; /* 🔹 Centraliza o logo horizontalmente */
     align-items: center; /* 🔹 Centraliza verticalmente */
+    padding:20px 25px 10px 15px;
 }
 
 #logo {
