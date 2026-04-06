@@ -108,14 +108,16 @@ nav {
 }
 
 #texto-logo h1 {
-    font-size: 18px;
+    font-size: 14px;
     color: #2D4A71;
     font-weight: 600;
+    background: var(--Cor2);
 }
 
 #texto-logo p {
-    font-size: 12px;
+    font-size: 10px;
     color: #666;
+    background: var(--Cor2);
 }
 
 ul#links {
