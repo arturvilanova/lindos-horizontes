@@ -117,7 +117,6 @@ nav {
 #texto-logo p {
     font-size: 12px;
     color: #666;
-    color: var(--Cor2);
 }
 
 ul#links {
