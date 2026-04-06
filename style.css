@@ -94,6 +94,30 @@ nav {
     -webkit-tap-highlight-color: transparent;
 }
 
+#logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+#texto-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+#texto-logo h1 {
+    font-size: 18px;
+    color: #2D4A71;
+    font-weight: 600;
+}
+
+#texto-logo p {
+    font-size: 12px;
+    color: #666;
+}
+
 ul#links {
     display: flex;
     width: max-content;
@@ -174,6 +198,14 @@ a.links-menu.ativo {
     #logo {
         height: 38px;
         margin: 0 auto;
+    }
+
+    #texto-logo h1 {
+        font-size: 16px;
+    }
+
+    #texto-logo p {
+        font-size: 11px;
     }
 
     ul#links {
