@@ -167,6 +167,26 @@ a.links-menu.ativo {
     transition: left 0.3s, width 0.3s;
 }
 
+#redes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: auto; /* joga para o lado direito */
+    padding-right: 20px;
+}
+
+#redes img {
+    width: 26px;
+    height: 26px;
+    transition: transform 0.3s, opacity 0.3s;
+    cursor: pointer;
+}
+
+#redes img:hover {
+    transform: scale(1.2);
+    opacity: 0.8;
+}
+
 /* RESPONSIVIDADE CABEÇALHO */
 
 @media(max-width: 900px) {
@@ -231,6 +251,10 @@ a.links-menu.ativo {
     .barra-deslizante {
         bottom: -6px;
         transform: translateY(6px);
+    }
+
+    #redes {
+        display: none;
     }
 }
 
