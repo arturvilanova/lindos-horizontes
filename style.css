@@ -323,10 +323,10 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
-    background-color: #ffffff;
+    background-color: #56a38b13;
     height: 500px;
     padding: 0px 20px 0px 20px;
-    box-shadow: inset 10px 10px 10px 10px #f0f0f0;
+    /* box-shadow: inset 10px 10px 10px 10px #f0f0f0; */
 }
 
 #slide-show {
