@@ -177,6 +177,100 @@ track5.addEventListener("touchend", e => {
 // ==========================
 updateCarousel5();
 
+// CARROSSEL IA
+
+const track = document.querySelector('.track');
+const slides = document.querySelectorAll('.slide');
+const carousel = document.querySelector('.carousel');
+
+let index = 0;
+let isDragging = false;
+let startX = 0;
+let currentX = 0;
+
+// ==========================
+// 🎯 CENTRALIZA COM ANIMAÇÃO
+// ==========================
+
+function updateCarousel(smooth = true) {
+  slides.forEach(s => s.classList.remove('active'));
+  slides[index].classList.add('active');
+
+  const slide = slides[index];
+
+  const containerWidth = carousel.offsetWidth;
+  const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+  const containerCenter = containerWidth / 2;
+
+  const offset = containerCenter - slideCenter;
+  track.style.transition = smooth 
+    ? 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)'
+    : 'none';
+
+  track.style.transform = `translateX(${offset}px)`;
+}
+
+// ==========================
+// 🖱️ DESKTOP (APENAS CLIQUE)
+// ==========================
+slides.forEach((slide, i) => {
+  slide.addEventListener('click', () => {
+    index = i;
+    updateCarousel(true);
+  });
+});
+
+// ==========================
+// 📱 MOBILE (SWIPE REAL)
+// ==========================
+track.addEventListener('touchstart', (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
+  track.style.transition = 'none';
+});
+
+track.addEventListener('touchmove', (e) => {
+  if (!isDragging) return;
+
+  currentX = e.touches[0].clientX;
+  const diff = currentX - startX;
+
+  const baseSlide = slides[index];
+  const containerWidth = carousel.offsetWidth;
+  const slideCenter = baseSlide.offsetLeft + baseSlide.offsetWidth / 2;
+  const containerCenter = containerWidth / 2;
+
+  const baseOffset = containerCenter - slideCenter;
+
+  // 👉 movimento suave durante arraste
+  track.style.transform = `translateX(${baseOffset + diff * 0.6}px)`;
+});
+
+track.addEventListener('touchend', () => {
+  if (!isDragging) return;
+  isDragging = false;
+
+  const diff = currentX - startX;
+  const threshold = 50;
+
+  // 👉 efeito de fim (bounce)
+  if ((index === 0 && diff > 0) || (index === slides.length - 1 && diff < 0)) {
+    updateCarousel(true);
+    return;
+  }
+
+  if (diff < -threshold) index++;
+  else if (diff > threshold) index--;
+
+  // limites
+  if (index < 0) index = 0;
+  if (index >= slides.length) index = slides.length - 1;
+
+  updateCarousel(true);
+});
+
+// FIM CARROSSEL IA
+
 // Atualiza o rodapé com o ano atual
 function AtualizarFooter() {
   const ano = new Date().getFullYear();
