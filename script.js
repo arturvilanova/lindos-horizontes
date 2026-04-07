@@ -204,18 +204,18 @@ const track5 = document.querySelector('.track_1');
 let slides5 = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
-let index = 0;
+let index5 = 0;
 
 // ==========================
 // 🎯 ATUALIZA VISUAL
 // ==========================
-function updateCarousel() {
+function updateCarousel5() {
     slides5.forEach(s => s.classList.remove('active'));
     dots.forEach(d => d.classList.remove('active'));
 
     slides5[1].classList.add('active'); // centro visual
 
-    dots[index].classList.add('active');
+    dots[index5].classList.add('active');
 }
 
 // ==========================
@@ -237,7 +237,7 @@ function moveNext() {
         // atualiza index
         index = (index + 1) % dots.length;
 
-        updateCarousel();
+        updateCarousel5();
 
     }, 600);
 }
@@ -267,7 +267,7 @@ track5.addEventListener("touchend", e => {
 });
 
 // ==========================
-updateCarousel();
+updateCarousel5();
 
 // Atualiza o rodapé com o ano atual
 function AtualizarFooter() {
