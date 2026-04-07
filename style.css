@@ -380,7 +380,8 @@ section#area-inicio, section#inicio {
 }
 
 /* Slide ativo (centro) */
-.slide.active {
+
+.slide_1.active {
     transform: scale(1);
     opacity: 1;
 }
