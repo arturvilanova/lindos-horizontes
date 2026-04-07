@@ -145,6 +145,7 @@ li {
     text-decoration: none;
     user-select: none;
     transition: color 0.3s;
+    font-weight: 600;
 }
 
 .links-menu:hover {
@@ -153,7 +154,6 @@ li {
 
 a.links-menu.ativo {
     color: var(--Cor2);
-    font-weight: 630;
 }
 
 .barra-deslizante {
