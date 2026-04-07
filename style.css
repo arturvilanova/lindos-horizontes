@@ -171,7 +171,8 @@ a.links-menu.ativo {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-left: auto; /* joga para o lado direito */
+    margin-left: 20px; /* joga para o lado direito */
+    
     padding-right: 20px;
 }
 
