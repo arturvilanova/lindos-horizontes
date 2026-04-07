@@ -198,8 +198,10 @@ track.addEventListener('touchend', () => {
   updateCarousel(true);
 });
 
-const track = document.querySelector('.track_1');
-let slides = document.querySelectorAll('.slide_1');
+// slide inicial versão 2
+
+const track5 = document.querySelector('.track_1');
+let slides5 = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
 let index = 0;
@@ -208,10 +210,10 @@ let index = 0;
 // 🎯 ATUALIZA VISUAL
 // ==========================
 function updateCarousel() {
-    slides.forEach(s => s.classList.remove('active'));
+    slides5.forEach(s => s.classList.remove('active'));
     dots.forEach(d => d.classList.remove('active'));
 
-    slides[1].classList.add('active'); // centro visual
+    slides5[1].classList.add('active'); // centro visual
 
     dots[index].classList.add('active');
 }
@@ -221,16 +223,16 @@ function updateCarousel() {
 // ==========================
 function moveNext() {
 
-    track.style.transition = "transform 0.6s ease";
-    track.style.transform = "translateX(-320px)";
+    track5.style.transition = "transform 0.6s ease";
+    track5.style.transform = "translateX(-320px)";
 
     setTimeout(() => {
-        track.style.transition = "none";
+        track5.style.transition = "none";
 
         // move o primeiro pro final (loop infinito)
-        track.appendChild(track.firstElementChild);
+        track5.appendChild(track5.firstElementChild);
 
-        track.style.transform = "translateX(0)";
+        track5.style.transform = "translateX(0)";
         
         // atualiza index
         index = (index + 1) % dots.length;
@@ -243,7 +245,7 @@ function moveNext() {
 // ==========================
 // 🖱️ CLICK (DESKTOP)
 // ==========================
-slides.forEach(slide => {
+slides5.forEach(slide => {
     slide.addEventListener("click", moveNext);
 });
 
@@ -252,11 +254,11 @@ slides.forEach(slide => {
 // ==========================
 let startX = 0;
 
-track.addEventListener("touchstart", e => {
+track5.addEventListener("touchstart", e => {
     startX = e.touches[0].clientX;
 });
 
-track.addEventListener("touchend", e => {
+track5.addEventListener("touchend", e => {
     let endX = e.changedTouches[0].clientX;
 
     if (startX - endX > 50) {
