@@ -460,8 +460,7 @@ section#area-inicio, section#inicio {
         align-items: center;
         position: relative;
         padding: 25px 10px;
-        height: 600px;
-        max-height: 300px;
+        max-height: 700px;
         box-shadow: inset 10px 0px 10px 0px #f0f0f0;
     }
 
