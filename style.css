@@ -113,6 +113,9 @@ nav {
     color: #2D4A71;
     font-weight: 780;
     color: var(--Cor2);
+    text-shadow: 5px 5px 15px;
+    -webkit-text-stroke-width: 0.4px; /* Largura da borda */
+    -webkit-text-stroke-color: white; /* Cor da borda */
 }
 
 #texto-logo p {
