@@ -198,6 +198,75 @@ track.addEventListener('touchend', () => {
   updateCarousel(true);
 });
 
+const track = document.querySelector('.track_1');
+let slides = document.querySelectorAll('.slide_1');
+const dots = document.querySelectorAll('.dot');
+
+let index = 0;
+
+// ==========================
+// 🎯 ATUALIZA VISUAL
+// ==========================
+function updateCarousel() {
+    slides.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+
+    slides[1].classList.add('active'); // centro visual
+
+    dots[index].classList.add('active');
+}
+
+// ==========================
+// 👉 MOVIMENTO PARA ESQUERDA
+// ==========================
+function moveNext() {
+
+    track.style.transition = "transform 0.6s ease";
+    track.style.transform = "translateX(-320px)";
+
+    setTimeout(() => {
+        track.style.transition = "none";
+
+        // move o primeiro pro final (loop infinito)
+        track.appendChild(track.firstElementChild);
+
+        track.style.transform = "translateX(0)";
+        
+        // atualiza index
+        index = (index + 1) % dots.length;
+
+        updateCarousel();
+
+    }, 600);
+}
+
+// ==========================
+// 🖱️ CLICK (DESKTOP)
+// ==========================
+slides.forEach(slide => {
+    slide.addEventListener("click", moveNext);
+});
+
+// ==========================
+// 📱 SWIPE (MOBILE)
+// ==========================
+let startX = 0;
+
+track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", e => {
+    let endX = e.changedTouches[0].clientX;
+
+    if (startX - endX > 50) {
+        moveNext(); // direita → esquerda
+    }
+});
+
+// ==========================
+updateCarousel();
+
 // Atualiza o rodapé com o ano atual
 function AtualizarFooter() {
   const ano = new Date().getFullYear();
