@@ -329,32 +329,6 @@ section#area-inicio, section#inicio {
     /* box-shadow: inset 10px 10px 10px 10px #f0f0f0; */
 }
 
-#slide-show {
-    position: relative;
-    width: 100%;
-    height: 400px;
-    max-width: 600px;
-    overflow: hidden; 
-}
-
-#slide-show img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
-    border: 0.5px solid rgb(214, 214, 214);
-    border-radius: 10px;
-}
-
-#slide-show img.ativo { /* A imagem ativa fica visível */
-    opacity: 1;
-    z-index: 1;
-}
-
 .carousel_1 {
     overflow: hidden;
     width: 100%;
