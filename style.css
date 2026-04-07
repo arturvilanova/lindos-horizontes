@@ -113,7 +113,7 @@ nav {
     color: #2D4A71;
     font-weight: 780;
     color: var(--Cor2);
-    text-shadow: 0px 0px 9px black;
+    text-shadow:  0px 9px 9px #F0F0F0;
     -webkit-text-stroke-width: 0.4px; /* Largura da borda */
     -webkit-text-stroke-color: white; /* Cor da borda */
 }
