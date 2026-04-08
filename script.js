@@ -89,14 +89,16 @@ function updateCarouselInicio() {
   slidesInicio.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
 
-  slidesInicio[1].classList.add('active');
+  slidesInicio[1]?.classList.add('active');
   dots[indexInicio].classList.add('active');
 }
 
 function moveNextInicio() {
 
+  const slideWidth = slidesInicio[0].offsetWidth + 10; // 10 = gap
+
   trackInicio.style.transition = "transform 0.6s ease";
-  trackInicio.style.transform = "translateX(-320px)";
+  trackInicio.style.transform = `translateX(-${slideWidth}px)`;
 
   setTimeout(() => {
     trackInicio.style.transition = "none";
@@ -113,11 +115,13 @@ function moveNextInicio() {
 
 function movePrevInicio() {
 
+  const slideWidth = slidesInicio[0].offsetWidth + 10;
+
   trackInicio.style.transition = "none";
 
   trackInicio.insertBefore(trackInicio.lastElementChild, trackInicio.firstElementChild);
 
-  trackInicio.style.transform = "translateX(-320px)";
+  trackInicio.style.transform = `translateX(-${slideWidth}px)`;
 
   requestAnimationFrame(() => {
     trackInicio.style.transition = "transform 0.6s ease";
@@ -128,12 +132,6 @@ function movePrevInicio() {
 
   updateCarouselInicio();
 }
-
-slidesInicio.forEach(slide => {
-  slide.addEventListener("click", moveNextInicio);
-});
-
-
 
 // 📱 Swipe
 let startXInicio = 0;
