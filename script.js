@@ -64,47 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Animação do slide de imagens
 
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll("#slide-show img");
-  let indice = 0;
+// FIM SLIDE DE imagens
 
-  function mostrarSlide(index) {
-    slides.forEach(img => img.classList.remove("ativo"));
-    slides[index].classList.add("ativo");
-  }
 
-  function proximoSlide() {
-    indice = (indice + 1) % slides.length;
-    mostrarSlide(indice);
-  }
-
-  // Mostra o primeiro
-  mostrarSlide(indice);
-
-  // Troca a cada 5 segundos
-  setInterval(proximoSlide, 5000);
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const menu = document.querySelector("ul");
-  const headerHeight = document.querySelector("#caixa-logo").offsetHeight;
-
-  window.addEventListener("scroll", function () {
-
-    // Só aplica no modo celular
-    if (window.innerWidth <= 480) {
-      if (window.scrollY > headerHeight) {
-        menu.classList.add("fixo");
-      } else {
-        menu.classList.remove("fixo");
-      }
-
-    } else {
-      // Remove a classe se estiver em tela grande
-      menu.classList.remove("fixo");
-    }
-  });
-});
 
 // ISLIDES INÍCIO 
 
