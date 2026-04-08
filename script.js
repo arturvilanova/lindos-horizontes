@@ -70,86 +70,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (INFINITO REAL)
+// 🎞️ CARROSSEL INÍCIO (FINAL LIMPO)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
-let slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
-let indexInicio = 1;
+let indexInicio = 0;
 
-// 🔥 CLONA PRIMEIRO E ÚLTIMO
-const firstClone = slidesInicio[0].cloneNode(true);
-const lastClone = slidesInicio[slidesInicio.length - 1].cloneNode(true);
-
-trackInicio.appendChild(firstClone);
-trackInicio.insertBefore(lastClone, slidesInicio[0]);
-
-slidesInicio = document.querySelectorAll('.slide_1');
-
-// 👉 POSIÇÃO INICIAL
-function setPosition() {
-  const slideWidth = slidesInicio[0].offsetWidth + 10; // gap
-  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
-}
-
-// 👉 ATUALIZA VISUAL
+// 🔥 ATUALIZA VISUAL
 function updateCarouselInicio() {
-  slidesInicio.forEach(s => s.classList.remove('active'));
+  const slides = document.querySelectorAll('.slide_1');
 
-  if (slidesInicio[indexInicio]) {
-    slidesInicio[indexInicio].classList.add('active');
-  }
-
+  slides.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
-  dots[(indexInicio - 1 + dots.length) % dots.length].classList.add('active');
+
+  // slide central (sempre o segundo visível)
+  if (slides[1]) slides[1].classList.add('active');
+
+  dots[indexInicio].classList.add('active');
 }
 
-// 👉 AVANÇA
+// 👉 AVANÇA (LOOP NATURAL)
 function moveNextInicio() {
-  const slideWidth = slidesInicio[0].offsetWidth + 10;
 
-  indexInicio++;
+  const slide = document.querySelector('.slide_1');
+  const slideWidth = slide.offsetWidth + 10;
 
   trackInicio.style.transition = "transform 0.5s ease";
-  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+  trackInicio.style.transform = `translateX(-${slideWidth}px)`;
 
-  updateCarouselInicio();
+  setTimeout(() => {
+
+    trackInicio.style.transition = "none";
+
+    // 🔥 move primeiro pro final (mantém ordem correta)
+    trackInicio.appendChild(trackInicio.firstElementChild);
+
+    trackInicio.style.transform = "translateX(0)";
+
+    indexInicio = (indexInicio + 1) % dots.length;
+
+    updateCarouselInicio();
+
+  }, 500);
 }
 
 // 👉 VOLTA
 function movePrevInicio() {
-  const slideWidth = slidesInicio[0].offsetWidth + 10;
 
-  indexInicio--;
+  const slide = document.querySelector('.slide_1');
+  const slideWidth = slide.offsetWidth + 10;
 
-  trackInicio.style.transition = "transform 0.5s ease";
-  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+  trackInicio.style.transition = "none";
+
+  trackInicio.insertBefore(trackInicio.lastElementChild, trackInicio.firstElementChild);
+
+  trackInicio.style.transform = `translateX(-${slideWidth}px)`;
+
+  requestAnimationFrame(() => {
+    trackInicio.style.transition = "transform 0.5s ease";
+    trackInicio.style.transform = "translateX(0)";
+  });
+
+  indexInicio = (indexInicio - 1 + dots.length) % dots.length;
 
   updateCarouselInicio();
 }
 
-// 👉 LOOP REAL (SEM PULO)
-trackInicio.addEventListener('transitionend', () => {
-  const slideWidth = slidesInicio[0].offsetWidth + 10;
-
-  if (indexInicio === slidesInicio.length - 1) {
-    trackInicio.style.transition = "none";
-    indexInicio = 1;
-    trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
-  }
-
-  if (indexInicio === 0) {
-    trackInicio.style.transition = "none";
-    indexInicio = slidesInicio.length - 2;
-    trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
-  }
-});
-
 // 👉 CLIQUE
-slidesInicio.forEach(() => {
-  trackInicio.addEventListener("click", moveNextInicio);
-});
+trackInicio.addEventListener("click", moveNextInicio);
 
 // 👉 SWIPE
 let startXInicio = 0;
@@ -168,7 +157,6 @@ trackInicio.addEventListener("touchend", e => {
 
 // 👉 INICIALIZA
 window.addEventListener("load", () => {
-  setPosition();
   updateCarouselInicio();
 });
 
