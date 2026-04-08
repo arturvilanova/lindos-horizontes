@@ -337,7 +337,7 @@ section#area-inicio, section#inicio {
 
 .track_1 {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     transition: transform 0.6s ease;
 }
 
