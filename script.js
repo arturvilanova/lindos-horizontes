@@ -111,9 +111,29 @@ function moveNextInicio() {
   }, 600);
 }
 
+function movePrevInicio() {
+
+  trackInicio.style.transition = "none";
+
+  trackInicio.insertBefore(trackInicio.lastElementChild, trackInicio.firstElementChild);
+
+  trackInicio.style.transform = "translateX(-320px)";
+
+  requestAnimationFrame(() => {
+    trackInicio.style.transition = "transform 0.6s ease";
+    trackInicio.style.transform = "translateX(0)";
+  });
+
+  indexInicio = (indexInicio - 1 + dots.length) % dots.length;
+
+  updateCarouselInicio();
+}
+
 slidesInicio.forEach(slide => {
   slide.addEventListener("click", moveNextInicio);
 });
+
+
 
 // 📱 Swipe
 let startXInicio = 0;
@@ -124,10 +144,10 @@ trackInicio.addEventListener("touchstart", e => {
 
 trackInicio.addEventListener("touchend", e => {
   let endX = e.changedTouches[0].clientX;
+  let diff = startXInicio - endX;
 
-  if (startXInicio - endX > 50) {
-    moveNextInicio();
-  }
+  if (diff > 50) moveNextInicio();
+  else if (diff < -50) movePrevInicio();
 });
 
 updateCarouselInicio();
