@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (FINAL)
+// 🎞️ CARROSSEL INÍCIO (ESTÁVEL)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
 const slidesInicio = document.querySelectorAll('.slide_1');
@@ -78,7 +78,7 @@ const dots = document.querySelectorAll('.dot');
 
 let indexInicio = 0;
 
-// 🔥 CENTRALIZAÇÃO PERFEITA
+// 🔥 FUNÇÃO PRINCIPAL (SEM BUG)
 function updateCarouselInicio() {
   slidesInicio.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
@@ -86,40 +86,18 @@ function updateCarouselInicio() {
   slidesInicio[indexInicio].classList.add('active');
   dots[indexInicio].classList.add('active');
 
-  const slide = slidesInicio[indexInicio];
+  const slideWidth = slidesInicio[0].offsetWidth;
 
-  const slideRect = slide.getBoundingClientRect();
-  const containerRect = document.querySelector('.carousel_1').getBoundingClientRect();
+  const offset = -(slideWidth * indexInicio);
 
-  const slideCenter = slideRect.left + slideRect.width / 2;
-  const containerCenter = containerRect.left + containerRect.width / 2;
-
-  const offset = containerCenter - slideCenter;
-
-  trackInicio.style.willChange = "transform";
+  trackInicio.style.transition = 'transform 0.6s ease';
   trackInicio.style.transform = `translateX(${offset}px)`;
 }
 
-// 👉 CLIQUE (loop suave)
-slidesInicio.forEach((slide, i) => {
+// 👉 CLIQUE (avança infinito)
+slidesInicio.forEach((slide) => {
   slide.addEventListener('click', () => {
-
-    indexInicio++;
-
-    if (indexInicio >= slidesInicio.length) {
-      indexInicio = 0;
-
-      trackInicio.style.transition = 'none';
-      updateCarouselInicio();
-
-      requestAnimationFrame(() => {
-        trackInicio.style.transition = 'transform 0.6s ease';
-      });
-
-      return;
-    }
-
-    trackInicio.style.transition = 'transform 0.6s ease';
+    indexInicio = (indexInicio + 1) % slidesInicio.length;
     updateCarouselInicio();
   });
 });
@@ -135,52 +113,18 @@ trackInicio.addEventListener("touchend", e => {
   let endX = e.changedTouches[0].clientX;
   let diff = startXInicio - endX;
 
-  if (diff > 50) {
-    indexInicio++;
+  if (diff > 50) indexInicio++;
+  else if (diff < -50) indexInicio--;
 
-    if (indexInicio >= slidesInicio.length) {
-      indexInicio = 0;
+  if (indexInicio >= slidesInicio.length) indexInicio = 0;
+  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
 
-      trackInicio.style.transition = 'none';
-      updateCarouselInicio();
-
-      requestAnimationFrame(() => {
-        trackInicio.style.transition = 'transform 0.6s ease';
-      });
-
-      return;
-    }
-  }
-
-  else if (diff < -50) {
-    indexInicio--;
-
-    if (indexInicio < 0) {
-      indexInicio = slidesInicio.length - 1;
-
-      trackInicio.style.transition = 'none';
-      updateCarouselInicio();
-
-      requestAnimationFrame(() => {
-        trackInicio.style.transition = 'transform 0.6s ease';
-      });
-
-      return;
-    }
-  }
-
-  trackInicio.style.transition = 'transform 0.6s ease';
   updateCarouselInicio();
 });
 
-// 👉 INICIALIZA (SEM BUG)
+// 👉 INICIALIZA
 window.addEventListener("load", () => {
-  trackInicio.style.transition = 'none';
   updateCarouselInicio();
-
-  requestAnimationFrame(() => {
-    trackInicio.style.transition = 'transform 0.6s ease';
-  });
 });
 
 
