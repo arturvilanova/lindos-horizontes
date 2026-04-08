@@ -105,7 +105,7 @@ function moveNext() {
         track5.style.transform = "translateX(0)";
         
         // atualiza index
-        index = (index + 1) % dots.length;
+        index5 = (index5 + 1) % dots.length;
 
         updateCarousel5();
 
