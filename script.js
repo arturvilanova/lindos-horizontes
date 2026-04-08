@@ -77,63 +77,43 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO
+// 🎞️ CARROSSEL INÍCIO (CORRIGIDO)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
-let slidesInicio = document.querySelectorAll('.slide_1');
+const slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
 let indexInicio = 0;
 
+// 🔥 FUNÇÃO PRINCIPAL (CENTRALIZA O SLIDE)
 function updateCarouselInicio() {
   slidesInicio.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
 
-  slidesInicio[1]?.classList.add('active');
+  slidesInicio[indexInicio].classList.add('active');
   dots[indexInicio].classList.add('active');
+
+  const slide = slidesInicio[indexInicio];
+
+  const containerWidth = trackInicio.parentElement.offsetWidth;
+  const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+  const containerCenter = containerWidth / 2;
+
+  const offset = containerCenter - slideCenter;
+
+  trackInicio.style.transition = 'transform 0.6s ease';
+  trackInicio.style.transform = `translateX(${offset}px)`;
 }
 
-function moveNextInicio() {
-
-  const slideWidth = slidesInicio[0].offsetWidth + 10; // 10 = gap
-
-  trackInicio.style.transition = "transform 0.6s ease";
-  trackInicio.style.transform = `translateX(-${slideWidth}px)`;
-
-  setTimeout(() => {
-    trackInicio.style.transition = "none";
-
-    trackInicio.appendChild(trackInicio.firstElementChild);
-    trackInicio.style.transform = "translateX(0)";
-
-    indexInicio = (indexInicio + 1) % dots.length;
-
+// 👉 Clique nas imagens
+slidesInicio.forEach((slide, i) => {
+  slide.addEventListener('click', () => {
+    indexInicio = i;
     updateCarouselInicio();
-
-  }, 600);
-}
-
-function movePrevInicio() {
-
-  const slideWidth = slidesInicio[0].offsetWidth + 10;
-
-  trackInicio.style.transition = "none";
-
-  trackInicio.insertBefore(trackInicio.lastElementChild, trackInicio.firstElementChild);
-
-  trackInicio.style.transform = `translateX(-${slideWidth}px)`;
-
-  requestAnimationFrame(() => {
-    trackInicio.style.transition = "transform 0.6s ease";
-    trackInicio.style.transform = "translateX(0)";
   });
+});
 
-  indexInicio = (indexInicio - 1 + dots.length) % dots.length;
-
-  updateCarouselInicio();
-}
-
-// 📱 Swipe
+// 👉 Swipe
 let startXInicio = 0;
 
 trackInicio.addEventListener("touchstart", e => {
@@ -144,10 +124,16 @@ trackInicio.addEventListener("touchend", e => {
   let endX = e.changedTouches[0].clientX;
   let diff = startXInicio - endX;
 
-  if (diff > 50) moveNextInicio();
-  else if (diff < -50) movePrevInicio();
+  if (diff > 50) indexInicio++;
+  else if (diff < -50) indexInicio--;
+
+  if (indexInicio < 0) indexInicio = 0;
+  if (indexInicio >= slidesInicio.length) indexInicio = slidesInicio.length - 1;
+
+  updateCarouselInicio();
 });
 
+// 👉 Inicializa
 updateCarouselInicio();
 
 
