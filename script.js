@@ -70,36 +70,85 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (ESTÁVEL)
+// 🎞️ CARROSSEL INÍCIO (INFINITO REAL)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
-const slidesInicio = document.querySelectorAll('.slide_1');
+let slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
-let indexInicio = 0;
+let indexInicio = 1;
 
-// 🔥 FUNÇÃO PRINCIPAL (SEM BUG)
-function updateCarouselInicio() {
-  slidesInicio.forEach(s => s.classList.remove('active'));
-  dots.forEach(d => d.classList.remove('active'));
+// 🔥 CLONA PRIMEIRO E ÚLTIMO
+const firstClone = slidesInicio[0].cloneNode(true);
+const lastClone = slidesInicio[slidesInicio.length - 1].cloneNode(true);
 
-  slidesInicio[indexInicio].classList.add('active');
-  dots[indexInicio].classList.add('active');
+trackInicio.appendChild(firstClone);
+trackInicio.insertBefore(lastClone, slidesInicio[0]);
 
-  const slideWidth = slidesInicio[0].offsetWidth;
+slidesInicio = document.querySelectorAll('.slide_1');
 
-  const offset = -(slideWidth * indexInicio);
-
-  trackInicio.style.transition = 'transform 0.6s ease';
-  trackInicio.style.transform = `translateX(${offset}px)`;
+// 👉 POSIÇÃO INICIAL
+function setPosition() {
+  const slideWidth = slidesInicio[0].offsetWidth + 10; // gap
+  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
 }
 
-// 👉 CLIQUE (avança infinito)
-slidesInicio.forEach((slide) => {
-  slide.addEventListener('click', () => {
-    indexInicio = (indexInicio + 1) % slidesInicio.length;
-    updateCarouselInicio();
-  });
+// 👉 ATUALIZA VISUAL
+function updateCarouselInicio() {
+  slidesInicio.forEach(s => s.classList.remove('active'));
+
+  if (slidesInicio[indexInicio]) {
+    slidesInicio[indexInicio].classList.add('active');
+  }
+
+  dots.forEach(d => d.classList.remove('active'));
+  dots[(indexInicio - 1 + dots.length) % dots.length].classList.add('active');
+}
+
+// 👉 AVANÇA
+function moveNextInicio() {
+  const slideWidth = slidesInicio[0].offsetWidth + 10;
+
+  indexInicio++;
+
+  trackInicio.style.transition = "transform 0.5s ease";
+  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+
+  updateCarouselInicio();
+}
+
+// 👉 VOLTA
+function movePrevInicio() {
+  const slideWidth = slidesInicio[0].offsetWidth + 10;
+
+  indexInicio--;
+
+  trackInicio.style.transition = "transform 0.5s ease";
+  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+
+  updateCarouselInicio();
+}
+
+// 👉 LOOP REAL (SEM PULO)
+trackInicio.addEventListener('transitionend', () => {
+  const slideWidth = slidesInicio[0].offsetWidth + 10;
+
+  if (indexInicio === slidesInicio.length - 1) {
+    trackInicio.style.transition = "none";
+    indexInicio = 1;
+    trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+  }
+
+  if (indexInicio === 0) {
+    trackInicio.style.transition = "none";
+    indexInicio = slidesInicio.length - 2;
+    trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+  }
+});
+
+// 👉 CLIQUE
+slidesInicio.forEach(() => {
+  trackInicio.addEventListener("click", moveNextInicio);
 });
 
 // 👉 SWIPE
@@ -113,17 +162,13 @@ trackInicio.addEventListener("touchend", e => {
   let endX = e.changedTouches[0].clientX;
   let diff = startXInicio - endX;
 
-  if (diff > 50) indexInicio++;
-  else if (diff < -50) indexInicio--;
-
-  if (indexInicio >= slidesInicio.length) indexInicio = 0;
-  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
-
-  updateCarouselInicio();
+  if (diff > 50) moveNextInicio();
+  else if (diff < -50) movePrevInicio();
 });
 
 // 👉 INICIALIZA
 window.addEventListener("load", () => {
+  setPosition();
   updateCarouselInicio();
 });
 
