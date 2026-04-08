@@ -342,7 +342,7 @@ section#area-inicio, section#inicio {
 }
 
 .slide_1 {
-    min-width: 300px;
+    min-width: 70%;
     transition: all 0.4s ease;
     transform: scale(0.9);
     opacity: 0.8; /* menos lavado */
