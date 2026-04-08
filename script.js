@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 50);
   }
 
-  // ✅ BARRA CORRIGIDA (sem bug de posição)
   function MoverBarra(linkAtivo, animar = true) {
     const largura = linkAtivo.offsetWidth;
     const esquerda = linkAtivo.offsetLeft;
@@ -49,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ✅ POSICIONA AO CARREGAR
   const linkInicial = document.querySelector(".links-menu.ativo");
   if (linkInicial) {
     requestAnimationFrame(() => {
@@ -57,27 +55,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ✅ RESPONSIVO
   window.addEventListener("resize", () => {
     const ativo = document.querySelector(".links-menu.ativo");
     if (ativo) MoverBarra(ativo, false);
   });
 
-  // ==========================
-  // 📌 FOOTER (CORRIGIDO)
-  // ==========================
   function AtualizarFooter() {
     const ano = new Date().getFullYear();
     direitos.textContent = `© ${ano} - Lindos Horizontes. Todos os direitos reservados.`;
   }
 
   AtualizarFooter();
-
 });
 
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (CORRIGIDO)
+// 🎞️ CARROSSEL INÍCIO (FINAL)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
 const slidesInicio = document.querySelectorAll('.slide_1');
@@ -85,7 +78,7 @@ const dots = document.querySelectorAll('.dot');
 
 let indexInicio = 0;
 
-// 🔥 FUNÇÃO PRINCIPAL (CENTRALIZA O SLIDE)
+// 🔥 CENTRALIZAÇÃO PERFEITA
 function updateCarouselInicio() {
   slidesInicio.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
@@ -95,28 +88,43 @@ function updateCarouselInicio() {
 
   const slide = slidesInicio[indexInicio];
 
-  const containerWidth = trackInicio.parentElement.offsetWidth;
-  const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-  const containerCenter = containerWidth / 2;
+  const slideRect = slide.getBoundingClientRect();
+  const containerRect = document.querySelector('.carousel_1').getBoundingClientRect();
+
+  const slideCenter = slideRect.left + slideRect.width / 2;
+  const containerCenter = containerRect.left + containerRect.width / 2;
 
   const offset = containerCenter - slideCenter;
 
-  trackInicio.style.transition = 'transform 0.6s ease';
+  trackInicio.style.willChange = "transform";
   trackInicio.style.transform = `translateX(${offset}px)`;
 }
 
-// 👉 Clique nas imagens
+// 👉 CLIQUE (loop suave)
 slidesInicio.forEach((slide, i) => {
   slide.addEventListener('click', () => {
-  indexInicio++;
-  if (indexInicio >= slidesInicio.length) indexInicio = 0;
-  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
-  updateCarouselInicio();
-});
-  
+
+    indexInicio++;
+
+    if (indexInicio >= slidesInicio.length) {
+      indexInicio = 0;
+
+      trackInicio.style.transition = 'none';
+      updateCarouselInicio();
+
+      requestAnimationFrame(() => {
+        trackInicio.style.transition = 'transform 0.6s ease';
+      });
+
+      return;
+    }
+
+    trackInicio.style.transition = 'transform 0.6s ease';
+    updateCarouselInicio();
+  });
 });
 
-// 👉 Swipe
+// 👉 SWIPE
 let startXInicio = 0;
 
 trackInicio.addEventListener("touchstart", e => {
@@ -127,21 +135,57 @@ trackInicio.addEventListener("touchend", e => {
   let endX = e.changedTouches[0].clientX;
   let diff = startXInicio - endX;
 
-  if (diff > 50) indexInicio++;
-  else if (diff < -50) indexInicio--;
+  if (diff > 50) {
+    indexInicio++;
 
-  if (indexInicio >= slidesInicio.length) indexInicio = 0;
-  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
-  
+    if (indexInicio >= slidesInicio.length) {
+      indexInicio = 0;
+
+      trackInicio.style.transition = 'none';
+      updateCarouselInicio();
+
+      requestAnimationFrame(() => {
+        trackInicio.style.transition = 'transform 0.6s ease';
+      });
+
+      return;
+    }
+  }
+
+  else if (diff < -50) {
+    indexInicio--;
+
+    if (indexInicio < 0) {
+      indexInicio = slidesInicio.length - 1;
+
+      trackInicio.style.transition = 'none';
+      updateCarouselInicio();
+
+      requestAnimationFrame(() => {
+        trackInicio.style.transition = 'transform 0.6s ease';
+      });
+
+      return;
+    }
+  }
+
+  trackInicio.style.transition = 'transform 0.6s ease';
   updateCarouselInicio();
 });
 
-// 👉 Inicializa
-updateCarouselInicio();
+// 👉 INICIALIZA (SEM BUG)
+window.addEventListener("load", () => {
+  trackInicio.style.transition = 'none';
+  updateCarouselInicio();
+
+  requestAnimationFrame(() => {
+    trackInicio.style.transition = 'transform 0.6s ease';
+  });
+});
 
 
 // ==========================
-// 🎞️ CARROSSEL IA
+// 🎞️ CARROSSEL IA (SEM ALTERAÇÃO)
 // ==========================
 const track = document.querySelector('.track');
 const slides = document.querySelectorAll('.slide');
@@ -171,7 +215,6 @@ function updateCarousel(smooth = true) {
   track.style.transform = `translateX(${offset}px)`;
 }
 
-// Clique
 slides.forEach((slide, i) => {
   slide.addEventListener('click', () => {
     index = i;
@@ -179,7 +222,6 @@ slides.forEach((slide, i) => {
   });
 });
 
-// Swipe
 track.addEventListener('touchstart', (e) => {
   isDragging = true;
   startX = e.touches[0].clientX;
