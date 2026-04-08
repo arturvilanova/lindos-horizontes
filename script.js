@@ -108,9 +108,12 @@ function updateCarouselInicio() {
 // 👉 Clique nas imagens
 slidesInicio.forEach((slide, i) => {
   slide.addEventListener('click', () => {
-    indexInicio = i;
-    updateCarouselInicio();
-  });
+  indexInicio++;
+  if (indexInicio >= slidesInicio.length) indexInicio = 0;
+  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
+  updateCarouselInicio();
+});
+  
 });
 
 // 👉 Swipe
@@ -127,9 +130,9 @@ trackInicio.addEventListener("touchend", e => {
   if (diff > 50) indexInicio++;
   else if (diff < -50) indexInicio--;
 
-  if (indexInicio < 0) indexInicio = 0;
-  if (indexInicio >= slidesInicio.length) indexInicio = slidesInicio.length - 1;
-
+  if (indexInicio >= slidesInicio.length) indexInicio = 0;
+  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
+  
   updateCarouselInicio();
 });
 
