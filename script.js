@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById(id).classList.add("ativa");
 
     setTimeout(() => {
-      updateCarouselIA();
+      updateCarouselIA(false);
       updateCarouselInicio(false);
     }, 50);
   }
@@ -42,19 +42,12 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.add("ativo");
 
       mostrarSecao(link.dataset.target);
-
-      requestAnimationFrame(() => {
-        moverBarra(link, true);
-      });
+      moverBarra(link, true);
     });
   });
 
   const linkInicial = document.querySelector(".links-menu.ativo");
-  if (linkInicial) {
-    requestAnimationFrame(() => {
-      moverBarra(linkInicial, false);
-    });
-  }
+  if (linkInicial) moverBarra(linkInicial, false);
 
   window.addEventListener("resize", () => {
     const ativo = document.querySelector(".links-menu.ativo");
@@ -68,64 +61,66 @@ document.addEventListener("DOMContentLoaded", () => {
     const ano = new Date().getFullYear();
     direitos.textContent = `© ${ano} - Lindos Horizontes. Todos os direitos reservados.`;
   }
-
   atualizarFooter();
 
-// ==========================
-// 🎞️ CARROSSEL INÍCIO (UMA IMAGEM POR VEZ)
-// ==========================
-const trackInicio = document.querySelector('.track_1');
-const slidesInicio = document.querySelectorAll('.slide_1');
-const dots = document.querySelectorAll('.dot');
 
-let indexInicio = 0;
-let startX = 0;
+  // ==========================
+  // 🎞️ CARROSSEL INÍCIO
+  // ==========================
+  const trackInicio = document.querySelector('.track_1');
+  let slidesInicio = document.querySelectorAll('.slide_1');
+  const dots = document.querySelectorAll('.dot');
 
-// 🔥 ATUALIZA POSIÇÃO
-function updateCarouselInicio(smooth = true) {
-  const width = trackInicio.clientWidth;
+  let indexInicio = 0;
+  let startXInicio = 0;
 
-  trackInicio.style.transition = smooth ? "transform 0.4s ease" : "none";
-  trackInicio.style.transform = `translateX(-${width * indexInicio}px)`;
+  function updateCarouselInicio(smooth = true) {
 
-  dots.forEach(d => d.classList.remove('active'));
-  dots[indexInicio].classList.add('active');
-}
+    slidesInicio = document.querySelectorAll('.slide_1');
 
-// 👉 AVANÇA (infinito)
-function nextSlide() {
-  indexInicio++;
-  if (indexInicio >= slidesInicio.length) indexInicio = 0;
-  updateCarouselInicio(true);
-}
+    slidesInicio.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
 
-// 👉 VOLTA (infinito)
-function prevSlide() {
-  indexInicio--;
-  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
-  updateCarouselInicio(true);
-}
+    const slide = slidesInicio[indexInicio];
+    slide.classList.add('active');
+    dots[indexInicio].classList.add('active');
 
-// 👉 CLIQUE
-trackInicio.addEventListener("click", nextSlide);
+    const container = document.querySelector('.carousel_1');
 
-// 👉 SWIPE
-trackInicio.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-});
+    const containerWidth = container.offsetWidth;
+    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+    const containerCenter = containerWidth / 2;
 
-trackInicio.addEventListener("touchend", e => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
+    const offset = containerCenter - slideCenter;
 
-  if (diff > 50) nextSlide();
-  else if (diff < -50) prevSlide();
-});
+    trackInicio.style.transition = smooth ? "transform 0.6s ease" : "none";
+    trackInicio.style.transform = `translateX(${offset}px)`;
+  }
 
-// 👉 INICIALIZA
-window.addEventListener("load", () => {
-  updateCarouselInicio(false);
-});
+  function nextSlideInicio() {
+    indexInicio = (indexInicio + 1) % slidesInicio.length;
+    updateCarouselInicio(true);
+  }
+
+  function prevSlideInicio() {
+    indexInicio = (indexInicio - 1 + slidesInicio.length) % slidesInicio.length;
+    updateCarouselInicio(true);
+  }
+
+  trackInicio.addEventListener("click", nextSlideInicio);
+
+  trackInicio.addEventListener("touchstart", e => {
+    startXInicio = e.touches[0].clientX;
+  });
+
+  trackInicio.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startXInicio - endX;
+
+    if (diff > 50) nextSlideInicio();
+    else if (diff < -50) prevSlideInicio();
+  });
+
 
   // ==========================
   // 🎞️ CARROSSEL IA
@@ -136,7 +131,7 @@ window.addEventListener("load", () => {
 
   let index = 0;
   let isDragging = false;
-  let startX = 0;
+  let startXIA = 0;
   let currentX = 0;
 
   function updateCarouselIA(smooth = true) {
@@ -167,7 +162,7 @@ window.addEventListener("load", () => {
 
   track.addEventListener('touchstart', (e) => {
     isDragging = true;
-    startX = e.touches[0].clientX;
+    startXIA = e.touches[0].clientX;
     track.style.transition = 'none';
   });
 
@@ -175,7 +170,7 @@ window.addEventListener("load", () => {
     if (!isDragging) return;
 
     currentX = e.touches[0].clientX;
-    const diff = currentX - startX;
+    const diff = currentX - startXIA;
 
     const baseSlide = slides[index];
     const containerWidth = carousel.offsetWidth;
@@ -191,7 +186,7 @@ window.addEventListener("load", () => {
     if (!isDragging) return;
     isDragging = false;
 
-    const diff = currentX - startX;
+    const diff = currentX - startXIA;
     const threshold = 50;
 
     if ((index === 0 && diff > 0) || (index === slides.length - 1 && diff < 0)) {
@@ -208,8 +203,9 @@ window.addEventListener("load", () => {
     updateCarouselIA(true);
   });
 
+
   // ==========================
-  // 🚀 INICIALIZA TUDO
+  // 🚀 INICIALIZA
   // ==========================
   window.addEventListener("load", () => {
     updateCarouselInicio(false);
