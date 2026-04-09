@@ -71,74 +71,104 @@ document.addEventListener("DOMContentLoaded", () => {
 
   atualizarFooter();
 
-  // ==========================
-  // 🎞️ CARROSSEL INÍCIO (FLUIDO)
-  // ==========================
-  const trackInicio = document.querySelector('.track_1');
-  const slidesInicio = document.querySelectorAll('.slide_1');
-  const dots = document.querySelectorAll('.dot');
+// ==========================
+// 🎞️ CARROSSEL INÍCIO (AJUSTADO)
+// ==========================
+const trackInicio = document.querySelector('.track_1');
+const slidesInicio = document.querySelectorAll('.slide_1');
+const dots = document.querySelectorAll('.dot');
 
-  let indexInicio = 0;
-  let startXInicio = 0;
-  let currentTranslateInicio = 0;
-  let prevTranslateInicio = 0;
-  let isDraggingInicio = false;
+let indexInicio = 0;
+let startXInicio = 0;
+let currentTranslateInicio = 0;
+let prevTranslateInicio = 0;
+let isDraggingInicio = false;
 
-  function updateCarouselInicio(smooth = true) {
-    const slideWidth = slidesInicio[0].offsetWidth + 20;
+// 🔥 pega largura REAL (corrige deslocamento)
+function getSlideWidth() {
+  const slide = slidesInicio[0];
+  const style = window.getComputedStyle(slide);
+  const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
+  return slide.offsetWidth + margin;
+}
 
-    currentTranslateInicio = -(slideWidth * indexInicio);
+// 🔥 centraliza corretamente
+function updateCarouselInicio(smooth = true) {
+  const slideWidth = getSlideWidth();
 
-    trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
-    trackInicio.style.transform = `translateX(${currentTranslateInicio}px)`;
+  currentTranslateInicio = -(slideWidth * indexInicio);
 
-    slidesInicio.forEach(s => s.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
+  trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
+  trackInicio.style.transform = `translateX(${currentTranslateInicio}px)`;
 
-    slidesInicio[indexInicio].classList.add('active');
-    dots[indexInicio].classList.add('active');
+  slidesInicio.forEach(s => s.classList.remove('active'));
+  dots.forEach(d => d.classList.remove('active'));
+
+  slidesInicio[indexInicio].classList.add('active');
+  dots[indexInicio].classList.add('active');
+}
+
+// 👉 AVANÇA (loop suave)
+function nextInicio() {
+  indexInicio++;
+
+  if (indexInicio >= slidesInicio.length) {
+    indexInicio = 0;
   }
 
-  function nextInicio() {
-    indexInicio = (indexInicio + 1) % slidesInicio.length;
-    updateCarouselInicio(true);
+  updateCarouselInicio(true);
+}
+
+// 👉 VOLTA (mesmo comportamento)
+function prevInicio() {
+  indexInicio--;
+
+  if (indexInicio < 0) {
+    indexInicio = slidesInicio.length - 1;
   }
 
-  function prevInicio() {
-    indexInicio = (indexInicio - 1 + slidesInicio.length) % slidesInicio.length;
-    updateCarouselInicio(true);
-  }
+  updateCarouselInicio(true);
+}
 
-  // Clique
-  trackInicio.addEventListener("click", nextInicio);
+// 👉 CLIQUE
+trackInicio.addEventListener("click", nextInicio);
 
-  // Swipe
-  trackInicio.addEventListener("touchstart", e => {
-    isDraggingInicio = true;
-    startXInicio = e.touches[0].clientX;
-    prevTranslateInicio = currentTranslateInicio;
-    trackInicio.style.transition = "none";
-  });
+// 👉 TOUCH START
+trackInicio.addEventListener("touchstart", e => {
+  isDraggingInicio = true;
+  startXInicio = e.touches[0].clientX;
+  prevTranslateInicio = currentTranslateInicio;
+  trackInicio.style.transition = "none";
+});
 
-  trackInicio.addEventListener("touchmove", e => {
-    if (!isDraggingInicio) return;
+// 👉 TOUCH MOVE (🔥 agora não corta mais)
+trackInicio.addEventListener("touchmove", e => {
+  if (!isDraggingInicio) return;
 
-    const currentX = e.touches[0].clientX;
-    const diff = currentX - startXInicio;
+  const currentX = e.touches[0].clientX;
+  const diff = currentX - startXInicio;
 
-    trackInicio.style.transform = `translateX(${prevTranslateInicio + diff}px)`;
-  });
+  trackInicio.style.transform = `translateX(${prevTranslateInicio + diff}px)`;
+});
 
-  trackInicio.addEventListener("touchend", e => {
-    isDraggingInicio = false;
+// 👉 TOUCH END
+trackInicio.addEventListener("touchend", e => {
+  isDraggingInicio = false;
 
-    const endX = e.changedTouches[0].clientX;
-    const diff = startXInicio - endX;
+  const endX = e.changedTouches[0].clientX;
+  const diff = startXInicio - endX;
 
-    if (diff > 50) nextInicio();
-    else if (diff < -50) prevInicio();
-    else updateCarouselInicio(true);
-  });
+  const threshold = 60;
+
+  if (diff > threshold) nextInicio();
+  else if (diff < -threshold) prevInicio();
+  else updateCarouselInicio(true);
+});
+
+// 👉 INICIALIZA
+window.addEventListener("load", () => {
+  updateCarouselInicio(false);
+});
 
   // ==========================
   // 🎞️ CARROSSEL IA
