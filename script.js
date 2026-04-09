@@ -72,102 +72,96 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarFooter();
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (AJUSTADO)
+// 🎞️ CARROSSEL INÍCIO (INFINITO REAL)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
-const slidesInicio = document.querySelectorAll('.slide_1');
+let slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
-let indexInicio = 0;
+let indexInicio = 1;
 let startXInicio = 0;
-let currentTranslateInicio = 0;
-let prevTranslateInicio = 0;
 let isDraggingInicio = false;
 
-// 🔥 pega largura REAL (corrige deslocamento)
-function getSlideWidth() {
+// 🔥 CLONES (segredo do infinito real)
+const firstClone = slidesInicio[0].cloneNode(true);
+const lastClone = slidesInicio[slidesInicio.length - 1].cloneNode(true);
+
+trackInicio.appendChild(firstClone);
+trackInicio.insertBefore(lastClone, slidesInicio[0]);
+
+slidesInicio = document.querySelectorAll('.slide_1');
+
+// 🔥 largura correta
+function getWidth() {
   const slide = slidesInicio[0];
-  const style = window.getComputedStyle(slide);
+  const style = getComputedStyle(slide);
   const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
   return slide.offsetWidth + margin;
 }
 
-// 🔥 centraliza corretamente
-function updateCarouselInicio(smooth = true) {
-  const slideWidth = getSlideWidth();
-
-  currentTranslateInicio = -(slideWidth * indexInicio);
+// 🔥 posiciona corretamente
+function setPosition(smooth = true) {
+  const width = getWidth();
 
   trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
-  trackInicio.style.transform = `translateX(${currentTranslateInicio}px)`;
+  trackInicio.style.transform = `translateX(-${width * indexInicio}px)`;
 
-  slidesInicio.forEach(s => s.classList.remove('active'));
   dots.forEach(d => d.classList.remove('active'));
-
-  slidesInicio[indexInicio].classList.add('active');
-  dots[indexInicio].classList.add('active');
+  dots[(indexInicio - 1 + dots.length) % dots.length].classList.add('active');
 }
 
-// 👉 AVANÇA (loop suave)
+// 👉 AVANÇA
 function nextInicio() {
   indexInicio++;
-
-  if (indexInicio >= slidesInicio.length) {
-    indexInicio = 0;
-  }
-
-  updateCarouselInicio(true);
+  setPosition(true);
 }
 
-// 👉 VOLTA (mesmo comportamento)
+// 👉 VOLTA
 function prevInicio() {
   indexInicio--;
+  setPosition(true);
+}
 
-  if (indexInicio < 0) {
-    indexInicio = slidesInicio.length - 1;
+// 🔥 LOOP INVISÍVEL
+trackInicio.addEventListener("transitionend", () => {
+  const width = getWidth();
+
+  if (indexInicio === slidesInicio.length - 1) {
+    trackInicio.style.transition = "none";
+    indexInicio = 1;
+    trackInicio.style.transform = `translateX(-${width * indexInicio}px)`;
   }
 
-  updateCarouselInicio(true);
-}
+  if (indexInicio === 0) {
+    trackInicio.style.transition = "none";
+    indexInicio = slidesInicio.length - 2;
+    trackInicio.style.transform = `translateX(-${width * indexInicio}px)`;
+  }
+});
 
 // 👉 CLIQUE
 trackInicio.addEventListener("click", nextInicio);
 
-// 👉 TOUCH START
+// 👉 SWIPE
 trackInicio.addEventListener("touchstart", e => {
-  isDraggingInicio = true;
   startXInicio = e.touches[0].clientX;
-  prevTranslateInicio = currentTranslateInicio;
-  trackInicio.style.transition = "none";
+  isDraggingInicio = true;
 });
 
-// 👉 TOUCH MOVE (🔥 agora não corta mais)
-trackInicio.addEventListener("touchmove", e => {
-  if (!isDraggingInicio) return;
-
-  const currentX = e.touches[0].clientX;
-  const diff = currentX - startXInicio;
-
-  trackInicio.style.transform = `translateX(${prevTranslateInicio + diff}px)`;
-});
-
-// 👉 TOUCH END
 trackInicio.addEventListener("touchend", e => {
+  if (!isDraggingInicio) return;
   isDraggingInicio = false;
 
   const endX = e.changedTouches[0].clientX;
   const diff = startXInicio - endX;
 
-  const threshold = 60;
-
-  if (diff > threshold) nextInicio();
-  else if (diff < -threshold) prevInicio();
-  else updateCarouselInicio(true);
+  if (diff > 50) nextInicio();
+  else if (diff < -50) prevInicio();
 });
 
 // 👉 INICIALIZA
 window.addEventListener("load", () => {
-  updateCarouselInicio(false);
+  setPosition(false);
 });
 
   // ==========================
