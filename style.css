@@ -334,6 +334,9 @@ section#area-inicio, section#inicio {
   width: 100%;
   display: flex;
   justify-content: center;
+  display: flex;
+  flex-direction: column; /* 🔥 empilha imagem + bolinhas */
+  align-items: center;   /* 🔥 centraliza tudo */
 }
 
 .track_1 {
@@ -367,8 +370,10 @@ section#area-inicio, section#inicio {
 .dots {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    align-items: center;
+    margin-top: 20px; /* 🔥 distância controlada da imagem */
     gap: 10px;
+    width: 100%;
 }
 
 .dot {
