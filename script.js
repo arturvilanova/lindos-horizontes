@@ -72,96 +72,59 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarFooter();
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (INFINITO REAL)
+// 🎞️ CARROSSEL INÍCIO (UMA IMAGEM POR VEZ)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
-let slidesInicio = document.querySelectorAll('.slide_1');
+const slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
-let indexInicio = 1;
-let startXInicio = 0;
-let isDraggingInicio = false;
+let indexInicio = 0;
+let startX = 0;
 
-// 🔥 CLONES (segredo do infinito real)
-const firstClone = slidesInicio[0].cloneNode(true);
-const lastClone = slidesInicio[slidesInicio.length - 1].cloneNode(true);
+// 🔥 ATUALIZA POSIÇÃO
+function updateCarouselInicio(smooth = true) {
+  const width = trackInicio.clientWidth;
 
-trackInicio.appendChild(firstClone);
-trackInicio.insertBefore(lastClone, slidesInicio[0]);
-
-slidesInicio = document.querySelectorAll('.slide_1');
-
-// 🔥 largura correta
-function getWidth() {
-  const slide = slidesInicio[0];
-  const style = getComputedStyle(slide);
-  const margin = parseFloat(style.marginLeft) + parseFloat(style.marginRight);
-  return slide.offsetWidth + margin;
-}
-
-// 🔥 posiciona corretamente
-function setPosition(smooth = true) {
-  const width = getWidth();
-
-  trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
+  trackInicio.style.transition = smooth ? "transform 0.4s ease" : "none";
   trackInicio.style.transform = `translateX(-${width * indexInicio}px)`;
 
   dots.forEach(d => d.classList.remove('active'));
-  dots[(indexInicio - 1 + dots.length) % dots.length].classList.add('active');
+  dots[indexInicio].classList.add('active');
 }
 
-// 👉 AVANÇA
-function nextInicio() {
+// 👉 AVANÇA (infinito)
+function nextSlide() {
   indexInicio++;
-  setPosition(true);
+  if (indexInicio >= slidesInicio.length) indexInicio = 0;
+  updateCarouselInicio(true);
 }
 
-// 👉 VOLTA
-function prevInicio() {
+// 👉 VOLTA (infinito)
+function prevSlide() {
   indexInicio--;
-  setPosition(true);
+  if (indexInicio < 0) indexInicio = slidesInicio.length - 1;
+  updateCarouselInicio(true);
 }
-
-// 🔥 LOOP INVISÍVEL
-trackInicio.addEventListener("transitionend", () => {
-  const width = getWidth();
-
-  if (indexInicio === slidesInicio.length - 1) {
-    trackInicio.style.transition = "none";
-    indexInicio = 1;
-    trackInicio.style.transform = `translateX(-${width * indexInicio}px)`;
-  }
-
-  if (indexInicio === 0) {
-    trackInicio.style.transition = "none";
-    indexInicio = slidesInicio.length - 2;
-    trackInicio.style.transform = `translateX(-${width * indexInicio}px)`;
-  }
-});
 
 // 👉 CLIQUE
-trackInicio.addEventListener("click", nextInicio);
+trackInicio.addEventListener("click", nextSlide);
 
 // 👉 SWIPE
 trackInicio.addEventListener("touchstart", e => {
-  startXInicio = e.touches[0].clientX;
-  isDraggingInicio = true;
+  startX = e.touches[0].clientX;
 });
 
 trackInicio.addEventListener("touchend", e => {
-  if (!isDraggingInicio) return;
-  isDraggingInicio = false;
-
   const endX = e.changedTouches[0].clientX;
-  const diff = startXInicio - endX;
+  const diff = startX - endX;
 
-  if (diff > 50) nextInicio();
-  else if (diff < -50) prevInicio();
+  if (diff > 50) nextSlide();
+  else if (diff < -50) prevSlide();
 });
 
 // 👉 INICIALIZA
 window.addEventListener("load", () => {
-  setPosition(false);
+  updateCarouselInicio(false);
 });
 
   // ==========================
