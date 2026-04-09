@@ -332,19 +332,21 @@ section#area-inicio, section#inicio {
 .carousel_1 {
   overflow: hidden;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .track_1 {
   display: flex;
-  gap: 20px;
   transition: transform 0.5s ease;
+  width: 100%;
 }
 
 .slide_1 {
-  min-width: 80%;
+  min-width: 100%;
   flex-shrink: 0;
-  margin: 0 auto;
-  opacity: 1; /* 🔥 remove branco */
+  display: flex;
+  justify-content: center;
 }
 
 /* Slide ativo (centro) */
@@ -354,7 +356,7 @@ section#area-inicio, section#inicio {
 }
 
 .slide_1 img {
-  width: 100%;
+  width: 90%;
   height: 220px;
   object-fit: cover;
   border-radius: 12px;
