@@ -341,25 +341,29 @@ section#area-inicio, section#inicio {
 
 .track_1 {
   display: flex;
-  transition: transform 0.5s ease;
-  width: 100%;
+  align-items: center;
 }
 
 .slide_1 {
-  min-width: 100%;
+  min-width: 80%; /* 🔥 menor que 100% */
+  margin: 0 10px; /* 🔥 cria as “pontinhas” */
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  transition: all 0.4s ease;
+  transform: scale(0.9);
+  opacity: 0.6;
 }
 
 /* Slide ativo (centro) */
 
 .slide_1.active {
+  transform: scale(1);
   opacity: 1;
 }
 
 .slide_1 img {
-  width: 90%;
+  width: 100%; /* 🔥 MUITO IMPORTANTE */
   height: 220px;
   object-fit: cover;
   border-radius: 12px;
