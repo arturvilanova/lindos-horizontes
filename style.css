@@ -371,7 +371,7 @@ section#area-inicio, section#inicio {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px; /* 🔥 distância controlada da imagem */
+    margin-top: 30px; /* distância controlada da imagem */
     gap: 10px;
     width: 100%;
 }
@@ -385,7 +385,7 @@ section#area-inicio, section#inicio {
 }
 
 .dot.active {
-    width: 25px; /* 🔥 bolinha esticada */
+    width: 25px; /* bolinha esticada */
     background: #56A38A;
 }
 
