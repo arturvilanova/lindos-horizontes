@@ -325,7 +325,7 @@ section#area-inicio, section#inicio {
     overflow: hidden;
     background-color: #56a38b13;
     height: 500px;
-    padding: 0px 20px 0px 20px;
+    /* padding: 0px 20px 0px 20px; */
     /* box-shadow: inset 10px 10px 10px 10px #f0f0f0; */
 }
 
