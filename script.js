@@ -64,62 +64,110 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarFooter();
 
 
-  // ==========================
-  // 🎞️ CARROSSEL INÍCIO
-  // ==========================
-  const trackInicio = document.querySelector('.track_1');
-  let slidesInicio = document.querySelectorAll('.slide_1');
-  const dots = document.querySelectorAll('.dot');
+// ==========================
+// 🎞️ CARROSSEL INÍCIO (CENTRAL + LOOP INFINITO)
+// ==========================
+const trackInicio = document.querySelector('.track_1');
+let slidesInicio = document.querySelectorAll('.slide_1');
+const dots = document.querySelectorAll('.dot');
 
-  let indexInicio = 0;
-  let startXInicio = 0;
+let indexInicio = 0;
+let startX = 0;
 
-  function updateCarouselInicio(smooth = true) {
+// ==========================
+// 🎯 CENTRALIZA CORRETAMENTE
+// ==========================
+function updateCarouselInicio(smooth = true) {
+  slidesInicio = document.querySelectorAll('.slide_1'); // atualiza lista
 
-    slidesInicio = document.querySelectorAll('.slide_1');
+  const slide = slidesInicio[1]; // sempre o do meio (visual)
+  const container = trackInicio.parentElement;
 
-    slidesInicio.forEach(s => s.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
+  const containerWidth = container.offsetWidth;
+  const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+  const containerCenter = containerWidth / 2;
 
-    const slide = slidesInicio[indexInicio];
-    slide.classList.add('active');
-    dots[indexInicio].classList.add('active');
+  const offset = containerCenter - slideCenter;
 
-    const container = document.querySelector('.carousel_1');
+  trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
+  trackInicio.style.transform = `translateX(${offset}px)`;
 
-    const containerWidth = container.offsetWidth;
-    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-    const containerCenter = containerWidth / 2;
+  // dots
+  dots.forEach(d => d.classList.remove('active'));
+  dots[indexInicio].classList.add('active');
+}
 
-    const offset = containerCenter - slideCenter;
+// ==========================
+// 👉 PRÓXIMO (loop infinito)
+// ==========================
+function nextSlide() {
+  trackInicio.style.transition = "transform 0.5s ease";
+  trackInicio.style.transform = "translateX(-320px)";
 
-    trackInicio.style.transition = smooth ? "transform 0.6s ease" : "none";
-    trackInicio.style.transform = `translateX(${offset}px)`;
-  }
+  setTimeout(() => {
+    trackInicio.style.transition = "none";
 
-  function nextSlideInicio() {
+    // move o primeiro pro final
+    trackInicio.appendChild(trackInicio.firstElementChild);
+
+    trackInicio.style.transform = "translateX(0)";
+
     indexInicio = (indexInicio + 1) % slidesInicio.length;
-    updateCarouselInicio(true);
-  }
 
-  function prevSlideInicio() {
-    indexInicio = (indexInicio - 1 + slidesInicio.length) % slidesInicio.length;
-    updateCarouselInicio(true);
-  }
+    updateCarouselInicio(false);
+  }, 500);
+}
 
-  trackInicio.addEventListener("click", nextSlideInicio);
+// ==========================
+// 👈 ANTERIOR (loop infinito)
+// ==========================
+function prevSlide() {
+  trackInicio.style.transition = "none";
 
-  trackInicio.addEventListener("touchstart", e => {
-    startXInicio = e.touches[0].clientX;
+  // move o último pro início
+  trackInicio.insertBefore(
+    trackInicio.lastElementChild,
+    trackInicio.firstElementChild
+  );
+
+  trackInicio.style.transform = "translateX(-320px)";
+
+  requestAnimationFrame(() => {
+    trackInicio.style.transition = "transform 0.5s ease";
+    trackInicio.style.transform = "translateX(0)";
   });
 
-  trackInicio.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startXInicio - endX;
+  indexInicio = (indexInicio - 1 + slidesInicio.length) % slidesInicio.length;
 
-    if (diff > 50) nextSlideInicio();
-    else if (diff < -50) prevSlideInicio();
-  });
+  updateCarouselInicio(false);
+}
+
+// ==========================
+// 🖱️ CLICK
+// ==========================
+trackInicio.addEventListener("click", nextSlide);
+
+// ==========================
+// 📱 SWIPE
+// ==========================
+trackInicio.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+trackInicio.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
+
+  if (diff > 50) nextSlide();
+  else if (diff < -50) prevSlide();
+});
+
+// ==========================
+// 🚀 INICIALIZA CENTRALIZADO
+// ==========================
+window.addEventListener("load", () => {
+  updateCarouselInicio(false);
+});
 
 
   // ==========================
