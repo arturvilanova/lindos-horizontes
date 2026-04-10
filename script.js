@@ -65,22 +65,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (CENTRAL + LOOP INFINITO)
+// 🎞️ CARROSSEL INÍCIO (CENTRAL + LOOP LIMPO)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
-let slidesInicio = document.querySelectorAll('.slide_1');
+const slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
 let indexInicio = 0;
 let startX = 0;
 
 // ==========================
-// 🎯 CENTRALIZA CORRETAMENTE
+// 🎯 CENTRALIZA PERFEITO
 // ==========================
 function updateCarouselInicio(smooth = true) {
-  slidesInicio = document.querySelectorAll('.slide_1'); // atualiza lista
-
-  const slide = slidesInicio[1]; // sempre o do meio (visual)
+  const slide = slidesInicio[indexInicio];
   const container = trackInicio.parentElement;
 
   const containerWidth = container.offsetWidth;
@@ -92,54 +90,25 @@ function updateCarouselInicio(smooth = true) {
   trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
   trackInicio.style.transform = `translateX(${offset}px)`;
 
-  // dots
+  // dots sincronizados
   dots.forEach(d => d.classList.remove('active'));
   dots[indexInicio].classList.add('active');
 }
 
 // ==========================
-// 👉 PRÓXIMO (loop infinito)
+// 👉 PRÓXIMO (loop)
 // ==========================
 function nextSlide() {
-  trackInicio.style.transition = "transform 0.5s ease";
-  trackInicio.style.transform = "translateX(-320px)";
-
-  setTimeout(() => {
-    trackInicio.style.transition = "none";
-
-    // move o primeiro pro final
-    trackInicio.appendChild(trackInicio.firstElementChild);
-
-    trackInicio.style.transform = "translateX(0)";
-
-    indexInicio = (indexInicio + 1) % slidesInicio.length;
-
-    updateCarouselInicio(false);
-  }, 500);
+  indexInicio = (indexInicio + 1) % slidesInicio.length;
+  updateCarouselInicio(true);
 }
 
 // ==========================
-// 👈 ANTERIOR (loop infinito)
+// 👈 ANTERIOR (loop)
 // ==========================
 function prevSlide() {
-  trackInicio.style.transition = "none";
-
-  // move o último pro início
-  trackInicio.insertBefore(
-    trackInicio.lastElementChild,
-    trackInicio.firstElementChild
-  );
-
-  trackInicio.style.transform = "translateX(-320px)";
-
-  requestAnimationFrame(() => {
-    trackInicio.style.transition = "transform 0.5s ease";
-    trackInicio.style.transform = "translateX(0)";
-  });
-
   indexInicio = (indexInicio - 1 + slidesInicio.length) % slidesInicio.length;
-
-  updateCarouselInicio(false);
+  updateCarouselInicio(true);
 }
 
 // ==========================
@@ -163,7 +132,7 @@ trackInicio.addEventListener("touchend", e => {
 });
 
 // ==========================
-// 🚀 INICIALIZA CENTRALIZADO
+// 🚀 INICIALIZA
 // ==========================
 window.addEventListener("load", () => {
   updateCarouselInicio(false);
