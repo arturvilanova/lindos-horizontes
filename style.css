@@ -334,8 +334,8 @@ section#area-inicio, section#inicio {
   display: flex;
   justify-content: center;
   display: flex;
-  flex-direction: column; /* 🔥 empilha imagem + bolinhas */
-  align-items: center;   /* 🔥 centraliza tudo */
+  flex-direction: column; /* empilha imagem + bolinhas */
+  align-items: center;   /* centraliza tudo */
 }
 
 .track_1 {
