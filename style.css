@@ -372,7 +372,7 @@ section#area-inicio, section#inicio {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; /* 🔥 distância controlada da imagem */
+    margin-top: 30px; /* 🔥 distância controlada da imagem */
     gap: 10px;
     width: 100%;
 }
