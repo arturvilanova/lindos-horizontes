@@ -363,6 +363,7 @@ section#area-inicio, section#inicio {
   height: 220px;
   object-fit: cover;
   border-radius: 12px;
+  border: 1.7px solid #9d9d9d;
 }
 
 /* Bolinhas */
