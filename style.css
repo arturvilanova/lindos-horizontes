@@ -324,8 +324,6 @@ section#area-inicio, section#inicio {
     overflow: hidden;
     background-color: #56a38b13;
     height: 500px;
-    /* padding: 0px 20px 0px 20px; */
-    /* box-shadow: inset 10px 10px 10px 10px #f0f0f0; */
 }
 
 .carousel_1 {
@@ -333,7 +331,6 @@ section#area-inicio, section#inicio {
   width: 100%;
   display: flex;
   justify-content: center;
-  display: flex;
   flex-direction: column; /* empilha imagem + bolinhas */
   align-items: center;   /* centraliza tudo */
 }
