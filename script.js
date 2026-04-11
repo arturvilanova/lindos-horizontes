@@ -64,54 +64,70 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarFooter();
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO
+// 🎞️ CARROSSEL INÍCIO (LOOP INFINITO REAL)
 // ==========================
 const trackInicio = document.querySelector('.track_1');
-const slidesInicio = document.querySelectorAll('.slide_1');
+let slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
-let indexInicio = 0;
+let indexInicio = 1; // começa no primeiro REAL (por causa do clone)
 let startX = 0;
 
-// 👉 GARANTE posição inicial correta
-function resetPosition() {
-  trackInicio.style.transition = "none";
-  trackInicio.style.transform = "translateX(0)";
-}
+// 🔥 CLONAR PRIMEIRO E ÚLTIMO
+const firstClone = slidesInicio[0].cloneNode(true);
+const lastClone = slidesInicio[slidesInicio.length - 1].cloneNode(true);
 
-// 🎯 ATUALIZA
+trackInicio.appendChild(firstClone);
+trackInicio.insertBefore(lastClone, trackInicio.firstElementChild);
+
+// atualizar lista
+slidesInicio = document.querySelectorAll('.slide_1');
+
+// 🎯 ATUALIZA POSIÇÃO
 function updateCarouselInicio(smooth = true) {
   const slideWidth = slidesInicio[0].offsetWidth;
 
   trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
   trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
 
-  // bolinhas
+  // bolinhas (ignora clones)
   dots.forEach(d => d.classList.remove('active'));
-  if (dots[indexInicio]) dots[indexInicio].classList.add('active');
+  let realIndex = indexInicio - 1;
+
+  if (realIndex < 0) realIndex = dots.length - 1;
+  if (realIndex >= dots.length) realIndex = 0;
+
+  dots[realIndex].classList.add('active');
 }
 
 // 👉 PRÓXIMO
 function nextSlide() {
   indexInicio++;
-
-  if (indexInicio >= slidesInicio.length) {
-    indexInicio = 0; // loop correto
-  }
-
   updateCarouselInicio(true);
 }
 
 // 👉 ANTERIOR
 function prevSlide() {
   indexInicio--;
-
-  if (indexInicio < 0) {
-    indexInicio = slidesInicio.length - 1;
-  }
-
   updateCarouselInicio(true);
 }
+
+// 🔥 CORREÇÃO INVISÍVEL DO LOOP
+trackInicio.addEventListener("transitionend", () => {
+  const slideWidth = slidesInicio[0].offsetWidth;
+
+  if (indexInicio === slidesInicio.length - 1) {
+    trackInicio.style.transition = "none";
+    indexInicio = 1;
+    trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+  }
+
+  if (indexInicio === 0) {
+    trackInicio.style.transition = "none";
+    indexInicio = slidesInicio.length - 2;
+    trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+  }
+});
 
 // 👉 CLICK
 trackInicio.addEventListener("click", nextSlide);
@@ -129,10 +145,13 @@ trackInicio.addEventListener("touchend", e => {
   else if (diff < -50) prevSlide();
 });
 
-// 👉 INICIALIZA (ESSA É A CHAVE 🔥)
+// 👉 INICIALIZA
 window.addEventListener("load", () => {
-  indexInicio = 0;          // garante começar na primeira
-  resetPosition();          // remove qualquer deslocamento bugado
+  const slideWidth = slidesInicio[0].offsetWidth;
+
+  trackInicio.style.transition = "none";
+  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
+
   updateCarouselInicio(false);
 });
 
