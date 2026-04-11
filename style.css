@@ -333,12 +333,14 @@ section#area-inicio, section#inicio {
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  background-color: red;
 }
 
 .track_1 {
   display: flex;
   transition: transform 0.5s ease;
   width: 100%;
+  background-color: green;
 }
 
 .slide_1 {
@@ -346,6 +348,7 @@ section#area-inicio, section#inicio {
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  background-color: yellow;
 }
 
 .slide_1.active {
