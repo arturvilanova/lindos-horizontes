@@ -462,7 +462,7 @@ section#area-inicio, section#inicio {
         justify-content: center;
         align-items: center;
         position: relative;
-        padding: 25px 10px;
+        padding: 25px 0px;
         max-height: 700px;
         box-shadow: inset 10px 0px 10px 0px #f0f0f0;
     }
