@@ -146,13 +146,35 @@ trackInicio.addEventListener("touchend", e => {
 });
 
 // 👉 INICIALIZA
-window.addEventListener("load", () => {
+// 👉 ESPERA TODAS AS IMAGENS CARREGAREM
+function iniciarCarrosselInicio() {
   const slideWidth = slidesInicio[0].offsetWidth;
 
   trackInicio.style.transition = "none";
   trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
 
   updateCarouselInicio(false);
+}
+
+window.addEventListener("load", () => {
+  const imagens = document.querySelectorAll('.slide_1 img');
+  let carregadas = 0;
+
+  imagens.forEach(img => {
+    if (img.complete) {
+      carregadas++;
+    } else {
+      img.addEventListener("load", () => {
+        carregadas++;
+        if (carregadas === imagens.length) iniciarCarrosselInicio();
+      });
+    }
+  });
+
+  // fallback
+  if (carregadas === imagens.length) {
+    iniciarCarrosselInicio();
+  }
 });
 
   // ==========================
