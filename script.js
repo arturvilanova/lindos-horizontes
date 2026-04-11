@@ -63,86 +63,78 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   atualizarFooter();
 
-  // ==========================
-  // 🎞️ CARROSSEL INÍCIO (FINAL)
-  // ==========================
-  const trackInicio = document.querySelector('.track_1');
-  let slidesInicio = document.querySelectorAll('.slide_1');
-  const dots = document.querySelectorAll('.dot');
+// ==========================
+// 🎞️ CARROSSEL INÍCIO
+// ==========================
+const trackInicio = document.querySelector('.track_1');
+const slidesInicio = document.querySelectorAll('.slide_1');
+const dots = document.querySelectorAll('.dot');
 
-  let startXInicio = 0;
+let indexInicio = 0;
+let startX = 0;
 
-  // 🔁 CLONES
-  const firstClone = slidesInicio[0].cloneNode(true);
-  const lastClone = slidesInicio[slidesInicio.length - 1].cloneNode(true);
+// 👉 GARANTE posição inicial correta
+function resetPosition() {
+  trackInicio.style.transition = "none";
+  trackInicio.style.transform = "translateX(0)";
+}
 
-  trackInicio.appendChild(firstClone);
-  trackInicio.insertBefore(lastClone, slidesInicio[0]);
+// 🎯 ATUALIZA
+function updateCarouselInicio(smooth = true) {
+  const slideWidth = slidesInicio[0].offsetWidth;
 
-  slidesInicio = document.querySelectorAll('.slide_1');
+  trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
+  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
 
-  let indexInicio = 1;
+  // bolinhas
+  dots.forEach(d => d.classList.remove('active'));
+  if (dots[indexInicio]) dots[indexInicio].classList.add('active');
+}
 
-  function updateCarouselInicio(smooth = true) {
-    const slide = slidesInicio[indexInicio];
-    const container = trackInicio.parentElement;
+// 👉 PRÓXIMO
+function nextSlide() {
+  indexInicio++;
 
-    const containerWidth = container.offsetWidth;
-    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-    const containerCenter = containerWidth / 2;
-
-    const offset = containerCenter - slideCenter;
-
-    trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
-    trackInicio.style.transform = `translateX(${offset}px)`;
-
-    const totalReais = slidesInicio.length - 2;
-    let realIndex = indexInicio - 1;
-
-    if (realIndex < 0) realIndex = totalReais - 1;
-    if (realIndex >= totalReais) realIndex = 0;
-
-    dots.forEach(d => d.classList.remove('active'));
-    dots[realIndex].classList.add('active');
+  if (indexInicio >= slidesInicio.length) {
+    indexInicio = 0; // loop correto
   }
 
-  function nextSlideInicio() {
-    indexInicio++;
-    updateCarouselInicio(true);
+  updateCarouselInicio(true);
+}
 
-    if (indexInicio === slidesInicio.length - 1) {
-      setTimeout(() => {
-        indexInicio = 1;
-        updateCarouselInicio(false);
-      }, 500);
-    }
+// 👉 ANTERIOR
+function prevSlide() {
+  indexInicio--;
+
+  if (indexInicio < 0) {
+    indexInicio = slidesInicio.length - 1;
   }
 
-  function prevSlideInicio() {
-    indexInicio--;
-    updateCarouselInicio(true);
+  updateCarouselInicio(true);
+}
 
-    if (indexInicio === 0) {
-      setTimeout(() => {
-        indexInicio = slidesInicio.length - 2;
-        updateCarouselInicio(false);
-      }, 500);
-    }
-  }
+// 👉 CLICK
+trackInicio.addEventListener("click", nextSlide);
 
-  trackInicio.addEventListener("click", nextSlideInicio);
+// 👉 SWIPE
+trackInicio.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
 
-  trackInicio.addEventListener("touchstart", e => {
-    startXInicio = e.touches[0].clientX;
-  });
+trackInicio.addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  const diff = startX - endX;
 
-  trackInicio.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    const diff = startXInicio - endX;
+  if (diff > 50) nextSlide();
+  else if (diff < -50) prevSlide();
+});
 
-    if (diff > 50) nextSlideInicio();
-    else if (diff < -50) prevSlideInicio();
-  });
+// 👉 INICIALIZA (ESSA É A CHAVE 🔥)
+window.addEventListener("load", () => {
+  indexInicio = 0;          // garante começar na primeira
+  resetPosition();          // remove qualquer deslocamento bugado
+  updateCarouselInicio(false);
+});
 
   // ==========================
   // 🎞️ CARROSSEL IA
