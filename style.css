@@ -457,7 +457,6 @@ section#area-inicio, section#inicio {
         position: relative;
         max-height: 580px;
         box-shadow: inset 10px 0px 10px 0px #f0f0f0;
-        padding-top: 30px;
     }
 
     #slide-show {
@@ -478,6 +477,7 @@ section#area-inicio, section#inicio {
         object-fit: cover; /* Garante que preencha sem distorcer */
         opacity: 0;
         transition: opacity 1s ease-in-out;
+        padding-top: 50px;
     }
 
     #slide-show img.ativo {
