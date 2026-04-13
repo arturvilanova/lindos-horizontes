@@ -456,10 +456,9 @@ section#area-inicio, section#inicio {
 
     #lado-direito {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         position: relative;
-        padding: 10px 0px;
         max-height: 580px;
         box-shadow: inset 10px 0px 10px 0px #f0f0f0;
     }
