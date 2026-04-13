@@ -435,6 +435,7 @@ section#area-inicio, section#inicio {
 
     #lado-esquerdo {
         height: auto;
+        padding-bottom: 50px;
     }
 
     #bem-vindo h1 {
@@ -477,7 +478,6 @@ section#area-inicio, section#inicio {
         object-fit: cover; /* Garante que preencha sem distorcer */
         opacity: 0;
         transition: opacity 1s ease-in-out;
-        padding-top: 50px;
     }
 
     #slide-show img.ativo {
@@ -486,15 +486,6 @@ section#area-inicio, section#inicio {
 }
 
 /* SECAO */
-
-
-/* RESPONSIVIDADE*/
-
-@media(max-width:480px) {
-
-
-    
-}
 
 /* SEÇÃO FOTOS */
 
