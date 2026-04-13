@@ -437,10 +437,6 @@ section#area-inicio, section#inicio {
         height: auto;
     }
 
-    #bem-vindo { /* 🔹 mantém espaçamento interno equilibrado */
-        padding: 50px 10px;
-    }
-
     #bem-vindo h1 {
         text-align: center;
         font-size: 30px;
