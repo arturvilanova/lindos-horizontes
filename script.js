@@ -176,6 +176,25 @@ window.addEventListener("load", () => {
     iniciarCarrosselInicio();
   }
 });
+  // ==========================
+  // ✍️ Frase do dia
+  // ==========================
+
+  const frases = [
+  "A natureza nunca se repete.",
+  "Beleza está nos pequenos detalhes.",
+  "O simples também encanta.",
+  "Cada olhar revela um novo mundo.",
+  "A luz transforma tudo.",
+  "O natural é a maior arte."
+];
+
+function atualizarFrase() {
+  const frase = frases[Math.floor(Math.random() * frases.length)];
+  document.getElementById("frase-dia").textContent = "✨ " + frase;
+}
+
+window.addEventListener("load", atualizarFrase);
 
   // ==========================
   // 🎞️ CARROSSEL IA
