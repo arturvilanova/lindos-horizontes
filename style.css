@@ -385,13 +385,13 @@ section#area-inicio, section#inicio {
 }
 
 #frase-dia {
+  whidth: max-content;
   margin-top: 60px;
   font-size: 18px;
   color: #666;
   text-align: center;
   font-style: italic;
   background-color: green;
-  whidth: 100%;
 }
 
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
