@@ -384,6 +384,15 @@ section#area-inicio, section#inicio {
     background: #56A38A;
 }
 
+#frase-dia {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+  padding: 0 20px;
+}
+
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
 
 @media(max-width: 900px) {
