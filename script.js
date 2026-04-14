@@ -285,4 +285,32 @@ window.addEventListener("load", atualizarFrase);
     updateCarouselIA(false);
   });
 
+  // ==========================
+// 🖼️ LIGHTBOX (ABRIR IMAGEM)
+// ==========================
+
+const imagens = document.querySelectorAll("#div-das-fotos img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const fechar = document.getElementById("fechar");
+
+imagens.forEach(img => {
+  img.addEventListener("click", () => {
+    lightbox.classList.add("ativo");
+    lightboxImg.src = img.src;
+  });
+});
+
+// fechar clicando no X
+fechar.addEventListener("click", () => {
+  lightbox.classList.remove("ativo");
+});
+
+// fechar clicando fora da imagem
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove("ativo");
+  }
+});
+
 });
