@@ -198,6 +198,19 @@ a.links-menu.ativo {
 }
 
 @media(max-width: 900px) {
+  nav {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 999;
+  }
+}
+
+@media(max-width: 900px) {
+
+    header {
+    position: relative;
+    }
 
     ul {
         gap: 60px;
