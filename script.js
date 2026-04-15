@@ -64,33 +64,38 @@ document.addEventListener("DOMContentLoaded", () => {
   atualizarFooter();
 
 // ==========================
-// 🎞️ CARROSSEL INÍCIO (LOOP INFINITO REAL)
+// 🎞️ CARROSSEL INÍCIO (FIXED)
 // ==========================
+
 const trackInicio = document.querySelector('.track_1');
 let slidesInicio = document.querySelectorAll('.slide_1');
 const dots = document.querySelectorAll('.dot');
 
-let indexInicio = 1; // começa no primeiro REAL (por causa do clone)
+let indexInicio = 1; // 🔥 começa no primeiro real
 let startX = 0;
 
-// 🔥 CLONAR PRIMEIRO E ÚLTIMO
+// ==========================
+// 🔁 CLONE PARA LOOP INFINITO
+// ==========================
 const firstClone = slidesInicio[0].cloneNode(true);
 const lastClone = slidesInicio[slidesInicio.length - 1].cloneNode(true);
 
 trackInicio.appendChild(firstClone);
-trackInicio.insertBefore(lastClone, trackInicio.firstElementChild);
+trackInicio.insertBefore(lastClone, slidesInicio[0]);
 
-// atualizar lista
+// Atualiza lista de slides após clone
 slidesInicio = document.querySelectorAll('.slide_1');
 
+// ==========================
 // 🎯 ATUALIZA POSIÇÃO
+// ==========================
 function updateCarouselInicio(smooth = true) {
-  const slideWidth = slidesInicio[0].offsetWidth;
+  const slideWidth = slidesInicio[0].clientWidth;
 
-  trackInicio.style.transition = smooth ? "transform 0.5s ease" : "none";
+  trackInicio.style.transition = smooth ? "transform 0.4s ease" : "none";
   trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
 
-  // bolinhas (ignora clones)
+  // Bolinhas
   dots.forEach(d => d.classList.remove('active'));
   let realIndex = indexInicio - 1;
 
@@ -100,28 +105,36 @@ function updateCarouselInicio(smooth = true) {
   dots[realIndex].classList.add('active');
 }
 
-// 👉 PRÓXIMO
+// ==========================
+// 👉 AVANÇAR
+// ==========================
 function nextSlide() {
   indexInicio++;
   updateCarouselInicio(true);
 }
 
-// 👉 ANTERIOR
+// ==========================
+// 👉 VOLTAR
+// ==========================
 function prevSlide() {
   indexInicio--;
   updateCarouselInicio(true);
 }
 
-// 🔥 CORREÇÃO INVISÍVEL DO LOOP
+// ==========================
+// 🔄 CORREÇÃO LOOP (SEM BUG)
+// ==========================
 trackInicio.addEventListener("transitionend", () => {
-  const slideWidth = slidesInicio[0].offsetWidth;
+  const slideWidth = slidesInicio[0].clientWidth;
 
+  // Se passou do último clone → volta pro primeiro real
   if (indexInicio === slidesInicio.length - 1) {
     trackInicio.style.transition = "none";
     indexInicio = 1;
     trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
   }
 
+  // Se voltou antes do primeiro clone → vai pro último real
   if (indexInicio === 0) {
     trackInicio.style.transition = "none";
     indexInicio = slidesInicio.length - 2;
@@ -129,10 +142,14 @@ trackInicio.addEventListener("transitionend", () => {
   }
 });
 
-// 👉 CLICK
+// ==========================
+// 🖱️ CLICK
+// ==========================
 trackInicio.addEventListener("click", nextSlide);
 
-// 👉 SWIPE
+// ==========================
+// 📱 SWIPE
+// ==========================
 trackInicio.addEventListener("touchstart", e => {
   startX = e.touches[0].clientX;
 });
@@ -145,37 +162,22 @@ trackInicio.addEventListener("touchend", e => {
   else if (diff < -50) prevSlide();
 });
 
-// 👉 INICIALIZA
-// 👉 ESPERA TODAS AS IMAGENS CARREGAREM
-function iniciarCarrosselInicio() {
-  const slideWidth = slidesInicio[0].offsetWidth;
-
-  trackInicio.style.transition = "none";
-  trackInicio.style.transform = `translateX(-${slideWidth * indexInicio}px)`;
-
-  updateCarouselInicio(false);
-}
-
+// ==========================
+// 🚀 INICIALIZA SEM BUG VISUAL
+// ==========================
 window.addEventListener("load", () => {
-  const imagens = document.querySelectorAll('.slide_1 img');
-  let carregadas = 0;
+  trackInicio.style.transition = "none";
+  updateCarouselInicio(false);
 
-  imagens.forEach(img => {
-    if (img.complete) {
-      carregadas++;
-    } else {
-      img.addEventListener("load", () => {
-        carregadas++;
-        if (carregadas === imagens.length) iniciarCarrosselInicio();
-      });
-    }
-  });
+  // 🔥 evita flicker da imagem errada
+  setTimeout(() => {
+    trackInicio.style.transition = "transform 0.4s ease";
+  }, 50);
 
-  // fallback
-  if (carregadas === imagens.length) {
-    iniciarCarrosselInicio();
-  }
+  // 🔥 mostra o carrossel suavemente
+  document.querySelector(".carousel_1").style.opacity = "1";
 });
+  
   // ==========================
   // ✍️ Frase do dia
   // ==========================
