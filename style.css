@@ -188,6 +188,15 @@ a.links-menu.ativo {
 
 /* RESPONSIVIDADE CABEÇALHO */
 
+@media(min-width: 901px) {
+  header {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 999;
+  }
+}
+
 @media(max-width: 900px) {
 
     ul {
