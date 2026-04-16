@@ -227,7 +227,7 @@ a.links-menu.ativo {
 @media(max-width: 480px) {
 
     header {
-        padding-top: 5px;
+        padding-top: 10px;
         display: block;
     }
 
