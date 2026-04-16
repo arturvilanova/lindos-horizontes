@@ -274,7 +274,7 @@ a.links-menu.ativo {
     }
 
     .barra-deslizante {
-        bottom: -6px;
+        bottom: -10px;
         transform: translateY(6px);
     }
 
