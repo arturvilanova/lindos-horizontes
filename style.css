@@ -61,7 +61,6 @@ main {
 
 header {
     padding: 10px 0 10px 0px;
-    border-bottom: 4px solid #f0f0f0;
     display: flex;
     z-index: 3;
 }
