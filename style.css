@@ -63,6 +63,7 @@ header {
     padding: 10px 0px 5px 0px;
     display: flex;
     z-index: 3;
+    background-color: orange;
 }
 
 nav {
@@ -160,7 +161,7 @@ a.links-menu.ativo {
     background: var(--Cor2);
     position: absolute;
     border-radius: 1.5px;
-    bottom: -14px;
+    bottom: -10px;
     width: 0;
     left: 0;
     height: 4px;
