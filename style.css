@@ -36,6 +36,7 @@
 }
 
 /* CONFIGURAÇÕES PARA TODO O DOCUMENTO */
+
 html, body {
     font-family: "Be Vietnam Pro", sans-serif;
     max-width: 100%;
@@ -226,7 +227,7 @@ a.links-menu.ativo {
 @media(max-width: 480px) {
 
     header {
-        padding: 0px 0 8px 0px;
+        padding: 10px 0px 0px 0px;
         display: block;
     }
 
