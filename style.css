@@ -70,6 +70,7 @@ nav {
     display: flex;
     position: relative;
     flex: 1;
+    border-bottom: 4px solid #f0f0f0;
 }
 
 #area-nav {
