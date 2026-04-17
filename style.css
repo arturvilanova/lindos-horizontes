@@ -230,6 +230,7 @@ a.links-menu.ativo {
         align-items: center;
         justify-content: center;
         width: 100%;
+        height: max-content;
         gap: 10px;
     }
 
