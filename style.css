@@ -367,8 +367,8 @@ section#area-inicio, section#inicio {
 }
 
 .slide_1 img {
-  width: 90%;
-  height: 350px;
+  width: 100%;
+  height: 330px;
   object-fit: cover;
   border-radius: 12px;
   border: 1.7px solid #9d9d9d;
