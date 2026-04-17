@@ -71,8 +71,8 @@ header {
 }
 
 nav {
-    display: flex; /* 🔥 volta pro flex */
-    align-items: center; /* 🔥 alinha com o logo */
+    display: flex; 
+    align-items: center;
     position: relative;
     flex: 1;
     padding-bottom: 10px;
