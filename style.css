@@ -62,7 +62,7 @@ main {
 
 header {
     padding: 10px 0px 0px 0px;
-    display: block;
+    display: flex;
     z-index: 3;
 }
 
