@@ -199,7 +199,7 @@ a.links-menu.ativo {
   }
 }
 
-@media(max-width: 900px) {
+@media(max-width: 480px) {
   nav {
     position: sticky;
     top: 0;
