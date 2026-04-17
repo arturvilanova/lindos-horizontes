@@ -78,6 +78,7 @@ nav {
 
 #area-nav {
     display: flex;
+    align-items: center;
 }
 
 #caixa-logo {
