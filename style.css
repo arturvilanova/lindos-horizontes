@@ -485,6 +485,7 @@ section#area-inicio, section#inicio {
         position: relative;
         max-height: 450px;
         box-shadow: inset 10px 0px 10px 0px #f0f0f0;
+        background-color: DarkMagenta;
     }
 
     .slide_1 img {
