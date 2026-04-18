@@ -220,15 +220,20 @@ a.links-menu.ativo {
     header {
         padding-top: 10px;
         display: block;
+        text-align: center;
+    }
+
+    #area-nav {
+      margin: 0 auto;
     }
 
     nav, #area-nav {
         flex-direction: column;
         align-items: center;
+        display: flex;
         justify-content: center;
         width: 100%;
         gap: 10px;
-        width: max-content;
     }
 
     #caixa-logo {
