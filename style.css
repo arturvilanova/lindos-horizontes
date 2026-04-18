@@ -77,13 +77,13 @@ nav {
     flex: 1;
     padding-bottom: 10px;
     background-color: yellow;
+    width: max-content;
 }
 
 #area-nav {
     display: flex;
     align-items: center; /* 🔥 garante alinhamento */
     background-color: orange;
-    
 }
 
 #caixa-logo {
@@ -221,16 +221,11 @@ a.links-menu.ativo {
         display: block;
     }
 
-  #area-nav {
-      height: max-content;
-  }
-
     nav, #area-nav {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         width: 100%;
-        height: max-content;
         gap: 10px;
     }
 
