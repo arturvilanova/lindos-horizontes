@@ -66,6 +66,7 @@ header {
     justify-content: space-between;
     padding: 0 20px;
     z-index: 3;
+    position: relative; /* importante */
     border-bottom: 4px solid #f0f0f0;
     background-color: purple;
 }
@@ -82,7 +83,7 @@ nav {
 #area-nav {
     display: flex;
     align-items: center; /* 🔥 garante alinhamento */
-    background-color: orange;
+    backgroud-color: orange;
 }
 
 #caixa-logo {
@@ -169,7 +170,7 @@ a.links-menu.ativo {
     background: var(--Cor2);
     position: absolute;
     border-radius: 1.5px;
-    bottom: -26px;
+    bottom: -4px;
     width: 0;
     left: 0;
     height: 4px;
