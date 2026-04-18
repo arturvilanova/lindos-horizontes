@@ -296,6 +296,10 @@ section#area-inicio, section#inicio {
     flex-direction: column;
 }
 
+#lado-direito {
+    width: 60%;
+}
+
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
