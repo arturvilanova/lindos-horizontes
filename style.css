@@ -91,6 +91,7 @@ nav {
     justify-content: center; /* 🔹 Centraliza o logo horizontalmente */
     align-items: center; /* 🔹 Centraliza verticalmente */
     padding:20px 35px 10px 22px;
+    width: max-content;
 }
 
 #logo {
