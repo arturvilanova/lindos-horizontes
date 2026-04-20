@@ -309,7 +309,6 @@ section#area-inicio, section#inicio {
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
-    background-color: #56a38b13;
     height: 500px;
 }
 
