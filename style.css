@@ -215,6 +215,10 @@ a.links-menu.ativo {
 
 @media(max-width: 480px) {
 
+    body {
+        display: block; /* 🔥 libera o sticky */
+    }
+
     header {
         padding-top: 10px;
         display: block;
@@ -235,11 +239,12 @@ a.links-menu.ativo {
     }
 
     nav {
-         background-color: orange;
-         padding-bottom: 0px;
+        background-color: orange;
+        padding-bottom: 0px;
         position: sticky;
         top: 0;
         z-index: 1000;
+        flex: none; /* 🔥 remove interferência */
     }
 
     #caixa-logo {
