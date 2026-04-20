@@ -236,6 +236,7 @@ a.links-menu.ativo {
 
     nav {
          background-color: orange;
+         padding-bottom: 0px;
     }
 
     #caixa-logo {
