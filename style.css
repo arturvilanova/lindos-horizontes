@@ -81,7 +81,6 @@ nav {
 #area-nav {
     display: flex;
     align-items: center; /* 🔥 garante alinhamento */
-    backgroud-color: orange;
 }
 
 #caixa-logo {
@@ -139,6 +138,7 @@ ul#links {
     align-items: center;
     gap: 80px;
     position: relative;
+    align-items: center;
 }
 
 li {
