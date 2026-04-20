@@ -238,15 +238,6 @@ a.links-menu.ativo {
         gap: 10px;
     }
 
-    nav {
-        background-color: orange;
-        padding-bottom: 0px;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        flex: none; /* 🔥 remove interferência */
-    }
-
     #caixa-logo {
         width: 100%;
         padding-top: 0px;
