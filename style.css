@@ -168,7 +168,7 @@ a.links-menu.ativo {
     background: var(--Cor2);
     position: absolute;
     border-radius: 1.5px;
-    bottom: -4px;
+    bottom: -22px;
     width: 0;
     left: 0;
     height: 4px;
