@@ -308,6 +308,7 @@ section#area-inicio, section#inicio {
 
 #lado-direito {
     width: 60%;
+    background-color: red;
 }
 
 #lado-esquerdo {
@@ -470,6 +471,7 @@ section#area-inicio, section#inicio {
     #lado-esquerdo, #lado-direito { /* 🔹 cola as duas caixas verticalmente */
         width: 100%;
         margin-top: 0;
+        background-color: #56a38b13;
     }
 
     #lado-esquerdo {
