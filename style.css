@@ -316,6 +316,7 @@ section#area-inicio, section#inicio {
     width: 50%;
     display: flex;
     flex-direction: column;
+    background-color: #56a38b13;
 }
 
 #lado-direito {
