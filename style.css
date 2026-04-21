@@ -381,7 +381,7 @@ section#area-inicio, section#inicio {
 .slide_1 img {
   width: 100%;
   height: 330px;
-  padding: 15px;
+  margin:20px 15px;
   object-fit: cover;
   border-radius: 12px;
   border: 1.7px solid #9d9d9d;
@@ -499,7 +499,7 @@ section#area-inicio, section#inicio {
     .slide_1 img {
         width: 90%;
         height: 250px;
-        padding: 0px;
+        margin: 0px;
     }
 
     #slide-show {
