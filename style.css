@@ -64,7 +64,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px 0px 10px;
+    padding: 0px 10px 0px 0px;
     z-index: 3;
     position: relative;
     border-bottom: 4px solid #f0f0f0;
@@ -178,26 +178,6 @@ a.links-menu.ativo {
     left: 0;
     height: 4px;
     transition: left 0.3s, width 0.3s;
-}
-
-#redes {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-left: 50px;
-    padding-right: 20px;
-}
-
-#redes img {
-    width: 26px;
-    height: 26px;
-    transition: transform 0.3s, opacity 0.3s;
-    cursor: pointer;
-}
-
-#redes img:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
 }
 
 /* RESPONSIVIDADE CABEÇALHO */
