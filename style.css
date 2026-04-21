@@ -227,6 +227,17 @@ a.links-menu.ativo {
         padding-top: 10px;
         display: block;
         text-align: center;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: red; /* importante pra não ver conteúdo atrás */
+        z-index: 9999;
+    }
+
+    main {
+    margin-top: 120px;
     }
 
     nav {
