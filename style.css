@@ -88,7 +88,7 @@ nav {
     width: max-content;
     justify-content: center;
     align-items: center;
-    padding:20px 35px 10px 10px;
+    padding:20px 35px 15px 10px;
     width: max-content;
     background-color: purple;
 }
@@ -171,7 +171,7 @@ a.links-menu.ativo {
     background: var(--Cor2);
     position: absolute;
     border-radius: 1.5px;
-    bottom: -33px;
+    bottom: -35px;
     width: 0;
     left: 0;
     height: 4px;
@@ -205,7 +205,6 @@ a.links-menu.ativo {
         padding-top: 10px;
         display: block;
         text-align: center;
-
         position: fixed;
         top: 0;
         left: 0;
