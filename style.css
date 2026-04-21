@@ -414,7 +414,7 @@ section#area-inicio, section#inicio {
 
 #frase-dia {
   whidth: max-content;
-  margin-top: 60px;
+  margin-top: 40px;
   font-size: 18px;
   color: #666;
   text-align: center;
@@ -524,6 +524,10 @@ section#area-inicio, section#inicio {
 
     #slide-show img.ativo {
         opacity: 1;
+    }
+
+    #frase-dia {
+        margin-top: 60px;
     }
 }
 
