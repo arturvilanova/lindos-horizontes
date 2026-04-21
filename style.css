@@ -173,7 +173,7 @@ a.links-menu.ativo {
     background: var(--Cor2);
     position: absolute;
     border-radius: 1.5px;
-    bottom: -34px;
+    bottom: -30px;
     width: 0;
     left: 0;
     height: 4px;
@@ -292,7 +292,7 @@ a.links-menu.ativo {
     }
 
     .barra-deslizante {
-        bottom: 1.99px;
+        bottom: 2px;
         transform: translateY(6px);
     }
 
