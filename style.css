@@ -76,7 +76,6 @@ nav {
     align-items: center;
     position: relative;
     flex: 1;
-    padding-bottom: 10px;
     background-color: yellow;
 }
 
@@ -221,7 +220,7 @@ a.links-menu.ativo {
     }
 
     nav {
-        padding-bottom: 5px;
+        
     }
 
     #area-nav {
