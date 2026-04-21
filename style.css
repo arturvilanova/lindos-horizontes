@@ -209,7 +209,7 @@ a.links-menu.ativo {
         top: 0;
         left: 0;
         width: 100%;
-        /*background: red;  importante pra não ver conteúdo atrás*/
+        background: white;  importante pra não ver conteúdo atrás*/
         z-index: 9999;
     }
 
