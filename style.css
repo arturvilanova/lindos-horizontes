@@ -500,6 +500,7 @@ section#area-inicio, section#inicio {
     .slide_1 img {
         width: 90%;
         height: 250px;
+        padding: 0px;
     }
 
     #slide-show {
