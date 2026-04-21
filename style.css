@@ -67,7 +67,7 @@ header {
     z-index: 3;
     position: relative;
     border-bottom: 4px solid #f0f0f0;
-    background-color: red;
+    /*background-color: red*/
 }
 
 nav {
@@ -75,13 +75,13 @@ nav {
     align-items: center;
     position: relative;
     flex: 1;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 #area-nav {
     display: flex;
     align-items: center;
-    background-color: orange;
+    /*background-color: orange;*/
 }
 
 #caixa-logo {
@@ -90,7 +90,7 @@ nav {
     align-items: center;
     padding:20px 35px 15px 10px;
     width: max-content;
-    background-color: purple;
+    /*background-color: purple;*/
 }
 
 #logo {
