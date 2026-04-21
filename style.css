@@ -64,7 +64,7 @@ header {
     display: flex;
     align-items: center; /* alinhamento vertical */
     justify-content: space-between;
-    padding: 0 20px 0px 10px;
+    padding: 0 10px 0px 10px;
     z-index: 3;
     position: relative; /* importante */
     border-bottom: 4px solid #f0f0f0;
