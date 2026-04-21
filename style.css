@@ -230,6 +230,10 @@ a.links-menu.ativo {
         text-align: center;
     }
 
+    nav {
+        padding-bottom: 5px;
+    }
+
     #area-nav {
       margin: 0 auto;
     }
