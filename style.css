@@ -64,7 +64,7 @@ header {
     display: flex;
     align-items: center; /* alinhamento vertical */
     justify-content: space-between;
-    padding: 0 20px 10px;
+    padding: 0 20px 0px 10px;
     z-index: 3;
     position: relative; /* importante */
     border-bottom: 4px solid #f0f0f0;
@@ -89,11 +89,12 @@ nav {
     align-items: center; /* 🔹 Centraliza verticalmente */
     padding:20px 35px 10px 22px;
     width: max-content;
+    background-color: red;
 }
 
 #logo {
     display: block;
-    height: 40px;
+    height: 35px;
     border-radius: 50%;
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 3px 1px 10px #00000042;
