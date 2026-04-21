@@ -68,6 +68,7 @@ header {
     z-index: 3;
     position: relative; /* importante */
     border-bottom: 4px solid #f0f0f0;
+    background-color: red;
 }
 
 nav {
@@ -76,11 +77,13 @@ nav {
     position: relative;
     flex: 1;
     padding-bottom: 10px;
+    background-color: yellow;
 }
 
 #area-nav {
     display: flex;
     align-items: center; /* 🔥 garante alinhamento */
+    background-color: orange;
 }
 
 #caixa-logo {
@@ -89,7 +92,7 @@ nav {
     align-items: center; /* 🔹 Centraliza verticalmente */
     padding:20px 35px 10px 10px;
     width: max-content;
-    background-color: red;
+    background-color: purple;
 }
 
 #logo {
@@ -140,6 +143,7 @@ ul#links {
     gap: 80px;
     position: relative;
     align-items: center;
+    background-color: pink;
 }
 
 li {
