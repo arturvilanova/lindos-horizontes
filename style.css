@@ -64,7 +64,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 10px;
     z-index: 3;
     position: relative;
     border-bottom: 4px solid #f0f0f0;
