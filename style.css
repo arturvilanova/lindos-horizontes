@@ -415,7 +415,7 @@ section#area-inicio, section#inicio {
 #frase-dia {
   whidth: max-content;
   margin-top: 40px;
-  font-size: 18px;
+  font-size: 22px;
   color: #666;
   text-align: center;
   font-style: italic;
@@ -528,6 +528,7 @@ section#area-inicio, section#inicio {
 
     #frase-dia {
         margin-top: 60px;
+        font-size: 18px;
     }
 }
 
