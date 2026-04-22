@@ -171,7 +171,7 @@ a.links-menu.ativo {
     background: var(--Cor2);
     position: absolute;
     border-radius: 1.5px;
-    bottom: -41px;
+    bottom: -39px;
     width: 0;
     left: 0;
     height: 4px;
@@ -381,7 +381,7 @@ section#area-inicio, section#inicio {
 .slide_1 img {
   width: 100%;
   height: 330px;
-  margin:35px 32px;
+  margin: 35px 32px;
   object-fit: cover;
   border-radius: 12px;
   border: 1.7px solid #9d9d9d;
