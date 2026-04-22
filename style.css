@@ -66,7 +66,7 @@ header {
     justify-content: space-between;
     z-index: 3;
     position: relative;
-    border-bottom: 4px solid #f0f0f0;
+    border-bottom: 5px solid #f0f0f0;
     /*background-color: red*/
 }
 
@@ -174,7 +174,7 @@ a.links-menu.ativo {
     bottom: -39.5px;
     width: 0;
     left: 0;
-    height: 4px;
+    height: 5px;
     transition: left 0.3s, width 0.3s;
 }
 
@@ -209,6 +209,7 @@ a.links-menu.ativo {
         top: 0;
         left: 0;
         width: 100%;
+        border-bottom: 4px solid #f0f0f0;
         background: white;  importante pra não ver conteúdo atrás*/
         z-index: 9999;
     }
@@ -271,6 +272,7 @@ a.links-menu.ativo {
     .barra-deslizante {
         bottom: 2px;
         transform: translateY(6px);
+        height: 4px;
     }
 
     #redes {
