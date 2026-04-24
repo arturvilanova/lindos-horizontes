@@ -213,11 +213,8 @@ a.links-menu.ativo {
         z-index: 9999;
     }
 
-    #texto-logo {
-         display: block
-    }
-
-    #logo-area {
+    
+    #caixa-logo {
         display: block
     }
 
