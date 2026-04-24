@@ -213,11 +213,6 @@ a.links-menu.ativo {
         z-index: 9999;
     }
 
-    
-    #caixa-logo {
-        display: block
-    }
-
     main {
        margin-top: 95px;
     }
