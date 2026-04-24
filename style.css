@@ -226,7 +226,7 @@ a.links-menu.ativo {
     }
 
     nav, #area-nav {
-        flex-direction: column;
+        /* flex-direction: column;*/
         align-items: center;
         display: flex;
         justify-content: center;
