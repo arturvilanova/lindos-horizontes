@@ -19,19 +19,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function moverBarra(linkAtivo, animar = true) {
-    const largura = linkAtivo.offsetWidth;
-    const esquerda = linkAtivo.offsetLeft;
+  const container = document.querySelector("#links");
+  const containerRect = container.getBoundingClientRect();
+  const linkRect = linkAtivo.getBoundingClientRect();
 
-    if (!animar) barra.style.transition = "none";
+  const largura = linkRect.width;
+  const esquerda = linkRect.left - containerRect.left;
 
-    barra.style.width = `${largura}px`;
-    barra.style.left = `${esquerda}px`;
+  if (!animar) barra.style.transition = "none";
 
-    if (!animar) {
-      requestAnimationFrame(() => {
-        barra.style.transition = "left 0.3s ease, width 0.3s ease";
-      });
-    }
+  barra.style.width = `${largura}px`;
+  barra.style.left = `${esquerda}px`;
+
+  if (!animar) {
+    requestAnimationFrame(() => {
+      barra.style.transition = "left 0.3s ease, width 0.3s ease";
+    });
+  }
   }
 
   links.forEach(link => {
