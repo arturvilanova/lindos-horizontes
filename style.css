@@ -207,7 +207,7 @@ a.links-menu.ativo {
         top: 0;
         left: 0;
         width: 100%;
-        height: 90px;
+        height: 85px;
         border-bottom: 4px solid #f0f0f0;
         background: white; /* importante */
         z-index: 9999;
