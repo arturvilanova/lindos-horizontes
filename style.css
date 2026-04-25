@@ -202,65 +202,63 @@ a.links-menu.ativo {
     }
 
     header {
-        padding-top: 10px;
-        text-align: center;
+        padding: 10px 15px;
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         border-bottom: 4px solid #f0f0f0;
-        background: white;  importante pra não ver conteúdo atrás*/
+        background: white; /* importante */
         z-index: 9999;
     }
 
     main {
-       margin-top: 95px;
+        margin-top: 80px;
     }
 
+    /* 🔥 MANTÉM TUDO EM LINHA (logo + menu) */
     nav {
-        
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
     #area-nav {
-      margin: 0 auto;
-    }
-
-    nav, #area-nav {
-        /* flex-direction: column;*/
-        align-items: center;
         display: flex;
-        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
         width: 100%;
-        gap: 10px;
+        flex-direction: row; /* ESSENCIAL */
     }
 
     #caixa-logo {
-        width: 100%;
-        padding-top: 0px;
+        display: flex;
+        align-items: center;
+        padding: 0;
         margin: 0;
+        width: auto;
     }
 
     #logo {
-        height: 34px;
-        margin: 0 auto;
+        height: 32px;
+        margin: 0;
     }
 
-    #texto-logo h1 {
-        font-size: 16px;
+    /* 🔥 ESCONDE TEXTO (como você pediu) */
+    #texto-logo {
+        display: none;
     }
 
-    #texto-logo p {
-        font-size: 11px;
-    }
-
+    /* 🔥 MENU NA MESMA LINHA */
     ul#links {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 40px;
-        width: 100%;
-        padding: 0px 0px 10px 0px;
-        margin: 0px auto 0px auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
         align-items: center;
+        gap: 20px;
+        width: auto;
+        padding: 0;
+        margin: 0;
     }
 
     .links-menu {
@@ -269,15 +267,17 @@ a.links-menu.ativo {
     }
 
     .barra-deslizante {
-        bottom: 2px;
-        transform: translateY(6px);
-        height: 4px;
+        display: none;
     }
 
     #redes {
         display: none;
     }
 }
+
+
+        
+
 
 /* SEÇÃO INÍCIO */
 
