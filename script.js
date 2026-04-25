@@ -19,12 +19,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function moverBarra(linkAtivo, animar = true) {
-  const container = document.querySelector("#links");
-  const containerRect = container.getBoundingClientRect();
-  const linkRect = linkAtivo.getBoundingClientRect();
+  let largura, esquerda;
 
-  const largura = linkRect.width;
-  const esquerda = linkRect.left - containerRect.left;
+  const isMobile = window.innerWidth <= 480;
+
+  if (isMobile) {
+    // 🔥 CÁLCULO CORRETO PARA MOBILE
+    const container = document.querySelector("#links");
+    const containerRect = container.getBoundingClientRect();
+    const linkRect = linkAtivo.getBoundingClientRect();
+
+    largura = linkRect.width;
+    esquerda = linkRect.left - containerRect.left;
+
+  } else {
+    // ✅ DESKTOP (mantém seu comportamento atual)
+    largura = linkAtivo.offsetWidth;
+    esquerda = linkAtivo.offsetLeft;
+  }
 
   if (!animar) barra.style.transition = "none";
 
