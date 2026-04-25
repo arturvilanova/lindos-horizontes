@@ -272,7 +272,7 @@ a.links-menu.ativo {
     bottom: -6px;
     height: 3px;
     background: var(--Cor2);
-    border-radius: 2px;
+    border-radius: 1.3px;
     left: 0;
     width: 0;
     transition: left 0.3s ease, width 0.3s ease;
