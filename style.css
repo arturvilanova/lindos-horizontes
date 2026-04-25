@@ -271,7 +271,7 @@ a.links-menu.ativo {
     .barra-deslizante {
     display: block;
     position: absolute;
-    bottom: -25px;
+    bottom: -28px;
     height: 4px;
     background: var(--Cor2);
     border-radius: 1.3px;
