@@ -267,7 +267,9 @@ a.links-menu.ativo {
     }
 
     .barra-deslizante {
-        display: none;
+        display: block;
+        bottom: -3px; /* ajusta posição abaixo do menu */
+        height: 3px;
     }
 
     #redes {
