@@ -543,6 +543,97 @@ section#area-inicio, section#inicio {
     }
 }
 
+/* ==========================
+   🌿 SEÇÃO AUTOR
+========================== */
+
+#autor {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* CARD */
+.autor-container {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 30px 20px 35px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.autor-container:hover {
+    transform: translateY(-4px);
+}
+
+/* FOTO */
+.autor-foto {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--Cor2);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.15);
+}
+
+.autor-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* NOME */
+.autor-nome {
+    font-size: 22px;
+    color: var(--Cor3);
+    margin-bottom: 8px;
+}
+
+/* SUBTÍTULO */
+.autor-subtitulo {
+    font-size: 15px;
+    color: #5a7d73;
+    margin-bottom: 15px;
+}
+
+/* BIO */
+.autor-bio {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 480px) {
+
+    #autor {
+        padding: 50px 15px;
+    }
+
+    .autor-container {
+        padding: 25px 15px 30px;
+    }
+
+    .autor-foto {
+        width: 140px;
+        height: 140px;
+    }
+
+    .autor-nome {
+        font-size: 20px;
+    }
+
+    .autor-bio {
+        font-size: 14px;
+    }
+
+}
+
 /* SECAO */
 
 /* SEÇÃO FOTOS */
