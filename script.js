@@ -213,97 +213,9 @@ function atualizarFrase() {
 }
 
 window.addEventListener("load", atualizarFrase);
+  
 
-  // ==========================
-  // 🎞️ CARROSSEL IA
-  // ==========================
-  const track = document.querySelector('.track');
-  const slides = document.querySelectorAll('.slide');
-  const carousel = document.querySelector('.carousel');
-
-  let index = 0;
-  let isDragging = false;
-  let startXIA = 0;
-  let currentX = 0;
-
-  function updateCarouselIA(smooth = true) {
-    slides.forEach(s => s.classList.remove('active'));
-    slides[index].classList.add('active');
-
-    const slide = slides[index];
-
-    const containerWidth = carousel.offsetWidth;
-    const slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
-    const containerCenter = containerWidth / 2;
-
-    const offset = containerCenter - slideCenter;
-
-    track.style.transition = smooth
-      ? 'transform 0.6s cubic-bezier(0.22, 1, 0.36, 1)'
-      : 'none';
-
-    track.style.transform = `translateX(${offset}px)`;
-  }
-
-  slides.forEach((slide, i) => {
-    slide.addEventListener('click', () => {
-      index = i;
-      updateCarouselIA(true);
-    });
-  });
-
-  track.addEventListener('touchstart', (e) => {
-    isDragging = true;
-    startXIA = e.touches[0].clientX;
-    track.style.transition = 'none';
-  });
-
-  track.addEventListener('touchmove', (e) => {
-    if (!isDragging) return;
-
-    currentX = e.touches[0].clientX;
-    const diff = currentX - startXIA;
-
-    const baseSlide = slides[index];
-    const containerWidth = carousel.offsetWidth;
-    const slideCenter = baseSlide.offsetLeft + baseSlide.offsetWidth / 2;
-    const containerCenter = containerWidth / 2;
-
-    const baseOffset = containerCenter - slideCenter;
-
-    track.style.transform = `translateX(${baseOffset + diff * 0.6}px)`;
-  });
-
-  track.addEventListener('touchend', () => {
-    if (!isDragging) return;
-    isDragging = false;
-
-    const diff = currentX - startXIA;
-    const threshold = 50;
-
-    if ((index === 0 && diff > 0) || (index === slides.length - 1 && diff < 0)) {
-      updateCarouselIA(true);
-      return;
-    }
-
-    if (diff < -threshold) index++;
-    else if (diff > threshold) index--;
-
-    if (index < 0) index = 0;
-    if (index >= slides.length) index = slides.length - 1;
-
-    updateCarouselIA(true);
-  });
-
-  // ==========================
-  // 🚀 INICIALIZA
-  // ==========================
-  window.addEventListener("load", () => {
-    updateCarouselInicio(false);
-    updateCarouselIA(false);
-  });
-
-  // ==========================
+// ==========================
 // 🖼️ LIGHTBOX (ABRIR IMAGEM)
 // ==========================
 
