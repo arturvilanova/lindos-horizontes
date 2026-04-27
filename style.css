@@ -504,7 +504,7 @@ section#area-inicio, section#inicio {
         justify-content: flex-start;
         align-items: center;
         position: relative;
-        max-height: 450px;
+        max-height: 430px;
     }
 
     .slide_1 img {
