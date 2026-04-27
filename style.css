@@ -556,12 +556,12 @@ section#area-inicio, section#inicio {
 /* CARD */
 .autor-container {
     width: 100%;
-    max-width: 400px;
+    /*max-width: 400px;*/
     background: #ffffff;
     border-radius: 20px;
-    padding: 30px 20px 35px;
+    /*padding: 30px 20px 35px;*/
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    /*box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);*/
     transition: 0.3s;
 }
 
