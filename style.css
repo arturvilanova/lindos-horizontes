@@ -285,10 +285,6 @@ a.links-menu.ativo {
     }
 }
 
-
-        
-
-
 /* SEÇÃO INÍCIO */
 
 section#area-inicio, section#inicio {
@@ -483,7 +479,7 @@ section#area-inicio, section#inicio {
 
     #lado-esquerdo {
         height: auto;
-        padding-bottom: 50px;
+        padding-bottom: 30px;
     }
 
     #bem-vindo h1 {
