@@ -9,13 +9,25 @@ document.addEventListener("DOMContentLoaded", () => {
   const direitos = document.getElementById("direitos");
 
   function mostrarSecao(id) {
-    secoes.forEach(secao => secao.classList.remove("ativa"));
-    document.getElementById(id).classList.add("ativa");
+  secoes.forEach(secao => secao.classList.remove("ativa"));
 
-    setTimeout(() => {
-      updateCarouselInicio(false);
+  const secao = document.getElementById(id);
+
+  if (secao) {
+    secao.classList.add("ativa");
+  } else {
+    console.warn("Seção ainda não existe:", id);
+    return; // 🔥 impede bugs
+  }
+
+  setTimeout(() => {
+    updateCarouselInicio(false);
+
+    if (typeof updateCarouselIA === "function") {
       updateCarouselIA(false);
-    }, 50);
+    }
+
+  }, 50);
   }
 
   function moverBarra(linkAtivo, animar = true) {
