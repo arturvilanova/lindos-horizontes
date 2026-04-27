@@ -610,7 +610,7 @@ section#area-inicio, section#inicio {
 @media (max-width: 480px) {
 
     #autor {
-        padding: 40px 15px;
+        padding: 0px 15px;
     }
 
     .autor-container {
