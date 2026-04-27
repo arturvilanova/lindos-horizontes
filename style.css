@@ -596,8 +596,10 @@ section#area-inicio, section#inicio {
 /* SUBTÍTULO */
 .autor-subtitulo {
     font-size: 15px;
+    font-style: italic;
     color: #5a7d73;
     margin-bottom: 15px;
+    
 }
 
 /* BIO */
