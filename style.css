@@ -314,14 +314,14 @@ section#area-inicio, section#inicio {
 
 #lado-direito {
     width: 60%;
-    background-color: Indigo;
+    /*background-color: Indigo;*/
 }
 
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
     height: 500px;
-    background-color: YellowGreen;
+    /*background-color: YellowGreen;*/
 }
 
 #bem-vindo {
