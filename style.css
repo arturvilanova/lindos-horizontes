@@ -632,7 +632,127 @@ section#area-inicio, section#inicio {
 
 }
 
-/* SECAO */
+/* SEÇÃO AUTOR */
+
+/* ==========================
+   🌄 GALERIA PREVIEW
+========================== */
+
+#galeria-preview {
+    padding: 60px 20px;
+    background: #f8f9f8;
+}
+
+/* CONTAINER */
+.galeria-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TÍTULO */
+.galeria-titulo {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: var(--Cor3);
+    text-align: left;
+}
+
+/* GRID */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 15px;
+}
+
+/* FOTO */
+.foto {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 🔥 deixa quadrado */
+    overflow: hidden;
+    border-radius: 12px;
+    background: #ddd;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.foto:hover img {
+    transform: scale(1.08);
+}
+
+/* BOTÃO */
+.galeria-botao-area {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end; /* direita no desktop */
+}
+
+.btn-ver-mais {
+    text-decoration: none;
+    padding: 12px 22px;
+    border: 2px solid var(--Cor2);
+    border-radius: 50px;
+    color: var(--Cor2);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-ver-mais:hover {
+    background: var(--Cor2);
+    color: white;
+}
+
+@media (max-width: 900px) {
+
+    .galeria-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    #galeria-preview {
+        padding: 35px 12px;
+    }
+
+    .galeria-titulo {
+        text-align: center;
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .foto {
+        border-radius: 10px;
+    }
+
+    .foto img {
+        transition: none; /* 🔥 remove zoom pesado no celular */
+    }
+
+    .galeria-botao-area {
+        justify-content: center;
+        margin-top: 25px;
+    }
+
+    .btn-ver-mais {
+        width: 100%;
+        max-width: 260px;
+        text-align: center;
+        font-size: 14px;
+        padding: 11px;
+    }
+
+}
 
 /* SEÇÃO FOTOS */
 
