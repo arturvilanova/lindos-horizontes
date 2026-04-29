@@ -733,7 +733,8 @@ section#area-inicio, section#inicio {
 
     .galeria-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        column-gap: 10px;
+        row-gap: 15px;
     }
 
     .foto {
