@@ -674,6 +674,7 @@ section#area-inicio, section#inicio {
     overflow: hidden;
     border-radius: 12px;
     background: #ddd;
+    padding: 0px;
 }
 
 .foto img {
