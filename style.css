@@ -559,6 +559,7 @@ section#area-inicio, section#inicio {
     text-align: center;
     /*box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);*/
     transition: 0.3s;
+    diplay: flex;
 }
 
 .autor-container:hover {
@@ -616,6 +617,7 @@ section#area-inicio, section#inicio {
 
     .autor-container {
         padding: 25px 15px 30px;
+        diplay: block;
     }
 
     .autor-foto {
