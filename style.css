@@ -562,10 +562,6 @@ section#area-inicio, section#inicio {
     diplay: flex;
 }
 
-.autor-container:hover {
-    transform: translateY(-4px);
-}
-
 /* FOTO */
 .autor-foto {
     width: 160px;
