@@ -811,7 +811,7 @@ section#fotos h1 {
     animation: fadeIn 0.6s forwards;
 }
 
-figure:hover {
+#caixa-das-fotos figure:hover {
     transform: scale(1.02);
     box-shadow: 0 6px 14px #00000033;
 }
