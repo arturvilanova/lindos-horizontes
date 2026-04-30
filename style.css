@@ -799,7 +799,7 @@ section#fotos h1 {
     direction: ltr;
 }
 
-figure img {
+#caixa-das-fotos figure img {
     width: 100%;
     height: auto;
     border-radius: 8px;
