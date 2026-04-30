@@ -637,12 +637,14 @@ section#area-inicio, section#inicio {
 
 #galeria-preview {
     padding: 60px 20px;
+    background-color: red;
 }
 
 /* CONTAINER */
 .galeria-container {
     max-width: 1200px;
     margin: 0 auto;
+    background-color: yellow;
 }
 
 /* TÍTULO */
@@ -651,6 +653,7 @@ section#area-inicio, section#inicio {
     margin-bottom: 30px;
     color: var(--Cor3);
     text-align: left;
+    background-color: purple;
 }
 
 /* GRID PERFEITO */
@@ -665,7 +668,7 @@ section#area-inicio, section#inicio {
     width: 100%;
     aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 10px;
 }
 
 /* IMAGEM */
@@ -689,6 +692,7 @@ section#area-inicio, section#inicio {
     margin-top: 30px;
     display: flex;
     justify-content: flex-end;
+    background-color: orange;
 }
 
 .btn-ver-mais {
