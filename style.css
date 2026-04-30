@@ -784,7 +784,7 @@ section#fotos h1 {
     direction: ltr;
 }
 
-figure {
+#caixa-das-fotos figure {
     display: inline-block;
     width: 100%;
     margin: 0 0 15px;
