@@ -728,32 +728,42 @@ section#area-inicio, section#inicio {
 }
 
 /* ==========================
-   📱 MOBILE REAL (CELULAR)
+   📱 MOBILE (CORRIGIDO DE VERDADE)
 ========================== */
 
 @media (max-width: 480px) {
 
+    /* 🔥 mais espaço para imagens crescerem */
     #galeria-preview {
-        padding: 25px 6px; /* 🔥 libera espaço lateral */
+        padding: 25px 6px;
     }
 
     .galeria-container {
         max-width: 100%;
     }
 
+    /* 🔥 GRID PERFEITO */
     .galeria-grid {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 6px; /* 🔥 espaço IGUAL e mais compacto */
+
+        gap: 8px;              /* 🔥 garante igualdade */
+        row-gap: 8px;
+        column-gap: 8px;
+
+        align-items: start;    /* 🔥 remove bug vertical */
     }
 
-    /* 🔥 QUADRADO PERFEITO */
+    /* 🔥 CARD DA IMAGEM */
     .foto {
         position: relative;
         width: 100%;
+        margin: 0;             /* 🔥 remove qualquer sobra */
         border-radius: 10px;
         overflow: hidden;
     }
 
+    /* 🔥 QUADRADO PERFEITO (SEM BUG) */
     .foto::before {
         content: "";
         display: block;
@@ -767,8 +777,10 @@ section#area-inicio, section#inicio {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        display: block;
     }
 
+    /* ajustes visuais */
     .galeria-titulo {
         text-align: center;
         font-size: 18px;
