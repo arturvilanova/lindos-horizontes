@@ -698,6 +698,7 @@ section#area-inicio, section#inicio {
     margin-top: 30px;
     display: flex;
     justify-content: flex-end;
+    outline: none;
     /*background-color: orange;*/
 }
 
