@@ -632,7 +632,7 @@ section#area-inicio, section#inicio {
 }
 
 /* ==========================
-   🌄 GALERIA PREVIEW (CORRIGIDA)
+   🌄 GALERIA PREVIEW (FINAL)
 ========================== */
 
 #galeria-preview {
@@ -656,11 +656,11 @@ section#area-inicio, section#inicio {
     background-color: purple;
 }
 
-/* GRID PERFEITO */
+/* GRID */
 .galeria-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px; /* 🔥 espaçamento igual em tudo */
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
 }
 
 /* FOTO */
@@ -669,6 +669,9 @@ section#area-inicio, section#inicio {
     aspect-ratio: 1 / 1;
     overflow: hidden;
     border-radius: 10px;
+
+    /* 🔥 ESSENCIAL PARA ALINHAMENTO PERFEITO */
+    display: block;
 }
 
 /* IMAGEM */
@@ -711,6 +714,7 @@ section#area-inicio, section#inicio {
 }
 
 
+
 /* ==========================
    📱 RESPONSIVO
 ========================== */
@@ -718,17 +722,21 @@ section#area-inicio, section#inicio {
 /* Tablets */
 @media (max-width: 900px) {
     .galeria-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
     }
 }
 
-/* Celulares médios */
+/* Celular (AQUI ESTAVA O PROBLEMA) */
 @media (max-width: 600px) {
-     .galeria-grid {
+
+    .galeria-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
-     }
+
+        /* 🔥 GARANTE IGUALDADE REAL */
+        align-items: start;
+    }
 
     .galeria-titulo {
         text-align: center;
