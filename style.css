@@ -698,7 +698,7 @@ section#area-inicio, section#inicio {
     margin-top: 30px;
     display: flex;
     justify-content: flex-end;
-    background-color: orange;
+    /*background-color: orange;*/
 }
 
 .btn-ver-mais {
