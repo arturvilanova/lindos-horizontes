@@ -540,33 +540,35 @@ section#area-inicio, section#inicio {
 }
 
 /* ==========================
-   🌿 SEÇÃO AUTOR
+   🌿 SEÇÃO AUTOR (DESKTOP LADO A LADO)
 ========================== */
 
 #autor {
     padding: 40px 20px;
-    /*display: block;*/
+    display: flex;
     justify-content: center;
 }
 
-/* CARD */
+/* CONTAINER PRINCIPAL */
 .autor-container {
+    max-width: 1000px;
     width: 100%;
-    /*max-width: 400px;*/
+
+    display: flex;
+    align-items: center;
+    gap: 40px; /* espaço entre foto e texto */
+
     background: #ffffff;
     border-radius: 20px;
-    /*padding: 30px 20px 35px;*/
-    text-align: center;
-    /*box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);*/
-    transition: 0.3s;
-    diplay: flex;
+    padding: 30px;
 }
 
-/* FOTO */
+/* FOTO (ESQUERDA) */
 .autor-foto {
-    width: 160px;
-    height: 160px;
-    margin: 0 auto 20px;
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+
     border-radius: 50%;
     overflow: hidden;
     border: 3px solid var(--Cor2);
@@ -579,11 +581,17 @@ section#area-inicio, section#inicio {
     object-fit: cover;
 }
 
+/* TEXTO (DIREITA) */
+.autor-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 /* NOME */
 .autor-nome {
-    font-size: 23px;
+    font-size: 26px;
     color: var(--Cor3);
-    margin-bottom: 8px;
 }
 
 /* SUBTÍTULO */
@@ -591,29 +599,21 @@ section#area-inicio, section#inicio {
     font-size: 16px;
     font-style: italic;
     color: #5a7d73;
-    margin-bottom: 22px;
-    
 }
 
 /* BIO */
 .autor-bio {
-    font-size: 17px;
+    font-size: 15px;
     color: #555;
     line-height: 1.6;
-    padding: 0 10px;
 }
 
-/* RESPONSIVO */
 @media (max-width: 480px) {
 
-    #autor {
-        padding: 0px 15px;
-        display: block;
-    }
-
     .autor-container {
-        padding: 25px 15px 30px;
-        diplay: block;
+        flex-direction: column; /* 🔥 volta pro formato vertical */
+        text-align: center;
+        padding: 25px 15px;
     }
 
     .autor-foto {
@@ -621,17 +621,17 @@ section#area-inicio, section#inicio {
         height: 140px;
     }
 
+    .autor-info {
+        align-items: center;
+    }
+
     .autor-nome {
-        font-size: 23px;
+        font-size: 20px;
     }
 
-    .autor-subtitulo {
-    font-size: 13px;
-    }
     .autor-bio {
-        font-size: 15.5px;
+        font-size: 14px;
     }
-
 }
 
 /* ==========================
