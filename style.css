@@ -540,7 +540,7 @@ section#area-inicio, section#inicio {
 }
 
 /* ==========================
-   🌿 SEÇÃO AUTOR (DESKTOP LADO A LADO)
+   🌿 SEÇÃO AUTOR (FINAL CORRETO)
 ========================== */
 
 #autor {
@@ -549,14 +549,14 @@ section#area-inicio, section#inicio {
     justify-content: center;
 }
 
-/* CONTAINER PRINCIPAL */
+/* CONTAINER */
 .autor-container {
     max-width: 1000px;
     width: 100%;
 
     display: flex;
-    align-items: center;
-    gap: 40px; /* espaço entre foto e texto */
+    align-items: center; /* centraliza verticalmente */
+    gap: 30px;
 
     background: #ffffff;
     border-radius: 20px;
@@ -565,8 +565,8 @@ section#area-inicio, section#inicio {
 
 /* FOTO (ESQUERDA) */
 .autor-foto {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     flex-shrink: 0;
 
     border-radius: 50%;
@@ -581,24 +581,26 @@ section#area-inicio, section#inicio {
     object-fit: cover;
 }
 
-/* TEXTO (DIREITA) */
+/* TEXTO (DIREITA - EM COLUNA) */
 .autor-info {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: column; /* 🔥 garante ordem vertical */
+    justify-content: center;
 }
 
 /* NOME */
 .autor-nome {
     font-size: 26px;
     color: var(--Cor3);
+    margin-bottom: 5px;
 }
 
 /* SUBTÍTULO */
 .autor-subtitulo {
-    font-size: 16px;
+    font-size: 15px;
     font-style: italic;
     color: #5a7d73;
+    margin-bottom: 10px;
 }
 
 /* BIO */
@@ -606,12 +608,18 @@ section#area-inicio, section#inicio {
     font-size: 15px;
     color: #555;
     line-height: 1.6;
+    max-width: 500px;
 }
+
+
+/* ==========================
+   📱 MOBILE (CENTRALIZADO)
+========================== */
 
 @media (max-width: 480px) {
 
     .autor-container {
-        flex-direction: column; /* 🔥 volta pro formato vertical */
+        flex-direction: column; /* 🔥 empilha */
         text-align: center;
         padding: 25px 15px;
     }
@@ -629,8 +637,13 @@ section#area-inicio, section#inicio {
         font-size: 20px;
     }
 
+    .autor-subtitulo {
+        font-size: 14px;
+    }
+
     .autor-bio {
         font-size: 14px;
+        max-width: 100%;
     }
 }
 
