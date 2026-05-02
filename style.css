@@ -590,14 +590,14 @@ section#area-inicio, section#inicio {
 
 /* NOME */
 .autor-nome {
-    font-size: 26px;
+    font-size: 28px;
     color: var(--Cor3);
     margin-bottom: 5px;
 }
 
 /* SUBTÍTULO */
 .autor-subtitulo {
-    font-size: 15px;
+    font-size: 18px;
     font-style: italic;
     color: #5a7d73;
     margin-bottom: 10px;
@@ -605,7 +605,7 @@ section#area-inicio, section#inicio {
 
 /* BIO */
 .autor-bio {
-    font-size: 15px;
+    font-size: 20px;
     color: #555;
     line-height: 1.6;
     max-width: 500px;
@@ -634,15 +634,15 @@ section#area-inicio, section#inicio {
     }
 
     .autor-nome {
-        font-size: 20px;
+        font-size: 25px;
     }
 
     .autor-subtitulo {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .autor-bio {
-        font-size: 14px;
+        font-size: 18px;
         max-width: 100%;
     }
 }
