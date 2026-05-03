@@ -1,3 +1,28 @@
+// 1. CONFIGURAÇÃO DA SUA MENSAGEM COM O SEU LINK REAL
+        const TEXTO_MENSAGEM = "Olha esse projeto incrível! 🚀\n\nAchei muito maneiro a iniciativa deste jovem e resolvi apoiar! Dá uma olhada você também.\n\n👉 https://arturvilanova.github.io/lindos-horizontes/index.html";
+
+        const mensagemCodificada = encodeURIComponent(TEXTO_MENSAGEM);
+
+        // 2. MONTA A ROTA OFICIAL DE COMPARTILHAMENTO
+        const linkApi = "https://api.whatsapp.com/send?text=" + mensagemCodificada;
+
+        // Injeta a rota diretamente no atributo href do HTML para o navegador não travar
+        document.getElementById('linkZap').href = linkApi;
+        document.getElementById('linkStatus').href = linkApi;
+
+        // Abre o card automaticamente 1.5 segundos após carregar a página
+        window.onload = function() {
+            setTimeout(function() {
+                document.getElementById('modalOverlay').classList.add('ativo');
+            }, 1500); 
+        };
+
+        // Fecha o card
+        function fecharCard() {
+            document.getElementById('modalOverlay').classList.remove('ativo');
+        }
+// ===========================
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // ==========================
