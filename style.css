@@ -1101,6 +1101,18 @@ section#frase {
             font-size: 1rem;
             color: #607274;
             line-height: 1.6;
+
+            .tag-status {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #4a9d8f;
+            border: 1px solid #4a9d8f;
+            padding: 5px 12px;
+            border-radius: 50px;
+            }
             
 /* --- TERMINA SEÇÃO IA --- */
             
