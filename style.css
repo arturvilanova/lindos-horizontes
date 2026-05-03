@@ -1072,6 +1072,39 @@ section#frase {
     }
 }
 
+
+/* --- SEÇÃO IA --- */
+
+.card-aviso {
+            max-width: 500px;
+            text-align: center;
+            padding: 40px 30px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+        }
+
+        .icone-ia {
+            font-size: 2.5rem;
+            color: #4a9d8f;
+            margin-bottom: 15px;
+        }
+
+        .titulo-aviso {
+            font-size: 1.6rem;
+            color: #1c2d37;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .texto-aviso {
+            font-size: 1rem;
+            color: #607274;
+            line-height: 1.6;
+            
+/* --- TERMINA SEÇÃO IA --- */
+            
+
 /* --- SEÇÕES ATIVAS --- */
 
 section.secao {
