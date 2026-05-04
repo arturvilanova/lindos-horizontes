@@ -237,7 +237,7 @@ window.addEventListener("load", () => {
 
   const frases = [
   "A natureza nunca se repete.",
-  "Beleza está nos pequenos detalhes.",
+  "A Beleza está nos pequenos detalhes.",
   "O simples também encanta.",
   "Cada olhar revela um novo mundo.",
   "A luz transforma tudo.",
