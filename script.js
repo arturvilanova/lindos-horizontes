@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================
   // 🔗 MENU + SEÇÕES
   // ==========================
+        
   const links = document.querySelectorAll(".links-menu");
   const secoes = document.querySelectorAll(".secao");
   const barra = document.querySelector(".barra-deslizante");
@@ -232,7 +233,7 @@ window.addEventListener("load", () => {
 });
   
   // ==========================
-  // ✍️ Frase do dia
+  // ✍️ FRASE DO DIA
   // ==========================
 
   const frases = [
@@ -250,8 +251,32 @@ function atualizarFrase() {
 }
 
 window.addEventListener("load", atualizarFrase);
-  
 
+//======================
+// BOTÃO VER MAIS FOTOS
+//======================
+
+// 🔒 CONTROLE SEGURO DE NAVEGAÇÃO INTERNA
+document.querySelectorAll("[data-target].nav-trigger").forEach(botao => {
+  botao.addEventListener("click", e => {
+    e.preventDefault();
+          
+    const alvo = botao.dataset.target;
+
+    // 🔹 ativa a seção
+    mostrarSecao(alvo);
+
+    // 🔹 atualiza menu ativo
+    const linkMenu = document.querySelector(`.links-menu[data-target="${alvo}"]`);
+
+    if (linkMenu) {
+      links.forEach(l => l.classList.remove("ativo"));
+      linkMenu.classList.add("ativo");
+      moverBarra(linkMenu, true);
+    }
+  });
+});
+  
 // ==========================
 // 🖼️ LIGHTBOX (ABRIR IMAGEM)
 // ==========================
