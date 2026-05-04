@@ -1075,6 +1075,10 @@ section#frase {
 
 /* --- SEÇÃO IA --- */
 
+section#imagens-ia {
+    height: 100vh;
+}
+
 .card-aviso {
             max-width: 500px;
             text-align: center;
@@ -1093,7 +1097,6 @@ section#frase {
         .titulo-aviso {
             font-size: 1.6rem;
             color: #1c2d37;
-            margin-bottom: 12px;
             font-weight: 600;
         }
 
@@ -1101,6 +1104,7 @@ section#frase {
             font-size: 1rem;
             color: #607274;
             line-height: 1.6;
+            margin: 15px 0px 10px 0px;
         }
 
             .tag-status {
