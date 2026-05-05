@@ -1077,7 +1077,7 @@ section#frase {
 /* --- SEÇÃO IA --- */
 
 section#imagens-ia {
-    height: 100%;
+    min-height: 100vh;
 }
 
 .card-aviso {
@@ -1194,4 +1194,14 @@ footer {
   font-size: 40px;
   color: white;
   cursor: pointer;
-        }
+}
+
+/* 🔥 CONTROLE REAL DAS SEÇÕES */
+.secao {
+    display: none;
+    width: 100%;
+}
+
+.secao.ativa {
+    display: block;
+}
