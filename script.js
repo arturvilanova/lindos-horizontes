@@ -263,13 +263,13 @@ document.querySelectorAll("[data-target].nav-trigger").forEach(botao => {
 
     const alvo = botao.dataset.target;
 
-    // 🔹 ativa a seção
     mostrarSecao(alvo);
 
-    // 🔹 sobe instantaneamente
-    window.scrollTo(0, 0);
+    // 🔥 topo invisível (sem efeito visual)
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
 
-    // 🔹 atualiza menu ativo
     const linkMenu = document.querySelector(`.links-menu[data-target="${alvo}"]`);
 
     if (linkMenu) {
