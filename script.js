@@ -260,11 +260,14 @@ window.addEventListener("load", atualizarFrase);
 document.querySelectorAll("[data-target].nav-trigger").forEach(botao => {
   botao.addEventListener("click", e => {
     e.preventDefault();
-          
+
     const alvo = botao.dataset.target;
 
     // 🔹 ativa a seção
     mostrarSecao(alvo);
+
+    // 🔹 sobe instantaneamente
+    window.scrollTo(0, 0);
 
     // 🔹 atualiza menu ativo
     const linkMenu = document.querySelector(`.links-menu[data-target="${alvo}"]`);
