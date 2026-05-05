@@ -767,6 +767,11 @@ section#area-inicio, section#inicio {
     }
 }
 
+span a {
+    background-color:;
+    color: var(--Cor3);
+}
+
 /* ==========================
    🌄 GALERIA PREVIEW (FINAL)
 ========================== */
