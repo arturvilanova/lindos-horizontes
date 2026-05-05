@@ -103,10 +103,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       mostrarSecao(alvo);
 
-      // 🔥 topo invisível (SEM animação)
-      requestAnimationFrame(() => {
-        window.scrollTo(0, 0);
-      });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
 
       moverBarra(link, true);
     });
@@ -273,10 +271,8 @@ document.querySelectorAll("[data-target].nav-trigger").forEach(botao => {
 
     mostrarSecao(alvo);
 
-    // 🔥 topo invisível (sem efeito visual)
-    requestAnimationFrame(() => {
-      window.scrollTo(0, 0);
-    });
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
 
     const linkMenu = document.querySelector(`.links-menu[data-target="${alvo}"]`);
 
