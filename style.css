@@ -1076,7 +1076,7 @@ section#frase {
 /* --- SEÇÃO IA --- */
 
 section#imagens-ia {
-    height: 100vh;
+    height: 100%;
 }
 
 .card-aviso {
