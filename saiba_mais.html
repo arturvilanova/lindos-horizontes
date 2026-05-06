@@ -106,6 +106,35 @@
             border-radius: 50px;
         }
 
+        .botao-voltar {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 12px 26px;
+    border-radius: 50px;
+
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+
+    color: var(--Cor2);
+    border: 1.8px solid rgba(86, 163, 138, 0.7);
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+
+    z-index: 9999;
+        }
+
+        .botao-voltar:active {
+         transform: translateX(-50%) scale(0.96);
+        }
+
         a:hover {
             background-color: #5fb69a;;
         }
@@ -191,7 +220,7 @@
             Que, ao explorar este espaço, você também encontre novos horizontes… e descubra a paz que existe em cada detalhe da natureza.  
         </p>
 
-        <a href="index.html">Voltar</a>
+        <a href="index.html" class="botao-voltar">Voltar</a>
     </main>
 </body>
 </html>
