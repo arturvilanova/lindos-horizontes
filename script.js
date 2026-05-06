@@ -10,11 +10,11 @@ const linkApi = "https://api.whatsapp.com/send?text=" + mensagemCodificada;
 document.getElementById('linkZap').href = linkApi;
 document.getElementById('linkStatus').href = linkApi;
 
-// Abre o card automaticamente 1.5 segundos após carregar a página
+// Abre o card automaticamente 5 segundos após carregar a página
 window.onload = function() {
     setTimeout(function() {
         document.getElementById('modalOverlay').classList.add('ativo');
-    }, 1500); 
+    }, 5000); 
 };
 
 // Fecha o card
