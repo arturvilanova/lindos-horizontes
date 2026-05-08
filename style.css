@@ -1039,6 +1039,11 @@ span a {
         margin-bottom:24px;
     }
 
+    .logo-instagram {
+        width:70px;
+        height:70px;
+    }
+
     .logo-lh{
         width:35px;
         height:35px;
@@ -1047,14 +1052,14 @@ span a {
     }
 
     .instagram-texto{
-        font-size:15px;
+        font-size:14px;
         line-height:1.8;
         margin-bottom:28px;
     }
 
     .btn-instagram{
-        font-size:17px;
-        padding:14px 42px;
+        font-size:15px;
+        padding:10px 20px;
     }
 }
 
