@@ -1069,6 +1069,10 @@ span a {
         left:-4px;
     }
 
+    #instagram-area span {
+      margin: 3px 0px 15px 0px;  
+    }
+
     .instagram-texto{
         font-size:14.5px;
         line-height:1.8;
