@@ -940,7 +940,7 @@ span a {
 #instagram-area{
     width:100%;
     background:#EEF2F1;
-    padding:55px 20px 65px;
+    padding:15px 15px 65px 15px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -963,7 +963,6 @@ span a {
     position:relative;
     width:115px;
     height:115px;
-    margin-bottom:28px;
 }
 
 .logo-instagram{
@@ -1030,7 +1029,7 @@ span a {
 @media(max-width:480px){
 
     #instagram-area{
-        padding:50px 22px 70px;
+        padding:0px 22px 70px;
     }
 
     .instagram-logo-box{
