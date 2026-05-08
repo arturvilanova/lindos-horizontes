@@ -934,149 +934,127 @@ span a {
 }
 
 /* ==========================
-   🌿 ÁREA INSTAGRAM
+🌿 ÁREA INSTAGRAM
 ========================== */
 
-#instagram-area {
-    width: 100%;
-    background: #EEF2F1;
-    padding: 85px 20px 110px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#instagram-area{
+    width:100%;
+    background:#EEF2F1;
+    padding:55px 20px 65px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-.instagram-container {
-    width: 100%;
-    max-width: 700px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.instagram-container{
+    width:100%;
+    max-width:700px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
 }
 
 /* ==========================
-   📸 LOGOS
+📸 LOGOS
 ========================== */
 
-.instagram-logo-box {
-    position: relative;
-    width: 140px;
-    height: 140px;
-    margin-bottom: 45px;
+.instagram-logo-box{
+    position:relative;
+    width:115px;
+    height:115px;
+    margin-bottom:28px;
 }
 
-/* Logo Instagram */
-.logo-instagram {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
+.logo-instagram{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
 }
 
-/* Logo Lindos Horizontes */
-.logo-lh {
-    position: absolute;
-
-    top: -6px;
-    left: -6px;
-
-    width: 48px;
-    height: 48px;
-
-    border-radius: 50%;
-    object-fit: cover;
-
-    background: white;
-    padding: 3px;
-
-    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+.logo-lh{
+    position:absolute;
+    top:-5px;
+    left:-5px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+    background:white;
+    padding:3px;
+    box-shadow:0 3px 10px rgba(0,0,0,0.12);
 }
 
 /* ==========================
-   ✍️ TEXO
+✍️ TEXTO
 ========================== */
 
-.instagram-texto {
-    max-width: 620px;
-
-    font-size: 19px;
-    line-height: 1.9;
-
-    color: #111;
-
-    margin-bottom: 45px;
+.instagram-texto{
+    max-width:620px;
+    font-size:17px;
+    line-height:1.8;
+    color:#111;
+    margin-bottom:30px;
 }
 
 /* ==========================
-   🔘 BOTÃO
+🔘 BOTÃO
 ========================== */
 
-.btn-instagram {
-    background: linear-gradient(135deg, #56A38A, #6EC2A7);
-
-    color: white;
-    text-decoration: none;
-
-    font-size: 20px;
-    font-weight: 700;
-
-    padding: 18px 55px;
-
-    border-radius: 50px;
-
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease,
-                opacity 0.25s ease;
-
-    box-shadow: 0 10px 25px rgba(86,163,138,0.20);
+.btn-instagram{
+    background:linear-gradient(135deg,#56A38A,#6EC2A7);
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    font-weight:700;
+    padding:16px 48px;
+    border-radius:50px;
+    transition:transform 0.25s ease,box-shadow 0.25s ease,opacity 0.25s ease;
+    box-shadow:0 10px 25px rgba(86,163,138,0.20);
 }
 
-/* Hover */
-.btn-instagram:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 30px rgba(86,163,138,0.25);
+.btn-instagram:hover{
+    transform:translateY(-2px);
+    box-shadow:0 14px 30px rgba(86,163,138,0.25);
 }
 
-/* Clique */
-.btn-instagram:active {
-    transform: scale(0.98);
+.btn-instagram:active{
+    transform:scale(0.98);
 }
 
 /* ==========================
-   📱 MOBILE
+📱 MOBILE
 ========================== */
 
-@media (max-width: 480px) {
+@media(max-width:480px){
 
-    #instagram-area {
-        padding: 70px 22px 90px;
+    #instagram-area{
+        padding:50px 22px 70px;
     }
 
-    .instagram-logo-box {
-        width: 115px;
-        height: 115px;
-        margin-bottom: 38px;
+    .instagram-logo-box{
+        width:100px;
+        height:100px;
+        margin-bottom:24px;
     }
 
-    .logo-lh {
-        width: 40px;
-        height: 40px;
-
-        top: -5px;
-        left: -5px;
+    .logo-lh{
+        width:35px;
+        height:35px;
+        top:-4px;
+        left:-4px;
     }
 
-    .instagram-texto {
-        font-size: 17px;
-        line-height: 1.8;
-        margin-bottom: 38px;
+    .instagram-texto{
+        font-size:15px;
+        line-height:1.8;
+        margin-bottom:28px;
     }
 
-    .btn-instagram {
-        font-size: 18px;
-        padding: 16px 48px;
+    .btn-instagram{
+        font-size:17px;
+        padding:14px 42px;
     }
 }
 
