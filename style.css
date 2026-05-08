@@ -1012,14 +1012,15 @@ span a {
 ========================== */
 
 .btn-instagram{
-    background:linear-gradient(135deg,#56A38A,#6EC2A7);
+    /* background: #56A38A; */
     color:white;
     text-decoration:none;
     font-size:18px;
     font-weight:700;
     padding:10px 20px;
-    border-radius:50px;
-    transition:transform 0.25s ease,box-shadow 0.25s ease,opacity 0.25s ease;
+    border: 1px solid #696969;
+    border-radius:10px;
+    #696969ease,box-shadow 0.25s ease,opacity 0.25s ease;
     box-shadow:0 10px 25px rgba(86,163,138,0.20);
 }
 
