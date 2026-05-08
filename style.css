@@ -1069,7 +1069,7 @@ span a {
         left:-4px;
     }
 
-    instagram-area h2 {
+    #instagram-area h2 {
       color: #212121; /*  preto suave */
     }
     
@@ -1086,7 +1086,7 @@ span a {
     }
 
     .btn-instagram{
-        font-size:15px;
+        font-size:16px;
         padding:8px 15px;
     }
 }
