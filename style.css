@@ -961,27 +961,39 @@ span a {
 
 .instagram-logo-box{
     position:relative;
-    width:115px;
-    height:115px;
+
+    width:72px;
+    height:72px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin-bottom:24px;
 }
 
 .logo-instagram{
-    width:100%;
-    height:100%;
+    width:72px;
+    height:72px;
     object-fit:contain;
     display:block;
 }
 
 .logo-lh{
     position:absolute;
-    top:-5px;
-    left:-5px;
-    width:40px;
-    height:40px;
+
+    top:-4px;
+    left:-4px;
+
+    width:28px;
+    height:28px;
+
     border-radius:50%;
     object-fit:cover;
+
     background:white;
-    padding:3px;
+    padding:2px;
+
     box-shadow:0 3px 10px rgba(0,0,0,0.12);
 }
 
@@ -1033,19 +1045,26 @@ span a {
     }
 
     .instagram-logo-box{
-        width:100px;
-        height:100px;
+        width:52px;
+        height:52px;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
         margin-bottom:24px;
     }
 
-    .logo-instagram {
+    .logo-instagram{
         width:52px;
         height:52px;
+        object-fit:contain;
     }
 
     .logo-lh{
         width:25px;
         height:25px;
+
         top:-4px;
         left:-4px;
     }
@@ -1061,6 +1080,7 @@ span a {
         padding:8px 15px;
     }
 }
+
 
 /* SEÇÃO FOTOS */
 
