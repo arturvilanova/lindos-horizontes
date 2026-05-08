@@ -1040,26 +1040,26 @@ span a {
     }
 
     .logo-instagram {
-        width:70px;
-        height:70px;
+        width:45px;
+        height:45px;
     }
 
     .logo-lh{
-        width:35px;
-        height:35px;
+        width:25px;
+        height:25px;
         top:-4px;
         left:-4px;
     }
 
     .instagram-texto{
-        font-size:14px;
+        font-size:14.5px;
         line-height:1.8;
         margin-bottom:28px;
     }
 
     .btn-instagram{
         font-size:15px;
-        padding:10px 20px;
+        padding:8px 15px;
     }
 }
 
