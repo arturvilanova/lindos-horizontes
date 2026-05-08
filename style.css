@@ -1069,9 +1069,13 @@ span a {
         left:-4px;
     }
 
+    instagram-area h2 {
+      color: #212121; /*  preto suave */
+    }
+    
     #instagram-area span {
       margin: 4px 0px 15px 0px; 
-      background-color: #f2f2f2; /* cinza sutil */
+      color: #f2f2f2; /* cinza sutil */
       fonte-size: 13.5px;
     }
 
