@@ -855,8 +855,6 @@ span a {
     color: white;
 }
 
-
-
 /* ==========================
    📱 RESPONSIVO
 ========================== */
@@ -1075,7 +1073,7 @@ span a {
     
     #instagram-area span {
       margin: 4px 0px 15px 0px; 
-      color: #f2f2f2; /* cinza sutil */
+      color: #696969; /* cinza escuro */
       fonte-size: 13.5px;
     }
 
