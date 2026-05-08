@@ -1070,7 +1070,9 @@ span a {
     }
 
     #instagram-area span {
-      margin: 3px 0px 15px 0px;  
+      margin: 4px 0px 15px 0px; 
+      background-color: #f2f2f2; /* cinza sutil */
+      fonte-size: 13.5px;
     }
 
     .instagram-texto{
