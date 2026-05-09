@@ -974,7 +974,7 @@ span a {
     background:orange;
 
     /* formato da onda */
-    border-radius:0 0 50% 50%;
+    border-radius: 0 0 100% 100%;
 
     z-index:1;
 }
