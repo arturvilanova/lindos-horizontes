@@ -947,7 +947,7 @@ span a {
     align-items:center;
 
     position:relative;
-    overflow:hidden;
+
     z-index:2;
 }
 
@@ -956,15 +956,17 @@ span a {
     content:"";
 
     position:absolute;
-    top:-80px;
+    top:-110px;
     left:-10%;
 
     width:120%;
-    height:140px;
+    height:180px;
 
     background:#f5f5f5;
-    z-index: 1;
+
     border-radius:0 0 50% 50%;
+
+    z-index:1;
 }
 
 .instagram-container{
@@ -977,7 +979,7 @@ span a {
     text-align:center;
 
     position:relative;
-    z-index:2;
+    z-index:3;
 }
 
 /* ==========================
@@ -1064,15 +1066,15 @@ span a {
 
 @media(max-width:480px){
 
-    #instagram-area{
-        padding:5px 22px 70px;
-        margin-top: 80px;
-    }
+   #instagram-area{
+    padding:120px 22px 70px;
+    margin-top:80px;
+}
 
-    #instagram-area::before {
-        top:-180px;
-    }
-
+#instagram-area::before{
+    top:-120px;
+    height:160px;
+}
     .instagram-logo-box{
         width:52px;
         height:52px;
