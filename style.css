@@ -948,6 +948,7 @@ span a {
 
     position:relative;
     overflow:hidden;
+    z-index:2;
 }
 
 /* ONDA */
@@ -962,7 +963,7 @@ span a {
     height:140px;
 
     background:#f5f5f5;
-
+    z-index: 1;
     border-radius:0 0 50% 50%;
 }
 
