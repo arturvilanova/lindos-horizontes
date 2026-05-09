@@ -937,10 +937,10 @@ span a {
 
 #instagram-area{
     width:100%;
-    background:#56a38b13;
+    background:#eef3f1;
 
     padding:120px 15px 70px;
-    margin-top:40px;
+    margin-top:0;
 
     display:flex;
     justify-content:center;
@@ -950,12 +950,12 @@ span a {
     overflow:hidden;
 }
 
-/* ONDA SUPERIOR */
+/* ONDA */
 #instagram-area::before{
     content:"";
 
     position:absolute;
-    top:-95px;
+    top:-85px;
     left:-10%;
 
     width:120%;
@@ -967,7 +967,6 @@ span a {
     border-bottom-right-radius:50% 100%;
 }
 
-/* CONTEÚDO */
 .instagram-container{
     width:100%;
     max-width:700px;
