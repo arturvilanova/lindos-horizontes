@@ -1065,7 +1065,11 @@ span a {
 
     #instagram-area{
         padding:5px 22px 70px;
-        margin-top: 50px;
+        margin-top: 80px;
+    }
+
+    #instagram-area::before {
+        top:-180px;
     }
 
     .instagram-logo-box{
