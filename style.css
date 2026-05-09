@@ -938,46 +938,35 @@ span a {
 #instagram-area{
     width:100%;
     background:#eef3f1;
-
-    padding:190px 15px 70px;
+    padding:70px 15px 70px;
     margin-top:0;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
     position:relative;
-
     z-index:2;
 }
 
 /* ONDA */
 #instagram-area::before{
     content:"";
-
     position:absolute;
     top:-110px;
     left:-10%;
-
     width:120%;
     height:180px;
-
     background:#f5f5f5;
-
     border-radius:0 0 50% 50%;
-
     z-index:1;
 }
 
 .instagram-container{
     width:100%;
     max-width:700px;
-
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
-
     position:relative;
     z-index:3;
 }
@@ -1067,7 +1056,7 @@ span a {
 @media(max-width:480px){
 
    #instagram-area{
-    padding:120px 22px 70px;
+    padding:70px 22px 70px;
     margin-top:80px;
 }
 
