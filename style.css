@@ -937,36 +937,61 @@ span a {
 
 #instagram-area{
     width:100%;
-    background: green;
-    padding:70px 15px 70px;
-    margin-top:0;
+    background:green;
+
+    /* distância da galeria */
+    margin-top:140px;
+
+    /* espaço interno */
+    padding:120px 15px 70px;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
     position:relative;
     z-index:2;
 }
 
-/* ONDA */
+/* ==========================
+🌊 ONDA
+========================== */
+
 #instagram-area::before{
     content:"";
+
     position:absolute;
-    top:-110px;
+
+    /* controla altura da onda */
+    top:-70px;
+
     left:-10%;
+
     width:120%;
-    height:180px;
-    background: orange;
-    border-radius: 40 40 50% 50%;
+    height:120px;
+
+    /* cor da área de cima */
+    background:orange;
+
+    /* formato da onda */
+    border-radius:0 0 50% 50%;
+
     z-index:1;
 }
+
+/* ==========================
+📦 CONTAINER
+========================== */
 
 .instagram-container{
     width:100%;
     max-width:700px;
+
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
+
     position:relative;
     z-index:3;
 }
@@ -1030,13 +1055,12 @@ span a {
 ========================== */
 
 .btn-instagram{
-    /* background: #56A38A; */
-    color: #696969;
+    color:#696969;
     text-decoration:none;
     font-size:18px;
     font-weight:700;
     padding:10px 20px;
-    border: 1px solid #696969;
+    border:1px solid #696969;
     border-radius:10px;
 }
 
@@ -1055,15 +1079,23 @@ span a {
 
 @media(max-width:480px){
 
-   #instagram-area{
-    padding:70px 22px 70px;
-    margin-top:80px;
-}
+    #instagram-area{
 
-#instagram-area::before{
-    top:-120px;
-    height:160px;
-}
+        /* distância da galeria */
+        margin-top:110px;
+
+        /* espaço interno */
+        padding:95px 22px 70px;
+    }
+
+    #instagram-area::before{
+
+        /* altura da onda mobile */
+        top:-55px;
+
+        height:95px;
+    }
+
     .instagram-logo-box{
         width:52px;
         height:52px;
@@ -1089,14 +1121,14 @@ span a {
         left:-4px;
     }
 
-    #instagram-area h2 {
-      color: #212121; /*  preto suave */
+    #instagram-area h2{
+        color:#212121;
     }
-    
-    #instagram-area span {
-      margin: 4px 0px 15px 0px; 
-      color: #696969; /* cinza escuro */
-      fonte-size: 13.5px;
+
+    #instagram-area span{
+        margin:4px 0px 15px 0px;
+        color:#696969;
+        font-size:13.5px;
     }
 
     .instagram-texto{
