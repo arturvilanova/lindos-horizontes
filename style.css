@@ -942,6 +942,19 @@ span a {
     display:flex;
     justify-content:center;
     align-items:center;
+    position: relative;
+    overflow: hidden;
+}
+
+#instagram-area::before {
+    content: "";
+    position: absolute;
+    top: -70px;
+    left: -5%;
+    width: 110%;
+    height: 140px;
+    background: #F5F5F5;
+    border-radius: 0 0 50% 50%;
 }
 
 .instagram-container{
