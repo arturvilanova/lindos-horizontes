@@ -1100,9 +1100,9 @@ span a {
 
     border-radius:
         0 0 30% 30% /
-        0 0 100% 100%;
+        0 0 80% 80%;
 
-    transform:rotate(-1deg);
+    transform:rotate(-4deg);
     }
 
     .instagram-logo-box{
