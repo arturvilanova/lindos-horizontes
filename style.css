@@ -955,7 +955,7 @@ span a {
     content:"";
 
     position:absolute;
-    top:-120px;
+    top:-80px;
     left:-10%;
 
     width:120%;
@@ -1064,7 +1064,8 @@ span a {
 @media(max-width:480px){
 
     #instagram-area{
-        padding:0px 22px 70px;
+        padding:5px 22px 70px;
+        margin-top: 50px;
     }
 
     .instagram-logo-box{
