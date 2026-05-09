@@ -959,23 +959,15 @@ span a {
 
 #instagram-area::before{
     content:"";
-
     position:absolute;
-
-    /* controla altura da onda */
-    top:-70px;
-
-    left:-10%;
-
-    width:120%;
-    height:120px;
-
-    /* cor da área de cima */
-    background:orange;
-
-    /* formato da onda */
-    border-radius: 0 0 100% 100%;
-
+    top:-95px;
+    left:-30%;
+    width:160%;
+    height:190px;
+    background:#f5f5f5;
+    border-radius:
+        0 0 35% 65% /
+        0 0 100% 100%;
     z-index:1;
 }
 
