@@ -939,7 +939,7 @@ span a {
     width:100%;
     background:green;
     margin-top:70px;
-    padding:40px 15px 70px;
+    padding:50px 15px 70px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -1083,17 +1083,15 @@ span a {
 
     #instagram-area{
         margin-top:90px;
-        padding:105px 22px 70px;
+        padding:40px 22px 70px;
     }
 
     .instagram-logo-box{
         width:52px;
         height:52px;
-
         display:flex;
         justify-content:center;
         align-items:center;
-
         margin-bottom:24px;
     }
 
