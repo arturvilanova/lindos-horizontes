@@ -940,7 +940,7 @@ span a {
     background:green;
 
     margin-top:70px;
-    padding:170px 15px 70px;
+    padding:150px 15px 70px;
 
     display:flex;
     justify-content:center;
@@ -952,21 +952,21 @@ span a {
 }
 
 /* ==========================
-🌊 ONDA SUAVE
+🌊 ONDA
 ========================== */
 
 .wave-top{
     position:absolute;
 
-    top:-78px;
+    top:-88px;
     left:0;
 
     width:100%;
-    height:90px;
-
-    line-height:0;
+    height:95px;
 
     z-index:2;
+
+    line-height:0;
 }
 
 .wave-top svg{
@@ -978,7 +978,6 @@ span a {
 .wave-top path{
     fill:#eef3f1;
 }
-
 /* ==========================
 📦 CONTAINER
 ========================== */
