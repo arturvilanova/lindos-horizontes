@@ -947,7 +947,7 @@ span a {
     align-items:center;
 
     position:relative;
-    overflow:hidden;
+    overflow:visible;
     z-index:2;
 }
 
@@ -962,7 +962,7 @@ span a {
 
     line-height:0;
 
-    z-index:2;
+    z-index:2
 }
 
 .wave-top svg{
@@ -972,7 +972,7 @@ span a {
 }
 
 .wave-top path{
-    fill:green;
+    fill:red;
 }
 
 /* ==========================
