@@ -938,14 +938,11 @@ span a {
 #instagram-area{
     width:100%;
     background:green;
-
     margin-top:70px;
-    padding:150px 15px 70px;
-
+    padding:40px 15px 70px;
     display:flex;
     justify-content:center;
     align-items:center;
-
     position:relative;
     overflow:visible;
     z-index:2;
