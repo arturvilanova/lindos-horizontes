@@ -12,6 +12,11 @@
     box-sizing: border-box;
 }
 
+*{
+    border:none !important;
+    box-shadow:none !important;
+}
+
 /* CORES */
 
 :root {
