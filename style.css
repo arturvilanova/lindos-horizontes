@@ -970,11 +970,11 @@ span a {
 
 .wave-top svg{
     width:100%;
-    height:100%;
+    height:101%;
 
     display:block;
 
-    transform:scaleY(1.02);
+    transform:translateY(1px);
 }
 
 .wave-top path{
