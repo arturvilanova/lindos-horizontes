@@ -937,7 +937,7 @@ span a {
 
 #instagram-area{
     width:100%;
-    background-color:#56a38b13;
+    background-color:rgba(86,163,139,0.08);
     margin-top:70px;
     padding:50px 15px 70px;
     display:flex;
@@ -964,17 +964,23 @@ span a {
     z-index:2;
 
     line-height:0;
+
+    overflow:hidden;
 }
 
 .wave-top svg{
     width:100%;
     height:100%;
+
     display:block;
+
+    transform:scaleY(1.02);
 }
 
 .wave-top path{
-    fill:#56a38b13;
+    fill:rgba(86,163,139,0.08);
 }
+
 /* ==========================
 📦 CONTAINER
 ========================== */
