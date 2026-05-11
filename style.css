@@ -937,7 +937,7 @@ span a {
 
 #instagram-area{
     width:100%;
-    background:green;
+    background-color:#56a38b13;
     margin-top:70px;
     padding:50px 15px 70px;
     display:flex;
@@ -973,7 +973,7 @@ span a {
 }
 
 .wave-top path{
-    fill:#eef3f1;
+    fill:#56a38b13;
 }
 /* ==========================
 📦 CONTAINER
@@ -982,12 +982,10 @@ span a {
 .instagram-container{
     width:100%;
     max-width:700px;
-
     display:flex;
     flex-direction:column;
     align-items:center;
     text-align:center;
-
     position:relative;
     z-index:3;
 }
@@ -1083,7 +1081,7 @@ span a {
 
     #instagram-area{
         margin-top:70px;
-        padding:40px 22px 70px;
+        padding:30px 22px 70px;
     }
 
     .instagram-logo-box{
