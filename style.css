@@ -1014,7 +1014,6 @@ span a {
     display:flex;
     justify-content:center;
     align-items:center;
-    margin-bottom:24px;
 }
 
 .logo-instagram{
@@ -1035,6 +1034,17 @@ span a {
     background:white;
     padding:2px;
     box-shadow:0 3px 10px rgba(0,0,0,0.12);
+}
+
+#instagram-area h2{
+  color:#212121;
+  margin: 20px 0px 4px 0px;
+}
+
+#instagram-area span{
+        margin-bottom: 15px;
+        color:#696969;
+        font-size:14px;
 }
 
 /* ==========================
@@ -1061,11 +1071,6 @@ span a {
     padding:10px 20px;
     border:1px solid #696969;
     border-radius:10px;
-}
-
-.btn-instagram:hover{
-    transform:translateY(-2px);
-    box-shadow:0 14px 30px rgba(86,163,138,0.25);
 }
 
 .btn-instagram:active{
