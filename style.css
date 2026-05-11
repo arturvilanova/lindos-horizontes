@@ -941,7 +941,9 @@ span a {
     justify-content:center;
     align-items:center;
     position:relative;
+
     overflow:visible;
+
     z-index:2;
 }
 
@@ -949,32 +951,38 @@ span a {
 🌊 ONDA
 ========================== */
 
-#instagram-area{
-    overflow:visible;
-}
-
 .wave-top{
     position:absolute;
-    top:-86px;
+
+    top:-94px;
+
     left:0;
     width:100%;
-    height:95px;
-    z-index:1;
+
+    height:96px;
+
     line-height:0;
+
     overflow:hidden;
+
+    z-index:1;
+
+    pointer-events:none;
 }
 
 .wave-top svg{
-    width:100%;
-    height:102%;
     display:block;
-    transform:translateY(2px);
+
+    width:100%;
+    height:100%;
+
+    transform:translateY(0.5px);
 }
 
 .wave-top path{
     fill:rgba(86,163,139,0.08);
-    stroke:rgba(86,163,139,0.08);
-    stroke-width:2;
+
+    shape-rendering:geometricPrecision;
 }
 
 /* ==========================
