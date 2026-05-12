@@ -937,8 +937,8 @@ span a {
 #instagram-area{
     width:100%;
 
-    background: var(--Cor2);
-
+    /* background: var(--Cor2);*/
+    background: #56a38b13;
     margin-top:0px;
     padding:50px 15px 70px;
 
@@ -1440,5 +1440,5 @@ footer {
 }
 
 .onda-base path{
-    fill:var(--Cor2);
+    fill:#56a38b13;
 }
