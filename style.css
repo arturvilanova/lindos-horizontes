@@ -436,11 +436,13 @@ section#area-inicio, section#inicio {
     align-items: center;
     position: relative;
     overflow: hidden;
+    height: 520px;
 }
 
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
+    height: 520px;
 }
 
 #bem-vindo {
