@@ -935,20 +935,21 @@ span a {
 
 #instagram-area{
     width:100%;
-    background-color:green;
+
+    background:#f3f8f6;
+
     margin-top:70px;
     padding:50px 15px 70px;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    position:relative;
-    border-top:none;
-    overflow:visible;
-    z-index:2;
-}
 
-#instagram-area::before{
-    display:none;
+    position:relative;
+
+    overflow:hidden;
+
+    z-index:2;
 }
 
 /* ==========================
@@ -957,6 +958,7 @@ span a {
 
 .wave-top{
     position:absolute;
+
     top:-94px;
     left:0;
 
@@ -966,6 +968,8 @@ span a {
     overflow:hidden;
 
     line-height:0;
+
+    z-index:1;
 }
 
 .wave-top svg{
@@ -975,9 +979,13 @@ span a {
     height:101%;
 
     transform:translateY(1px);
+
+    vertical-align:top;
 }
 
 .wave-top path{
+    fill:#f3f8f6;
+
     stroke:none;
 }
 
@@ -988,10 +996,13 @@ span a {
 .instagram-container{
     width:100%;
     max-width:700px;
+
     display:flex;
     flex-direction:column;
     align-items:center;
+
     text-align:center;
+
     position:relative;
     z-index:3;
 }
@@ -1002,8 +1013,10 @@ span a {
 
 .instagram-logo-box{
     position:relative;
+
     width:72px;
     height:72px;
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -1012,32 +1025,44 @@ span a {
 .logo-instagram{
     width:72px;
     height:72px;
+
     object-fit:contain;
+
     display:block;
 }
 
 .logo-lh{
     position:absolute;
+
     top:-4px;
     left:-4px;
+
     width:28px;
     height:28px;
+
     border-radius:50%;
+
     object-fit:cover;
+
     background:white;
+
     padding:2px;
+
     box-shadow:0 3px 10px rgba(0,0,0,0.12);
 }
 
-#instagram-area h2{
-  color:#212121;
-  margin: 20px 0px 4px 0px;
+#instagram-area h3{
+    color:#212121;
+
+    margin:20px 0px 4px 0px;
 }
 
 #instagram-area span{
-        margin-bottom: 15px;
-        color:#696969;
-        font-size:14px;
+    margin-bottom:15px;
+
+    color:#696969;
+
+    font-size:14px;
 }
 
 /* ==========================
@@ -1046,9 +1071,12 @@ span a {
 
 .instagram-texto{
     max-width:620px;
+
     font-size:17px;
     line-height:1.8;
+
     color:#111;
+
     margin-bottom:30px;
 }
 
@@ -1058,11 +1086,16 @@ span a {
 
 .btn-instagram{
     color:#696969;
+
     text-decoration:none;
+
     font-size:18px;
     font-weight:700;
+
     padding:10px 20px;
+
     border:1px solid #696969;
+
     border-radius:10px;
 }
 
@@ -1078,52 +1111,57 @@ span a {
 
     #instagram-area{
         margin-top:70px;
+
         padding:30px 22px 70px;
     }
 
     .instagram-logo-box{
         width:52px;
         height:52px;
+
         display:flex;
         justify-content:center;
         align-items:center;
+
         margin-bottom:24px;
     }
 
     .logo-instagram{
         width:48px;
         height:48px;
-        object-fit:contain;
     }
 
     .logo-lh{
         width:25px;
         height:25px;
+
         top:-4px;
         left:-4px;
     }
 
-    #instagram-area h2{
-        color:#212121;
-    }
-
     #instagram-area span{
         margin:4px 0 15px;
+
         color:#696969;
+
         font-size:13.5px;
     }
 
     .instagram-texto{
         font-size:14.5px;
+
         line-height:1.8;
+
         margin-bottom:28px;
     }
 
     .btn-instagram{
         font-size:16px;
+
         padding:8px 15px;
     }
 }
+
 
 /* SEÇÃO FOTOS */
 
