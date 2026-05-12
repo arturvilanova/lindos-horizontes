@@ -432,14 +432,15 @@ section#area-inicio, section#inicio {
 
 #lado-direito {
     width: 60%;
-    /*background-color: Indigo;*/
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
 }
 
 #lado-esquerdo {
     justify-content: space-between;
     height: max-content;
-    height: 500px;
-    /*background-color: YellowGreen;*/
 }
 
 #bem-vindo {
@@ -471,14 +472,6 @@ section#area-inicio, section#inicio {
 
 #bem-vindo a:hover {
     background: #5fb69a;
-}
-
-#lado-direito {
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    height: 500px;
 }
 
 .carousel_1 {
