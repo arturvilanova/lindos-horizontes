@@ -956,36 +956,21 @@ span a {
     top:-88px;
     left:0;
     width:100%;
-
     height:95px;
 
-    line-height:0;
-
     overflow:hidden;
-
-    z-index:1;
-
-    pointer-events:none;
 }
 
 .wave-top svg{
     width:100%;
-    height:calc(100% + 3px);
+    height:100%;
     display:block;
-    position:absolute;
-    bottom:-2px;
-    left:0;
-    transform:translateY(1.5px);
-    backface-visibility:hidden;
-    transform:translateZ(0);
 }
 
 .wave-top path{
     fill:rgba(86,163,139,0.08);
 
     stroke:none;
-
-    shape-rendering:auto;
 }
 
 /* ==========================
