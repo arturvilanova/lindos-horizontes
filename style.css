@@ -939,7 +939,7 @@ span a {
 
     background: var(--Cor2);
 
-    margin-top:70px;
+    margin-top:0px;
     padding:50px 15px 70px;
 
     display:flex;
@@ -1073,7 +1073,7 @@ span a {
 @media(max-width:480px){
 
     #instagram-area{
-        margin-top:70px;
+        margin-top:0px;
         padding:15px 22px 70px;
     }
 
