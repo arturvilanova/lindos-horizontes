@@ -426,7 +426,7 @@ section#area-inicio, section#inicio {
     height: 520px;
     display: flex;
     flex-direction: column;
-    background: var(--Cor2);
+    background: #56a38b13;
 
 }
 
