@@ -959,11 +959,11 @@ span a {
 .wave-top{
     position:absolute;
 
-    top:-88px;
+    top:-120px;
     left:0;
 
     width:100%;
-    height:95px;
+    height:140px;
 
     overflow:hidden;
 
@@ -977,11 +977,9 @@ span a {
     bottom:-1px;
 
     width:100%;
-    height:100%;
+    height:140px;
 
     display:block;
-
-    vertical-align:bottom;
 }
 
 .wave-top path{
@@ -989,7 +987,6 @@ span a {
 
     stroke:none;
 }
-
 
 /* ==========================
 📦 CONTAINER
