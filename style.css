@@ -1423,11 +1423,22 @@ footer {
 🌿 ONDA DO AUTOR
 ========================== */
 
-.onda-topo{
-    background:#56a38b13;
+.onda-topo-autor{
+    width:100%;
+    line-height:0;
+    overflow:hidden;
+
+    margin-top:-1px;
 }
 
-.onda-topo path{
+.onda-topo-autor svg{
+    display:block;
+
+    width:100%;
+    height:95px;
+}
+
+.onda-topo-autor path{
     fill:#56a38b13;
 }
 
