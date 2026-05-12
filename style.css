@@ -942,10 +942,13 @@ span a {
     justify-content:center;
     align-items:center;
     position:relative;
-
+    border-top:none;
     overflow:visible;
-
     z-index:2;
+}
+
+#instagram-area::before{
+    display:none;
 }
 
 /* ==========================
@@ -961,25 +964,23 @@ span a {
     height:95px;
 
     overflow:hidden;
-    line-height:0;
+
+    z-index:1;
 }
 
 .wave-top svg{
-    position:absolute;
-
-    left:-1px;
-    bottom:-3px;
-
-    width:calc(100% + 2px);
-    height:calc(100% + 6px);
-
     display:block;
+
+    width:101%;
+    height:100%;
+
+    position:absolute;
+    left:-0.5%;
+    bottom:-1px;
 }
 
 .wave-top path{
     fill:rgba(86,163,139,0.08);
-
-    stroke:none;
 }
 
 /* ==========================
