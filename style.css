@@ -953,13 +953,11 @@ span a {
 
 .wave-top{
     position:absolute;
-
-    top:-94px;
-
+    top:-88px;
     left:0;
     width:100%;
 
-    height:96px;
+    height:95px;
 
     line-height:0;
 
@@ -971,10 +969,12 @@ span a {
 }
 
 .wave-top svg{
-    display:block;
-
     width:100%;
-    height:100%;
+    height:calc(100% + 3px);
+    display:block;
+    position:absolute;
+    bottom:-2px;
+    left:0;
     transform:translateY(1.5px);
     backface-visibility:hidden;
     transform:translateZ(0);
