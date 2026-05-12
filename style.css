@@ -1016,7 +1016,6 @@ span a {
 
 #instagram-area h3{
     color:#212121;
-
     margin:20px 0px 4px 0px;
 }
 
@@ -1074,18 +1073,15 @@ span a {
 
     #instagram-area{
         margin-top:70px;
-
-        padding:30px 22px 70px;
+        padding:15px 22px 70px;
     }
 
     .instagram-logo-box{
         width:52px;
         height:52px;
-
         display:flex;
         justify-content:center;
         align-items:center;
-
         margin-bottom:24px;
     }
 
