@@ -936,7 +936,7 @@ span a {
 #instagram-area{
     width:100%;
 
-    background:#f3f8f6;
+    background: var(--Cor2);
 
     margin-top:70px;
     padding:50px 15px 70px;
