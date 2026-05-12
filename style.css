@@ -970,7 +970,7 @@ span a {
 
 .wave-top svg{
     display:block;
-
+    vertical-align:top;
     width:101%;
     height:100%;
 
