@@ -165,11 +165,14 @@ body {
         .whatsapp-status:hover { background-color: #075e54; }
 
         /* Ícones SVG do Whatsapp */
-        .btn-share svg {
-            width: 20px;
-            height: 20px;
-            fill: white;
-        }
+        .btn-share svg{
+    width:20px;
+    height:20px;
+}
+
+.btn-share svg path{
+    fill:white;
+}
 
 main {
     flex: 1;
