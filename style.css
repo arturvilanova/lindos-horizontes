@@ -1426,16 +1426,16 @@ footer {
     width:100%;
     line-height:0;
     overflow:hidden;
+    position:relative;
     z-index:2;
-    margin-bottom:-2px;
-    /*margin-top:-1px;*/
+
+    margin-bottom:-1px; /* remove corte */
 }
 
 .onda-topo-autor svg{
     display:block;
-
     width:100%;
-    height:70px;
+    height:65px; /* onda mais suave e baixa */
 }
 
 .onda-topo-autor path{
