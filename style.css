@@ -291,7 +291,7 @@ a.links-menu.ativo {
     background: var(--Cor2);
     position: absolute;
     border-radius: 1.5px;
-    bottom: -40px;
+    bottom: -39.7px;
     width: 0;
     left: 0;
     height: 5px;
@@ -1426,8 +1426,8 @@ footer {
     width:100%;
     line-height:0;
     overflow:hidden;
-
-    margin-top:-1px;
+    z-index: 1;
+    /*margin-top:-1px;*/
 }
 
 .onda-topo-autor svg{
