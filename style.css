@@ -50,6 +50,7 @@ body {
     flex-direction: column;
     height: 100svh;
     min-height: 100dvh;
+    background: #56a38b13;
 }
 
 /* 1. FUNDO ESCURO */
