@@ -664,7 +664,7 @@ section#area-inicio, section#inicio {
 }
 
 /* ==========================
-   🌿 SEÇÃO AUTOR (FINAL CORRETO)
+   🌿 SEÇÃO AUTOR  
 ========================== */
 
 #autor {
@@ -1450,6 +1450,14 @@ footer {
 
 .onda-base{
     background:white;
+    line-height: 0;
+    margin-bottom: -1px;
+    position: relative;
+    z-index: 2;
+}
+
+.onda-base svg{
+    display:block;
 }
 
 .onda-base path{
