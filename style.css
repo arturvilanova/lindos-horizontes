@@ -1451,7 +1451,7 @@ footer {
 .onda-base{
     background:white;
     line-height: 0;
-    margin-bottom: -1px;
+    margin-bottom: -2px;
     position: relative;
     z-index: 2;
 }
