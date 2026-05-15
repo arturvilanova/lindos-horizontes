@@ -1274,6 +1274,7 @@ section#frase {
 
 section#imagens-ia {
     min-height: 100vh;
+    margin: auto;
 }
 
 .card-aviso {
