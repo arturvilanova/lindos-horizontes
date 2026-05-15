@@ -164,8 +164,8 @@ body {
         .whatsapp-status { background-color: #128C7E; }
         .whatsapp-status:hover { background-color: #075e54; }
 
-        /* Ícones SVG do Whatsapp */
-        .btn-share svg {
+    /* Ícones SVG do Whatsapp */
+    .btn-share svg {
     width: 22px;
     height: 22px;
     fill: white;
