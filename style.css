@@ -168,11 +168,9 @@ body {
         .btn-share svg {
     width: 20px;
     height: 20px;
-    fill: white;
-    flex-shrink: 0;
 }
 
-.btn-share svg path {
+.btn-share svg * {
     fill: white;
 }
 
