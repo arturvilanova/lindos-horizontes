@@ -429,7 +429,7 @@ section#area-inicio, section#inicio {
     height: 520px;
     display: flex;
     flex-direction: column;
-    background: #56a38b13;
+    background: #F2F8F6;
 
 }
 
@@ -940,7 +940,7 @@ span a {
     width:100%;
     margin-top:-2px;
     /* background: var(--Cor2);*/
-    background: #56a38b13;
+    background: #F2F8F6;
     margin-top:0px;
     padding:50px 15px 70px;
 
