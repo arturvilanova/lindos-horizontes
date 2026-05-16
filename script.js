@@ -1,5 +1,5 @@
 // 1. CONFIGURAÇÃO DA SUA MENSAGEM COM O SEU LINK REAL
-const TEXTO_MENSAGEM = "Olha esse projeto incrível! 🚀\n\nAchei muito maneiro a iniciativa deste jovem e resolvi apoiar! Dá uma olhada você também.\n\n👉 https://arturvilanova.github.io/lindos-horizontes/index.html";
+const TEXTO_MENSAGEM = "*Olha esse projeto incrível!* 🚀\n\nAchei muito legal a iniciativa desse jovem e resolvi apoiar! Dá uma olhada você também.\n\n👉 https://arturvilanova.github.io/lindos-horizontes/index.html";
 
 const mensagemCodificada = encodeURIComponent(TEXTO_MENSAGEM);
 
