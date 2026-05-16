@@ -1274,7 +1274,7 @@ section#frase {
 /* --- SEÇÃO IA --- */
 
 section#imagens-ia {
-    min-height: 100vh;
+    min-height: 80vh;
     margin: auto;
 }
 
@@ -1284,7 +1284,7 @@ section#imagens-ia {
             padding: 40px 30px;
             background: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); /* Sombra suave */
+            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); Sombra suave */
         }
 
         .icone-ia {
