@@ -493,6 +493,7 @@ section#area-inicio, section#inicio {
   display: flex;
   transition: transform 0.5s ease;
   width: 100%;
+  will-change: transform;
 }
 
 .slide_1 {
@@ -514,6 +515,7 @@ section#area-inicio, section#inicio {
   border-radius: 12px;
   border: 1.7px solid #9d9d9d;
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.10);
+  will-change: transform;
 }
 
 /* Bolinhas */
