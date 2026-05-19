@@ -274,34 +274,22 @@ trackInicio.addEventListener("touchend", e => {
 });
 
 // ==========================
-// ⏳ ESPERA IMAGENS
+// 🚀 INICIALIZAÇÃO ULTRA RÁPIDA
 // ==========================
-window.addEventListener("load", () => {
 
-  const imagens = document.querySelectorAll('.slide_1 img');
+document.addEventListener("DOMContentLoaded", () => {
 
-  let carregadas = 0;
+  iniciarCarousel();
 
-  imagens.forEach(img => {
-
-    if (img.complete) {
-      carregadas++;
-    } else {
-
-      img.addEventListener("load", () => {
-        carregadas++;
-
-        if (carregadas === imagens.length) {
-          iniciarCarousel();
-        }
-      });
-    }
+  // força recalcular posição após renderização
+  requestAnimationFrame(() => {
+    updateCarouselInicio(false);
   });
 
-  // caso todas já estejam carregadas
-  if (carregadas === imagens.length) {
-    iniciarCarousel();
-  }
+  // reforço extra contra bug de cache/layout
+  setTimeout(() => {
+    updateCarouselInicio(false);
+  }, 120);
 });
   
   // ==========================
