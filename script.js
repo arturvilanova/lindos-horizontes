@@ -277,20 +277,15 @@ trackInicio.addEventListener("touchend", e => {
 // 🚀 INICIALIZAÇÃO ULTRA RÁPIDA
 // ==========================
 
-document.addEventListener("DOMContentLoaded", () => {
+iniciarCarousel();
 
-  iniciarCarousel();
-
-  // força recalcular posição após renderização
-  requestAnimationFrame(() => {
-    updateCarouselInicio(false);
-  });
-
-  // reforço extra contra bug de cache/layout
-  setTimeout(() => {
-    updateCarouselInicio(false);
-  }, 120);
+requestAnimationFrame(() => {
+  updateCarouselInicio(false);
 });
+
+setTimeout(() => {
+  updateCarouselInicio(false);
+}, 120);
   
   // ==========================
   // ✍️ FRASE DO DIA
