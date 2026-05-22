@@ -18,63 +18,90 @@
 
 <body>
 
-<header>
+<header class="header-topo">
 
-    <div id="header-container">
+    <!-- ESQUERDA -->
+    <div class="brand-area">
 
-        <!-- LOGO + TEXTO -->
-        <a href="#" id="logo-area">
+        <img
+            src="SUA-LOGO.png"
+            alt="Logo"
+            class="logo-topo"
+        >
 
-            <img src="imagens/logo.png" alt="Lindos Horizontes" id="logo">
+        <div class="brand-textos">
+            <h1>Lindos Horizontes</h1>
 
-            <div id="texto-logo">
-                <h1>Lindos Horizontes</h1>
-                <p>A natureza se revela para quem sabe observar. 🌿</p>
+            <p>
+                A natureza se revela para quem sabe observar. 🌿
+            </p>
+        </div>
+
+    </div>
+
+    <!-- DIREITA -->
+    <div class="modo-toggle">
+
+        <!-- APRESENTAÇÃO -->
+        <div class="modo-lado">
+
+            <div class="icon-box icon-apresentacao">
+
+                <!-- SVG IMAGEM -->
+                <svg
+                    fill="none"
+                    stroke-width="2.7"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M4 16L9 11L13 15L20 8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+
             </div>
 
-        </a>
+            <span>Apresentação</span>
 
-        <!-- BOTÃO MODO -->
-        <div id="modo-toggle">
+        </div>
 
-            <!-- APRESENTAÇÃO -->
-            <button class="modo-card ativo">
+        <!-- SWITCH -->
+        <div class="switch"></div>
 
-                <div class="icone-box">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M4 18L10 11L14 15L20 8" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M20 8V14" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
-                    </svg>
-                </div>
+        <!-- LOJA -->
+        <div class="modo-lado">
 
-                <span>Modo Apresentação</span>
+            <div class="icon-box icon-loja">
 
-            </button>
+                <!-- SVG SACOLA -->
+                <svg
+                    fill="none"
+                    stroke-width="2.3"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        d="M6 8H18L17 20H7L6 8Z"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
 
-            <!-- SWITCH -->
-            <div id="switch-area">
-                <div id="switch-bola"></div>
+                    <path
+                        d="M9 8V6A3 3 0 0 1 15 6V8"
+                        stroke-linecap="round"
+                    />
+                </svg>
+
             </div>
 
-            <!-- LOJA -->
-            <button class="modo-card">
-
-                <div class="icone-box loja">
-                    <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M6 8L7 19H17L18 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M9 8V6C9 4.34315 10.3431 3 12 3V3C13.6569 3 15 4.34315 15 6V8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-                    </svg>
-                </div>
-
-                <span>Modo Loja</span>
-
-            </button>
+            <span>Loja</span>
 
         </div>
 
     </div>
 
 </header>
+
 
     <!-- CARD FLUTUANTE -->
 
