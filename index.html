@@ -18,14 +18,14 @@
 
 <body>
 
-    <header>
+<header>
 
     <div id="header-container">
 
         <!-- LOGO + TEXTO -->
         <a href="#" id="logo-area">
 
-            <img src="imagens/logo.png" id="logo" alt="Logo">
+            <img src="imagens/logo.png" alt="Lindos Horizontes" id="logo">
 
             <div id="texto-logo">
                 <h1>Lindos Horizontes</h1>
@@ -34,39 +34,39 @@
 
         </a>
 
-        <!-- SWITCH -->
-        <div id="modo-switch">
+        <!-- BOTÃO MODO -->
+        <div id="modo-toggle">
 
             <!-- APRESENTAÇÃO -->
-            <button class="modo-btn ativo" id="btn-apresentacao">
+            <button class="modo-card ativo">
 
-                <span class="icone-modo">
-                    🖼️
-                </span>
+                <div class="icone-box">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M4 18L10 11L14 15L20 8" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M20 8V14" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/>
+                    </svg>
+                </div>
 
-                <span class="texto-modo">
-                    Modo Apresentação
-                </span>
+                <span>Modo Apresentação</span>
 
             </button>
 
-            <!-- TOGGLE -->
-            <div id="toggle-area">
-
-                <div id="toggle-bola"></div>
-
+            <!-- SWITCH -->
+            <div id="switch-area">
+                <div id="switch-bola"></div>
             </div>
 
             <!-- LOJA -->
-            <button class="modo-btn" id="btn-loja">
+            <button class="modo-card">
 
-                <span class="icone-modo">
-                    🛍️
-                </span>
+                <div class="icone-box loja">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M6 8L7 19H17L18 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 8V6C9 4.34315 10.3431 3 12 3V3C13.6569 3 15 4.34315 15 6V8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                    </svg>
+                </div>
 
-                <span class="texto-modo">
-                    Modo Loja
-                </span>
+                <span>Modo Loja</span>
 
             </button>
 
@@ -74,8 +74,7 @@
 
     </div>
 
-    </header>
-
+</header>
 
     <!-- CARD FLUTUANTE -->
 
