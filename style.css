@@ -409,311 +409,234 @@ a.links-menu.ativo {
     }
 } */
 
-/* ==========================
-🌿 HEADER NOVO
-========================== */
+/* =========================================
+   HEADER NOVO
+========================================= */
 
-header{
-    width:100%;
-    background:white;
+.header-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    border-bottom:1px solid #ececec;
+    padding: 14px 18px;
 
-    padding:22px 30px;
+    background: #ffffff;
 
-    position:relative;
-    z-index:50;
+    gap: 14px;
 
-    box-shadow:0 4px 18px rgba(0,0,0,0.04);
+    border-bottom: 1px solid #ececec;
 }
 
-/* ==========================
-📦 CONTAINER
-========================== */
+/* =========================================
+   BLOCO ESQUERDO (LOGO + TEXTO)
+========================================= */
 
-#header-container{
-    width:100%;
-    max-width:1400px;
+.brand-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:30px;
+    min-width: 0;
 }
 
-/* ==========================
-🌿 LOGO
-========================== */
+/* LOGO */
+.logo-topo {
+    width: 62px;
+    height: 62px;
 
-#logo-area{
-    display:flex;
-    align-items:center;
+    border-radius: 50%;
+    object-fit: cover;
 
-    gap:18px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 
-    text-decoration:none;
+    flex-shrink: 0;
 }
 
-#logo{
-    width:92px;
-    height:92px;
+/* TEXTOS */
+.brand-textos {
+    display: flex;
+    flex-direction: column;
 
-    border-radius:50%;
+    min-width: 0;
+}
 
-    object-fit:cover;
+.brand-textos h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+
+    color: #10251d;
+
+    margin: 0;
+    line-height: 1.1;
+
+    white-space: nowrap;
+}
+
+.brand-textos p {
+    margin: 4px 0 0;
+
+    font-size: 0.82rem;
+    color: #5b5b5b;
+
+    white-space: nowrap;
+}
+
+/* =========================================
+   BOTÃO MODOS
+========================================= */
+
+.modo-toggle {
+    display: flex;
+    align-items: center;
+
+    background: #ffffff;
+
+    border: 1.5px solid #e7e7e7;
+
+    border-radius: 999px;
+
+    padding: 8px;
+
+    gap: 14px;
 
     box-shadow:
-    0 5px 18px rgba(0,0,0,0.10),
-    inset 0 0 0 5px white;
+        0 3px 10px rgba(0,0,0,0.04),
+        inset 0 1px 0 rgba(255,255,255,0.7);
+
+    flex-shrink: 0;
 }
 
-#texto-logo{
-    display:flex;
-    flex-direction:column;
+/* =========================================
+   LADOS
+========================================= */
+
+.modo-lado {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-#texto-logo h1{
-    font-size:56px;
+.modo-lado span {
+    font-size: 0.92rem;
+    font-weight: 600;
 
-    line-height:1;
+    color: #2f2f2f;
 
-    color:#102418;
-
-    font-weight:800;
-
-    margin-bottom:10px;
+    line-height: 1.1;
 }
 
-#texto-logo p{
-    font-size:20px;
+/* =========================================
+   ÍCONES SVG
+========================================= */
 
-    color:#5d5d5d;
+.icon-box {
+    width: 40px;
+    height: 40px;
 
-    font-weight:400;
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f4f4f4;
+
+    border: 1px solid #ececec;
 }
 
-/* ==========================
-🎛️ TOGGLE MODOS
-========================== */
-
-#modo-toggle{
-    display:flex;
-    align-items:center;
-
-    gap:20px;
-
-    background:#ffffff;
-
-    border:1.5px solid #ececec;
-
-    padding:18px 22px;
-
-    border-radius:35px;
-
-    box-shadow:
-    0 3px 10px rgba(0,0,0,0.04),
-    inset 0 0 0 1px rgba(255,255,255,0.8);
+.icon-box svg {
+    width: 20px;
+    height: 20px;
 }
 
-/* ==========================
-📦 BOTÕES
-========================== */
-
-.modo-card{
-    display:flex;
-    align-items:center;
-
-    gap:14px;
-
-    background:transparent;
-
-    border:none;
-
-    font-family:inherit;
-
-    cursor:pointer;
+/* ÍCONE APRESENTAÇÃO */
+.icon-apresentacao {
+    background: #edf7f2;
 }
 
-.modo-card span{
-    font-size:28px;
-
-    font-weight:600;
-
-    color:#2e2e2e;
+.icon-apresentacao svg {
+    stroke: #4ea886;
 }
 
-.modo-card.ativo span{
-    color:var(--Cor2);
+/* ÍCONE LOJA */
+.icon-loja svg {
+    stroke: #444;
 }
 
-/* ==========================
-🟢 ÍCONES
-========================== */
+/* =========================================
+   SWITCH
+========================================= */
 
-.icone-box{
-    width:64px;
-    height:64px;
+.switch {
+    width: 62px;
+    height: 34px;
 
-    border-radius:18px;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    background:#eef8f4;
-
-    box-shadow:
-    inset 0 0 0 1px rgba(0,0,0,0.04),
-    0 2px 8px rgba(0,0,0,0.05);
-}
-
-.icone-box svg{
-    width:34px;
-    height:34px;
-
-    color:var(--Cor2);
-}
-
-.icone-box.loja{
-    background:#f7f7f7;
-}
-
-.icone-box.loja svg{
-    color:#444;
-}
-
-/* ==========================
-🔘 SWITCH
-========================== */
-
-#switch-area{
-    width:95px;
-    height:52px;
-
-    background:linear-gradient(
-    180deg,
-    #24bb73,
-    #1f9f63
+    background: linear-gradient(
+        180deg,
+        #35c774,
+        #1ea45b
     );
 
-    border-radius:50px;
+    border-radius: 999px;
 
-    position:relative;
+    position: relative;
 
-    cursor:pointer;
-
-    box-shadow:
-    inset 0 2px 5px rgba(255,255,255,0.20),
-    inset 0 -2px 5px rgba(0,0,0,0.10);
-}
-
-#switch-bola{
-    width:42px;
-    height:42px;
-
-    background:white;
-
-    border-radius:50%;
-
-    position:absolute;
-
-    top:5px;
-    right:5px;
+    cursor: pointer;
 
     box-shadow:
-    0 4px 10px rgba(0,0,0,0.15);
+        inset 0 2px 4px rgba(255,255,255,0.2),
+        inset 0 -2px 4px rgba(0,0,0,0.08);
 }
 
-/* ==========================
-📱 MOBILE
-========================== */
+.switch::before {
+    content: "";
 
-@media(max-width:480px){
+    position: absolute;
 
-    header{
-        padding:14px 12px;
-    }
+    width: 26px;
+    height: 26px;
 
-    #header-container{
-        flex-direction:column;
+    border-radius: 50%;
 
-        align-items:stretch;
+    background: white;
 
-        gap:18px;
-    }
+    top: 4px;
+    right: 4px;
 
-    #logo-area{
-        gap:12px;
-    }
-
-    #logo{
-        width:62px;
-        height:62px;
-    }
-
-    #texto-logo h1{
-        font-size:28px;
-
-        margin-bottom:4px;
-    }
-
-    #texto-logo p{
-        font-size:13.5px;
-
-        line-height:1.5;
-    }
-
-    #modo-toggle{
-        width:100%;
-
-        justify-content:space-between;
-
-        padding:12px 14px;
-
-        gap:10px;
-
-        border-radius:24px;
-    }
-
-    .modo-card{
-        gap:8px;
-    }
-
-    .modo-card span{
-        font-size:14px;
-    }
-
-    .icone-box{
-        width:40px;
-        height:40px;
-
-        border-radius:12px;
-    }
-
-    .icone-box svg{
-        width:22px;
-        height:22px;
-    }
-
-    #switch-area{
-        width:62px;
-        height:34px;
-
-        flex-shrink:0;
-    }
-
-    #switch-bola{
-        width:26px;
-        height:26px;
-
-        top:4px;
-        right:4px;
-    }
+    box-shadow:
+        0 2px 6px rgba(0,0,0,0.18);
 }
 
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .header-topo {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .logo-topo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .brand-textos h1 {
+        font-size: 1.2rem;
+    }
+
+    .brand-textos p {
+        font-size: 0.72rem;
+    }
+
+    .modo-toggle {
+        transform: scale(0.88);
+        transform-origin: right top;
+    }
+
+}
 
 /* SEÇÃO INÍCIO */
 
