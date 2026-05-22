@@ -194,19 +194,19 @@ header {
     /*background-color: red*/
 }
 
-nav {
+/* nav {
     display: flex;
     align-items: center;
     position: relative;
     flex: 1;
-    /*background-color: yellow;*/
+    background-color: yellow;
 }
 
 #area-nav {
     display: flex;
     align-items: center;
-    /*background-color: orange;*/
-}
+    background-color: orange;
+} */
 
 #caixa-logo {
     width: max-content;
@@ -258,21 +258,21 @@ nav {
     font-weight: 500;
 }
 
-ul#links {
+/* ul#links {
     display: flex;
     width: max-content;
     align-items: center;
     gap: 80px;
     position: relative;
     align-items: center;
-    /*background-color: pink;*/
+    background-color: pink;*/
 }
 
 li {
     list-style: none;
 }
 
-.links-menu {
+/* .links-menu {
     position: relative;
     color: #444;
     font-size: 22px;
@@ -280,7 +280,7 @@ li {
     text-decoration: none;
     user-select: none;
     transition: color 0.3s;
-    font-weight: 600;
+    font-weight: 600; 
 }
 
 .links-menu:hover {
@@ -300,9 +300,9 @@ a.links-menu.ativo {
     left: 0;
     height: 5px;
     transition: left 0.3s, width 0.3s;
-}
+} */
 
-/* RESPONSIVIDADE CABEÇALHO */
+/* RESPONSIVIDADE CABEÇALHO 
 
 @media(max-width: 900px) {
 
@@ -333,7 +333,7 @@ a.links-menu.ativo {
         width: 100%;
         height: 80px;
         border-bottom: 4px solid #f0f0f0;
-        background: white; /* importante */
+        background: white; 
         z-index: 9999;
     }
 
@@ -341,7 +341,7 @@ a.links-menu.ativo {
         margin-top: 70px;
     }
 
-    /* 🔥 MANTÉM TUDO EM LINHA (logo + menu) */
+     🔥 MANTÉM TUDO EM LINHA (logo + menu) 
     nav {
         display: flex;
         align-items: center;
@@ -353,7 +353,7 @@ a.links-menu.ativo {
         align-items: center;
         justify-content: center;
         width: 100%;
-        flex-direction: row; /* ESSENCIAL */
+        flex-direction: row; ESSENCIAL
     }
 
     #caixa-logo {
@@ -369,12 +369,12 @@ a.links-menu.ativo {
         margin: 0;
     }
 
-    /* 🔥 ESCONDE TEXTO (como você pediu) */
+    🔥 ESCONDE TEXTO (como você pediu) 
     #texto-logo {
         display: none;
     }
 
-    /* 🔥 MENU NA MESMA LINHA */
+    🔥 MENU NA MESMA LINHA 
     ul#links {
         position: relative;
         display: flex;
@@ -406,6 +406,331 @@ a.links-menu.ativo {
 
     #redes {
         display: none;
+    }
+} */
+
+/* ==========================
+HEADER NOVO
+========================== */
+
+header{
+    width:100%;
+    padding:22px;
+
+    background:#F2F8F6;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border-bottom:1px solid #dde7e3;
+}
+
+/* CONTAINER */
+
+#header-container{
+
+    width:100%;
+    max-width:1250px;
+
+    background:white;
+
+    border:1px solid #dfe8e4;
+
+    border-radius:30px;
+
+    padding:22px 28px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:30px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,0.04);
+}
+
+/* ==========================
+LOGO
+========================== */
+
+#logo-area{
+
+    display:flex;
+    align-items:center;
+
+    gap:18px;
+
+    text-decoration:none;
+}
+
+#logo{
+
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    box-shadow:0 5px 14px rgba(0,0,0,0.08);
+}
+
+#texto-logo{
+
+    display:flex;
+    flex-direction:column;
+}
+
+#texto-logo h1{
+
+    font-size:45px;
+
+    color:#16392F;
+
+    font-weight:800;
+}
+
+#texto-logo p{
+
+    margin-top:4px;
+
+    font-size:20px;
+
+    color:#5b6762;
+}
+
+/* ==========================
+SWITCH
+========================== */
+
+#modo-switch{
+
+    background:#F8FBFA;
+
+    border:1px solid #e3ece8;
+
+    border-radius:100px;
+
+    padding:10px;
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
+}
+
+/* BOTÕES */
+
+.modo-btn{
+
+    background:none;
+    border:none;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 18px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+.modo-btn.ativo{
+
+    background:#56A38A15;
+}
+
+.icone-modo{
+
+    width:44px;
+    height:44px;
+
+    border-radius:14px;
+
+    background:#56A38A;
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:22px;
+}
+
+.texto-modo{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    color:#2e6d5a;
+}
+
+/* ==========================
+TOGGLE
+========================== */
+
+#toggle-area{
+
+    width:82px;
+    height:42px;
+
+    background:#56A38A;
+
+    border-radius:50px;
+
+    position:relative;
+
+    cursor:pointer;
+}
+
+#toggle-bola{
+
+    width:34px;
+    height:34px;
+
+    background:white;
+
+    border-radius:50%;
+
+    position:absolute;
+
+    top:4px;
+    left:4px;
+
+    transition:0.35s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ==========================
+MODO LOJA
+========================== */
+
+body.modo-loja #toggle-bola{
+
+    left:44px;
+}
+
+body.modo-loja #btn-apresentacao{
+
+    background:none;
+}
+
+body.modo-loja #btn-loja{
+
+    background:#56A38A15;
+}
+
+/* ==========================
+RESPONSIVO
+========================== */
+
+@media(max-width:900px){
+
+    #header-container{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+    }
+
+    #modo-switch{
+
+        width:100%;
+
+        justify-content:space-between;
+    }
+
+    .texto-modo{
+
+        font-size:18px;
+    }
+}
+
+@media(max-width:480px){
+
+    header{
+
+        padding:14px;
+    }
+
+    #header-container{
+
+        padding:18px;
+
+        border-radius:24px;
+
+        gap:20px;
+    }
+
+    #logo{
+
+        width:58px;
+        height:58px;
+    }
+
+    #texto-logo h1{
+
+        font-size:28px;
+    }
+
+    #texto-logo p{
+
+        font-size:14px;
+    }
+
+    #modo-switch{
+
+        width:100%;
+
+        padding:8px;
+
+        gap:10px;
+    }
+
+    .modo-btn{
+
+        flex:1;
+
+        padding:10px;
+    }
+
+    .icone-modo{
+
+        width:36px;
+        height:36px;
+
+        font-size:18px;
+    }
+
+    .texto-modo{
+
+        font-size:13px;
+    }
+
+    #toggle-area{
+
+        width:65px;
+        height:36px;
+    }
+
+    #toggle-bola{
+
+        width:28px;
+        height:28px;
+
+        top:4px;
+    }
+
+    body.modo-loja #toggle-bola{
+
+        left:33px;
     }
 }
 
