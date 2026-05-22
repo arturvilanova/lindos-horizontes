@@ -20,74 +20,62 @@
 
     <header>
 
-        <div id="caixa-logo">
+    <div id="header-container">
 
-            <a href="#" id="logo-area">
+        <!-- LOGO + TEXTO -->
+        <a href="#" id="logo-area">
 
-                <img
-                    src="imagens/logo.jpeg"
-                    alt="Logo Lindos Horizontes"
-                    id="logo"
-                >
+            <img src="imagens/logo.png" id="logo" alt="Logo">
 
-                <div id="texto-logo">
-                    <h1>Lindos Horizontes</h1>
-                    <p>
-                        A natureza se revela para quem
-                        <br>
-                        sabe observar
-                    </p>
-                </div>
+            <div id="texto-logo">
+                <h1>Lindos Horizontes</h1>
+                <p>A natureza se revela para quem sabe observar. 🌿</p>
+            </div>
 
-            </a>
+        </a>
 
-        </div>
+        <!-- SWITCH -->
+        <div id="modo-switch">
 
-        <nav>
+            <!-- APRESENTAÇÃO -->
+            <button class="modo-btn ativo" id="btn-apresentacao">
 
-            <div id="area-nav">
+                <span class="icone-modo">
+                    🖼️
+                </span>
 
-                <ul id="links">
+                <span class="texto-modo">
+                    Modo Apresentação
+                </span>
 
-                    <li>
-                        <a
-                            href="#"
-                            class="links-menu nav-trigger ativo"
-                            data-target="inicio"
-                        >
-                            Início
-                        </a>
-                    </li>
+            </button>
 
-                    <li>
-                        <a
-                            href="#"
-                            class="links-menu nav-trigger"
-                            data-target="fotos"
-                        >
-                            Fotos
-                        </a>
-                    </li>
+            <!-- TOGGLE -->
+            <div id="toggle-area">
 
-                    <li>
-                        <a
-                            href="#"
-                            class="links-menu nav-trigger"
-                            data-target="imagens-ia"
-                        >
-                            Imagens IA
-                        </a>
-                    </li>
-
-                    <div class="barra-deslizante"></div>
-
-                </ul>
+                <div id="toggle-bola"></div>
 
             </div>
 
-        </nav>
+            <!-- LOJA -->
+            <button class="modo-btn" id="btn-loja">
+
+                <span class="icone-modo">
+                    🛍️
+                </span>
+
+                <span class="texto-modo">
+                    Modo Loja
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
 
     </header>
+
 
     <!-- CARD FLUTUANTE -->
 
