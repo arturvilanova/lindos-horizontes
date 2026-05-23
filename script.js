@@ -30,11 +30,41 @@ document.addEventListener("DOMContentLoaded", () => {
   // 🔗 MENU + SEÇÕES
   // ==========================
 
-    const switchBtn = document.querySelector(".switch");
+    // ==========================================
+// TOGGLE APRESENTAÇÃO / LOJA
+// ==========================================
 
-switchBtn.addEventListener("click", () => {
+const switchToggle = document.querySelector(".switch");
 
-    switchBtn.classList.toggle("ativo");
+const iconApresentacao = document.querySelector(".icon-apresentacao");
+const iconLoja = document.querySelector(".icon-loja");
+
+switchToggle.addEventListener("click", () => {
+
+    // alterna bolinha
+    switchToggle.classList.toggle("ativo");
+
+    // se ESTÁ ativo → loja ativa
+    if (switchToggle.classList.contains("ativo")) {
+
+        // remove apresentação
+        iconApresentacao.classList.remove("ativo");
+
+        // ativa loja
+        iconLoja.classList.add("ativo");
+
+    } 
+    
+    // se NÃO está ativo → apresentação ativa
+    else {
+
+        // ativa apresentação
+        iconApresentacao.classList.add("ativo");
+
+        // remove loja
+        iconLoja.classList.remove("ativo");
+
+    }
 
 });
         
