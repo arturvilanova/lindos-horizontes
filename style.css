@@ -413,43 +413,42 @@ a.links-menu.ativo {
    HEADER NOVO
 ========================================= */
 
-.header-topo {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header-topo{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 
-    padding: 14px 18px;
+    padding:18px 22px;
 
-    background: #ffffff;
+    background:#fff;
 
-    gap: 14px;
+    gap:18px;
 
-    border-bottom: 1px solid #ececec;
+    border-bottom:1px solid #ececec;
 }
 
 /* =========================================
    BLOCO ESQUERDO (LOGO + TEXTO)
 ========================================= */
 
-.brand-area {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.brand-area{
+    display:flex;
+    align-items:center;
 
-    min-width: 0;
+    gap:14px;
+
+    min-width:0;
 }
 
 /* LOGO */
-.logo-topo {
-    width: 62px;
-    height: 62px;
+.logo-topo{
+    width:58px;
+    height:58px;
 
-    border-radius: 50%;
-    object-fit: cover;
+    border-radius:50%;
+    object-fit:cover;
 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-
-    flex-shrink: 0;
+    flex-shrink:0;
 }
 
 /* TEXTOS */
@@ -550,17 +549,21 @@ a.links-menu.ativo {
 }
 
 /* ÍCONE APRESENTAÇÃO */
-.icon-apresentacao {
-    background: #F2F8F6;
+.icon-apresentacao{
+    background:#F2F8F6;
 }
 
-.icon-apresentacao svg {
-    stroke: #4ea886;
+.icon-apresentacao svg{
+    stroke:#56A38A;
 }
 
 /* ÍCONE LOJA */
-.icon-loja svg {
-    stroke: #444;
+.icon-loja.ativo{
+    background:#F2F8F6;
+}
+
+.icon-loja.ativo svg{
+    stroke:#56A38A;
 }
 
 /* =========================================
@@ -609,7 +612,7 @@ a.links-menu.ativo {
 ========================================= */
 
 .switch.ativo {
-    background: #24bb73;
+    background:#56A38A;
 }
 
 .switch.ativo::before {
