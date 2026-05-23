@@ -541,29 +541,29 @@ a.links-menu.ativo {
     background: #f4f4f4;
 
     border: 1px solid #ececec;
+
+    transition: 0.3s;
 }
 
 .icon-box svg {
     width: 20px;
     height: 20px;
+
+    stroke: #6f6f6f;
+
+    transition: 0.3s;
 }
 
-/* ÍCONE APRESENTAÇÃO */
-.icon-apresentacao{
-    background:#F2F8F6;
+/* =========================================
+   ESTADO ATIVO
+========================================= */
+
+.icon-box.ativo {
+    background: #F2F8F6;
 }
 
-.icon-apresentacao svg{
-    stroke:#56A38A;
-}
-
-/* ÍCONE LOJA */
-.icon-loja.ativo{
-    background:#F2F8F6;
-}
-
-.icon-loja.ativo svg{
-    stroke:#56A38A;
+.icon-box.ativo svg {
+    stroke: #56A38A;
 }
 
 /* =========================================
