@@ -29,6 +29,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================
   // 🔗 MENU + SEÇÕES
   // ==========================
+
+    const switchBtn = document.querySelector(".switch");
+
+switchBtn.addEventListener("click", () => {
+
+    switchBtn.classList.toggle("ativo");
+
+});
         
   const links = document.querySelectorAll(".links-menu");
   const secoes = document.querySelectorAll(".secao");
