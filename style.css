@@ -571,11 +571,7 @@ a.links-menu.ativo {
     width: 62px;
     height: 34px;
 
-    background: linear-gradient(
-        180deg,
-        #35c774,
-        #1ea45b
-    );
+    background: #dcdcdc;
 
     border-radius: 999px;
 
@@ -583,10 +579,16 @@ a.links-menu.ativo {
 
     cursor: pointer;
 
+    transition: 0.3s;
+
     box-shadow:
         inset 0 2px 4px rgba(255,255,255,0.2),
         inset 0 -2px 4px rgba(0,0,0,0.08);
 }
+
+/* =========================================
+   BOLINHA
+========================================= */
 
 .switch::before {
     content: "";
@@ -601,10 +603,28 @@ a.links-menu.ativo {
     background: white;
 
     top: 4px;
-    right: 4px;
+    left: 4px;
+
+    transition: 0.3s;
 
     box-shadow:
         0 2px 6px rgba(0,0,0,0.18);
+}
+
+/* =========================================
+   MODO APRESENTAÇÃO ATIVO
+========================================= */
+
+.switch.ativo {
+    background: linear-gradient(
+        180deg,
+        #35c774,
+        #1ea45b
+    );
+}
+
+.switch.ativo::before {
+    left: calc(100% - 30px);
 }
 
 /* =========================================
