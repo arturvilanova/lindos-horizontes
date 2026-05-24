@@ -34,35 +34,43 @@ document.addEventListener("DOMContentLoaded", () => {
 // TOGGLE APRESENTAÇÃO / LOJA
 // ==========================================
 
-const switchToggle = document.querySelector(".switch");
+const switchBtn = document.querySelector(".switch");
 
 const iconApresentacao = document.querySelector(".icon-apresentacao");
 const iconLoja = document.querySelector(".icon-loja");
 
-switchToggle.addEventListener("click", () => {
+switchBtn.addEventListener("click", () => {
 
-    // alterna bolinha
-    switchToggle.classList.toggle("ativo");
+    // move bolinha
+    switchBtn.classList.toggle("ativo");
 
-    // se ESTÁ ativo → loja ativa
-    if (switchToggle.classList.contains("ativo")) {
+    // =====================================
+    // APRESENTAÇÃO ATIVA
+    // bolinha na direita
+    // =====================================
 
-        // remove apresentação
-        iconApresentacao.classList.remove("ativo");
+    if (switchBtn.classList.contains("ativo")) {
 
-        // ativa loja
-        iconLoja.classList.add("ativo");
-
-    } 
-    
-    // se NÃO está ativo → apresentação ativa
-    else {
-
-        // ativa apresentação
+        // acende apresentação
         iconApresentacao.classList.add("ativo");
 
-        // remove loja
+        // apaga loja
         iconLoja.classList.remove("ativo");
+
+    }
+
+    // =====================================
+    // LOJA ATIVA
+    // bolinha na esquerda
+    // =====================================
+
+    else {
+
+        // apaga apresentação
+        iconApresentacao.classList.remove("ativo");
+
+        // acende loja
+        iconLoja.classList.add("ativo");
 
     }
 
