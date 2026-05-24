@@ -651,132 +651,57 @@ a.links-menu.ativo {
 }
 
 /* =========================================
-   CELULAR EM PÉ
+   MOBILE RETRATO
 ========================================= */
 
 @media (max-width: 480px) {
 
-    /* =====================================
-       HEADER
-    ===================================== */
+    .header-topo{
 
-    .header-topo {
+        padding:16px 14px;
 
-        padding:
-            14px   /* topo */
-            16px;  /* lados */
-
-        gap: 12px;
-
-        align-items: center;
-    }
-
-    /* =====================================
-       BLOCO ESQUERDO
-    ===================================== */
-
-    .brand-area {
-
-        gap: 12px;
-
-        margin-right: 6px;
-
-        flex-shrink: 0;
+        gap:10px;
     }
 
     /* =====================================
        LOGO
     ===================================== */
 
-    .logo-topo {
+    .logo-topo{
 
-        width: 48px;
-        height: 48px;
+        width:50px;
+        height:50px;
+
+        margin-left:2px;   /* (1) margem esquerda */
+        margin-right:8px;  /* (2) espaço da logo */
     }
 
     /* =====================================
-       ESCONDE TEXTOS
+       BLOCO DA LOGO
     ===================================== */
 
-    .brand-textos {
+    .brand-area{
 
-        display: none;
+        gap:0;
     }
 
     /* =====================================
-       ÁREA DO TOGGLE
+       BOTÃO MODOS
     ===================================== */
 
-    .modo-toggle {
+    .modo-toggle{
 
-        flex: 1;
+        margin-right:2px; /* (3) margem direita */
 
-        justify-content: space-between;
+        padding:8px;
 
-        padding: 6px;
-
-        gap: 10px;
-
-        min-width: 0;
-    }
-
-    /* =====================================
-       CADA LADO
-    ===================================== */
-
-    .modo-lado {
-
-        gap: 8px;
-    }
-
-    /* =====================================
-       TEXTO
-    ===================================== */
-
-    .modo-lado span {
-
-        font-size: 0.82rem;
-
-        font-weight: 600;
-    }
-
-    /* =====================================
-       ÍCONES
-    ===================================== */
-
-    .icon-box {
-
-        width: 36px;
-        height: 36px;
-
-        border-radius: 12px;
-    }
-
-    .icon-box svg {
-
-        width: 18px;
-        height: 18px;
-    }
-
-    /* =====================================
-       SWITCH
-    ===================================== */
-
-    .switch {
-
-        width: 54px;
-        height: 30px;
-    }
-
-    .switch::before {
-
-        width: 22px;
-        height: 22px;
-
-        top: 4px;
+        gap:12px;
     }
 
 }
+
+
+
 
 /* SEÇÃO INÍCIO */
 
