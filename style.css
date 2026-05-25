@@ -661,17 +661,6 @@ a.links-menu.ativo {
         padding:16px 14px;
 
         gap:10px;
-
-        align-items:center;
-    }
-
-    /* =====================================
-       ESCONDE TEXTOS NO MOBILE
-    ===================================== */
-
-    .brand-textos{
-
-        display:none;
     }
 
     /* =====================================
@@ -680,34 +669,33 @@ a.links-menu.ativo {
 
     .logo-topo{
 
-        width:50px;
-        height:50px;
+        width:40px;
+        height:40px;
 
-        margin-right:10px;
-
-        flex-shrink:0;
+        margin-left:2px;   /* (1) margem esquerda */
+        margin-right:8px;  /* (2) espaço da logo */
     }
 
     /* =====================================
-       BLOCO ESQUERDO
+       BLOCO DA LOGO
     ===================================== */
 
     .brand-area{
 
-        flex-shrink:0;
+        gap:0;
     }
 
     /* =====================================
-       CONTROLE DIREITA
+       BOTÃO MODOS
     ===================================== */
 
     .modo-toggle{
 
-        flex:1;
+        margin-right:2px; /* (3) margem direita */
 
-        min-width:0;
+        padding:8px;
 
-        margin-right:0;
+        gap:12px;
     }
 
 }
