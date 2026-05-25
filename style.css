@@ -683,9 +683,11 @@ a.links-menu.ativo {
         gap:0;
     }
 
-    brand-textos {
-        display: none;
+        .brand-textos{
+        display:none;
     }
+
+}
 
     /* =====================================
        BOTÃO MODOS
