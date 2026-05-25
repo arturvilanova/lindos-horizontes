@@ -455,7 +455,6 @@ a.links-menu.ativo {
 .brand-textos {
     display: flex;
     flex-direction: column;
-
     min-width: 0;
 }
 
@@ -681,8 +680,11 @@ a.links-menu.ativo {
     ===================================== */
 
     .brand-area{
-
         gap:0;
+    }
+
+    brand-textos {
+        display: none;
     }
 
     /* =====================================
