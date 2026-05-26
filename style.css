@@ -928,7 +928,7 @@ section#area-inicio, section#inicio {
         width: 100%;
         height: 250px;
         margin: 0px;
-        border-radius: none;
+        border-radius: 0px;
     }
 
 .carousel_1,
