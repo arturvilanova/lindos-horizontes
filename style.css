@@ -1240,6 +1240,39 @@ span a {
    SEÇÃO INTELIGÊNCIA ARTIFICIAL (LINDOS HORIZONTES)
    ========================================================================== */
 
+/* ==========================================================================
+   CSS EXCLUSIVO PARA O SVG DA ONDA
+   ========================================================================== */
+
+/* 
+   A sua section principal precisa destas duas regras abaixo 
+   para que a onda funcione e não apareçam frestas brancas.
+*/
+.secao-ia-container {
+    position: relative; /* Obriga a onda a se alinhar pelo topo desta caixa */
+    padding-top: 0;     /* Remove o espaço superior para a onda colar perfeitamente */
+}
+
+/* Container que segura o SVG e o joga para cima da caixa colorida */
+.ia-onda-topo {
+    position: absolute;
+    top: -99px;        /* Empurra a onda exatamente para fora e acima da section */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;    /* Remove espaços fantasmas de renderização do navegador */
+    pointer-events: none; /* Garante que o usuário consiga clicar no que estiver por baixo */
+}
+
+/* Controla a altura física e o comportamento elástico da onda */
+.ia-onda-topo svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;     /* Altura ideal para o "S" deitado respirar sem achatar */
+}
+
+
 /* Caixa Principal da Seção com a cor customizada */
 .secao-ia-container {
     width: 100%;
