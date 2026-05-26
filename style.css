@@ -1236,113 +1236,75 @@ span a {
     }
 }
 
-/* ==========================================================================
-   SEÇÃO INTELIGÊNCIA ARTIFICIAL (LINDOS HORIZONTES)
-   ========================================================================== */
-
-/* ==========================================================================
-   CSS EXCLUSIVO PARA O SVG DA ONDA
+ /* ==========================================================================
+   CONCEITO HERO: IMAGEM DE IA NO FUNDO COM TEXTO EM BRANCO
    ========================================================================== */
 
 /* 
-   A sua section principal precisa destas duas regras abaixo 
-   para que a onda funcione e não apareçam frestas brancas.
+   Caixa principal adaptada para a foto de fundo. 
+   O padding superior e inferior é zerado para as duas ondas colarem.
 */
 .secao-ia-container {
-    position: relative; /* Obriga a onda a se alinhar pelo topo desta caixa */
-    padding-top: 0;     /* Remove o espaço superior para a onda colar perfeitamente */
+    position: relative;
+    width: 100%;
+    min-height: 450px; /* Altura imponente para o bloco no celular */
+    background-image: url('imagens/imagens_ia/ChatGPT Image 26 de mai. de 2026, 11_25_17.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center; 
+    padding: 0;
+    margin: 140px 0;
+    text-align: left;
 }
 
-/* Container que segura o SVG e o joga para cima da caixa colorida */
-.ia-onda-topo {
+/* Camada preta translúcida para dar contraste e leitura ao texto */
+.ia-overlay-escura {
     position: absolute;
-    top: -99px;        /* Empurra a onda exatamente para fora e acima da section */
+    top: 0;
     left: 0;
     width: 100%;
-    overflow: hidden;
-    line-height: 0;    /* Remove espaços fantasmas de renderização do navegador */
-    pointer-events: none; /* Garante que o usuário consiga clicar no que estiver por baixo */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55); /* 55% de escurecimento sobre a foto */
+    z-index: 1;
 }
 
-/* Controla a altura física e o comportamento elástico da onda */
-.ia-onda-topo svg {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100px;     /* Altura ideal para o "S" deitado respirar sem achatar */
-}
-
-
-/* Caixa Principal da Seção com a cor customizada */
-.secao-ia-container {
-    width: 100%;
-    background-color: #F2F8F6; 
-    padding: 60px 0;
-    text-align: left;
-    margin: 40px 0;
-}
-
-/* Container unificado para garantir margens idênticas nas duas pontas */
+/* Garante que o texto fique por cima da foto e da camada escura */
 .ia-conteudo-wrapper {
-    max-width: 900px; /* Largura expandida para acomodar 3 colunas no PC */
+    position: relative;
+    z-index: 2; 
+    max-width: 600px; /* Segura a largura do texto no PC e celular */
     margin: 0 auto;
-    padding: 0 24px; 
+    padding: 80px 24px; /* Afasta o texto das curvas das ondas */
+    width: 100%;
 }
 
-/* Título Principal no seu Azul-Marinho */
+/* Textos convertidos para Branco para destacar no fundo escuro */
 .secao-ia-container h2 {
-    color: #1d3557; 
-    font-size: 2rem;
+    color: #ffffff !important; 
+    font-size: 2.2rem;
     font-weight: 800;
     line-height: 1.25;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
     letter-spacing: -0.5px;
 }
 
-/* Parágrafo com boa leitura */
 .secao-ia-container p {
-    color: #4a4a4a;
+    color: #e0e0e0 !important; /* Tom de branco fosco elegante */
     font-size: 1.05rem;
     line-height: 1.6;
-    margin-bottom: 40px;
-    max-width: 600px;
+    margin-bottom: 35px;
 }
 
-/* 
-   MODO CELULAR (Padrão): 1 coluna única. 
-   Cada imagem ocupa a largura inteira disponível e cola na de cima.
-*/
-.galeria-dinamica {
-    column-count: 1;
-    column-gap: 0;
-    width: 100%;
-    margin-bottom: 45px;
-}
-
-/* Elementos da foto com altura livre (Masonry) */
-.foto-ia-item {
-    display: inline-block; 
-    width: 100%;           
-    margin-bottom: 16px;   /* Espaço vertical uniforme entre as fotos */
-    border-radius: 12px;   /* Seus cantos arredondados padrão */
-    overflow: hidden;
-    background-color: #e2e8f0;
-}
-
-.foto-ia-item img {
-    width: 100%;
-    height: auto;          /* Evita cortes na proporção original da imagem */
-    display: block;
-}
-
-/* Botão Explorar Mais (Seu Verde Oliva Oficial) */
+/* Mantém o seu botão verde oliva original se destacando no escuro */
 .btn-ia-full {
     display: inline-block;
     background-color: #54a489; 
     color: #ffffff;
     text-decoration: none;
     padding: 14px 45px;
-    border-radius: 30px; 
+    border-radius: 30px; /* Formato pílula idêntico ao seu */
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -1356,71 +1318,62 @@ span a {
 }
 
 /* ==========================================================================
-   CSS EXCLUSIVO PARA O SVG DA ONDA DE BAIXO
+   CSS AS ONDAS (MANTIDO E ADAPTADO)
    ========================================================================== */
 
-/* 
-   Ajuste obrigatório na sua section principal:
-   Zera a margem interna inferior para que a onda de baixo cole perfeitamente.
-*/
-.secao-ia-container {
-    padding-bottom: 0 !important; 
-}
-
-/* Container que segura o SVG inferior e o joga para fora da caixa colorida */
-.ia-onda-rodape {
+/* Onda do Topo */
+.ia-onda-topo {
     position: absolute;
-    bottom: -99px;     /* Empurra a onda exatamente para fora e abaixo da section */
+    top: -99px; 
     left: 0;
     width: 100%;
     overflow: hidden;
-    line-height: 0;    /* Remove espaços fantasmas de renderização do navegador */
-    pointer-events: none; /* Garante que o usuário consiga clicar no que estiver por baixo */
+    line-height: 0;
+    z-index: 3; /* Fica acima de toda a imagem de fundo */
+    pointer-events: none;
 }
 
-/* Controla a altura física da onda inferior */
+.ia-onda-topo svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;
+}
+
+/* Onda do Rodapé */
+.ia-onda-rodape {
+    position: absolute;
+    bottom: -99px; 
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 3; /* Fica acima de toda a imagem de fundo */
+    pointer-events: none;
+}
+
 .ia-onda-rodape svg {
     position: relative;
     display: block;
     width: 100%;
-    height: 100px;     /* Mantém a mesma proporção visual da onda do topo */
+    height: 100px;
 }
-
 
 /* ==========================================================================
-   RESPONSIVIDADE (MEDIA QUERIES)
+   RESPONSIVIDADE PARA MONITORES GRANDES
    ========================================================================== */
-
-/* MODO TABLET: A partir de 600px de largura vira 2 colunas */
-@media (min-width: 600px) {
-    .galeria-dinamica {
-        column-count: 2;
-        column-gap: 14px;
-    }
-    .foto-ia-item {
-        margin-bottom: 14px;
-    }
-}
-
-/* MODO COMPUTADOR: A partir de 1024px de largura vira 3 colunas */
 @media (min-width: 1024px) {
     .secao-ia-container {
-        padding: 80px 0;
+        min-height: 550px; /* O bloco fica mais alto e cinematográfico no PC */
     }
-    .galeria-dinamica {
-        column-count: 3;
-        column-gap: 16px;
-    }
-    .foto-ia-item {
-        margin-bottom: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    .secao-ia-container h2 {
+        font-size: 2.8rem; /* Título maior na tela do computador */
     }
 }
 
-/* Ajuste fino para telas muito pequenas */
-@media (max-width: 400px) {
-    .secao-ia-container h2 { font-size: 1.7rem; }
-}
+
+
+
 
 
 /* ==========================
