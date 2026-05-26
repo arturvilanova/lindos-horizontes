@@ -1236,6 +1236,128 @@ span a {
     }
 }
 
+/* ==========================================================================
+   SEÇÃO INTELIGÊNCIA ARTIFICIAL (LINDOS HORIZONTES)
+   ========================================================================== */
+
+/* Caixa Principal da Seção com a cor customizada */
+.secao-ia-container {
+    width: 100%;
+    background-color: #F2F8F6; 
+    padding: 60px 0;
+    text-align: left;
+    margin: 40px 0;
+}
+
+/* Container unificado para garantir margens idênticas nas duas pontas */
+.ia-conteudo-wrapper {
+    max-width: 900px; /* Largura expandida para acomodar 3 colunas no PC */
+    margin: 0 auto;
+    padding: 0 24px; 
+}
+
+/* Título Principal no seu Azul-Marinho */
+.secao-ia-container h2 {
+    color: #1d3557; 
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+}
+
+/* Parágrafo com boa leitura */
+.secao-ia-container p {
+    color: #4a4a4a;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* 
+   MODO CELULAR (Padrão): 1 coluna única. 
+   Cada imagem ocupa a largura inteira disponível e cola na de cima.
+*/
+.galeria-dinamica {
+    column-count: 1;
+    column-gap: 0;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+/* Elementos da foto com altura livre (Masonry) */
+.foto-ia-item {
+    display: inline-block; 
+    width: 100%;           
+    margin-bottom: 16px;   /* Espaço vertical uniforme entre as fotos */
+    border-radius: 12px;   /* Seus cantos arredondados padrão */
+    overflow: hidden;
+    background-color: #e2e8f0;
+}
+
+.foto-ia-item img {
+    width: 100%;
+    height: auto;          /* Evita cortes na proporção original da imagem */
+    display: block;
+}
+
+/* Botão Explorar Mais (Seu Verde Oliva Oficial) */
+.btn-ia-full {
+    display: inline-block;
+    background-color: #54a489; 
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 45px;
+    border-radius: 30px; 
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-ia-full:hover {
+    background-color: #43856f;
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================================================== */
+
+/* MODO TABLET: A partir de 600px de largura vira 2 colunas */
+@media (min-width: 600px) {
+    .galeria-dinamica {
+        column-count: 2;
+        column-gap: 14px;
+    }
+    .foto-ia-item {
+        margin-bottom: 14px;
+    }
+}
+
+/* MODO COMPUTADOR: A partir de 1024px de largura vira 3 colunas */
+@media (min-width: 1024px) {
+    .secao-ia-container {
+        padding: 80px 0;
+    }
+    .galeria-dinamica {
+        column-count: 3;
+        column-gap: 16px;
+    }
+    .foto-ia-item {
+        margin-bottom: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+}
+
+/* Ajuste fino para telas muito pequenas */
+@media (max-width: 400px) {
+    .secao-ia-container h2 { font-size: 1.7rem; }
+}
+
+
 /* ==========================
 🌿 ÁREA INSTAGRAM
 ========================== */
