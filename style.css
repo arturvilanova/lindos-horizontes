@@ -1356,6 +1356,38 @@ span a {
 }
 
 /* ==========================================================================
+   CSS EXCLUSIVO PARA O SVG DA ONDA DE BAIXO
+   ========================================================================== */
+
+/* 
+   Ajuste obrigatório na sua section principal:
+   Zera a margem interna inferior para que a onda de baixo cole perfeitamente.
+*/
+.secao-ia-container {
+    padding-bottom: 0 !important; 
+}
+
+/* Container que segura o SVG inferior e o joga para fora da caixa colorida */
+.ia-onda-rodape {
+    position: absolute;
+    bottom: -99px;     /* Empurra a onda exatamente para fora e abaixo da section */
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;    /* Remove espaços fantasmas de renderização do navegador */
+    pointer-events: none; /* Garante que o usuário consiga clicar no que estiver por baixo */
+}
+
+/* Controla a altura física da onda inferior */
+.ia-onda-rodape svg {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100px;     /* Mantém a mesma proporção visual da onda do topo */
+}
+
+
+/* ==========================================================================
    RESPONSIVIDADE (MEDIA QUERIES)
    ========================================================================== */
 
