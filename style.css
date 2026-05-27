@@ -1236,19 +1236,23 @@ span a {
     }
 }
 
- /* ==========================================================================
-   CONCEITO HERO: IMAGEM DE IA NO FUNDO COM TEXTO EM BRANCO
+ 
+/* ==========================================================================
+   CONCEITO: A HISTÓRIA DA FOTO (TEXTO SOBRE IMAGEM DE FUNDO)
    ========================================================================== */
 
 /* 
-   Caixa principal adaptada para a foto de fundo. 
-   O padding superior e inferior é zerado para as duas ondas colarem.
+   Caixa principal adaptada para receber a sua foto em destaque.
+   Sempre que você quiser trocar a história, basta alterar o link da imagem abaixo!
 */
-.secao-ia-container {
+.secao-historia-foto {
     position: relative;
     width: 100%;
-    min-height: 450px; /* Altura imponente para o bloco no celular */
-    background-image: url('imagens/imagens_ia/ChatGPT Image 27 de mai. de 2026, 09_22_56.png');
+    min-height: 460px; /* Altura cinematográfica perfeita para o celular */
+    
+    /* SUBSTITUA pelo caminho da foto que você vai contar a história hoje */
+    background-image: url('imagens/imagens_ia/ChatGPT Image 26 de mai. de 2026, 11_25_17.png');
+    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1259,29 +1263,29 @@ span a {
     text-align: left;
 }
 
-/* Camada preta translúcida para dar contraste e leitura ao texto */
+/* Camada escura para o texto branco contrastar e brilhar */
 .ia-overlay-escura {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.55); /* 55% de escurecimento sobre a foto */
+    background-color: rgba(0, 0, 0, 0.50); /* 50% de preto translúcido sobre a imagem */
     z-index: 1;
 }
 
-/* Garante que o texto fique por cima da foto e da camada escura */
-.ia-conteudo-wrapper {
+/* Container do texto (Mantém a sua margem idêntica nas duas pontas) */
+.secao-historia-foto .ia-conteudo-wrapper {
     position: relative;
     z-index: 2; 
-    max-width: 600px; /* Segura a largura do texto no PC e celular */
+    max-width: 600px; 
     margin: 0 auto;
-    padding: 80px 24px; /* Afasta o texto das curvas das ondas */
+    padding: 80px 24px; 
     width: 100%;
 }
 
-/* Textos convertidos para Branco para destacar no fundo escuro */
-.secao-ia-container h2 {
+/* Títulos adaptados para Branco por conta do fundo da foto */
+.secao-historia-foto h2 {
     color: #ffffff !important; 
     font-size: 2.2rem;
     font-weight: 800;
@@ -1290,21 +1294,21 @@ span a {
     letter-spacing: -0.5px;
 }
 
-.secao-ia-container p {
-    color: #e0e0e0 !important; /* Tom de branco fosco elegante */
+.secao-historia-foto p {
+    color: #e2e8f0 !important; /* Branco suave/fosco para leitura agradável */
     font-size: 1.05rem;
     line-height: 1.6;
     margin-bottom: 35px;
 }
 
-/* Mantém o seu botão verde oliva original se destacando no escuro */
-.btn-ia-full {
+/* Mantém o seu botão verde oliva se destacando sobre o fundo escuro */
+.secao-historia-foto .btn-ia-full {
     display: inline-block;
     background-color: #54a489; 
     color: #ffffff;
     text-decoration: none;
     padding: 14px 45px;
-    border-radius: 30px; /* Formato pílula idêntico ao seu */
+    border-radius: 30px; 
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -1313,15 +1317,13 @@ span a {
     cursor: pointer;
 }
 
-.btn-ia-full:hover {
+.secao-historia-foto .btn-ia-full:hover {
     background-color: #43856f;
 }
 
 /* ==========================================================================
-   CSS AS ONDAS (MANTIDO E ADAPTADO)
+   POSICIONAMENTO DAS SUAS ONDAS (MANTIDO)
    ========================================================================== */
-
-/* Onda do Topo */
 .ia-onda-topo {
     position: absolute;
     top: -99px; 
@@ -1329,7 +1331,7 @@ span a {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    z-index: 3; /* Fica acima de toda a imagem de fundo */
+    z-index: 3;
     pointer-events: none;
 }
 
@@ -1340,7 +1342,6 @@ span a {
     height: 100px;
 }
 
-/* Onda do Rodapé */
 .ia-onda-rodape {
     position: absolute;
     bottom: -99px; 
@@ -1348,7 +1349,7 @@ span a {
     width: 100%;
     overflow: hidden;
     line-height: 0;
-    z-index: 3; /* Fica acima de toda a imagem de fundo */
+    z-index: 3;
     pointer-events: none;
 }
 
@@ -1360,20 +1361,16 @@ span a {
 }
 
 /* ==========================================================================
-   RESPONSIVIDADE PARA MONITORES GRANDES
+   RESPONSIVIDADE PARA MONITORES GRANDES (DESKTOP)
    ========================================================================== */
 @media (min-width: 1024px) {
-    .secao-ia-container {
-        min-height: 550px; /* O bloco fica mais alto e cinematográfico no PC */
+    .secao-historia-foto {
+        min-height: 550px; /* Bloco expande verticalmente no computador */
     }
-    .secao-ia-container h2 {
-        font-size: 2.8rem; /* Título maior na tela do computador */
+    .secao-historia-foto h2 {
+        font-size: 2.8rem;
     }
 }
-
-
-
-
 
 
 /* ==========================
