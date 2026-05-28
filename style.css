@@ -1237,9 +1237,9 @@ span a {
 }
 
  
-/* ==========================================================================
-   CONCEITO: A HISTÓRIA DA FOTO (TEXTO SOBRE IMAGEM DE FUNDO)
-   ========================================================================== */
+/* ============================*/
+    A HISTÓRIA DA FOTO
+/*============================= */
 
 /* 
    Caixa principal adaptada para receber a sua foto em destaque.
@@ -1259,7 +1259,7 @@ span a {
     display: flex;
     align-items: center; 
     padding: 0;
-    margin: 140px 0;
+    margin: 80px 0;
     text-align: left;
 }
 
@@ -1270,7 +1270,7 @@ span a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.50); /* 50% de preto translúcido sobre a imagem */
+    background-color: rgba(0, 0, 0, 0.50); /* 50% de preto sobre a imagem */
     z-index: 1;
 }
 
@@ -1308,7 +1308,7 @@ span a {
     color: #ffffff;
     text-decoration: none;;
     padding: 12px 22px;
-    border: 1px solid white;
+    border: 0.3px solid white;
     border-radius: 30px; 
     font-size: 1rem;
     font-weight: 600;
@@ -1708,58 +1708,7 @@ section#frase {
         padding: 40px 15px;
     }
 }
-
-
-/* --- SEÇÃO IA --- */
-
-section#imagens-ia {
-    min-height: 75vh;
-    margin: auto;
-}
-
-.card-aviso {
-            max-width: 500px;
-            text-align: center;
-            padding: 40px 30px;
-            background: #ffffff;
-            border-radius: 12px;
-            /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); Sombra suave */
-        }
-
-        .icone-ia {
-            font-size: 2.5rem;
-            color: #4a9d8f;
-            margin-bottom: 15px;
-        }
-
-        .titulo-aviso {
-            font-size: 1.6rem;
-            color: #1c2d37;
-            font-weight: 600;
-        }
-
-        .texto-aviso {
-            font-size: 1rem;
-            color: #607274;
-            line-height: 1.6;
-            margin: 15px 0px 20px 0px;
-        }
-
-            .tag-status {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #4a9d8f;
-            border: 1px solid #4a9d8f;
-            padding: 5px 12px;
-            border-radius: 50px;
-            }
             
-/* --- TERMINA SEÇÃO IA --- */
-            
-
 /* --- SEÇÕES ATIVAS --- */
 
 section.secao {
@@ -1841,65 +1790,4 @@ footer {
 
 .secao.ativa {
     display: block;
-}
-
-
-
-/* ==========================
-🌊 ONDAS SVG
-========================== */
-
-.onda{
-    width:100%;
-    line-height:0;
-    overflow:hidden;
-}
-
-.onda svg{
-    display:block;
-    width:100%;
-    height:90px;
-}
-
-/* ==========================
-🌿 ONDA DO AUTOR
-========================== */
-
-.onda-topo-autor{
-    width:100%;
-    line-height:0;
-    overflow:hidden;
-    position:relative;
-    z-index:2;
-
-    margin-bottom:-1px; /* remove corte */
-}
-
-.onda-topo-autor svg{
-    display:block;
-    width:100%;
-    height:65px; /* onda mais suave e baixa */
-}
-
-.onda-topo-autor path{
-    fill:#F2F8F6;
-}
-
-/* ==========================
-📸 ONDA INSTAGRAM
-========================== */
-
-.onda-base{
-    line-height: 0;
-    margin-bottom: -2px;
-    position: relative;
-    z-index: 2;
-}
-
-.onda-base svg{
-    display:block;
-}
-
-.onda-base path{
-    fill:#F2F8F6;
 }
