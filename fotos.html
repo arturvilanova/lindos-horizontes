@@ -1,1 +1,574 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fotografias | Lindos Horizontes</title>
+
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* ==========================================
+           RESET
+        ========================================== */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        /* ==========================================
+           CORES
+        ========================================== */
+
+        :root{
+            --Cor1:#ffb656;
+            --Cor2:#56A38A;
+            --Cor3:#2D4A71;
+            --Cor4:#0F2437;
+            --Cor5:#F2F8F6;
+        }
+
+        /* ==========================================
+           BODY
+        ========================================== */
+
+        html,
+        body{
+            width:100%;
+            min-height:100vh;
+
+            font-family:"Be Vietnam Pro", sans-serif;
+
+            background:#f5f5f5;
+
+            overflow-x:hidden;
+
+            scroll-behavior:smooth;
+        }
+
+        /* ==========================================
+           HEADER
+        ========================================== */
+
+        header{
+            width:100%;
+
+            background:white;
+
+            padding:18px 22px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            border-bottom:1px solid #e9e9e9;
+
+            position:sticky;
+            top:0;
+
+            z-index:999;
+        }
+
+        .logo-area{
+            display:flex;
+            align-items:center;
+            gap:14px;
+
+            text-decoration:none;
+        }
+
+        .logo-area img{
+            width:55px;
+            height:55px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+        }
+
+        .logo-textos{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .logo-textos h1{
+            font-size:1.5rem;
+            color:#10251d;
+        }
+
+        .logo-textos p{
+            font-size:0.82rem;
+            color:#666;
+        }
+
+        /* ==========================================
+           BOTÃO VOLTAR
+        ========================================== */
+
+        .btn-voltar{
+            text-decoration:none;
+
+            color:white;
+
+            background:var(--Cor2);
+
+            padding:10px 18px;
+
+            border-radius:50px;
+
+            font-weight:600;
+
+            transition:0.3s;
+        }
+
+        .btn-voltar:hover{
+            background:#43856f;
+        }
+
+        /* ==========================================
+           SEÇÃO FOTOS
+        ========================================== */
+
+        #caixa-das-fotos{
+            background-color:var(--Cor3);
+
+            background-image:url(imagens/horizonte_destktop.jpg);
+
+            background-position:center bottom;
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-attachment:fixed;
+
+            min-height:100vh;
+        }
+
+        #fotos{
+            padding:60px 20px;
+            height:100%;
+        }
+
+        section#fotos h1{
+            text-align:center;
+
+            font-size:38px;
+
+            margin-bottom:60px;
+
+            color:#fff;
+
+            padding:0 10px;
+        }
+
+        /* ==========================================
+           GRID
+        ========================================== */
+
+        #div-das-fotos{
+            column-count:4;
+            column-gap:10px;
+        }
+
+        /* ==========================================
+           CARD FOTO
+        ========================================== */
+
+        #caixa-das-fotos figure{
+
+            display:inline-block;
+
+            width:100%;
+
+            margin:0 0 15px;
+
+            background:#fff;
+
+            text-align:center;
+
+            border-radius:10px;
+
+            box-shadow:0 4px 10px #0000001a;
+
+            padding:10px;
+
+            position:relative;
+
+            break-inside:avoid;
+
+            transition:0.3s;
+        }
+
+        #caixa-das-fotos figure:hover{
+
+            transform:scale(1.02);
+
+            box-shadow:0 6px 14px #00000033;
+        }
+
+        /* ==========================================
+           IMAGENS
+        ========================================== */
+
+        #caixa-das-fotos figure img{
+
+            width:100%;
+
+            height:auto;
+
+            border-radius:8px;
+
+            cursor:pointer;
+
+            display:block;
+
+            object-fit:cover;
+
+            transition:transform 0.3s;
+        }
+
+        figure img:hover{
+            transform:scale(1.03);
+        }
+
+        /* ==========================================
+           LEGENDA
+        ========================================== */
+
+        figcaption{
+
+            color:#555;
+
+            font-size:16px;
+
+            text-align:justify;
+
+            line-height:23px;
+
+            margin-top:10px;
+
+            padding:0 5px;
+        }
+
+        /* ==========================================
+           FRASE
+        ========================================== */
+
+        section#frase{
+
+            text-align:center;
+
+            font-size:22px;
+
+            margin-top:50px;
+
+            color:white;
+        }
+
+        /* ==========================================
+           LIGHTBOX
+        ========================================== */
+
+        #lightbox{
+
+            position:fixed;
+
+            top:0;
+            left:0;
+
+            width:100%;
+            height:100%;
+
+            background:rgba(0,0,0,0.96);
+
+            display:flex;
+
+            justify-content:center;
+            align-items:center;
+
+            opacity:0;
+
+            pointer-events:none;
+
+            transition:0.3s;
+
+            z-index:99999;
+        }
+
+        #lightbox.ativo{
+
+            opacity:1;
+
+            pointer-events:all;
+        }
+
+        #lightbox img{
+
+            max-width:95%;
+            max-height:90%;
+
+            border-radius:10px;
+        }
+
+        #fechar{
+
+            position:absolute;
+
+            top:20px;
+            right:30px;
+
+            color:white;
+
+            font-size:45px;
+
+            cursor:pointer;
+        }
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        footer{
+
+            background:var(--Cor4);
+
+            padding:18px;
+
+            text-align:center;
+
+            color:#c7c7c7;
+        }
+
+        /* ==========================================
+           RESPONSIVO
+        ========================================== */
+
+        @media(max-width:1200px){
+
+            #div-das-fotos{
+                column-count:3;
+            }
+
+        }
+
+        @media(max-width:800px){
+
+            #div-das-fotos{
+                column-count:2;
+            }
+
+            section#fotos h1{
+                font-size:30px;
+            }
+
+        }
+
+        @media(max-width:480px){
+
+            header{
+
+                padding:14px 12px;
+            }
+
+            .logo-textos{
+                display:none;
+            }
+
+            .logo-area img{
+
+                width:42px;
+                height:42px;
+            }
+
+            .btn-voltar{
+
+                font-size:14px;
+
+                padding:8px 14px;
+            }
+
+            #div-das-fotos{
+                column-count:1;
+            }
+
+            section#fotos h1{
+                font-size:20px;
+            }
+
+            figure{
+                margin:0 0 20px;
+                padding:8px;
+            }
+
+            figcaption{
+
+                font-size:15px;
+
+                text-align:center;
+
+                padding:0 4px;
+            }
+
+            section#frase{
+                font-size:17.5px;
+            }
+
+            section#fotos{
+
+                background-size:cover;
+
+                background-position:center center;
+
+                background-attachment:scroll;
+
+                padding:40px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header>
+
+        <a href="index.html" class="logo-area">
+
+            <img src="imagens/logo.png" alt="Logo Lindos Horizontes">
+
+            <div class="logo-textos">
+
+                <h1>Lindos Horizontes</h1>
+
+                <p>Fotografias autorais</p>
+
+            </div>
+
+        </a>
+
+        <a href="index.html" class="btn-voltar">
+            Voltar
+        </a>
+
+    </header>
+
+    <!-- ==========================================
+         GALERIA
+    =========================================== -->
+
+    <main id="caixa-das-fotos">
+
+        <section id="fotos">
+
+            <h1>
+                Fotografias autorais de "Lindos Horizontes"
+            </h1>
+
+            <div id="div-das-fotos">
+
+                <!-- COLE TODOS OS SEUS FIGURES AQUI -->
+
+            </div>
+
+            <section id="frase">
+
+                <p>
+                    "A natureza se revela para quem sabe observar."
+                    <br><br>
+                    🍃 🌿
+                </p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- ==========================================
+         LIGHTBOX
+    =========================================== -->
+
+    <div id="lightbox">
+
+        <span id="fechar">&times;</span>
+
+        <img id="lightbox-img" src="" alt="Imagem ampliada">
+
+    </div>
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        © 2026 - Lindos Horizontes. Todos os direitos reservados.
+
+    </footer>
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+        const imagens =
+            document.querySelectorAll("#div-das-fotos img");
+
+        const lightbox =
+            document.getElementById("lightbox");
+
+        const lightboxImg =
+            document.getElementById("lightbox-img");
+
+        const fechar =
+            document.getElementById("fechar");
+
+        imagens.forEach(img => {
+
+            img.addEventListener("click", () => {
+
+                lightbox.classList.add("ativo");
+
+                lightboxImg.src = img.src;
+
+            });
+
+        });
+
+        fechar.addEventListener("click", () => {
+
+            lightbox.classList.remove("ativo");
+
+        });
+
+        lightbox.addEventListener("click", e => {
+
+            if(e.target === lightbox){
+
+                lightbox.classList.remove("ativo");
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
