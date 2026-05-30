@@ -1389,14 +1389,11 @@ span a {
     background: #F2F8F6;
     margin-top:0px;
     padding:50px 15px 70px;
-
     display:flex;
     justify-content:center;
     align-items:center;
-
-    position:relative;
-    overflow:hidden;
-
+    position: relative;
+    overflow: visible;
     z-index:2;
 }
 
