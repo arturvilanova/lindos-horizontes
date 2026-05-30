@@ -717,6 +717,7 @@ section#area-inicio, section#inicio {
     align-items: flex-start;
     height: auto;
     background-color: white;
+    position: relative;
 }
 
 #lado-esquerdo, #lado-direito {
@@ -847,7 +848,7 @@ section#area-inicio, section#inicio {
 
 .onda-em-baixo {
     position: absolute;
-    bottom: -99px;
+    bottom: 0;
     left: 0;
 
     width: 100%;
@@ -857,7 +858,6 @@ section#area-inicio, section#inicio {
     line-height: 0;
 
     z-index: 20;
-
     pointer-events: none;
 }
 
