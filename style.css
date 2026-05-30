@@ -1357,6 +1357,24 @@ span a {
 🌿 ÁREA INSTAGRAM
 ========================== */
 
+.onda-em-cima {
+            position: absolute;
+            top: -99px; 
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 3; /* Fica acima da imagem de fundo para cortar a foto de forma limpa */
+            pointer-events: none;
+        }
+
+        .onda-em-cima svg {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100px;
+        }
+
 #instagram-area{
     width:100%;
     margin-top:-2px;
