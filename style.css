@@ -1301,6 +1301,7 @@ span a {
     z-index: 2; 
     max-width: 600px; 
     margin: 0 auto;
+    margin-bottom: 30px;
     padding: 80px 24px; 
     width: 100%;
 }
