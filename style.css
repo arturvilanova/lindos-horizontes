@@ -848,25 +848,22 @@ section#area-inicio, section#inicio {
 }
 
 .onda-em-baixo{
-    position:absolute;
-    left:0;
-    bottom:-1px;
-
     width:100%;
-    height:120px;
+    height:100px;
 
     overflow:hidden;
     line-height:0;
 
-    z-index:50;
-
-    pointer-events:none;
+    background:#ffffff;
 }
 
 .onda-em-baixo svg{
     display:block;
+
     width:100%;
     height:100%;
+
+    transform:rotate(180deg);
 }
 
 /* RESPONSIVIDADE SEÇÃO INÍCIO */
