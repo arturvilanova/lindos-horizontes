@@ -736,6 +736,7 @@ section#area-inicio, section#inicio {
     position: relative;
     overflow: hidden;
     height: 520px;
+    overflow: visible;
 }
 
 #lado-esquerdo {
