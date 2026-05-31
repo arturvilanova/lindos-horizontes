@@ -838,7 +838,7 @@ section#area-inicio, section#inicio {
 }
 
 #frase-dia {
-  whidth: max-content;
+  width: max-content;
   margin-top: 40px;
   font-size: 22px;
   color: #666;
