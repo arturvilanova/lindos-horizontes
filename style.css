@@ -345,50 +345,45 @@ header {
 @media (max-width: 480px) {
 
     .header-topo{
+        height: 78px; /* diminui a altura */
+        padding: 0 14px;
 
-        padding:16px 14px;
-
-        gap:10px;
+        display:flex;
+        align-items:center; /* centraliza verticalmente */
+        justify-content:space-between;
     }
 
-    /* =====================================
-       LOGO
-    ===================================== */
-
+    /* LOGO */
     .logo-topo{
+        width:44px;
+        height:44px;
 
-        width:40px;
-        height:40px;
-
-        margin-left:2px;   /* (1) margem esquerda */
-        margin-right:8px;  /* (2) espaço da logo */
+        margin:0; /* remove margens */
     }
 
-    /* =====================================
-       BLOCO DA LOGO
-    ===================================== */
-
+    /* BLOCO DA ESQUERDA */
     .brand-area{
+        display:flex;
+        align-items:center;
+        height:100%;
         gap:0;
     }
 
-        .brand-textos{
+    .brand-textos{
         display:none;
     }
 
-    /* =====================================
-       BOTÃO MODOS
-    ===================================== */
-
+    /* TOGGLE */
     .modo-toggle{
+        margin:0;
+        padding:6px;
 
-        margin-right:2px; /* (3) margem direita */
+        display:flex;
+        align-items:center;
 
-        padding:8px;
-
-        gap:12px;
+        transform:scale(0.90);
+        transform-origin:center;
     }
-
 }
 
 
