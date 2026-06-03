@@ -447,6 +447,7 @@ section#area-inicio, section#inicio {
     font-size: 35px;
     margin-bottom: 30px;
     color: #000000;
+    
 }
 
 #bem-vindo a {
@@ -969,7 +970,7 @@ span a {
     display: flex;
     align-items: center; 
     padding: 0;
-    margin: 70px 0 50px 0;
+    margin-bottom: 180px;
     text-align: left;
 }
 
