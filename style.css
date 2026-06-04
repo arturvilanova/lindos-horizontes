@@ -410,8 +410,7 @@ section#area-inicio, section#inicio {
     height: 520px;
     display: flex;
     flex-direction: column;
-    background: var(--Cor5);
-
+    background-color:#ECFDF5;
 }
 
 #lado-direito {
