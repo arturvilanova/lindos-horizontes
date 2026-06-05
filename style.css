@@ -411,7 +411,7 @@ section#area-inicio, section#inicio {
     height: 520px;
     display: flex;
     flex-direction: column;
-    background-color:#ECFDF5;
+    background: var(--Cor4);
 }
 
 #lado-direito {
@@ -602,7 +602,7 @@ section#area-inicio, section#inicio {
     #lado-esquerdo, #lado-direito {
         width: 100%;
         margin-top: 0;
-        background-color: #56a38b13;
+        background-color: var(--Cor4);;
     }
 
     #lado-esquerdo {
