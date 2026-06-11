@@ -492,9 +492,13 @@ section#area-inicio, section#inicio {
         max-height: 2000px;
     }
 
+    .slide_1 {
+        height: 400px;
+    }
+
     .slide_1 img {
         width: 100%;
-        height: 350px;
+        height: 250px;
         margin: 0px;
         border-radius: 0px;
     }
