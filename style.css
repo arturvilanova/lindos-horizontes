@@ -70,13 +70,8 @@ main {
     display:flex;
     align-items:center;
     justify-content:space-between;
-     height:35px;
-    padding:18px 22px;
-
-    background:#fff;
-
-    gap:18px;
-
+    height:90px;
+    padding: 20px 14px;
     border-bottom:1px solid #ececec;
     position: sticky;
     top: 0;
@@ -166,8 +161,8 @@ main {
 @media (max-width: 480px) {
 
     .header-topo{
-        height: 90px; /* diminui a altura */
-        padding: 20px 14px;
+        height: 90px;
+        padding: 18px 13px;
         display:flex;
         align-items:center; /* centraliza verticalmente */
         justify-content:space-between;
@@ -177,8 +172,7 @@ main {
     .logo-topo{
         width:44px;
         height:44px;
-
-        margin-left: 10px; /* remove margens */
+        margin-left: 10px;
     }
 
     /* BLOCO DA ESQUERDA */
@@ -188,23 +182,6 @@ main {
         height:100%;
         gap:0;
     }
-
-    .brand-textos{
-     /*display:none;*/
-    }
-
-    /* TOGGLE */
-    .modo-toggle{
-        margin:0;
-        padding:6px;
-
-        display:flex;
-        align-items:center;
-
-        transform:scale(0.90);
-        transform-origin:center;
-    }
-}
 
 
 /* SEÇÃO INÍCIO */
