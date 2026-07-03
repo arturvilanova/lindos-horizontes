@@ -62,40 +62,6 @@ main {
     height: auto;
 }
 
-/* CABEÇALHO 
-
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 3;
-    position: relative;
-    height: 100px;
-    border-bottom: 5px solid #f0f0f0;
-}
-
-#caixa-logo {
-    width: max-content;
-    justify-content: center;
-    align-items: center;
-    padding:20px 35px 15px 10px;
-    width: max-content;
-    background-color: purple;
-}
-
-#logo {
-    display: block;
-    height: 40px;
-    border-radius: 50%;
-    border: 1px solid rgb(255, 255, 255);
-    box-shadow: 3px 1px 10px #00000042;
-    margin: 0px 5px 0px 15px;
-    padding:15px
-    user-select: none;
-    -webkit-user-drag: none;
-    -webkit-tap-highlight-color: transparent;
-} */
-
 /* =========================================
    HEADER NOVO
 ========================================= */
@@ -126,9 +92,7 @@ header {
 .brand-area{
     display:flex;
     align-items:center;
-
     gap:14px;
-
     min-width:0;
 }
 
@@ -136,10 +100,8 @@ header {
 .logo-topo{
     width:58px;
     height:58px;
-
     border-radius:50%;
     object-fit:cover;
-
     flex-shrink:0;
 }
 
@@ -172,7 +134,7 @@ header {
 }
 
 /* =========================================
-   MOBILE
+   HEADER TABLET
 ========================================= */
 
 @media (max-width: 768px) {
@@ -195,11 +157,6 @@ header {
         font-size: 0.72rem;
     }
 
-    .modo-toggle {
-        transform: scale(0.88);
-        transform-origin: right top;
-    }
-
 }
 
 /* =========================================
@@ -209,9 +166,8 @@ header {
 @media (max-width: 480px) {
 
     .header-topo{
-        height: 78px; /* diminui a altura */
-        padding: 0 14px;
-
+        height: 90px; /* diminui a altura */
+        padding: 20px 14px;
         display:flex;
         align-items:center; /* centraliza verticalmente */
         justify-content:space-between;
@@ -222,7 +178,7 @@ header {
         width:44px;
         height:44px;
 
-        margin:0; /* remove margens */
+        margin-left: 10px; /* remove margens */
     }
 
     /* BLOCO DA ESQUERDA */
