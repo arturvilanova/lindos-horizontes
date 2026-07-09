@@ -433,9 +433,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (fraseElemento) {
 
-            fraseElemento.textContent =
-                "✨ " + frase;
-
         }
 
     }
