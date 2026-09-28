@@ -3,508 +3,1133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta name="theme-color" content="#0F2437">
     <meta name="msapplication-navbutton-color" content="#0F2437">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <title>Lindos Horizontes</title>
-  <meta name="description" content="A natureza se revela para quem sabe observar.
-🍁 🌿">
-    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
 
-    <script defer src="script.js"></script>
+    <meta
+        name="description"
+        content="A natureza se revela para quem sabe observar. 🍁 🌿"
+    >
+
+    <link rel="shortcut icon" href="imagens/icone.png" type="image/x-icon">
+
+    <style>
+
+@charset "UTF-8";
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Cor1: #FFB657;
+    --Cor2: #57A389;
+    --Cor3: #13326E;
+    --Cor4: #ECFDF5;
+    --Cor5: #F2F8F6;
+    --Cor6: #0F2437;
+    --Cor7: #2D4A71;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+html, body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.header-topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    padding: 20px 14px;
+    border-bottom: 1px solid #ececec;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    background: white;
+}
+
+.brand-area {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
+
+.logo-topo {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.brand-textos {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.brand-textos h1 {
+    font-size: 1.55rem;
+    font-weight: 700;
+    color: #10251d;
+    margin: 0;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.brand-textos p {
+    margin: 4px 0 0;
+    font-size: 0.82rem;
+    color: #5b5b5b;
+    white-space: nowrap;
+}
+
+/* INÍCIO / HERO */
+#inicio {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#area {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    background-color: white;
+    position: relative;
+}
+
+#lado-esquerdo,
+#lado-direito {
+    width: 50%;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    background: var(--Cor4);
+}
+
+#lado-esquerdo {
+    justify-content: space-between;
+}
+
+#lado-direito {
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+#bem-vindo {
+    flex: none;
+    padding: 60px 30px 30px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#bem-vindo h1 {
+    font-size: 35px;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+#bem-vindo a {
+    background: var(--Cor2);
+    width: max-content;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    display: block;
+    border: 0.5px solid #ffffff5b;
+}
+
+#bem-vindo a:hover {
+    background: #5fb69a;
+}
+
+/* CARROSSEL */
+.carousel_1 {
+    overflow: visible;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.track_1 {
+    display: flex;
+    transition: transform 0.4s ease;
+    width: 100%;
+    will-change: transform;
+}
+
+.slide_1 {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slide_1 img {
+    width: calc(100% - 64px);
+    height: 330px;
+    margin: 35px 32px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1.7px solid #9d9d9d;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.10);
+    will-change: transform;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 25px;
+    margin-top: 5px;
+    padding: 0;
+    gap: 10px;
+    position: relative;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50px;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    width: 25px;
+    background: #56A38A;
+}
+
+#frase-dia {
+    width: max-content;
+    max-width: 90%;
+    margin-top: 40px;
+    font-size: 22px;
+    color: #666;
+    text-align: center;
+    font-style: italic;
+}
+
+/* ONDAS */
+.onda-em-baixo {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    background: #ffffff;
+}
+
+.onda-em-baixo svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: rotate(180deg);
+}
+
+/* GALERIA DESTAQUE */
+#galeria-preview {
+    padding: 45px 20px;
+}
+
+.galeria-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.galeria-titulo {
+    font-size: 40px;
+    margin-bottom: 30px;
+    color: var(--Cor3);
+    text-align: left;
+}
+
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.foto {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: block;
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+@media (hover: hover) {
+    .foto:hover img { transform: scale(1.05); }
+}
+
+.galeria-botao-area {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn-ver-mais {
+    text-decoration: none;
+    padding: 12px 22px;
+    border: 2px solid var(--Cor2);
+    border-radius: 50px;
+    color: var(--Cor2);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-ver-mais:hover {
+    background: var(--Cor2);
+    color: white;
+}
+
+/* HISTÓRIA DA FOTO */
+.secao-historia-foto {
+    position: relative;
+    width: 100%;
+    min-height: 460px;
+    background-image: url('imagens/Imagens_perfil/painel-solar.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 40px 0 150px;
+    text-align: left;
+}
+
+.ia-overlay-escura {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 1;
+}
+
+.secao-historia-foto .ia-conteudo-wrapper {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    margin: 70px 0 50px;
+    padding: 80px 24px;
+    width: 100%;
+}
+
+.secao-historia-foto h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+}
+
+.secao-historia-foto p {
+    color: #e2e8f0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 35px;
+}
+
+.secao-historia-foto .btn-ia-full {
+    display: inline-block;
+    background-color: #54a489;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 12px 22px;
+    border: 0.2px solid white;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.secao-historia-foto .btn-ia-full:hover {
+    background-color: #43856f;
+}
+
+/* INSTAGRAM */
+#instagram-area {
+    width: 100%;
+    background: var(--Cor4);
+    padding: 50px 15px 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: visible;
+    z-index: 2;
+}
+
+.onda-em-cima {
+    position: absolute;
+    top: -99px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 20;
+    pointer-events: none;
+}
+
+.onda-em-cima svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.instagram-container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.instagram-logo-box {
+    position: relative;
+    width: 72px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-instagram {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    display: block;
+}
+
+.logo-lh {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    padding: 2px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+#instagram-area h3 {
+    color: #212121;
+    margin: 20px 0 4px;
+}
+
+#instagram-area span {
+    margin-bottom: 15px;
+    color: #696969;
+    font-size: 14px;
+}
+
+.instagram-texto {
+    max-width: 620px;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #111;
+    margin-bottom: 30px;
+}
+
+.btn-instagram {
+    color: #696969;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: 1px solid #696969;
+    border-radius: 10px;
+}
+
+.btn-instagram:active { transform: scale(0.98); }
+
+/* RODAPÉ */
+footer {
+    background: var(--Cor6);
+    width: 100%;
+    margin-top: auto;
+    padding: 15px 0;
+}
+
+#direitos {
+    color: #a8a8a8bd;
+    text-align: center;
+    font-size: 14.5px;
+    padding: 0 20px;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+    #area { flex-direction: column; }
+
+    #lado-esquerdo,
+    #lado-direito {
+        width: 100%;
+    }
+
+    #lado-esquerdo { height: auto; }
+    #lado-direito { height: 440px; }
+
+    #bem-vindo h1 { font-size: 32px; }
+
+    .galeria-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+    }
+}
+
+/* TABLET PEQUENO */
+@media (max-width: 768px) {
+    .header-topo {
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-topo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .brand-textos h1 { font-size: 1.2rem; }
+    .brand-textos p { font-size: 0.72rem; }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+    .header-topo {
+        height: 90px;
+        padding: 18px 13px;
+    }
+
+    .logo-topo {
+        width: 44px;
+        height: 44px;
+        margin-left: 10px;
+    }
+
+    .brand-area { gap: 0; }
+
+    #lado-esquerdo {
+        height: auto;
+        padding-bottom: 30px;
+    }
+
+    #bem-vindo h1 {
+        text-align: center;
+        font-size: 30px;
+    }
+
+    #bem-vindo a {
+        margin: 15px auto 0;
+        padding: 8px 13px;
+        font-size: 17px;
+    }
+
+    #lado-direito {
+        height: 300px;
+        justify-content: flex-start;
+    }
+
+    .carousel_1,
+    .track_1,
+    .slide_1 {
+        width: 100%;
+    }
+
+    .slide_1 img {
+        width: 100%;
+        height: 250px;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .dots {
+        margin-top: 5px;
+    }
+
+    #frase-dia {
+        margin-top: 45px;
+        font-size: 18px;
+    }
+
+    #galeria-preview { padding: 28px 6px; }
+
+    .galeria-container { max-width: 100%; }
+
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        align-items: start;
+    }
+
+    .foto {
+        position: relative;
+        margin: 0;
+        border-radius: 7px;
+    }
+
+    .foto::before {
+        content: "";
+        display: block;
+        padding-top: 100%;
+    }
+
+    .foto img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .galeria-titulo {
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .galeria-botao-area { justify-content: center; }
+
+    .secao-historia-foto {
+        min-height: 460px;
+        margin: 40px 0 120px;
+    }
+
+    .secao-historia-foto .ia-conteudo-wrapper {
+        margin: 40px 0;
+        padding: 60px 24px;
+    }
+
+    .secao-historia-foto h2 { font-size: 2rem; }
+    .secao-historia-foto p { font-size: 1rem; }
+
+    #instagram-area { padding: 15px 22px 70px; }
+
+    .instagram-logo-box {
+        width: 52px;
+        height: 52px;
+    }
+
+    .logo-instagram {
+        width: 48px;
+        height: 48px;
+    }
+
+    .logo-lh {
+        width: 25px;
+        height: 25px;
+        top: -4px;
+        left: -4px;
+    }
+
+    #instagram-area span {
+        margin: 4px 0 15px;
+        font-size: 13.5px;
+    }
+
+    .instagram-texto {
+        font-size: 14.5px;
+        line-height: 1.8;
+        margin-bottom: 28px;
+    }
+
+    .btn-instagram {
+        font-size: 16px;
+        padding: 8px 15px;
+    }
+
+    footer { font-size: 10px; }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+    .secao-historia-foto { min-height: 550px; }
+    .secao-historia-foto h2 { font-size: 2.8rem; }
+}
+
+    </style>
 </head>
 
 <body>
 
 <header class="header-topo">
-
-    <!-- ESQUERDA -->
     <div class="brand-area">
-
-        <a href="index.html">
-    <img
-        src="imagens/Imagens_logos/LindosHorizontes.png"
-        alt="Logo"
-        class="logo-topo"
-    >
+        <a href="index.html" aria-label="Página inicial">
+            <img
+                src="imagens/Imagens_logos/LindosHorizontes.png"
+                alt="Lindos Horizontes"
+                class="logo-topo"
+            >
         </a>
-        
 
         <div class="brand-textos">
             <h1>Lindos Horizontes</h1>
-
-            <p>
-                A natureza se revela para quem sabe observar.
-            </p>
+            <p>A natureza se revela para quem sabe observar.</p>
         </div>
-
     </div>
 </header>
 
-    <main id="conteudo">
+<main id="conteudo">
 
-        <!-- ========================= -->
-        <!-- SEÇÃO INÍCIO -->
-        <!-- ========================= -->
+    <section id="inicio">
 
-        <section id="inicio" class="secao ativa">
+        <!-- HERO -->
+        <div id="area">
 
-            <!-- HERO -->
+            <div id="lado-esquerdo">
+                <div id="bem-vindo">
 
-            <div id="area">
+                    <h1>
+                        Tenha um olhar criativo da natureza e transforme detalhes simples em grandes histórias.
+                    </h1>
 
-                <div id="lado-esquerdo">
-
-                    <div id="bem-vindo">
-
-                        <h1>
-                            Tenha um olhar criativo da natureza e transforme detalhes simples em grandes histórias.
-                        </h1>
-
-                        <p>
-                            <a href="saiba_mais.html">
-                                Saiba mais
-                            </a>
-                        </p>
-
-                    </div>
+                    <p>
+                        <a href="saiba_mais.html">Saiba mais</a>
+                    </p>
 
                 </div>
-
-                <!-- SLIDES -->
-
-                <section id="lado-direito">
-
-                    <div class="carousel_1">
-
-                        <div class="track_1">
-
-                            <div class="slide_1">
-                                <img src="imagens/Imagens_slides/flores.jpg">
-                            </div>
-
-                            <div class="slide_1">
-                                <img src="imagens/Imagens_slides/girassol.jpg">
-                            </div>
-
-                            <div class="slide_1">
-                                <img src="imagens/Imagens_slides/cumulo-nimbo.jpg">
-                            </div>
-
-                            <div class="slide_1">
-                                <img src="imagens/Imagens_slides/folha-de-mandioca.jpg">
-                            </div>
-
-                        </div>
-
-                        <div class="dots">
-
-                            <span class="dot active"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-                            <span class="dot"></span>
-
-                        </div>
-
-                    </div>
-
-                    <p id="frase-dia"></p>
-
             </div>
 
-            <div class="onda-em-baixo">
-                       <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-                            <path d="M0,50 C600,10 700,125 1440,30 L1440,100 L0,100 Z" fill="#ECFDF5"/>
-                       </svg>
-                    </div>
-          </section>
+            <!-- CARROSSEL -->
+            <section id="lado-direito" aria-label="Fotografias em destaque">
 
-    
+                <div class="carousel_1">
 
-            <!-- GALERIA -->
+                    <div class="track_1">
 
-            <section id="galeria-preview">
+                        <div class="slide_1">
+                            <img
+                                src="imagens/Imagens_slides/flores.jpg"
+                                alt="Flores"
+                            >
+                        </div>
 
-                <div class="galeria-container">
+                        <div class="slide_1">
+                            <img
+                                src="imagens/Imagens_slides/girassol.jpg"
+                                alt="Girassol"
+                            >
+                        </div>
 
-                    <h2 class="galeria-titulo">
-                        A criatividade é o que transforma
-                    </h2>
+                        <div class="slide_1">
+                            <img
+                                src="imagens/Imagens_slides/cumulo-nimbo.jpg"
+                                alt="Nuvem cúmulo-nimbo"
+                            >
+                        </div>
 
-                    <div class="galeria-grid">
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/arvore-florida.jpg">
-                        </figure>
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/goticulas-na-folha.jpg">
-                        </figure>
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/arco-iris.jpg">
-                        </figure>
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/cumulo-nimbo.jpg">
-                        </figure>
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/ceu-colorido.jpg">
-                        </figure>
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/painel-solar.jpg">
-                        </figure>
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/colecoes.jpg">
-                        </figure>
-
-                        <figure class="foto">
-                            <img src="imagens/Imagens_perfil/xique-xique.jpg">
-                        </figure>
+                        <div class="slide_1">
+                            <img
+                                src="imagens/Imagens_slides/folha-de-mandioca.jpg"
+                                alt="Folha de mandioca"
+                            >
+                        </div>
 
                     </div>
 
-                    <div class="galeria-botao-area">
-
-                        <a
-                            href="fotos.html"
-                            class="btn-ver-mais"
-                        >
-                            Ver todas as fotos
-                        </a>
-
+                    <div class="dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
                     </div>
 
                 </div>
+
+                <p id="frase-dia"></p>
+
             </section>
+        </div>
 
-<!-- SEÇÃO: A HISTÓRIA DA FOTO (LINDOS HORIZONTES) -->
-<section class="secao-ia-container secao-historia-foto">
-
-    <!-- Camada escura por cima da foto para dar leitura e elegância ao texto -->
-    <div class="ia-overlay-escura"></div>
-
-    <!-- Conteúdo Textual Alinhado à Esquerda -->
-    <div class="ia-conteudo-wrapper">
-        <h2>A história por trás da foto</h2>
-        <p>Cada clique guarda um segundo de paciência, luz e silêncio. Descubra os bastidores, os segredos técnicos e a jornada por trás da nossa última captura na natureza.</p>
-        
-        <!-- Botão no seu modelo padrão ajustado para o artigo -->
-        <a href="#artigo-da-foto" class="btn-ia-full">Ler artigo</a>
-    </div>
-
-</section>
-
-
-    <!-- INSTAGRAM -->
-
-    <section id="instagram-area">
-
-                <!-- Onda -->
-        <div class="onda-em-cima">
-            <svg viewBox="0 0 1440 100" fill="none" xmlns="http://w3.org" preserveAspectRatio="none">
-                <path d="M0,50 C600,10 700,125 1440,30 L1440,100 L0,100 Z" fill="#ECFDF5"/>
+        <div class="onda-em-baixo">
+            <svg
+                viewBox="0 0 1440 100"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="none"
+                aria-hidden="true"
+            >
+                <path
+                    d="M0,50 C600,10 700,125 1440,30 L1440,100 L0,100 Z"
+                    fill="#ECFDF5"
+                />
             </svg>
         </div>
 
-    <div class="instagram-container">
+        <!-- GALERIA -->
+        <section id="galeria-preview">
 
-        <div class="instagram-logo-box">
+            <div class="galeria-container">
 
-            <img
-                src="imagens/Imagens_logos/Instagram-logo.png"
-                alt="Instagram"
-                class="logo-instagram"
-            >
+                <h2 class="galeria-titulo">
+                    A criatividade é o que transforma
+                </h2>
 
-            <img
-                src="imagens/logo.jpeg"
-                alt="Lindos Horizontes"
-                class="logo-lh"
-            >
+                <div class="galeria-grid">
 
-        </div>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/arvore-florida.jpg"
+                            alt="Árvore florida"
+                        >
+                    </figure>
 
-        <h3>Siga-me no Instagram</h3>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/goticulas-na-folha.jpg"
+                            alt="Gotículas sobre uma folha"
+                        >
+                    </figure>
 
-        <span>@lindoshorizontes</span>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/arco-iris.jpg"
+                            alt="Arco-íris"
+                        >
+                    </figure>
 
-        <p class="instagram-texto">
-            Acompanhe novas fotografias e momentos da natureza
-            diretamente no Instagram.
-        </p>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/cumulo-nimbo.jpg"
+                            alt="Nuvem cúmulo-nimbo"
+                        >
+                    </figure>
 
-        <a
-            href="https://instagram.com/lindoshorizontes"
-            target="_blank"
-            class="btn-instagram"
-        >
-            Seguir
-        </a>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/ceu-colorido.jpg"
+                            alt="Céu colorido"
+                        >
+                    </figure>
 
-    </div>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/painel-solar.jpg"
+                            alt="Painel solar com gotículas"
+                        >
+                    </figure>
 
-    </section>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/colecoes.jpg"
+                            alt="Coleção de elementos naturais"
+                        >
+                    </figure>
 
-    </section>
+                    <figure class="foto">
+                        <img
+                            src="imagens/Imagens_perfil/xique-xique.jpg"
+                            alt="Xique-xique"
+                        >
+                    </figure>
 
-        <!-- ========================= -->
-        <!-- SEÇÃO FOTOS -->
-        <!-- ========================= -->
+                </div>
 
-        <section id="caixa-das-fotos">
-
-        <section id="fotos" class="secao">
-
-            <h1>
-                Fotografias autorais de "Lindos Horizontes".
-            </h1>
-
-            <div id="div-das-fotos">
-
-                <figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/girassol.jpg" alt="Flor do girassol">
-    <figcaption>
-        O <strong>Girassol</strong> é uma linda flor que transmite beleza e alegria.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/cumulo-nimbo.jpg" alt="Nuvens de chuva">
-    <figcaption>
-        "<strong>Cúmulos-nimbos</strong>", nuvens responsáveis por trazer grandes tempestades.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/ceu_agua.jpg" alt="Nuvens de chuva">
-    <figcaption>
-        O instante que virou eternidade.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/florzinhas.jpg" alt="Uma linda flor">
-    <figcaption>
-        Seus filetes e ânteras são tão pequeninos! Mas o seu aroma é sentido de longe.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/painel-solar.jpg" alt="Orvalho em placa solar">
-    <figcaption>
-        Em qualquer superfície, a natureza demonstra sua arte e beleza.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/angico.jpg" alt="Árvore">
-    <figcaption>
-        Esta linda árvore tem grande resistência à estiagem e sua flor é linda.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/mandacaru.jpg" alt="Mandacaru">
-    <figcaption>
-        <strong>Mandacaru</strong> jovem, essa planta pode viver muito mais que 100 anos.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/bananeira-ceu-azul.jpg" alt="Folha de banana">
-    <figcaption>
-        Nada melhor que usar o azul do céu como plano de fundo.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/folha-de-mandioca.jpg" alt="Folha da mandioca">
-    <figcaption>
-        A <strong>folha da mandioca</strong> traz consigo beleza e cores vibrantes.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/tempo-firme.jpg" alt="Céu azul">
-    <figcaption>
-        O céu é lindo em qualquer lugar do mundo.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/beijo.jpg" alt="Foto artística">
-    <figcaption>
-          A história encontra abrigo na força da natureza.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/serra_da_capivara_1.jpg" alt="Serra da Capivara">
-    <figcaption>
-        As rochas contando o passado e as árvores florescendo o futuro.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/serra_da_capivara.jpg.jpg" alt="Serra da Capivara">
-    <figcaption>
-         Vista do parque nacional Serra da capivara.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/ovos-no-ninho.jpg" alt="Ninho">
-    <figcaption>
-        Com o brilho do sol no ninho, essa foto ficou incrível.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/ceu-colorido.jpg" alt="Céu">
-    <figcaption>
-         Momento em que o sol toca as nuvens mais altas do céu.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/coentro.jpg" alt="Coentro">
-    <figcaption>
-        O sabor da terra desenhado em folhas delicadas.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/nuvem.jpg" alt="Nuvens">
-    <figcaption>
-        As nuvens não apagam a luz; apenas criam o cenário perfeito para ela brilhar.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/linda_flor.jpg" alt="Flor">
-    <figcaption>
-         Ela capricha no visual, pois sabe que tem apenas uma chance por ano para mostrar sua beleza.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/folha_de_bananeira.jpg" alt="Folha">
-    <figcaption>
-        A vida pulsa nos detalhes que a gente costuma não ver.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/folha_de_mangueira.jpg" alt="Folha de mangueira">
-    <figcaption>
-        Linhas, simetria e perfeição.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/flores_ceu.jpg" alt="Galhos floridos">
-    <figcaption>
-        O céu apenas emprestou o azul para o verde poder brilhar.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/flores.jpg" alt="Linda flor">
-    <figcaption>
-         Por ser um tom raro, o lilás faz com que está flor se destaque magnificamente no sertão.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/nuvens_e_lua.jpg" alt="Lua entre nuvens">
-    <figcaption>
-         A Lua de Prata se preparando para mostrar sua linda cor de zinco à noite.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/folha-orvalho.jpg" alt="Orvalho">
-    <figcaption>
-        O frescor vivo da renovação.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/paredoes.jpg" alt="Paredões">
-    <figcaption>
-          Incríveis paredões com  dezenas de métodos de altura.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/folha_de_banana.jpg" alt="Olho da banana">
-    <figcaption>
-        O ritmo próprio da natureza se renovando em cada curva e espiral.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/pintura_rupestre.jpg" alt="Símbolo">
-    <figcaption>
-        Pintura símbolo do parque nacional Serra da Capivara.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/pasto_verde.jpg" alt="Pasto verde">
-    <figcaption>
-        Tramas de luz e folhas.
-    </figcaption>
-</figure>
-
-<figure>
-    <img src="imagens/imagens-conteudo/galeria_principal/pasto.jpg" alt="Pasto verde">
-    <figcaption>
-        A essência simples do campo.
-    </figcaption>
-</figure>
+                <div class="galeria-botao-area">
+                    <a href="fotos.html" class="btn-ver-mais">
+                        Ver todas as fotos
+                    </a>
+                </div>
 
             </div>
 
-            <section id="frase">
+        </section>
+
+        <!-- HISTÓRIA DA FOTO -->
+        <section class="secao-historia-foto">
+
+            <div class="ia-overlay-escura"></div>
+
+            <div class="ia-conteudo-wrapper">
+
+                <h2>A história por trás da foto</h2>
 
                 <p>
-                    "A natureza se revela para quem sabe observar".
-                    <br>
-                    &#x1F341; &#x1F33F;
+                    Cada clique guarda um segundo de paciência, luz e silêncio.
+                    Descubra os bastidores, os segredos técnicos e a jornada
+                    por trás da nossa última captura na natureza.
                 </p>
 
-            </section>
+                <a href="#artigo-da-foto" class="btn-ia-full">
+                    Ler artigo
+                </a>
+
+            </div>
 
         </section>
+
+        <!-- INSTAGRAM -->
+        <section id="instagram-area">
+
+            <div class="onda-em-cima">
+                <svg
+                    viewBox="0 0 1440 100"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="none"
+                    aria-hidden="true"
+                >
+                    <path
+                        d="M0,50 C600,10 700,125 1440,30 L1440,100 L0,100 Z"
+                        fill="#ECFDF5"
+                    />
+                </svg>
+            </div>
+
+            <div class="instagram-container">
+
+                <div class="instagram-logo-box">
+
+                    <img
+                        src="imagens/Imagens_logos/Instagram-logo.png"
+                        alt="Instagram"
+                        class="logo-instagram"
+                    >
+
+                    <img
+                        src="imagens/logo.jpeg"
+                        alt="Lindos Horizontes"
+                        class="logo-lh"
+                    >
+
+                </div>
+
+                <h3>Siga-me no Instagram</h3>
+
+                <span>@lindoshorizontes</span>
+
+                <p class="instagram-texto">
+                    Acompanhe novas fotografias e momentos da natureza
+                    diretamente no Instagram.
+                </p>
+
+                <a
+                    href="https://instagram.com/lindoshorizontes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn-instagram"
+                >
+                    Seguir
+                </a>
+
+            </div>
+
         </section>
 
-    </main>
+    </section>
 
-    <!-- RODAPÉ -->
+</main>
 
-    <footer>
+<footer>
+    <p id="direitos"></p>
+</footer>
 
-        <p id="direitos"></p>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
-    </footer>
+    // =========================
+    // RODAPÉ
+    // =========================
 
-    <!-- LIGHTBOX -->
+    const direitos = document.getElementById("direitos");
 
-    <div id="lightbox">
+    if (direitos) {
+        direitos.textContent =
+            `© ${new Date().getFullYear()} - Lindos Horizontes. Todos os direitos reservados.`;
+    }
 
-        <span id="fechar">
-            &times;
-        </span>
+    // =========================
+    // FRASE DO DIA
+    // =========================
 
-        <img id="lightbox-img">
+    const frases = [
+        "A natureza nunca se repete.",
+        "A beleza está nos pequenos detalhes.",
+        "O simples também encanta.",
+        "Cada olhar revela um novo mundo.",
+        "A luz transforma tudo.",
+        "O natural é a maior arte."
+    ];
 
-    </div>
+    const fraseElemento = document.getElementById("frase-dia");
+
+    if (fraseElemento) {
+        fraseElemento.textContent =
+            frases[Math.floor(Math.random() * frases.length)];
+    }
+
+    // =========================
+    // CARROSSEL
+    // =========================
+
+    const track = document.querySelector(".track_1");
+    const dots = document.querySelectorAll(".dot");
+
+    if (!track) return;
+
+    const slidesOriginais =
+        Array.from(track.querySelectorAll(".slide_1"));
+
+    if (slidesOriginais.length === 0) return;
+
+    const primeiroClone = slidesOriginais[0].cloneNode(true);
+    const ultimoClone =
+        slidesOriginais[slidesOriginais.length - 1].cloneNode(true);
+
+    track.prepend(ultimoClone);
+    track.append(primeiroClone);
+
+    const slides = Array.from(
+        track.querySelectorAll(".slide_1")
+    );
+
+    let indice = 1;
+    let inicioToque = 0;
+    let movendoPorToque = false;
+
+    function atualizarCarrossel(animar = true) {
+
+        const largura = slides[0].getBoundingClientRect().width;
+
+        track.style.transition = animar
+            ? "transform 0.4s ease"
+            : "none";
+
+        track.style.transform =
+            `translateX(-${largura * indice}px)`;
+
+        dots.forEach(dot => dot.classList.remove("active"));
+
+        const indiceReal =
+            (indice - 1 + dots.length) % dots.length;
+
+        if (dots[indiceReal]) {
+            dots[indiceReal].classList.add("active");
+        }
+    }
+
+    function proximoSlide() {
+        indice++;
+        atualizarCarrossel(true);
+    }
+
+    function slideAnterior() {
+        indice--;
+        atualizarCarrossel(true);
+    }
+
+    track.addEventListener("transitionend", () => {
+
+        if (indice === slides.length - 1) {
+            indice = 1;
+            atualizarCarrossel(false);
+        }
+
+        if (indice === 0) {
+            indice = slides.length - 2;
+            atualizarCarrossel(false);
+        }
+    });
+
+    // No computador, clicar na imagem avança.
+    track.addEventListener("click", () => {
+        if (!movendoPorToque) {
+            proximoSlide();
+        }
+        movendoPorToque = false;
+    });
+
+    track.addEventListener("touchstart", event => {
+        inicioToque = event.touches[0].clientX;
+        movendoPorToque = false;
+    }, { passive: true });
+
+    track.addEventListener("touchend", event => {
+
+        const fimToque = event.changedTouches[0].clientX;
+        const diferenca = inicioToque - fimToque;
+
+        if (Math.abs(diferenca) > 50) {
+
+            movendoPorToque = true;
+
+            if (diferenca > 0) {
+                proximoSlide();
+            } else {
+                slideAnterior();
+            }
+
+        }
+    }, { passive: true });
+
+    window.addEventListener("resize", () => {
+        atualizarCarrossel(false);
+    });
+
+    atualizarCarrossel(false);
+});
+
+</script>
+
 </body>
 </html>
